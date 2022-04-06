@@ -1,0 +1,13 @@
+{
+    "name": "fabian/vu-ams",
+    "authors": [
+        {
+            "name": "Kellyop"
+        }
+    ],
+    "require": {
+      "ext-json": "*",
+      "ext-dom": "*",
+      "ext-libxml": "*"
+    }
+}

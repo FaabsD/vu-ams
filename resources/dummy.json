@@ -1,0 +1,905 @@
+{
+  "search_metadata": {
+    "id": "6245832e0f9866365369da3d",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/d268d379b81a5dfb/6245832e0f9866365369da3d.json",
+    "created_at": "2022-03-31 10:32:14 UTC",
+    "processed_at": "2022-03-31 10:32:14 UTC",
+    "google_scholar_url": "https://scholar.google.com/scholar?q=VU-AMS&hl=en&num=21",
+    "raw_html_file": "https://serpapi.com/searches/d268d379b81a5dfb/6245832e0f9866365369da3d.html",
+    "total_time_taken": 1.57
+  },
+  "search_parameters": {
+    "engine": "google_scholar",
+    "q": "VU-AMS",
+    "hl": "en",
+    "num": "20"
+  },
+  "search_information": {
+    "organic_results_state": "Results for exact spelling",
+    "total_results": 565,
+    "time_taken_displayed": 0.07,
+    "query_displayed": "VU-AMS"
+  },
+  "organic_results": [
+    {
+      "position": 0,
+      "title": "Association between anxiety disorders and heart rate variability in The Netherlands Study of Depression and Anxiety (NESDA)",
+      "result_id": "drxVRPj7D8kJ",
+      "link": "https://journals.lww.com/psychosomaticmedicine/Fulltext/2009/06000/Association_between_Anxiety_Disorders_and_Heart.5.aspx",
+      "snippet": "… ECG signal that was measured by the VU-AMS. The VU-AMS is a light-weight ambulatory … NESDA subjects were wearing the VU-AMS device during a large part of the NESDA clinic …",
+      "publication_info": {
+        "summary": "CMM Licht, EJC De Geus, R Van Dyck… - Psychosomatic …, 2009 - journals.lww.com",
+        "authors": [
+          {
+            "name": "R Van Dyck",
+            "link": "https://scholar.google.com/citations?user=D-kQjF8AAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=D-kQjF8AAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "D-kQjF8AAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "vumc.nl",
+          "file_format": "PDF",
+          "link": "https://research.vumc.nl/ws/files/150612/Licht%20Psychosomatic%20Medicine%2071(5)%202009%20u.pdf"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=drxVRPj7D8kJ",
+        "cited_by": {
+          "total": 281,
+          "link": "https://scholar.google.com/scholar?cites=14488075569991105654&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "14488075569991105654",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=14488075569991105654&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:drxVRPj7D8kJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 21,
+          "link": "https://scholar.google.com/scholar?cluster=14488075569991105654&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "14488075569991105654",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=14488075569991105654&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 1,
+      "title": "Dysregulation of the autonomic nervous system and its association with the presence and intensity of chronic widespread pain",
+      "result_id": "6zyKyE84m3oJ",
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1002/acr.21669",
+      "snippet": "… the VU University Ambulatory Monitoring System (VU-AMS). The VU-AMS is a simple, noninvasive, … Subjects wore the VU-AMS monitor during the assessment unobtrusively underneath …",
+      "publication_info": {
+        "summary": "A Barakat, N Vogelzangs, CMM Licht… - Arthritis care & …, 2012 - Wiley Online Library"
+      },
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=6zyKyE84m3oJ",
+        "cited_by": {
+          "total": 44,
+          "link": "https://scholar.google.com/scholar?cites=8834717009335434475&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "8834717009335434475",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=8834717009335434475&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:6zyKyE84m3oJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 13,
+          "link": "https://scholar.google.com/scholar?cluster=8834717009335434475&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "8834717009335434475",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=8834717009335434475&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 2,
+      "title": "Psychological and psychophysiological ambulatory monitoring",
+      "result_id": "Im0ZPkZz29AJ",
+      "link": "https://econtent.hogrefe.com/doi/abs/10.1027/1015-5759.23.4.214",
+      "snippet": "… with the Portapress (Finapres Medical Systems, Amsterdam, The Netherlands), impedance cardiography with a technically demanding averaging function is only available with VU-AMS …",
+      "publication_info": {
+        "summary": "UW Ebner-Priemer, T Kubiak - European Journal of …, 2007 - econtent.hogrefe.com",
+        "authors": [
+          {
+            "name": "UW Ebner-Priemer",
+            "link": "https://scholar.google.com/citations?user=eoS-oxkAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=eoS-oxkAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "eoS-oxkAAAAJ"
+          },
+          {
+            "name": "T Kubiak",
+            "link": "https://scholar.google.com/citations?user=Vv9uICUAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Vv9uICUAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "Vv9uICUAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "vu-ams.nl",
+          "file_format": "PDF",
+          "link": "http://www.vu-ams.nl/vuams-pubs/Ebner-Priemer.pdf"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=Im0ZPkZz29AJ",
+        "cited_by": {
+          "total": 99,
+          "link": "https://scholar.google.com/scholar?cites=15049749325315403042&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "15049749325315403042",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=15049749325315403042&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:Im0ZPkZz29AJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 8,
+          "link": "https://scholar.google.com/scholar?cluster=15049749325315403042&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "15049749325315403042",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=15049749325315403042&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 3,
+      "title": "Validity of the Empatica E4 wristband to measure heart rate variability (HRV) parameters: A comparison to electrocardiography (ECG)",
+      "result_id": "AJdkPLAG2tIJ",
+      "type": "Html",
+      "link": "https://link.springer.com/article/10.1007/s10916-020-01648-w",
+      "snippet": "… VU-AMS is a lightweight ECG device for ambulatory assessment that is considered to be a ‘gold standard’ [4, 5]. Although the VU-AMS … developed to analyze VU-AMS recordings (Vrije […",
+      "publication_info": {
+        "summary": "AAT Schuurmans, P de Looff, KS Nijhof… - Journal of medical …, 2020 - Springer"
+      },
+      "resources": [
+        {
+          "title": "springer.com",
+          "file_format": "HTML",
+          "link": "https://link.springer.com/article/10.1007/s10916-020-01648-w"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=AJdkPLAG2tIJ",
+        "html_version": "https://link.springer.com/article/10.1007/s10916-020-01648-w",
+        "cited_by": {
+          "total": 34,
+          "link": "https://scholar.google.com/scholar?cites=15193463646885025536&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "15193463646885025536",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=15193463646885025536&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:AJdkPLAG2tIJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 17,
+          "link": "https://scholar.google.com/scholar?cluster=15193463646885025536&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "15193463646885025536",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=15193463646885025536&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 4,
+      "title": "Changes in heart rate variability during vasomotor symptoms among midlife women",
+      "result_id": "UPfLJ6c58b4J",
+      "type": "Html",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4844776/",
+      "snippet": "… Min-by-min estimates of HR and RSA were conducted using VU-AMS software in accordance with guidelines. RSA was scored by VU-AMS software based on the peak-valley method. …",
+      "publication_info": {
+        "summary": "RC Thurston, KA Matthews, Y Chang… - … (New York, NY), 2016 - ncbi.nlm.nih.gov",
+        "authors": [
+          {
+            "name": "RC Thurston",
+            "link": "https://scholar.google.com/citations?user=weQd44gAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=weQd44gAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "weQd44gAAAAJ"
+          },
+          {
+            "name": "KA Matthews",
+            "link": "https://scholar.google.com/citations?user=4XpM8kgAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=4XpM8kgAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "4XpM8kgAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "nih.gov",
+          "file_format": "HTML",
+          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4844776/"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=UPfLJ6c58b4J",
+        "html_version": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4844776/",
+        "cited_by": {
+          "total": 20,
+          "link": "https://scholar.google.com/scholar?cites=13758841726683576144&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "13758841726683576144",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=13758841726683576144&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:UPfLJ6c58b4J:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 10,
+          "link": "https://scholar.google.com/scholar?cluster=13758841726683576144&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "13758841726683576144",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=13758841726683576144&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 5,
+      "title": "Measuring cardiac autonomic nervous system (ANS) activity in children",
+      "result_id": "NZ2mkZ-7oucJ",
+      "type": "Html",
+      "link": "https://www.jove.com/t/50073/measuring-cardiac-autonomic-nervous-system-ans-activity-in-children?list=LJS9q0qG&",
+      "snippet": "… (VU-AMS) device can record cardiac autonomic control in any setting. The VU-AMS proved … Put the empty memory card and full batteries in the VU-AMS device (successful placement is …",
+      "publication_info": {
+        "summary": "AE van Dijk, R van Lien, M van Eijsden… - JoVE (Journal of …, 2013 - jove.com"
+      },
+      "resources": [
+        {
+          "title": "jove.com",
+          "file_format": "HTML",
+          "link": "https://www.jove.com/t/50073/measuring-cardiac-autonomic-nervous-system-ans-activity-in-children?list=LJS9q0qG&"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=NZ2mkZ-7oucJ",
+        "html_version": "https://www.jove.com/t/50073/measuring-cardiac-autonomic-nervous-system-ans-activity-in-children?list=LJS9q0qG&",
+        "cited_by": {
+          "total": 42,
+          "link": "https://scholar.google.com/scholar?cites=16691109463006289205&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "16691109463006289205",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=16691109463006289205&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:NZ2mkZ-7oucJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 15,
+          "link": "https://scholar.google.com/scholar?cluster=16691109463006289205&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "16691109463006289205",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=16691109463006289205&engine=google_scholar&hl=en&num=20"
+        },
+        "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:NZ2mkZ-7oucJ:scholar.google.com/+VU-AMS&hl=en&num=20&as_sdt=0,33"
+      }
+    },
+    {
+      "position": 6,
+      "title": "Large-scale ensemble averaging of ambulatory impedance cardiograms",
+      "result_id": "c24P_N2iLkAJ",
+      "link": "https://link.springer.com/article/10.3758/BF03195525",
+      "snippet": "… The VU-AMS, therefore, does not record the full EKG but instead uses the R-wave as an approximation of the onset of the EMS and PEP scoring in the VUAMS relative to the R-wave. …",
+      "publication_info": {
+        "summary": "H Riese, PFC Groot, M van den Berg… - … Methods, Instruments, & …, 2003 - Springer",
+        "authors": [
+          {
+            "name": "H Riese",
+            "link": "https://scholar.google.com/citations?user=z_DDrmYAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=z_DDrmYAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "z_DDrmYAAAAJ"
+          },
+          {
+            "name": "PFC Groot",
+            "link": "https://scholar.google.com/citations?user=z6z-wsMAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=z6z-wsMAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "z6z-wsMAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "springer.com",
+          "file_format": "PDF",
+          "link": "https://link.springer.com/content/pdf/10.3758/BF03195525.pdf"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=c24P_N2iLkAJ",
+        "cited_by": {
+          "total": 107,
+          "link": "https://scholar.google.com/scholar?cites=4624812941656419955&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "4624812941656419955",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=4624812941656419955&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:c24P_N2iLkAJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 20,
+          "link": "https://scholar.google.com/scholar?cluster=4624812941656419955&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "4624812941656419955",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=4624812941656419955&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 7,
+      "title": "Cross‐instrument feasibility, validity, and reproducibility of wireless heart rate monitors: Novel opportunities for extended daily life monitoring",
+      "result_id": "vOFyG5EkYa0J",
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/psyp.13898",
+      "snippet": "… an established wired reference method (the VU-AMS ambulatory ECG monitor). Monitors … monitors showed acceptable agreement with the VU-AMS reference in laboratory setting. In …",
+      "publication_info": {
+        "summary": "YK Kunkels, AM van Roon, M Wichers… - …, 2021 - Wiley Online Library",
+        "authors": [
+          {
+            "name": "YK Kunkels",
+            "link": "https://scholar.google.com/citations?user=xbCZi-0AAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=xbCZi-0AAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "xbCZi-0AAAAJ"
+          },
+          {
+            "name": "M Wichers",
+            "link": "https://scholar.google.com/citations?user=SakYHWoAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=SakYHWoAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "SakYHWoAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "wiley.com",
+          "file_format": "PDF",
+          "link": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/psyp.13898"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=vOFyG5EkYa0J",
+        "cited_by": {
+          "total": 4,
+          "link": "https://scholar.google.com/scholar?cites=12493307046951838140&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "12493307046951838140",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=12493307046951838140&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:vOFyG5EkYa0J:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 8,
+          "link": "https://scholar.google.com/scholar?cluster=12493307046951838140&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "12493307046951838140",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=12493307046951838140&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 8,
+      "title": "Effects of work stress on ambulatory blood pressure, heart rate, and heart rate variability",
+      "result_id": "cDHYOD7W4jsJ",
+      "link": "https://www.ahajournals.org/doi/abs/10.1161/01.hyp.35.4.880",
+      "snippet": "… HR and vagal tone were measured by the VU-AMS (version … recording methodology of the VU-AMS have been described … during the registration, the VU-AMS also monitors the amount …",
+      "publication_info": {
+        "summary": "TGM Vrijkotte, LJP Van Doornen, EJC De Geus - Hypertension, 2000 - Am Heart Assoc",
+        "authors": [
+          {
+            "name": "TGM Vrijkotte",
+            "link": "https://scholar.google.com/citations?user=Binwp6gAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Binwp6gAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "Binwp6gAAAAJ"
+          },
+          {
+            "name": "EJC De Geus",
+            "link": "https://scholar.google.com/citations?user=F6N6rKkAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=F6N6rKkAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "F6N6rKkAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "ahajournals.org",
+          "file_format": "HTML",
+          "link": "https://www.ahajournals.org/doi/full/10.1161/01.HYP.35.4.880"
+        },
+        {
+          "title": "Full View",
+          "link": "https://scholar.google.com/scholar?output=instlink&q=info:cDHYOD7W4jsJ:scholar.google.com/&hl=en&num=20&as_sdt=0,33&scillfp=1001428167735776099&oi=lle"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=cDHYOD7W4jsJ",
+        "html_version": "https://www.ahajournals.org/doi/full/10.1161/01.HYP.35.4.880",
+        "cited_by": {
+          "total": 971,
+          "link": "https://scholar.google.com/scholar?cites=4315246955704365424&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "4315246955704365424",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=4315246955704365424&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:cDHYOD7W4jsJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 14,
+          "link": "https://scholar.google.com/scholar?cluster=4315246955704365424&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "4315246955704365424",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=4315246955704365424&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 9,
+      "title": "Childhood abuse and vasomotor symptoms among midlife women",
+      "result_id": "aIHRf4KwbkQJ",
+      "type": "Html",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6768766/",
+      "snippet": "… monitor (VU-AMS, VU University Amsterdam, www.vu-ams.nl, Amsterdam, the Netherlands); the VU-AMS … The VU-AMS was worn in a pouch around the waist and measured sternal skin …",
+      "publication_info": {
+        "summary": "MY Carson, RC Thurston - Menopause (New York, NY), 2019 - ncbi.nlm.nih.gov",
+        "authors": [
+          {
+            "name": "MY Carson",
+            "link": "https://scholar.google.com/citations?user=Y3iuzc0AAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Y3iuzc0AAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "Y3iuzc0AAAAJ"
+          },
+          {
+            "name": "RC Thurston",
+            "link": "https://scholar.google.com/citations?user=weQd44gAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=weQd44gAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "weQd44gAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "nih.gov",
+          "file_format": "HTML",
+          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6768766/"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=aIHRf4KwbkQJ",
+        "html_version": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6768766/",
+        "cited_by": {
+          "total": 8,
+          "link": "https://scholar.google.com/scholar?cites=4931072716553945448&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "4931072716553945448",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=4931072716553945448&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:aIHRf4KwbkQJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 10,
+          "link": "https://scholar.google.com/scholar?cluster=4931072716553945448&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "4931072716553945448",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=4931072716553945448&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 10,
+      "title": "Heritability of indices for cardiac contractility in ambulatory recordings",
+      "result_id": "uMqa7D6RbHYJ",
+      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-8167.2006.00535.x",
+      "snippet": "… the VU-AMS ambulatory … VU-AMS for 24 hours and the blood pressure monitor until going to sleep and to keep a detailed diary during this period. Every 30 (±10) minutes the VU-AMS …",
+      "publication_info": {
+        "summary": "N Kupper, G Willemsen, DI Boomsma… - Journal of …, 2006 - Wiley Online Library",
+        "authors": [
+          {
+            "name": "N Kupper",
+            "link": "https://scholar.google.com/citations?user=mryAnQ4AAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=mryAnQ4AAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "mryAnQ4AAAAJ"
+          },
+          {
+            "name": "DI Boomsma",
+            "link": "https://scholar.google.com/citations?user=F0ByHlcAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=F0ByHlcAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "F0ByHlcAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "tilburguniversity.edu",
+          "file_format": "PDF",
+          "link": "https://research.tilburguniversity.edu/files/748465/heritability.pdf"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=uMqa7D6RbHYJ",
+        "cited_by": {
+          "total": 27,
+          "link": "https://scholar.google.com/scholar?cites=8533355093403814584&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "8533355093403814584",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=8533355093403814584&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:uMqa7D6RbHYJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 18,
+          "link": "https://scholar.google.com/scholar?cluster=8533355093403814584&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "8533355093403814584",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=8533355093403814584&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 11,
+      "title": "Cardiovascular reactivity to work stress assessed by ambulatory blood pressure, heart rate, and heart rate variability",
+      "result_id": "XYxUaC0aNxcJ",
+      "type": "Pdf",
+      "link": "http://www.vu-ams.nl/vuams-pubs/Vrijkotte_2001.pdf",
+      "snippet": "… VU-AMS updates a running average of HR and RMSSD. To get an impression of the physical activity during the registration, the VU-AMS … More information about the VU-AMS can be …",
+      "publication_info": {
+        "summary": "TGM Vrijkotte, H Riese, EJC De Geus - Progress in ambulatory …, 2001 - vu-ams.nl",
+        "authors": [
+          {
+            "name": "TGM Vrijkotte",
+            "link": "https://scholar.google.com/citations?user=Binwp6gAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Binwp6gAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "Binwp6gAAAAJ"
+          },
+          {
+            "name": "H Riese",
+            "link": "https://scholar.google.com/citations?user=z_DDrmYAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=z_DDrmYAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "z_DDrmYAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "vu-ams.nl",
+          "file_format": "PDF",
+          "link": "http://www.vu-ams.nl/vuams-pubs/Vrijkotte_2001.pdf"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=XYxUaC0aNxcJ",
+        "cited_by": {
+          "total": 11,
+          "link": "https://scholar.google.com/scholar?cites=1672834568917650525&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "1672834568917650525",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=1672834568917650525&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:XYxUaC0aNxcJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 3,
+          "link": "https://scholar.google.com/scholar?cluster=1672834568917650525&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "1672834568917650525",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=1672834568917650525&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 12,
+      "title": "Family history of cardiovascular disease is associated with cardiovascular responses to stress in healthy young men and women",
+      "result_id": "1oL0wL3K8QIJ",
+      "link": "https://www.sciencedirect.com/science/article/pii/S0167876006003199",
+      "snippet": "… The VU-AMS and Portapres-2 devices were then fitted. … VU-AMS and Portapres recordings were taken throughout … and 5 min of continuous VU-AMS/Portapres recordings were …",
+      "publication_info": {
+        "summary": "CE Wright, K O'Donnell, L Brydon, J Wardle… - International Journal of …, 2007 - Elsevier"
+      },
+      "resources": [
+        {
+          "title": "ssu.ac.ir",
+          "file_format": "PDF",
+          "link": "http://ssu.ac.ir/cms/fileadmin/user_upload/ClinicBaghaeiPoor/moraghebat/Family-history-of-cardiovascular-disease-is-associated-with-cardiovascular-responses-to-stress-in-healthy-young-men-and-women_2007_International-Journ.pdf"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=1oL0wL3K8QIJ",
+        "cited_by": {
+          "total": 61,
+          "link": "https://scholar.google.com/scholar?cites=212173573798003414&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "212173573798003414",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=212173573798003414&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:1oL0wL3K8QIJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 12,
+          "link": "https://scholar.google.com/scholar?cluster=212173573798003414&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "212173573798003414",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=212173573798003414&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 13,
+      "title": "Overcommitment to work is associated with changes in cardiac sympathetic regulation",
+      "result_id": "H8G7XK8AdMAJ",
+      "link": "https://journals.lww.com/psychosomaticmedicine/fulltext/2004/09000/Overcommitment_to_Work_Is_Associated_With_Changes.6.aspx",
+      "snippet": "… To measure physical activity during the registration, the VU-AMS also monitored the amount of body movement of the subject by an in-built vertical accelerometer. Because the device …",
+      "publication_info": {
+        "summary": "TGM Vrijkotte, LJP van Doornen… - Psychosomatic …, 2004 - journals.lww.com",
+        "authors": [
+          {
+            "name": "TGM Vrijkotte",
+            "link": "https://scholar.google.com/citations?user=Binwp6gAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Binwp6gAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "Binwp6gAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "vu-ams.nl",
+          "file_format": "PDF",
+          "link": "http://www.vu-ams.nl/vuams-pubs/Vrijkotte_2004.pdf"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=H8G7XK8AdMAJ",
+        "cited_by": {
+          "total": 93,
+          "link": "https://scholar.google.com/scholar?cites=13867709905755685151&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "13867709905755685151",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=13867709905755685151&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:H8G7XK8AdMAJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 11,
+          "link": "https://scholar.google.com/scholar?cluster=13867709905755685151&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "13867709905755685151",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=13867709905755685151&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 14,
+      "title": "Estimating cardiac autonomic activity during sleep: impedance cardiography, spectral analysis, and Poincare plots",
+      "result_id": "1Hv0pAcHL1oJ",
+      "link": "https://www.sciencedirect.com/science/article/pii/S1388245703003122",
+      "snippet": "… The electrodes were connected to a VU-AMS device (version … and then amplified by the VU-AMS device using an amplifier … The VU-AMS also determined pre-ejection period (PEP) via …",
+      "publication_info": {
+        "summary": "HJ Burgess, PD Penev, R Schneider… - Clinical …, 2004 - Elsevier"
+      },
+      "resources": [
+        {
+          "title": "vu-ams.nl",
+          "file_format": "PDF",
+          "link": "http://www.vu-ams.nl/vuams-pubs/Burgess_2004.pdf"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=1Hv0pAcHL1oJ",
+        "cited_by": {
+          "total": 81,
+          "link": "https://scholar.google.com/scholar?cites=6498420516732566484&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "6498420516732566484",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=6498420516732566484&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:1Hv0pAcHL1oJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 11,
+          "link": "https://scholar.google.com/scholar?cluster=6498420516732566484&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "6498420516732566484",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=6498420516732566484&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 15,
+      "title": "LJSResearch",
+      "result_id": "Wmn-sNuftwQJ",
+      "type": "Pdf",
+      "link": "http://nieuwsmonitor.org/wp-content/uploads/onderzoeksrapport-MediaPolitiek.pdf",
+      "snippet": "Na de Brexit en de verkiezingen van Trump in de Verenigde Staten waren alle internationale ogen gericht op Nederland waar op 15 maart 2017 parlementsverkiezingen zijn gehouden. …",
+      "publication_info": {
+        "summary": "N Ruigrok, S Gagestein, AMS VU, C Jacobi - 2014 - nieuwsmonitor.org",
+        "authors": [
+          {
+            "name": "N Ruigrok",
+            "link": "https://scholar.google.com/citations?user=IYZ7h-gAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=IYZ7h-gAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "IYZ7h-gAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "nieuwsmonitor.org",
+          "file_format": "PDF",
+          "link": "http://nieuwsmonitor.org/wp-content/uploads/onderzoeksrapport-MediaPolitiek.pdf"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=Wmn-sNuftwQJ",
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:Wmn-sNuftwQJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 7,
+          "link": "https://scholar.google.com/scholar?cluster=339916062805879130&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "339916062805879130",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=339916062805879130&engine=google_scholar&hl=en&num=20"
+        },
+        "cached_page_link": "http://scholar.googleusercontent.com/scholar?q=cache:Wmn-sNuftwQJ:scholar.google.com/+VU-AMS&hl=en&num=20&as_sdt=0,33"
+      }
+    },
+    {
+      "position": 16,
+      "title": "Physiologically assessed hot flashes and endothelial function among midlife women",
+      "result_id": "NWgVUcQqncMJ",
+      "type": "Html",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5524590/",
+      "snippet": "… mark buttons on the VU-AMS monitor and actigraph when experiencing a hot flash, providing date and time-stamped hot flash reports. Participants wore the VU-AMS monitor for 24 …",
+      "publication_info": {
+        "summary": "RC Thurston, Y Chang, E Barinas-Mitchell… - … (New York, NY), 2017 - ncbi.nlm.nih.gov",
+        "authors": [
+          {
+            "name": "RC Thurston",
+            "link": "https://scholar.google.com/citations?user=weQd44gAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=weQd44gAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "weQd44gAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "nih.gov",
+          "file_format": "HTML",
+          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5524590/"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=NWgVUcQqncMJ",
+        "html_version": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5524590/",
+        "cited_by": {
+          "total": 52,
+          "link": "https://scholar.google.com/scholar?cites=14095469431401834549&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "14095469431401834549",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=14095469431401834549&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:NWgVUcQqncMJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 15,
+          "link": "https://scholar.google.com/scholar?cluster=14095469431401834549&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "14095469431401834549",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=14095469431401834549&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 17,
+      "title": "Predicting quality of life during and post detention in incarcerated juveniles",
+      "result_id": "AN05P1Oc6FwJ",
+      "type": "Html",
+      "link": "https://link.springer.com/article/10.1007/s11136-019-02160-6",
+      "snippet": "… the VU-Ambulatory Monitoring System [VU-AMS; 61]. Data were analyzed with VU-AMS software and data analysis support was offered by the VU-AMS department of VU University. …",
+      "publication_info": {
+        "summary": "EL De Ruigh, A Popma, JWR Twisk, RW Wiers… - Quality of Life …, 2019 - Springer",
+        "authors": [
+          {
+            "name": "A Popma",
+            "link": "https://scholar.google.com/citations?user=Pt-xe3sAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Pt-xe3sAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "Pt-xe3sAAAAJ"
+          },
+          {
+            "name": "RW Wiers",
+            "link": "https://scholar.google.com/citations?user=2vKDTuoAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=2vKDTuoAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "2vKDTuoAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "springer.com",
+          "file_format": "HTML",
+          "link": "https://link.springer.com/article/10.1007/s11136-019-02160-6"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=AN05P1Oc6FwJ",
+        "html_version": "https://link.springer.com/article/10.1007/s11136-019-02160-6",
+        "cited_by": {
+          "total": 8,
+          "link": "https://scholar.google.com/scholar?cites=6694772727443217664&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "6694772727443217664",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=6694772727443217664&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:AN05P1Oc6FwJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 14,
+          "link": "https://scholar.google.com/scholar?cluster=6694772727443217664&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "6694772727443217664",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=6694772727443217664&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 18,
+      "title": "The relationship between slow-wave activity, body temperature, and cardiac activity during nighttime sleep",
+      "result_id": "HshScFaLTiAJ",
+      "link": "https://academic.oup.com/sleep/article-abstract/24/3/343/2750031",
+      "snippet": "… VU-AMS device (version 4.6, TD-FPP, Vrije Universiteit, Amsterdam, The Netherlands). The ECG was recorded by the VU-AMS … The VU-AMS also determined pre-ejection period (PEP) …",
+      "publication_info": {
+        "summary": "HJ Burgess, AL Holmes, D Dawson - Sleep, 2001 - academic.oup.com",
+        "authors": [
+          {
+            "name": "D Dawson",
+            "link": "https://scholar.google.com/citations?user=Y5TrQeMAAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Y5TrQeMAAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "Y5TrQeMAAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "oup.com",
+          "file_format": "PDF",
+          "link": "https://academic.oup.com/sleep/article-pdf/24/3/343/13700999/sleep-24-3-343.pdf"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=HshScFaLTiAJ",
+        "cited_by": {
+          "total": 55,
+          "link": "https://scholar.google.com/scholar?cites=2327951260765046814&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "2327951260765046814",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=2327951260765046814&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:HshScFaLTiAJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 6,
+          "link": "https://scholar.google.com/scholar?cluster=2327951260765046814&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "2327951260765046814",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=2327951260765046814&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    },
+    {
+      "position": 19,
+      "title": "Virtual prejudice",
+      "result_id": "TdV4OXdicyMJ",
+      "link": "https://www.sciencedirect.com/science/article/pii/S002210310800036X",
+      "snippet": "… Vrije Universiteit Ambulant Monitoring System (VU-AMS). The VU-AMS has the size of a walkman… The VU-AMS measured SCL by passing a small current through the surface of the skin …",
+      "publication_info": {
+        "summary": "R Dotsch, DHJ Wigboldus - Journal of experimental social psychology, 2008 - Elsevier",
+        "authors": [
+          {
+            "name": "R Dotsch",
+            "link": "https://scholar.google.com/citations?user=VZ1QiT4AAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=VZ1QiT4AAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "VZ1QiT4AAAAJ"
+          },
+          {
+            "name": "DHJ Wigboldus",
+            "link": "https://scholar.google.com/citations?user=8_WwfG8AAAAJ&hl=en&num=20&oi=sra",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=8_WwfG8AAAAJ&engine=google_scholar_author&hl=en",
+            "author_id": "8_WwfG8AAAAJ"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "title": "ssoar.info",
+          "file_format": "PDF",
+          "link": "https://www.ssoar.info/ssoar/bitstream/handle/document/25310/ssoar-jexpsocpsychol-2008-4-dotsch_et_al-virtual_prejudice.pdf?sequence=1&isAllowed=y"
+        }
+      ],
+      "inline_links": {
+        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=TdV4OXdicyMJ",
+        "cited_by": {
+          "total": 215,
+          "link": "https://scholar.google.com/scholar?cites=2554493677854053709&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
+          "cites_id": "2554493677854053709",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=2554493677854053709&engine=google_scholar&hl=en&num=20"
+        },
+        "related_pages_link": "https://scholar.google.com/scholar?q=related:TdV4OXdicyMJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
+        "versions": {
+          "total": 15,
+          "link": "https://scholar.google.com/scholar?cluster=2554493677854053709&hl=en&num=20&as_sdt=0,33",
+          "cluster_id": "2554493677854053709",
+          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=2554493677854053709&engine=google_scholar&hl=en&num=20"
+        }
+      }
+    }
+  ],
+  "pagination": {
+    "current": 1,
+    "next": "https://scholar.google.com/scholar?start=20&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
+    "other_pages": {
+      "2": "https://scholar.google.com/scholar?start=20&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
+      "3": "https://scholar.google.com/scholar?start=40&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
+      "4": "https://scholar.google.com/scholar?start=60&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
+      "5": "https://scholar.google.com/scholar?start=80&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
+      "6": "https://scholar.google.com/scholar?start=100&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
+      "7": "https://scholar.google.com/scholar?start=120&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
+      "8": "https://scholar.google.com/scholar?start=140&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
+      "9": "https://scholar.google.com/scholar?start=160&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
+      "10": "https://scholar.google.com/scholar?start=180&q=VU-AMS&hl=en&num=20&as_sdt=0,33"
+    }
+  },
+  "serpapi_pagination": {
+    "current": 1,
+    "next_link": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=20",
+    "next": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=20",
+    "other_pages": {
+      "2": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=20",
+      "3": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=40",
+      "4": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=60",
+      "5": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=80",
+      "6": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=100",
+      "7": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=120",
+      "8": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=140",
+      "9": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=160",
+      "10": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=180"
+    }
+  }
+}
