@@ -1,905 +1,1579 @@
 {
   "search_metadata": {
-    "id": "6245832e0f9866365369da3d",
+    "id": "624d568c477c0eab9b29a3ea",
     "status": "Success",
-    "json_endpoint": "https://serpapi.com/searches/d268d379b81a5dfb/6245832e0f9866365369da3d.json",
-    "created_at": "2022-03-31 10:32:14 UTC",
-    "processed_at": "2022-03-31 10:32:14 UTC",
-    "google_scholar_url": "https://scholar.google.com/scholar?q=VU-AMS&hl=en&num=21",
-    "raw_html_file": "https://serpapi.com/searches/d268d379b81a5dfb/6245832e0f9866365369da3d.html",
-    "total_time_taken": 1.57
+    "json_endpoint": "https://serpapi.com/searches/b73eb850ecd2182f/624d568c477c0eab9b29a3ea.json",
+    "created_at": "2022-04-06 08:59:56 UTC",
+    "processed_at": "2022-04-06 08:59:56 UTC",
+    "google_scholar_author_url": "https://scholar.google.com/citations?user=cRt7JiIAAAAJ&hl=nl&pagesize=100",
+    "raw_html_file": "https://serpapi.com/searches/b73eb850ecd2182f/624d568c477c0eab9b29a3ea.html",
+    "total_time_taken": 0.77
   },
   "search_parameters": {
-    "engine": "google_scholar",
-    "q": "VU-AMS",
-    "hl": "en",
-    "num": "20"
+    "engine": "google_scholar_author",
+    "author_id": "cRt7JiIAAAAJ",
+    "hl": "nl",
+    "num": "100"
   },
-  "search_information": {
-    "organic_results_state": "Results for exact spelling",
-    "total_results": 565,
-    "time_taken_displayed": 0.07,
-    "query_displayed": "VU-AMS"
+  "author": {
+    "name": "VU-AMS",
+    "affiliations": "VU Amsterdam",
+    "email": "Geverifieerd emailadres voor vu.nl",
+    "website": "http://www.vu-ams.nl/",
+    "interests": [
+      {
+        "title": "Impedance cardiography",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=nl&mauthors=label:impedance_cardiography",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=nl&mauthors=label%3Aimpedance_cardiography"
+      },
+      {
+        "title": "heart rate variability",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=nl&mauthors=label:heart_rate_variability",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=nl&mauthors=label%3Aheart_rate_variability"
+      },
+      {
+        "title": "autonomic nervous system",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=nl&mauthors=label:autonomic_nervous_system",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=nl&mauthors=label%3Aautonomic_nervous_system"
+      }
+    ],
+    "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=cRt7JiIAAAAJ&citpid=4"
   },
-  "organic_results": [
+  "articles": [
     {
-      "position": 0,
-      "title": "Association between anxiety disorders and heart rate variability in The Netherlands Study of Depression and Anxiety (NESDA)",
-      "result_id": "drxVRPj7D8kJ",
-      "link": "https://journals.lww.com/psychosomaticmedicine/Fulltext/2009/06000/Association_between_Anxiety_Disorders_and_Heart.5.aspx",
-      "snippet": "… ECG signal that was measured by the VU-AMS. The VU-AMS is a light-weight ambulatory … NESDA subjects were wearing the VU-AMS device during a large part of the NESDA clinic …",
-      "publication_info": {
-        "summary": "CMM Licht, EJC De Geus, R Van Dyck… - Psychosomatic …, 2009 - journals.lww.com",
-        "authors": [
-          {
-            "name": "R Van Dyck",
-            "link": "https://scholar.google.com/citations?user=D-kQjF8AAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=D-kQjF8AAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "D-kQjF8AAAAJ"
-          }
-        ]
+      "title": "The Netherlands Study of Depression and Anxiety (NESDA): rationale, objectives and methods",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:08ZZubdj9fEC",
+      "citation_id": "cRt7JiIAAAAJ:08ZZubdj9fEC",
+      "authors": "BWJH Penninx, ATF Beekman, JH Smit, FG Zitman, WA Nolen, ...",
+      "publication": "International journal of methods in psychiatric research 17 (3), 121-140, 2008",
+      "cited_by": {
+        "value": 1025,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=6244867003380481445",
+        "serpapi_link": "https://serpapi.com/search.json?cites=6244867003380481445&engine=google_scholar&hl=nl",
+        "cites_id": "6244867003380481445"
       },
-      "resources": [
-        {
-          "title": "vumc.nl",
-          "file_format": "PDF",
-          "link": "https://research.vumc.nl/ws/files/150612/Licht%20Psychosomatic%20Medicine%2071(5)%202009%20u.pdf"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=drxVRPj7D8kJ",
-        "cited_by": {
-          "total": 281,
-          "link": "https://scholar.google.com/scholar?cites=14488075569991105654&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "14488075569991105654",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=14488075569991105654&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:drxVRPj7D8kJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 21,
-          "link": "https://scholar.google.com/scholar?cluster=14488075569991105654&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "14488075569991105654",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=14488075569991105654&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2008"
     },
     {
-      "position": 1,
-      "title": "Dysregulation of the autonomic nervous system and its association with the presence and intensity of chronic widespread pain",
-      "result_id": "6zyKyE84m3oJ",
-      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1002/acr.21669",
-      "snippet": "… the VU University Ambulatory Monitoring System (VU-AMS). The VU-AMS is a simple, noninvasive, … Subjects wore the VU-AMS monitor during the assessment unobtrusively underneath …",
-      "publication_info": {
-        "summary": "A Barakat, N Vogelzangs, CMM Licht… - Arthritis care & …, 2012 - Wiley Online Library"
-      },
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=6zyKyE84m3oJ",
-        "cited_by": {
-          "total": 44,
-          "link": "https://scholar.google.com/scholar?cites=8834717009335434475&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "8834717009335434475",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=8834717009335434475&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:6zyKyE84m3oJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 13,
-          "link": "https://scholar.google.com/scholar?cluster=8834717009335434475&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "8834717009335434475",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=8834717009335434475&engine=google_scholar&hl=en&num=20"
-        }
-      }
-    },
-    {
-      "position": 2,
-      "title": "Psychological and psychophysiological ambulatory monitoring",
-      "result_id": "Im0ZPkZz29AJ",
-      "link": "https://econtent.hogrefe.com/doi/abs/10.1027/1015-5759.23.4.214",
-      "snippet": "… with the Portapress (Finapres Medical Systems, Amsterdam, The Netherlands), impedance cardiography with a technically demanding averaging function is only available with VU-AMS …",
-      "publication_info": {
-        "summary": "UW Ebner-Priemer, T Kubiak - European Journal of …, 2007 - econtent.hogrefe.com",
-        "authors": [
-          {
-            "name": "UW Ebner-Priemer",
-            "link": "https://scholar.google.com/citations?user=eoS-oxkAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=eoS-oxkAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "eoS-oxkAAAAJ"
-          },
-          {
-            "name": "T Kubiak",
-            "link": "https://scholar.google.com/citations?user=Vv9uICUAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Vv9uICUAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "Vv9uICUAAAAJ"
-          }
-        ]
-      },
-      "resources": [
-        {
-          "title": "vu-ams.nl",
-          "file_format": "PDF",
-          "link": "http://www.vu-ams.nl/vuams-pubs/Ebner-Priemer.pdf"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=Im0ZPkZz29AJ",
-        "cited_by": {
-          "total": 99,
-          "link": "https://scholar.google.com/scholar?cites=15049749325315403042&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "15049749325315403042",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=15049749325315403042&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:Im0ZPkZz29AJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 8,
-          "link": "https://scholar.google.com/scholar?cluster=15049749325315403042&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "15049749325315403042",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=15049749325315403042&engine=google_scholar&hl=en&num=20"
-        }
-      }
-    },
-    {
-      "position": 3,
-      "title": "Validity of the Empatica E4 wristband to measure heart rate variability (HRV) parameters: A comparison to electrocardiography (ECG)",
-      "result_id": "AJdkPLAG2tIJ",
-      "type": "Html",
-      "link": "https://link.springer.com/article/10.1007/s10916-020-01648-w",
-      "snippet": "… VU-AMS is a lightweight ECG device for ambulatory assessment that is considered to be a ‘gold standard’ [4, 5]. Although the VU-AMS … developed to analyze VU-AMS recordings (Vrije […",
-      "publication_info": {
-        "summary": "AAT Schuurmans, P de Looff, KS Nijhof… - Journal of medical …, 2020 - Springer"
-      },
-      "resources": [
-        {
-          "title": "springer.com",
-          "file_format": "HTML",
-          "link": "https://link.springer.com/article/10.1007/s10916-020-01648-w"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=AJdkPLAG2tIJ",
-        "html_version": "https://link.springer.com/article/10.1007/s10916-020-01648-w",
-        "cited_by": {
-          "total": 34,
-          "link": "https://scholar.google.com/scholar?cites=15193463646885025536&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "15193463646885025536",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=15193463646885025536&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:AJdkPLAG2tIJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 17,
-          "link": "https://scholar.google.com/scholar?cluster=15193463646885025536&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "15193463646885025536",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=15193463646885025536&engine=google_scholar&hl=en&num=20"
-        }
-      }
-    },
-    {
-      "position": 4,
-      "title": "Changes in heart rate variability during vasomotor symptoms among midlife women",
-      "result_id": "UPfLJ6c58b4J",
-      "type": "Html",
-      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4844776/",
-      "snippet": "… Min-by-min estimates of HR and RSA were conducted using VU-AMS software in accordance with guidelines. RSA was scored by VU-AMS software based on the peak-valley method. …",
-      "publication_info": {
-        "summary": "RC Thurston, KA Matthews, Y Chang… - … (New York, NY), 2016 - ncbi.nlm.nih.gov",
-        "authors": [
-          {
-            "name": "RC Thurston",
-            "link": "https://scholar.google.com/citations?user=weQd44gAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=weQd44gAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "weQd44gAAAAJ"
-          },
-          {
-            "name": "KA Matthews",
-            "link": "https://scholar.google.com/citations?user=4XpM8kgAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=4XpM8kgAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "4XpM8kgAAAAJ"
-          }
-        ]
-      },
-      "resources": [
-        {
-          "title": "nih.gov",
-          "file_format": "HTML",
-          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4844776/"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=UPfLJ6c58b4J",
-        "html_version": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4844776/",
-        "cited_by": {
-          "total": 20,
-          "link": "https://scholar.google.com/scholar?cites=13758841726683576144&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "13758841726683576144",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=13758841726683576144&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:UPfLJ6c58b4J:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 10,
-          "link": "https://scholar.google.com/scholar?cluster=13758841726683576144&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "13758841726683576144",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=13758841726683576144&engine=google_scholar&hl=en&num=20"
-        }
-      }
-    },
-    {
-      "position": 5,
-      "title": "Measuring cardiac autonomic nervous system (ANS) activity in children",
-      "result_id": "NZ2mkZ-7oucJ",
-      "type": "Html",
-      "link": "https://www.jove.com/t/50073/measuring-cardiac-autonomic-nervous-system-ans-activity-in-children?list=LJS9q0qG&",
-      "snippet": "… (VU-AMS) device can record cardiac autonomic control in any setting. The VU-AMS proved … Put the empty memory card and full batteries in the VU-AMS device (successful placement is …",
-      "publication_info": {
-        "summary": "AE van Dijk, R van Lien, M van Eijsden… - JoVE (Journal of …, 2013 - jove.com"
-      },
-      "resources": [
-        {
-          "title": "jove.com",
-          "file_format": "HTML",
-          "link": "https://www.jove.com/t/50073/measuring-cardiac-autonomic-nervous-system-ans-activity-in-children?list=LJS9q0qG&"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=NZ2mkZ-7oucJ",
-        "html_version": "https://www.jove.com/t/50073/measuring-cardiac-autonomic-nervous-system-ans-activity-in-children?list=LJS9q0qG&",
-        "cited_by": {
-          "total": 42,
-          "link": "https://scholar.google.com/scholar?cites=16691109463006289205&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "16691109463006289205",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=16691109463006289205&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:NZ2mkZ-7oucJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 15,
-          "link": "https://scholar.google.com/scholar?cluster=16691109463006289205&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "16691109463006289205",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=16691109463006289205&engine=google_scholar&hl=en&num=20"
-        },
-        "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:NZ2mkZ-7oucJ:scholar.google.com/+VU-AMS&hl=en&num=20&as_sdt=0,33"
-      }
-    },
-    {
-      "position": 6,
-      "title": "Large-scale ensemble averaging of ambulatory impedance cardiograms",
-      "result_id": "c24P_N2iLkAJ",
-      "link": "https://link.springer.com/article/10.3758/BF03195525",
-      "snippet": "… The VU-AMS, therefore, does not record the full EKG but instead uses the R-wave as an approximation of the onset of the EMS and PEP scoring in the VUAMS relative to the R-wave. …",
-      "publication_info": {
-        "summary": "H Riese, PFC Groot, M van den Berg… - … Methods, Instruments, & …, 2003 - Springer",
-        "authors": [
-          {
-            "name": "H Riese",
-            "link": "https://scholar.google.com/citations?user=z_DDrmYAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=z_DDrmYAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "z_DDrmYAAAAJ"
-          },
-          {
-            "name": "PFC Groot",
-            "link": "https://scholar.google.com/citations?user=z6z-wsMAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=z6z-wsMAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "z6z-wsMAAAAJ"
-          }
-        ]
-      },
-      "resources": [
-        {
-          "title": "springer.com",
-          "file_format": "PDF",
-          "link": "https://link.springer.com/content/pdf/10.3758/BF03195525.pdf"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=c24P_N2iLkAJ",
-        "cited_by": {
-          "total": 107,
-          "link": "https://scholar.google.com/scholar?cites=4624812941656419955&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "4624812941656419955",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=4624812941656419955&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:c24P_N2iLkAJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 20,
-          "link": "https://scholar.google.com/scholar?cluster=4624812941656419955&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "4624812941656419955",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=4624812941656419955&engine=google_scholar&hl=en&num=20"
-        }
-      }
-    },
-    {
-      "position": 7,
-      "title": "Cross‐instrument feasibility, validity, and reproducibility of wireless heart rate monitors: Novel opportunities for extended daily life monitoring",
-      "result_id": "vOFyG5EkYa0J",
-      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/psyp.13898",
-      "snippet": "… an established wired reference method (the VU-AMS ambulatory ECG monitor). Monitors … monitors showed acceptable agreement with the VU-AMS reference in laboratory setting. In …",
-      "publication_info": {
-        "summary": "YK Kunkels, AM van Roon, M Wichers… - …, 2021 - Wiley Online Library",
-        "authors": [
-          {
-            "name": "YK Kunkels",
-            "link": "https://scholar.google.com/citations?user=xbCZi-0AAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=xbCZi-0AAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "xbCZi-0AAAAJ"
-          },
-          {
-            "name": "M Wichers",
-            "link": "https://scholar.google.com/citations?user=SakYHWoAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=SakYHWoAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "SakYHWoAAAAJ"
-          }
-        ]
-      },
-      "resources": [
-        {
-          "title": "wiley.com",
-          "file_format": "PDF",
-          "link": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/psyp.13898"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=vOFyG5EkYa0J",
-        "cited_by": {
-          "total": 4,
-          "link": "https://scholar.google.com/scholar?cites=12493307046951838140&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "12493307046951838140",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=12493307046951838140&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:vOFyG5EkYa0J:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 8,
-          "link": "https://scholar.google.com/scholar?cluster=12493307046951838140&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "12493307046951838140",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=12493307046951838140&engine=google_scholar&hl=en&num=20"
-        }
-      }
-    },
-    {
-      "position": 8,
       "title": "Effects of work stress on ambulatory blood pressure, heart rate, and heart rate variability",
-      "result_id": "cDHYOD7W4jsJ",
-      "link": "https://www.ahajournals.org/doi/abs/10.1161/01.hyp.35.4.880",
-      "snippet": "… HR and vagal tone were measured by the VU-AMS (version … recording methodology of the VU-AMS have been described … during the registration, the VU-AMS also monitors the amount …",
-      "publication_info": {
-        "summary": "TGM Vrijkotte, LJP Van Doornen, EJC De Geus - Hypertension, 2000 - Am Heart Assoc",
-        "authors": [
-          {
-            "name": "TGM Vrijkotte",
-            "link": "https://scholar.google.com/citations?user=Binwp6gAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Binwp6gAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "Binwp6gAAAAJ"
-          },
-          {
-            "name": "EJC De Geus",
-            "link": "https://scholar.google.com/citations?user=F6N6rKkAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=F6N6rKkAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "F6N6rKkAAAAJ"
-          }
-        ]
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:u-x6o8ySG0sC",
+      "citation_id": "cRt7JiIAAAAJ:u-x6o8ySG0sC",
+      "authors": "TGM Vrijkotte, LJP Van Doornen, EJC De Geus",
+      "publication": "Hypertension 35 (4), 880-886, 2000",
+      "cited_by": {
+        "value": 973,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=4315246955704365424",
+        "serpapi_link": "https://serpapi.com/search.json?cites=4315246955704365424&engine=google_scholar&hl=nl",
+        "cites_id": "4315246955704365424"
       },
-      "resources": [
-        {
-          "title": "ahajournals.org",
-          "file_format": "HTML",
-          "link": "https://www.ahajournals.org/doi/full/10.1161/01.HYP.35.4.880"
-        },
-        {
-          "title": "Full View",
-          "link": "https://scholar.google.com/scholar?output=instlink&q=info:cDHYOD7W4jsJ:scholar.google.com/&hl=en&num=20&as_sdt=0,33&scillfp=1001428167735776099&oi=lle"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=cDHYOD7W4jsJ",
-        "html_version": "https://www.ahajournals.org/doi/full/10.1161/01.HYP.35.4.880",
-        "cited_by": {
-          "total": 971,
-          "link": "https://scholar.google.com/scholar?cites=4315246955704365424&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "4315246955704365424",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=4315246955704365424&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:cDHYOD7W4jsJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 14,
-          "link": "https://scholar.google.com/scholar?cluster=4315246955704365424&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "4315246955704365424",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=4315246955704365424&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2000"
     },
     {
-      "position": 9,
-      "title": "Childhood abuse and vasomotor symptoms among midlife women",
-      "result_id": "aIHRf4KwbkQJ",
-      "type": "Html",
-      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6768766/",
-      "snippet": "… monitor (VU-AMS, VU University Amsterdam, www.vu-ams.nl, Amsterdam, the Netherlands); the VU-AMS … The VU-AMS was worn in a pouch around the waist and measured sternal skin …",
-      "publication_info": {
-        "summary": "MY Carson, RC Thurston - Menopause (New York, NY), 2019 - ncbi.nlm.nih.gov",
-        "authors": [
-          {
-            "name": "MY Carson",
-            "link": "https://scholar.google.com/citations?user=Y3iuzc0AAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Y3iuzc0AAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "Y3iuzc0AAAAJ"
-          },
-          {
-            "name": "RC Thurston",
-            "link": "https://scholar.google.com/citations?user=weQd44gAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=weQd44gAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "weQd44gAAAAJ"
-          }
-        ]
+      "title": "Vagal influence on working memory and attention",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:1yQoGdGgb4wC",
+      "citation_id": "cRt7JiIAAAAJ:1yQoGdGgb4wC",
+      "authors": "AL Hansen, BH Johnsen, JF Thayer",
+      "publication": "International journal of psychophysiology 48 (3), 263-274, 2003",
+      "cited_by": {
+        "value": 854,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=4397386272938735106",
+        "serpapi_link": "https://serpapi.com/search.json?cites=4397386272938735106&engine=google_scholar&hl=nl",
+        "cites_id": "4397386272938735106"
       },
-      "resources": [
-        {
-          "title": "nih.gov",
-          "file_format": "HTML",
-          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6768766/"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=aIHRf4KwbkQJ",
-        "html_version": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6768766/",
-        "cited_by": {
-          "total": 8,
-          "link": "https://scholar.google.com/scholar?cites=4931072716553945448&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "4931072716553945448",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=4931072716553945448&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:aIHRf4KwbkQJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 10,
-          "link": "https://scholar.google.com/scholar?cluster=4931072716553945448&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "4931072716553945448",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=4931072716553945448&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2003"
     },
     {
-      "position": 10,
-      "title": "Heritability of indices for cardiac contractility in ambulatory recordings",
-      "result_id": "uMqa7D6RbHYJ",
-      "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-8167.2006.00535.x",
-      "snippet": "… the VU-AMS ambulatory … VU-AMS for 24 hours and the blood pressure monitor until going to sleep and to keep a detailed diary during this period. Every 30 (±10) minutes the VU-AMS …",
-      "publication_info": {
-        "summary": "N Kupper, G Willemsen, DI Boomsma… - Journal of …, 2006 - Wiley Online Library",
-        "authors": [
-          {
-            "name": "N Kupper",
-            "link": "https://scholar.google.com/citations?user=mryAnQ4AAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=mryAnQ4AAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "mryAnQ4AAAAJ"
-          },
-          {
-            "name": "DI Boomsma",
-            "link": "https://scholar.google.com/citations?user=F0ByHlcAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=F0ByHlcAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "F0ByHlcAAAAJ"
-          }
-        ]
+      "title": "Autonomic specificity of discrete emotion and dimensions of affective space: A multivariate approach",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:tkaPQYYpVKoC",
+      "citation_id": "cRt7JiIAAAAJ:tkaPQYYpVKoC",
+      "authors": "IC Christie, BH Friedman",
+      "publication": "International journal of psychophysiology 51 (2), 143-153, 2004",
+      "cited_by": {
+        "value": 505,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=9256949351337800279",
+        "serpapi_link": "https://serpapi.com/search.json?cites=9256949351337800279&engine=google_scholar&hl=nl",
+        "cites_id": "9256949351337800279"
       },
-      "resources": [
-        {
-          "title": "tilburguniversity.edu",
-          "file_format": "PDF",
-          "link": "https://research.tilburguniversity.edu/files/748465/heritability.pdf"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=uMqa7D6RbHYJ",
-        "cited_by": {
-          "total": 27,
-          "link": "https://scholar.google.com/scholar?cites=8533355093403814584&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "8533355093403814584",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=8533355093403814584&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:uMqa7D6RbHYJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 18,
-          "link": "https://scholar.google.com/scholar?cluster=8533355093403814584&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "8533355093403814584",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=8533355093403814584&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2004"
     },
     {
-      "position": 11,
-      "title": "Cardiovascular reactivity to work stress assessed by ambulatory blood pressure, heart rate, and heart rate variability",
-      "result_id": "XYxUaC0aNxcJ",
-      "type": "Pdf",
-      "link": "http://www.vu-ams.nl/vuams-pubs/Vrijkotte_2001.pdf",
-      "snippet": "… VU-AMS updates a running average of HR and RMSSD. To get an impression of the physical activity during the registration, the VU-AMS … More information about the VU-AMS can be …",
-      "publication_info": {
-        "summary": "TGM Vrijkotte, H Riese, EJC De Geus - Progress in ambulatory …, 2001 - vu-ams.nl",
-        "authors": [
-          {
-            "name": "TGM Vrijkotte",
-            "link": "https://scholar.google.com/citations?user=Binwp6gAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Binwp6gAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "Binwp6gAAAAJ"
-          },
-          {
-            "name": "H Riese",
-            "link": "https://scholar.google.com/citations?user=z_DDrmYAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=z_DDrmYAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "z_DDrmYAAAAJ"
-          }
-        ]
+      "title": "Association between major depressive disorder and heart rate variability in the Netherlands Study of Depression and Anxiety (NESDA)",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:zYLM7Y9cAGgC",
+      "citation_id": "cRt7JiIAAAAJ:zYLM7Y9cAGgC",
+      "authors": "CMM Licht, EJC de Geus, FG Zitman, WJG Hoogendijk, R van Dyck, ...",
+      "publication": "Archives of general psychiatry 65 (12), 1358-1367, 2008",
+      "cited_by": {
+        "value": 454,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=8701216302357488246",
+        "serpapi_link": "https://serpapi.com/search.json?cites=8701216302357488246&engine=google_scholar&hl=nl",
+        "cites_id": "8701216302357488246"
       },
-      "resources": [
-        {
-          "title": "vu-ams.nl",
-          "file_format": "PDF",
-          "link": "http://www.vu-ams.nl/vuams-pubs/Vrijkotte_2001.pdf"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=XYxUaC0aNxcJ",
-        "cited_by": {
-          "total": 11,
-          "link": "https://scholar.google.com/scholar?cites=1672834568917650525&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "1672834568917650525",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=1672834568917650525&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:XYxUaC0aNxcJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 3,
-          "link": "https://scholar.google.com/scholar?cluster=1672834568917650525&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "1672834568917650525",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=1672834568917650525&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2008"
     },
     {
-      "position": 12,
-      "title": "Family history of cardiovascular disease is associated with cardiovascular responses to stress in healthy young men and women",
-      "result_id": "1oL0wL3K8QIJ",
-      "link": "https://www.sciencedirect.com/science/article/pii/S0167876006003199",
-      "snippet": "… The VU-AMS and Portapres-2 devices were then fitted. … VU-AMS and Portapres recordings were taken throughout … and 5 min of continuous VU-AMS/Portapres recordings were …",
-      "publication_info": {
-        "summary": "CE Wright, K O'Donnell, L Brydon, J Wardle… - International Journal of …, 2007 - Elsevier"
+      "title": "Depression is associated with decreased blood pressure, but antidepressant use increases the risk for hypertension",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:EUQCXRtRnyEC",
+      "citation_id": "cRt7JiIAAAAJ:EUQCXRtRnyEC",
+      "authors": "CMM Licht, EJC De Geus, A Seldenrijk, HPJ Van Hout, FG Zitman, ...",
+      "publication": "Hypertension 53 (4), 631-638, 2009",
+      "cited_by": {
+        "value": 351,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=9995759535024883246",
+        "serpapi_link": "https://serpapi.com/search.json?cites=9995759535024883246&engine=google_scholar&hl=nl",
+        "cites_id": "9995759535024883246"
       },
-      "resources": [
-        {
-          "title": "ssu.ac.ir",
-          "file_format": "PDF",
-          "link": "http://ssu.ac.ir/cms/fileadmin/user_upload/ClinicBaghaeiPoor/moraghebat/Family-history-of-cardiovascular-disease-is-associated-with-cardiovascular-responses-to-stress-in-healthy-young-men-and-women_2007_International-Journ.pdf"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=1oL0wL3K8QIJ",
-        "cited_by": {
-          "total": 61,
-          "link": "https://scholar.google.com/scholar?cites=212173573798003414&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "212173573798003414",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=212173573798003414&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:1oL0wL3K8QIJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 12,
-          "link": "https://scholar.google.com/scholar?cluster=212173573798003414&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "212173573798003414",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=212173573798003414&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2009"
     },
     {
-      "position": 13,
-      "title": "Overcommitment to work is associated with changes in cardiac sympathetic regulation",
-      "result_id": "H8G7XK8AdMAJ",
-      "link": "https://journals.lww.com/psychosomaticmedicine/fulltext/2004/09000/Overcommitment_to_Work_Is_Associated_With_Changes.6.aspx",
-      "snippet": "… To measure physical activity during the registration, the VU-AMS also monitored the amount of body movement of the subject by an in-built vertical accelerometer. Because the device …",
-      "publication_info": {
-        "summary": "TGM Vrijkotte, LJP van Doornen… - Psychosomatic …, 2004 - journals.lww.com",
-        "authors": [
-          {
-            "name": "TGM Vrijkotte",
-            "link": "https://scholar.google.com/citations?user=Binwp6gAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Binwp6gAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "Binwp6gAAAAJ"
-          }
-        ]
+      "title": "Cortisol responses to mild psychological stress are inversely associated with proinflammatory cytokines",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:eq2jaN3J8jMC",
+      "citation_id": "cRt7JiIAAAAJ:eq2jaN3J8jMC",
+      "authors": "SR Kunz-Ebrecht, V Mohamed-Ali, PJ Feldman, C Kirschbaum, A Steptoe",
+      "publication": "Brain, behavior, and immunity 17 (5), 373-383, 2003",
+      "cited_by": {
+        "value": 342,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=15014127435639428166",
+        "serpapi_link": "https://serpapi.com/search.json?cites=15014127435639428166&engine=google_scholar&hl=nl",
+        "cites_id": "15014127435639428166"
       },
-      "resources": [
-        {
-          "title": "vu-ams.nl",
-          "file_format": "PDF",
-          "link": "http://www.vu-ams.nl/vuams-pubs/Vrijkotte_2004.pdf"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=H8G7XK8AdMAJ",
-        "cited_by": {
-          "total": 93,
-          "link": "https://scholar.google.com/scholar?cites=13867709905755685151&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "13867709905755685151",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=13867709905755685151&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:H8G7XK8AdMAJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 11,
-          "link": "https://scholar.google.com/scholar?cluster=13867709905755685151&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "13867709905755685151",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=13867709905755685151&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2003"
     },
     {
-      "position": 14,
-      "title": "Estimating cardiac autonomic activity during sleep: impedance cardiography, spectral analysis, and Poincare plots",
-      "result_id": "1Hv0pAcHL1oJ",
-      "link": "https://www.sciencedirect.com/science/article/pii/S1388245703003122",
-      "snippet": "… The electrodes were connected to a VU-AMS device (version … and then amplified by the VU-AMS device using an amplifier … The VU-AMS also determined pre-ejection period (PEP) via …",
-      "publication_info": {
-        "summary": "HJ Burgess, PD Penev, R Schneider… - Clinical …, 2004 - Elsevier"
+      "title": "Resting respiratory sinus arrhythmia is associated with tonic positive emotionality.",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:pyW8ca7W8N0C",
+      "citation_id": "cRt7JiIAAAAJ:pyW8ca7W8N0C",
+      "authors": "C Oveis, AB Cohen, J Gruber, MN Shiota, J Haidt, D Keltner",
+      "publication": "Emotion 9 (2), 265, 2009",
+      "cited_by": {
+        "value": 339,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=5168992060207741725",
+        "serpapi_link": "https://serpapi.com/search.json?cites=5168992060207741725&engine=google_scholar&hl=nl",
+        "cites_id": "5168992060207741725"
       },
-      "resources": [
-        {
-          "title": "vu-ams.nl",
-          "file_format": "PDF",
-          "link": "http://www.vu-ams.nl/vuams-pubs/Burgess_2004.pdf"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=1Hv0pAcHL1oJ",
-        "cited_by": {
-          "total": 81,
-          "link": "https://scholar.google.com/scholar?cites=6498420516732566484&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "6498420516732566484",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=6498420516732566484&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:1Hv0pAcHL1oJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 11,
-          "link": "https://scholar.google.com/scholar?cluster=6498420516732566484&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "6498420516732566484",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=6498420516732566484&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2009"
     },
     {
-      "position": 15,
-      "title": "LJSResearch",
-      "result_id": "Wmn-sNuftwQJ",
-      "type": "Pdf",
-      "link": "http://nieuwsmonitor.org/wp-content/uploads/onderzoeksrapport-MediaPolitiek.pdf",
-      "snippet": "Na de Brexit en de verkiezingen van Trump in de Verenigde Staten waren alle internationale ogen gericht op Nederland waar op 15 maart 2017 parlementsverkiezingen zijn gehouden. …",
-      "publication_info": {
-        "summary": "N Ruigrok, S Gagestein, AMS VU, C Jacobi - 2014 - nieuwsmonitor.org",
-        "authors": [
-          {
-            "name": "N Ruigrok",
-            "link": "https://scholar.google.com/citations?user=IYZ7h-gAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=IYZ7h-gAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "IYZ7h-gAAAAJ"
-          }
-        ]
+      "title": "Emotions beyond the laboratory: Theoretical fundaments, study design, and analytic strategies for advanced ambulatory assessment",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:g5m5HwL7SMYC",
+      "citation_id": "cRt7JiIAAAAJ:g5m5HwL7SMYC",
+      "authors": "FH Wilhelm, P Grossman",
+      "publication": "Biological psychology 84 (3), 552-569, 2010",
+      "cited_by": {
+        "value": 316,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=10977572231747824257",
+        "serpapi_link": "https://serpapi.com/search.json?cites=10977572231747824257&engine=google_scholar&hl=nl",
+        "cites_id": "10977572231747824257"
       },
-      "resources": [
-        {
-          "title": "nieuwsmonitor.org",
-          "file_format": "PDF",
-          "link": "http://nieuwsmonitor.org/wp-content/uploads/onderzoeksrapport-MediaPolitiek.pdf"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=Wmn-sNuftwQJ",
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:Wmn-sNuftwQJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 7,
-          "link": "https://scholar.google.com/scholar?cluster=339916062805879130&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "339916062805879130",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=339916062805879130&engine=google_scholar&hl=en&num=20"
-        },
-        "cached_page_link": "http://scholar.googleusercontent.com/scholar?q=cache:Wmn-sNuftwQJ:scholar.google.com/+VU-AMS&hl=en&num=20&as_sdt=0,33"
-      }
+      "year": "2010"
     },
     {
-      "position": 16,
-      "title": "Physiologically assessed hot flashes and endothelial function among midlife women",
-      "result_id": "NWgVUcQqncMJ",
-      "type": "Html",
-      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5524590/",
-      "snippet": "… mark buttons on the VU-AMS monitor and actigraph when experiencing a hot flash, providing date and time-stamped hot flash reports. Participants wore the VU-AMS monitor for 24 …",
-      "publication_info": {
-        "summary": "RC Thurston, Y Chang, E Barinas-Mitchell… - … (New York, NY), 2017 - ncbi.nlm.nih.gov",
-        "authors": [
-          {
-            "name": "RC Thurston",
-            "link": "https://scholar.google.com/citations?user=weQd44gAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=weQd44gAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "weQd44gAAAAJ"
-          }
-        ]
+      "title": "Ambulatory measurement of respiratory sinus arrhythmia and respiration rate",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:-_dYPAW6P2MC",
+      "citation_id": "cRt7JiIAAAAJ:-_dYPAW6P2MC",
+      "authors": "EJC De Geus, GHM Willemsen, CHAM Klaver, LJP van Doornen",
+      "publication": "Biological psychology 41 (3), 205-227, 1995",
+      "cited_by": {
+        "value": 310,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=16263110460429377996",
+        "serpapi_link": "https://serpapi.com/search.json?cites=16263110460429377996&engine=google_scholar&hl=nl",
+        "cites_id": "16263110460429377996"
       },
-      "resources": [
-        {
-          "title": "nih.gov",
-          "file_format": "HTML",
-          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5524590/"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=NWgVUcQqncMJ",
-        "html_version": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5524590/",
-        "cited_by": {
-          "total": 52,
-          "link": "https://scholar.google.com/scholar?cites=14095469431401834549&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "14095469431401834549",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=14095469431401834549&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:NWgVUcQqncMJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 15,
-          "link": "https://scholar.google.com/scholar?cluster=14095469431401834549&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "14095469431401834549",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=14095469431401834549&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "1995"
     },
     {
-      "position": 17,
-      "title": "Predicting quality of life during and post detention in incarcerated juveniles",
-      "result_id": "AN05P1Oc6FwJ",
-      "type": "Html",
-      "link": "https://link.springer.com/article/10.1007/s11136-019-02160-6",
-      "snippet": "… the VU-Ambulatory Monitoring System [VU-AMS; 61]. Data were analyzed with VU-AMS software and data analysis support was offered by the VU-AMS department of VU University. …",
-      "publication_info": {
-        "summary": "EL De Ruigh, A Popma, JWR Twisk, RW Wiers… - Quality of Life …, 2019 - Springer",
-        "authors": [
-          {
-            "name": "A Popma",
-            "link": "https://scholar.google.com/citations?user=Pt-xe3sAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Pt-xe3sAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "Pt-xe3sAAAAJ"
-          },
-          {
-            "name": "RW Wiers",
-            "link": "https://scholar.google.com/citations?user=2vKDTuoAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=2vKDTuoAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "2vKDTuoAAAAJ"
-          }
-        ]
+      "title": "Simulating murder: the aversion to harmful action.",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:NMxIlDl6LWMC",
+      "citation_id": "cRt7JiIAAAAJ:NMxIlDl6LWMC",
+      "authors": "F Cushman, K Gray, A Gaffey, WB Mendes",
+      "publication": "Emotion 12 (1), 2, 2012",
+      "cited_by": {
+        "value": 292,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=5216713637389034455",
+        "serpapi_link": "https://serpapi.com/search.json?cites=5216713637389034455&engine=google_scholar&hl=nl",
+        "cites_id": "5216713637389034455"
       },
-      "resources": [
-        {
-          "title": "springer.com",
-          "file_format": "HTML",
-          "link": "https://link.springer.com/article/10.1007/s11136-019-02160-6"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=AN05P1Oc6FwJ",
-        "html_version": "https://link.springer.com/article/10.1007/s11136-019-02160-6",
-        "cited_by": {
-          "total": 8,
-          "link": "https://scholar.google.com/scholar?cites=6694772727443217664&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "6694772727443217664",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=6694772727443217664&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:AN05P1Oc6FwJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 14,
-          "link": "https://scholar.google.com/scholar?cluster=6694772727443217664&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "6694772727443217664",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=6694772727443217664&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2012"
     },
     {
-      "position": 18,
-      "title": "The relationship between slow-wave activity, body temperature, and cardiac activity during nighttime sleep",
-      "result_id": "HshScFaLTiAJ",
-      "link": "https://academic.oup.com/sleep/article-abstract/24/3/343/2750031",
-      "snippet": "… VU-AMS device (version 4.6, TD-FPP, Vrije Universiteit, Amsterdam, The Netherlands). The ECG was recorded by the VU-AMS … The VU-AMS also determined pre-ejection period (PEP) …",
-      "publication_info": {
-        "summary": "HJ Burgess, AL Holmes, D Dawson - Sleep, 2001 - academic.oup.com",
-        "authors": [
-          {
-            "name": "D Dawson",
-            "link": "https://scholar.google.com/citations?user=Y5TrQeMAAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Y5TrQeMAAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "Y5TrQeMAAAAJ"
-          }
-        ]
+      "title": "Innate secretory immunity in response to laboratory stressors that evoke distinct patterns of cardiac autonomic activity",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:IjCSPb-OGe4C",
+      "citation_id": "cRt7JiIAAAAJ:IjCSPb-OGe4C",
+      "authors": "JA Bosch, EJC de Geus, ECI Veerman, J Hoogstraten, AVN Amerongen",
+      "publication": "Psychosomatic medicine 65 (2), 245-258, 2003",
+      "cited_by": {
+        "value": 291,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=5517989912451842143",
+        "serpapi_link": "https://serpapi.com/search.json?cites=5517989912451842143&engine=google_scholar&hl=nl",
+        "cites_id": "5517989912451842143"
       },
-      "resources": [
-        {
-          "title": "oup.com",
-          "file_format": "PDF",
-          "link": "https://academic.oup.com/sleep/article-pdf/24/3/343/13700999/sleep-24-3-343.pdf"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=HshScFaLTiAJ",
-        "cited_by": {
-          "total": 55,
-          "link": "https://scholar.google.com/scholar?cites=2327951260765046814&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "2327951260765046814",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=2327951260765046814&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:HshScFaLTiAJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 6,
-          "link": "https://scholar.google.com/scholar?cluster=2327951260765046814&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "2327951260765046814",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=2327951260765046814&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2003"
     },
     {
-      "position": 19,
+      "title": "Risk for mania and positive emotional responding: too much of a good thing?",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:P5F9QuxV20EC",
+      "citation_id": "cRt7JiIAAAAJ:P5F9QuxV20EC",
+      "authors": "J Gruber, SL Johnson, C Oveis, D Keltner",
+      "publication": "Emotion 8 (1), 23, 2008",
+      "cited_by": {
+        "value": 287,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=3155856970239749098",
+        "serpapi_link": "https://serpapi.com/search.json?cites=3155856970239749098&engine=google_scholar&hl=nl",
+        "cites_id": "3155856970239749098"
+      },
+      "year": "2008"
+    },
+    {
+      "title": "Association between anxiety disorders and heart rate variability in The Netherlands Study of Depression and Anxiety (NESDA)",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:9yKSN-GCB0IC",
+      "citation_id": "cRt7JiIAAAAJ:9yKSN-GCB0IC",
+      "authors": "CMM Licht, EJC De Geus, R Van Dyck, BWJH Penninx",
+      "publication": "Psychosomatic medicine 71 (5), 508-518, 2009",
+      "cited_by": {
+        "value": 283,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=14488075569991105654",
+        "serpapi_link": "https://serpapi.com/search.json?cites=14488075569991105654&engine=google_scholar&hl=nl",
+        "cites_id": "14488075569991105654"
+      },
+      "year": "2009"
+    },
+    {
+      "title": "Stress responsivity and socioeconomic status. A mechanism for increased cardiovascular disease risk?",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:hkOj_22Ku90C",
+      "citation_id": "cRt7JiIAAAAJ:hkOj_22Ku90C",
+      "authors": "A Steptoe, PJ Feldman, S Kunz, N Owen, G Willemsen, M Marmot",
+      "publication": "European heart journal 23 (22), 1757-1763, 2002",
+      "cited_by": {
+        "value": 276,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=11677584593866704728",
+        "serpapi_link": "https://serpapi.com/search.json?cites=11677584593866704728&engine=google_scholar&hl=nl",
+        "cites_id": "11677584593866704728"
+      },
+      "year": "2002"
+    },
+    {
+      "title": "Attentional and physiological characteristics of patients with dental anxiety",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:LjlpjdlvIbIC",
+      "citation_id": "cRt7JiIAAAAJ:LjlpjdlvIbIC",
+      "authors": "BH Johnsen, JF Thayer, JC Laberg, B Wormnes, M Raadal, E Skaret, ...",
+      "publication": "Journal of anxiety disorders 17 (1), 75-87, 2003",
+      "cited_by": {
+        "value": 260,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=15913315995313348509",
+        "serpapi_link": "https://serpapi.com/search.json?cites=15913315995313348509&engine=google_scholar&hl=nl",
+        "cites_id": "15913315995313348509"
+      },
+      "year": "2003"
+    },
+    {
+      "title": "Autonomic specificity of basic emotions: Evidence from pattern classification and cluster analysis",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:HoB7MX3m0LUC",
+      "citation_id": "cRt7JiIAAAAJ:HoB7MX3m0LUC",
+      "authors": "CL Stephens, IC Christie, BH Friedman",
+      "publication": "Biological psychology 84 (3), 463-473, 2010",
+      "cited_by": {
+        "value": 254,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=135949603385324519",
+        "serpapi_link": "https://serpapi.com/search.json?cites=135949603385324519&engine=google_scholar&hl=nl",
+        "cites_id": "135949603385324519"
+      },
+      "year": "2010"
+    },
+    {
+      "title": "Increased sympathetic and decreased parasympathetic activity rather than changes in hypothalamic-pituitary-adrenal axis activity is associated with metabolic abnormalities",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:u_35RYKgDlwC",
+      "citation_id": "cRt7JiIAAAAJ:u_35RYKgDlwC",
+      "authors": "CMM Licht, SA Vreeburg, AKB van Reedt Dortland, EJ Giltay, ...",
+      "publication": "The Journal of Clinical Endocrinology & Metabolism 95 (5), 2458-2466, 2010",
+      "cited_by": {
+        "value": 253,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=18258149737195809917",
+        "serpapi_link": "https://serpapi.com/search.json?cites=18258149737195809917&engine=google_scholar&hl=nl",
+        "cites_id": "18258149737195809917"
+      },
+      "year": "2010"
+    },
+    {
+      "title": "Ambulatory monitoring of the impedance cardiogram",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:35r97b3x0nAC",
+      "citation_id": "cRt7JiIAAAAJ:35r97b3x0nAC",
+      "authors": "GHM Willemsen, EJC DeGeus, CHAM Klaver, LJP VanDoornen, D Carrofl",
+      "publication": "Psychophysiology 33 (2), 184-193, 1996",
+      "cited_by": {
+        "value": 249,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=8644905276920276423",
+        "serpapi_link": "https://serpapi.com/search.json?cites=8644905276920276423&engine=google_scholar&hl=nl",
+        "cites_id": "8644905276920276423"
+      },
+      "year": "1996"
+    },
+    {
+      "title": "Cardiac effects of momentary assessed worry episodes and stressful events",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:geHnlv5EZngC",
+      "citation_id": "cRt7JiIAAAAJ:geHnlv5EZngC",
+      "authors": "S Pieper, JF Brosschot, R van der Leeden, JF Thayer",
+      "publication": "Psychosomatic medicine 69 (9), 901-909, 2007",
+      "cited_by": {
+        "value": 224,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=3532863079895619554",
+        "serpapi_link": "https://serpapi.com/search.json?cites=3532863079895619554&engine=google_scholar&hl=nl",
+        "cites_id": "3532863079895619554"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "Psychophysiological determinants and concomitants of deficient decision making in pathological gamblers",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:kRWSkSYxWN8C",
+      "citation_id": "cRt7JiIAAAAJ:kRWSkSYxWN8C",
+      "authors": "AE Goudriaan, J Oosterlaan, E de Beurs, W van den Brink",
+      "publication": "Drug and alcohol dependence 84 (3), 231-239, 2006",
+      "cited_by": {
+        "value": 222,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=15769203227637754643",
+        "serpapi_link": "https://serpapi.com/search.json?cites=15769203227637754643&engine=google_scholar&hl=nl",
+        "cites_id": "15769203227637754643"
+      },
+      "year": "2006"
+    },
+    {
+      "title": "Understanding challenging behaviour in people with severe and profound intellectual disability: a stress‐attachment model",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:dQ2og3OwTAUC",
+      "citation_id": "cRt7JiIAAAAJ:dQ2og3OwTAUC",
+      "authors": "CGC Janssen, C Schuengel, J Stolk",
+      "publication": "Journal of Intellectual Disability Research 46 (6), 445-453, 2002",
+      "cited_by": {
+        "value": 222,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=106017724612446218",
+        "serpapi_link": "https://serpapi.com/search.json?cites=106017724612446218&engine=google_scholar&hl=nl",
+        "cites_id": "106017724612446218"
+      },
+      "year": "2002"
+    },
+    {
+      "title": "Longitudinal evidence for unfavorable effects of antidepressants on heart rate variability",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:Tyk-4Ss8FVUC",
+      "citation_id": "cRt7JiIAAAAJ:Tyk-4Ss8FVUC",
+      "authors": "CMM Licht, EJC de Geus, R van Dyck, BWJH Penninx",
+      "publication": "Biological psychiatry 68 (9), 861-868, 2010",
+      "cited_by": {
+        "value": 221,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=17454486147757499154",
+        "serpapi_link": "https://serpapi.com/search.json?cites=17454486147757499154&engine=google_scholar&hl=nl",
+        "cites_id": "17454486147757499154"
+      },
+      "year": "2010"
+    },
+    {
       "title": "Virtual prejudice",
-      "result_id": "TdV4OXdicyMJ",
-      "link": "https://www.sciencedirect.com/science/article/pii/S002210310800036X",
-      "snippet": "… Vrije Universiteit Ambulant Monitoring System (VU-AMS). The VU-AMS has the size of a walkman… The VU-AMS measured SCL by passing a small current through the surface of the skin …",
-      "publication_info": {
-        "summary": "R Dotsch, DHJ Wigboldus - Journal of experimental social psychology, 2008 - Elsevier",
-        "authors": [
-          {
-            "name": "R Dotsch",
-            "link": "https://scholar.google.com/citations?user=VZ1QiT4AAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=VZ1QiT4AAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "VZ1QiT4AAAAJ"
-          },
-          {
-            "name": "DHJ Wigboldus",
-            "link": "https://scholar.google.com/citations?user=8_WwfG8AAAAJ&hl=en&num=20&oi=sra",
-            "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=8_WwfG8AAAAJ&engine=google_scholar_author&hl=en",
-            "author_id": "8_WwfG8AAAAJ"
-          }
-        ]
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:vRqMK49ujn8C",
+      "citation_id": "cRt7JiIAAAAJ:vRqMK49ujn8C",
+      "authors": "R Dotsch, DHJ Wigboldus",
+      "publication": "Journal of experimental social psychology 44 (4), 1194-1198, 2008",
+      "cited_by": {
+        "value": 215,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=2554493677854053709",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2554493677854053709&engine=google_scholar&hl=nl",
+        "cites_id": "2554493677854053709"
       },
-      "resources": [
-        {
-          "title": "ssoar.info",
-          "file_format": "PDF",
-          "link": "https://www.ssoar.info/ssoar/bitstream/handle/document/25310/ssoar-jexpsocpsychol-2008-4-dotsch_et_al-virtual_prejudice.pdf?sequence=1&isAllowed=y"
-        }
-      ],
-      "inline_links": {
-        "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=TdV4OXdicyMJ",
-        "cited_by": {
-          "total": 215,
-          "link": "https://scholar.google.com/scholar?cites=2554493677854053709&as_sdt=5,33&sciodt=0,33&hl=en&num=20",
-          "cites_id": "2554493677854053709",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C33&cites=2554493677854053709&engine=google_scholar&hl=en&num=20"
-        },
-        "related_pages_link": "https://scholar.google.com/scholar?q=related:TdV4OXdicyMJ:scholar.google.com/&scioq=VU-AMS&hl=en&num=20&as_sdt=0,33",
-        "versions": {
-          "total": 15,
-          "link": "https://scholar.google.com/scholar?cluster=2554493677854053709&hl=en&num=20&as_sdt=0,33",
-          "cluster_id": "2554493677854053709",
-          "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C33&cluster=2554493677854053709&engine=google_scholar&hl=en&num=20"
-        }
-      }
+      "year": "2008"
+    },
+    {
+      "title": "Contribution of tonic vagal modulation of heart rate, central respiratory drive, respiratory depth, and respiratory frequency to respiratory sinus arrhythmia during mental …",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:qjMakFHDy7sC",
+      "citation_id": "cRt7JiIAAAAJ:qjMakFHDy7sC",
+      "authors": "JH Houtveen, S Rietveld, EJC De Geus",
+      "publication": "Psychophysiology 39 (4), 427-436, 2002",
+      "cited_by": {
+        "value": 202,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=2290252027099089338",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2290252027099089338&engine=google_scholar&hl=nl",
+        "cites_id": "2290252027099089338"
+      },
+      "year": "2002"
+    },
+    {
+      "title": "Impaired cardiovascular recovery following stress predicts 3-year increases in blood pressure",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:t6usbXjVLHcC",
+      "citation_id": "cRt7JiIAAAAJ:t6usbXjVLHcC",
+      "authors": "A Steptoe, M Marmot",
+      "publication": "Journal of hypertension 23 (3), 529-536, 2005",
+      "cited_by": {
+        "value": 201,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=6270772773308148803",
+        "serpapi_link": "https://serpapi.com/search.json?cites=6270772773308148803&engine=google_scholar&hl=nl",
+        "cites_id": "6270772773308148803"
+      },
+      "year": "2005"
+    },
+    {
+      "title": "Association between physical fitness, parasympathetic control, and proinflammatory responses to mental stress",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:tS2w5q8j5-wC",
+      "citation_id": "cRt7JiIAAAAJ:tS2w5q8j5-wC",
+      "authors": "M Hamer, A Steptoe",
+      "publication": "Psychosomatic medicine 69 (7), 660-666, 2007",
+      "cited_by": {
+        "value": 200,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=2410644492786166045",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2410644492786166045&engine=google_scholar&hl=nl",
+        "cites_id": "2410644492786166045"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "Being hot-tempered: Autonomic, emotional, and behavioral distinctions between childhood reactive and proactive aggression",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:SeFeTyx0c_EC",
+      "citation_id": "cRt7JiIAAAAJ:SeFeTyx0c_EC",
+      "authors": "A Scarpa, SC Haden, A Tanaka",
+      "publication": "Biological psychology 84 (3), 488-496, 2010",
+      "cited_by": {
+        "value": 198,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=5232430660954565030",
+        "serpapi_link": "https://serpapi.com/search.json?cites=5232430660954565030&engine=google_scholar&hl=nl",
+        "cites_id": "5232430660954565030"
+      },
+      "year": "2010"
+    },
+    {
+      "title": "Cohort profile: the Amsterdam Born Children and their Development (ABCD) study",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:cFHS6HbyZ2cC",
+      "citation_id": "cRt7JiIAAAAJ:cFHS6HbyZ2cC",
+      "authors": "M van Eijsden, TGM Vrijkotte, RJBJ Gemke, MF van der Wal",
+      "publication": "International journal of epidemiology 40 (5), 1176-1186, 2011",
+      "cited_by": {
+        "value": 192,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=1356986907314181497",
+        "serpapi_link": "https://serpapi.com/search.json?cites=1356986907314181497&engine=google_scholar&hl=nl",
+        "cites_id": "1356986907314181497"
+      },
+      "year": "2011"
+    },
+    {
+      "title": "Light and diurnal cycle affect human heart rate: possible role for the circadian pacemaker",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:tzM49s52ZIMC",
+      "citation_id": "cRt7JiIAAAAJ:tzM49s52ZIMC",
+      "authors": "FAJL Scheer, LJP van Doornen, RM Buijs",
+      "publication": "Journal of biological rhythms 14 (3), 202-212, 1999",
+      "cited_by": {
+        "value": 184,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=15306126769371604025",
+        "serpapi_link": "https://serpapi.com/search.json?cites=15306126769371604025&engine=google_scholar&hl=nl",
+        "cites_id": "15306126769371604025"
+      },
+      "year": "1999"
+    },
+    {
+      "title": "Comparison of time and frequency domain measures of RSA in ambulatory recordings",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:8AbLer7MMksC",
+      "citation_id": "cRt7JiIAAAAJ:8AbLer7MMksC",
+      "authors": "AD Goedhart, S Van Der Sluis, JH Houtveen, G Willemsen, EJC De Geus",
+      "publication": "Psychophysiology 44 (2), 203-215, 2007",
+      "cited_by": {
+        "value": 183,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=17922174623675103000",
+        "serpapi_link": "https://serpapi.com/search.json?cites=17922174623675103000&engine=google_scholar&hl=nl",
+        "cites_id": "17922174623675103000"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "A general enhancement of autonomic and cortisol responses during social evaluative threat",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:f2IySw72cVMC",
+      "citation_id": "cRt7JiIAAAAJ:f2IySw72cVMC",
+      "authors": "JA Bosch, EJC De Geus, D Carroll, AD Goedhart, LA Anane, ...",
+      "publication": "Psychosomatic medicine 71 (8), 877, 2009",
+      "cited_by": {
+        "value": 180,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=4523618719848846189",
+        "serpapi_link": "https://serpapi.com/search.json?cites=4523618719848846189&engine=google_scholar&hl=nl",
+        "cites_id": "4523618719848846189"
+      },
+      "year": "2009"
+    },
+    {
+      "title": "Social psychophysiology for social and personality psychology",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:ldfaerwXgEUC",
+      "citation_id": "cRt7JiIAAAAJ:ldfaerwXgEUC",
+      "authors": "J Blascovich, E Vanman, WB Mendes, S Dickerson",
+      "publication": "Sage Publications, 2011",
+      "cited_by": {
+        "value": 166,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=120067147614551941",
+        "serpapi_link": "https://serpapi.com/search.json?cites=120067147614551941&engine=google_scholar&hl=nl",
+        "cites_id": "120067147614551941"
+      },
+      "year": "2011"
+    },
+    {
+      "title": "Familial influences on basal salivary cortisol in an adult population",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:olpn-zPbct0C",
+      "citation_id": "cRt7JiIAAAAJ:olpn-zPbct0C",
+      "authors": "N Kupper, EJC de Geus, M van den Berg, C Kirschbaum, DI Boomsma, ...",
+      "publication": "Psychoneuroendocrinology 30 (9), 857-868, 2005",
+      "cited_by": {
+        "value": 166,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=2570104805177446733",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2570104805177446733&engine=google_scholar&hl=nl",
+        "cites_id": "2570104805177446733"
+      },
+      "year": "2005"
+    },
+    {
+      "title": "Autonomic reactivity in relation to attachment and early adversity among foster children",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:pqnbT2bcN3wC",
+      "citation_id": "cRt7JiIAAAAJ:pqnbT2bcN3wC",
+      "authors": "M Oosterman, JC De Schipper, P Fisher, M Dozier, C Schuengel",
+      "publication": "Development and psychopathology 22 (1), 109-118, 2010",
+      "cited_by": {
+        "value": 164,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=2036498579576510097",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2036498579576510097&engine=google_scholar&hl=nl",
+        "cites_id": "2036498579576510097"
+      },
+      "year": "2010"
+    },
+    {
+      "title": "Lab and/or field? Measuring personality processes and their social consequences",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:KlAtU1dfN6UC",
+      "citation_id": "cRt7JiIAAAAJ:KlAtU1dfN6UC",
+      "authors": "C Wrzus, MR Mehl",
+      "publication": "European Journal of Personality 29 (2), 250-271, 2015",
+      "cited_by": {
+        "value": 163,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=6072241685863177230",
+        "serpapi_link": "https://serpapi.com/search.json?cites=6072241685863177230&engine=google_scholar&hl=nl",
+        "cites_id": "6072241685863177230"
+      },
+      "year": "2015"
+    },
+    {
+      "title": "Vagal activity is quadratically related to prosocial traits, prosocial emotions, and observer perceptions of prosociality.",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:4DMP91E08xMC",
+      "citation_id": "cRt7JiIAAAAJ:4DMP91E08xMC",
+      "authors": "A Kogan, C Oveis, EW Carr, J Gruber, IB Mauss, A Shallcross, EA Impett, ...",
+      "publication": "Journal of personality and social psychology 107 (6), 1051, 2014",
+      "cited_by": {
+        "value": 160,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=4220266394433366999",
+        "serpapi_link": "https://serpapi.com/search.json?cites=4220266394433366999&engine=google_scholar&hl=nl",
+        "cites_id": "4220266394433366999"
+      },
+      "year": "2014"
+    },
+    {
+      "title": "Netherlands twin family study of anxious depression (NETSAD)",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:ZfRJV9d4-WMC",
+      "citation_id": "cRt7JiIAAAAJ:ZfRJV9d4-WMC",
+      "authors": "DI Boomsma, AL Beem, M Van den Berg, CV Dolan, JR Koopmans, ...",
+      "publication": "Twin Research and Human Genetics 3 (4), 323-334, 2000",
+      "cited_by": {
+        "value": 158,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=13016167963318435203",
+        "serpapi_link": "https://serpapi.com/search.json?cites=13016167963318435203&engine=google_scholar&hl=nl",
+        "cites_id": "13016167963318435203"
+      },
+      "year": "2000"
+    },
+    {
+      "title": "The effects of social stress and cortisol responses on the preconscious selective attention to social threat",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:eflP2zaiRacC",
+      "citation_id": "cRt7JiIAAAAJ:eflP2zaiRacC",
+      "authors": "K Roelofs, P Bakvis, EJ Hermans, J van Pelt, J van Honk",
+      "publication": "Biological psychology 75 (1), 1-7, 2007",
+      "cited_by": {
+        "value": 157,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=15898218123517913723",
+        "serpapi_link": "https://serpapi.com/search.json?cites=15898218123517913723&engine=google_scholar&hl=nl",
+        "cites_id": "15898218123517913723"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "Heritability of ambulatory heart rate variability",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:2osOgNQ5qMEC",
+      "citation_id": "cRt7JiIAAAAJ:2osOgNQ5qMEC",
+      "authors": "NHM Kupper, G Willemsen, M van den Berg, D de Boer, D Posthuma, ...",
+      "publication": "Circulation 110 (18), 2792-2796, 2004",
+      "cited_by": {
+        "value": 155,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=6915210701632387124",
+        "serpapi_link": "https://serpapi.com/search.json?cites=6915210701632387124&engine=google_scholar&hl=nl",
+        "cites_id": "6915210701632387124"
+      },
+      "year": "2004"
+    },
+    {
+      "title": "The Netherlands study of depression in older persons (NESDO); a prospective cohort study",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:vV6vV6tmYwMC",
+      "citation_id": "cRt7JiIAAAAJ:vV6vV6tmYwMC",
+      "authors": "HC Comijs, HW van Marwijk, RC van der Mast, P Naarding, ...",
+      "publication": "BMC Research Notes 4 (1), 1-10, 2011",
+      "cited_by": {
+        "value": 154,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=17604399305665928962",
+        "serpapi_link": "https://serpapi.com/search.json?cites=17604399305665928962&engine=google_scholar&hl=nl",
+        "cites_id": "17604399305665928962"
+      },
+      "year": "2011"
+    },
+    {
+      "title": "Prolonged cardiac effects of momentary assessed stressful events and worry episodes",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:M05iB0D1s5AC",
+      "citation_id": "cRt7JiIAAAAJ:M05iB0D1s5AC",
+      "authors": "S Pieper, JF Brosschot, R van der Leeden, JF Thayer",
+      "publication": "Psychosomatic Medicine 72 (6), 570-577, 2010",
+      "cited_by": {
+        "value": 154,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=896655799287666690",
+        "serpapi_link": "https://serpapi.com/search.json?cites=896655799287666690&engine=google_scholar&hl=nl",
+        "cites_id": "896655799287666690"
+      },
+      "year": "2010"
+    },
+    {
+      "title": "Alterations in autonomic tone during trauma exposure using eye movement desensitization and reprocessing (EMDR)—Results of a preliminary investigation",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:nb7KW1ujOQ8C",
+      "citation_id": "cRt7JiIAAAAJ:nb7KW1ujOQ8C",
+      "authors": "M Sack, W Lempa, A Steinmetz, F Lamprecht, A Hofmann",
+      "publication": "Journal of Anxiety Disorders 22 (7), 1264-1271, 2008",
+      "cited_by": {
+        "value": 152,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=14847073607744106512",
+        "serpapi_link": "https://serpapi.com/search.json?cites=14847073607744106512&engine=google_scholar&hl=nl",
+        "cites_id": "14847073607744106512"
+      },
+      "year": "2008"
+    },
+    {
+      "title": "Self-esteem levels and cardiovascular and inflammatory responses to acute stress",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:K3LRdlH-MEoC",
+      "citation_id": "cRt7JiIAAAAJ:K3LRdlH-MEoC",
+      "authors": "K O’Donnell, L Brydon, CE Wright, A Steptoe",
+      "publication": "Brain, behavior, and immunity 22 (8), 1241-1247, 2008",
+      "cited_by": {
+        "value": 149,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=12618371577053828523",
+        "serpapi_link": "https://serpapi.com/search.json?cites=12618371577053828523&engine=google_scholar&hl=nl",
+        "cites_id": "12618371577053828523"
+      },
+      "year": "2008"
+    },
+    {
+      "title": "Job strain in relation to ambulatory blood pressure, heart rate, and heart rate variability among female nurses",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:9vf0nzSNQJEC",
+      "citation_id": "cRt7JiIAAAAJ:9vf0nzSNQJEC",
+      "authors": "H Riese, LJP Van Doornen, ILD Houtman, EJC De Geus",
+      "publication": "Scandinavian journal of work, environment & health, 477-485, 2004",
+      "cited_by": {
+        "value": 147,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=7235611571942393080",
+        "serpapi_link": "https://serpapi.com/search.json?cites=7235611571942393080&engine=google_scholar&hl=nl",
+        "cites_id": "7235611571942393080"
+      },
+      "year": "2004"
+    },
+    {
+      "title": "Genome-wide association analysis identifies multiple loci related to resting heart rate",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:rO6llkc54NcC",
+      "citation_id": "cRt7JiIAAAAJ:rO6llkc54NcC",
+      "authors": "M Eijgelsheim, C Newton-Cheh, N Sotoodehnia, PIW de Bakker, M Müller, ...",
+      "publication": "Human molecular genetics 19 (19), 3885-3894, 2010",
+      "cited_by": {
+        "value": 142,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=2014911475105984030",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2014911475105984030&engine=google_scholar&hl=nl",
+        "cites_id": "2014911475105984030"
+      },
+      "year": "2010"
+    },
+    {
+      "title": "The effects of stress-induced cortisol responses on approach–avoidance behavior",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:Mojj43d5GZwC",
+      "citation_id": "cRt7JiIAAAAJ:Mojj43d5GZwC",
+      "authors": "K Roelofs, BM Elzinga, M Rotteveel",
+      "publication": "Psychoneuroendocrinology 30 (7), 665-677, 2005",
+      "cited_by": {
+        "value": 142,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=14270721988493731563",
+        "serpapi_link": "https://serpapi.com/search.json?cites=14270721988493731563&engine=google_scholar&hl=nl",
+        "cites_id": "14270721988493731563"
+      },
+      "year": "2005"
+    },
+    {
+      "title": "Effects of the physical work environment on physiological measures of stress",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:3s1wT3WcHBgC",
+      "citation_id": "cRt7JiIAAAAJ:3s1wT3WcHBgC",
+      "authors": "JF Thayer, B Verkuil, JF Brosschotj, K Kevin, A West, C Sterling, ...",
+      "publication": "European Journal of Preventive Cardiology 17 (4), 431-439, 2010",
+      "cited_by": {
+        "value": 136,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=18059221950455738352",
+        "serpapi_link": "https://serpapi.com/search.json?cites=18059221950455738352&engine=google_scholar&hl=nl",
+        "cites_id": "18059221950455738352"
+      },
+      "year": "2010"
+    },
+    {
+      "title": "Acute stress evokes selective mobilization of T cells that differ in chemokine receptor expression: a potential pathway linking immunologic reactivity to cardiovascular disease",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:5awf1xo2G04C",
+      "citation_id": "cRt7JiIAAAAJ:5awf1xo2G04C",
+      "authors": "JA Bosch, GG Berntson, JT Cacioppo, FS Dhabhar, PT Marucha",
+      "publication": "Brain, behavior, and immunity 17 (4), 251-259, 2003",
+      "cited_by": {
+        "value": 135,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=14102045732005280668",
+        "serpapi_link": "https://serpapi.com/search.json?cites=14102045732005280668&engine=google_scholar&hl=nl",
+        "cites_id": "14102045732005280668"
+      },
+      "year": "2003"
+    },
+    {
+      "title": "Differential effects of active versus passive coping on secretory immunity",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:Fu2w8maKXqMC",
+      "citation_id": "cRt7JiIAAAAJ:Fu2w8maKXqMC",
+      "authors": "JA Bosch, EJC De Geus, A Kelder, ECI Veerman, J Hoogstraten, ...",
+      "publication": "Psychophysiology 38 (5), 836-846, 2001",
+      "cited_by": {
+        "value": 134,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=12920592657694703334",
+        "serpapi_link": "https://serpapi.com/search.json?cites=12920592657694703334&engine=google_scholar&hl=nl",
+        "cites_id": "12920592657694703334"
+      },
+      "year": "2001"
+    },
+    {
+      "title": "Alexithymia predicts attenuated autonomic reactivity, but prolonged recovery to anger recall in young women",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:Y5dfb0dijaUC",
+      "citation_id": "cRt7JiIAAAAJ:Y5dfb0dijaUC",
+      "authors": "SA Neumann, JJ Sollers III, JF Thayer, SR Waldstein",
+      "publication": "International journal of psychophysiology 53 (3), 183-195, 2004",
+      "cited_by": {
+        "value": 128,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=5956884974036997507",
+        "serpapi_link": "https://serpapi.com/search.json?cites=5956884974036997507&engine=google_scholar&hl=nl",
+        "cites_id": "5956884974036997507"
+      },
+      "year": "2004"
+    },
+    {
+      "title": "Hostility and distraction have differential influences on cardiovascular recovery from anger recall in women.",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:AXPGKjj_ei8C",
+      "citation_id": "cRt7JiIAAAAJ:AXPGKjj_ei8C",
+      "authors": "SA Neumann, SR Waldstein, JJ Sellers III, JF Thayer, JD Sorkin",
+      "publication": "Health Psychology 23 (6), 631, 2004",
+      "cited_by": {
+        "value": 126,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=2814169541111912348",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2814169541111912348&engine=google_scholar&hl=nl",
+        "cites_id": "2814169541111912348"
+      },
+      "year": "2004"
+    },
+    {
+      "title": "Should neonates sleep alone?",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:lSLTfruPkqcC",
+      "citation_id": "cRt7JiIAAAAJ:lSLTfruPkqcC",
+      "authors": "BE Morgan, AR Horn, NJ Bergman",
+      "publication": "Biological psychiatry 70 (9), 817-825, 2011",
+      "cited_by": {
+        "value": 125,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=3131537235262565801",
+        "serpapi_link": "https://serpapi.com/search.json?cites=3131537235262565801&engine=google_scholar&hl=nl",
+        "cites_id": "3131537235262565801"
+      },
+      "year": "2011"
+    },
+    {
+      "title": "Stress regulation in adolescents: Physiological reactivity during the adult attachment interview and conflict interaction",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:l7t_Zn2s7bgC",
+      "citation_id": "cRt7JiIAAAAJ:l7t_Zn2s7bgC",
+      "authors": "MD Beijersbergen, MJ Bakermans‐Kranenburg, MH Van IJzendoorn, ...",
+      "publication": "Child Development 79 (6), 1707-1720, 2008",
+      "cited_by": {
+        "value": 125,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=10011155789123935002",
+        "serpapi_link": "https://serpapi.com/search.json?cites=10011155789123935002&engine=google_scholar&hl=nl",
+        "cites_id": "10011155789123935002"
+      },
+      "year": "2008"
+    },
+    {
+      "title": "Hypothalamus pituitary adrenal axis and autonomic activity during stress in delinquent male adolescents and controls",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:mvPsJ3kp5DgC",
+      "citation_id": "cRt7JiIAAAAJ:mvPsJ3kp5DgC",
+      "authors": "A Popma, LMC Jansen, R Vermeiren, H Steiner, A Raine, ...",
+      "publication": "Psychoneuroendocrinology 31 (8), 948-957, 2006",
+      "cited_by": {
+        "value": 121,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=13153516536649821937",
+        "serpapi_link": "https://serpapi.com/search.json?cites=13153516536649821937&engine=google_scholar&hl=nl",
+        "cites_id": "13153516536649821937"
+      },
+      "year": "2006"
+    },
+    {
+      "title": "The effects of cortisol increase on long-term memory retrieval during and after acute psychosocial stress",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:tOudhMTPpwUC",
+      "citation_id": "cRt7JiIAAAAJ:tOudhMTPpwUC",
+      "authors": "MS Tollenaar, BM Elzinga, P Spinhoven, WAM Everaerd",
+      "publication": "Acta psychologica 127 (3), 542-552, 2008",
+      "cited_by": {
+        "value": 120,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=1458707128320527325",
+        "serpapi_link": "https://serpapi.com/search.json?cites=1458707128320527325&engine=google_scholar&hl=nl",
+        "cites_id": "1458707128320527325"
+      },
+      "year": "2008"
+    },
+    {
+      "title": "The impact of stress systems and lifestyle on dyslipidemia and obesity in anxiety and depression",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:YFjsv_pBGBYC",
+      "citation_id": "cRt7JiIAAAAJ:YFjsv_pBGBYC",
+      "authors": "AKB van Reedt Dortland, SA Vreeburg, EJ Giltay, CMM Licht, ...",
+      "publication": "Psychoneuroendocrinology 38 (2), 209-218, 2013",
+      "cited_by": {
+        "value": 115,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=9784347067122545029",
+        "serpapi_link": "https://serpapi.com/search.json?cites=9784347067122545029&engine=google_scholar&hl=nl",
+        "cites_id": "9784347067122545029"
+      },
+      "year": "2013"
+    },
+    {
+      "title": "Differential mobilization of functionally distinct natural killer subsets during acute psychologic stress",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:bnK-pcrLprsC",
+      "citation_id": "cRt7JiIAAAAJ:bnK-pcrLprsC",
+      "authors": "JA Bosch, GG Berntson, JT Cacioppo, PT Marucha",
+      "publication": "Psychosomatic medicine 67 (3), 366-375, 2005",
+      "cited_by": {
+        "value": 115,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=11166393945009623813",
+        "serpapi_link": "https://serpapi.com/search.json?cites=11166393945009623813&engine=google_scholar&hl=nl",
+        "cites_id": "11166393945009623813"
+      },
+      "year": "2005"
+    },
+    {
+      "title": "The threat vs. challenge of car parking for women: How self-and group affirmation affect cardiovascular responses",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:70eg2SAEIzsC",
+      "citation_id": "cRt7JiIAAAAJ:70eg2SAEIzsC",
+      "authors": "B Derks, D Scheepers, C Van Laar, N Ellemers",
+      "publication": "Journal of Experimental Social Psychology 47 (1), 178-183, 2011",
+      "cited_by": {
+        "value": 114,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=12243155495037277306",
+        "serpapi_link": "https://serpapi.com/search.json?cites=12243155495037277306&engine=google_scholar&hl=nl",
+        "cites_id": "12243155495037277306"
+      },
+      "year": "2011"
+    },
+    {
+      "title": "The relationships among heart rate variability, executive functions, and clinical variables in patients with panic disorder",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:iH-uZ7U-co4C",
+      "citation_id": "cRt7JiIAAAAJ:iH-uZ7U-co4C",
+      "authors": "A Hovland, S Pallesen, Å Hammar, AL Hansen, JF Thayer, MP Tarvainen, ...",
+      "publication": "International Journal of Psychophysiology 86 (3), 269-275, 2012",
+      "cited_by": {
+        "value": 108,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=9965732127777281266",
+        "serpapi_link": "https://serpapi.com/search.json?cites=9965732127777281266&engine=google_scholar&hl=nl",
+        "cites_id": "9965732127777281266"
+      },
+      "year": "2012"
+    },
+    {
+      "title": "Large-scale ensemble averaging of ambulatory impedance cardiograms",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:UeHWp8X0CEIC",
+      "citation_id": "cRt7JiIAAAAJ:UeHWp8X0CEIC",
+      "authors": "H Riese, PFC Groot, M van den Berg, NHM Kupper, EHB Magnee, ...",
+      "publication": "Behavior Research Methods, Instruments, & Computers 35 (3), 467-477, 2003",
+      "cited_by": {
+        "value": 107,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=4624812941656419955",
+        "serpapi_link": "https://serpapi.com/search.json?cites=4624812941656419955&engine=google_scholar&hl=nl",
+        "cites_id": "4624812941656419955"
+      },
+      "year": "2003"
+    },
+    {
+      "title": "Physiologic indexes in chronic insomnia during a constant routine: evidence for general hyperarousal?",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:HE397vMXCloC",
+      "citation_id": "cRt7JiIAAAAJ:HE397vMXCloC",
+      "authors": "M Varkevisser, HPA Van Dongen, GA Kerkhof",
+      "publication": "Sleep 28 (12), 1588-1596, 2005",
+      "cited_by": {
+        "value": 106,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=8026213030594182089",
+        "serpapi_link": "https://serpapi.com/search.json?cites=8026213030594182089&engine=google_scholar&hl=nl",
+        "cites_id": "8026213030594182089"
+      },
+      "year": "2005"
+    },
+    {
+      "title": "Ambulatory assessment of parasympathetic/sympathetic balance by impedance cardiography",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:u5HHmVD_uO8C",
+      "citation_id": "cRt7JiIAAAAJ:u5HHmVD_uO8C",
+      "authors": "EJC De Geus, LJP Van Doornen",
+      "publication": "Ambulatory assessment: Computer-assisted psychological and …, 1996",
+      "cited_by": {
+        "value": 106,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=6235591266183763648",
+        "serpapi_link": "https://serpapi.com/search.json?cites=6235591266183763648&engine=google_scholar&hl=nl",
+        "cites_id": "6235591266183763648"
+      },
+      "year": "1996"
+    },
+    {
+      "title": "Effects of bright light and melatonin on sleep propensity, temperature, and cardiac activity at night",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:kzcrU_BdoSEC",
+      "citation_id": "cRt7JiIAAAAJ:kzcrU_BdoSEC",
+      "authors": "HJ Burgess, T Sletten, N Savic, SS Gilbert, D Dawson",
+      "publication": "Journal of Applied Physiology 91 (3), 1214-1222, 2001",
+      "cited_by": {
+        "value": 104,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=4970205631378724977",
+        "serpapi_link": "https://serpapi.com/search.json?cites=4970205631378724977&engine=google_scholar&hl=nl",
+        "cites_id": "4970205631378724977"
+      },
+      "year": "2001"
+    },
+    {
+      "title": "Should heart rate variability be “corrected” for heart rate? Biological, quantitative, and interpretive considerations",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:LO7wyVUgiFcC",
+      "citation_id": "cRt7JiIAAAAJ:LO7wyVUgiFcC",
+      "authors": "EJC de Geus, PJ Gianaros, RC Brindle, JR Jennings, GG Berntson",
+      "publication": "Psychophysiology 56 (2), e13287, 2019",
+      "cited_by": {
+        "value": 99,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=9559769815578706573",
+        "serpapi_link": "https://serpapi.com/search.json?cites=9559769815578706573&engine=google_scholar&hl=nl",
+        "cites_id": "9559769815578706573"
+      },
+      "year": "2019"
+    },
+    {
+      "title": "Psychological and psychophysiological ambulatory monitoring",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:D_sINldO8mEC",
+      "citation_id": "cRt7JiIAAAAJ:D_sINldO8mEC",
+      "authors": "UW Ebner-Priemer, T Kubiak",
+      "publication": "European Journal of Psychological Assessment 23 (4), 214-226, 2007",
+      "cited_by": {
+        "value": 99,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=15049749325315403042",
+        "serpapi_link": "https://serpapi.com/search.json?cites=15049749325315403042&engine=google_scholar&hl=nl",
+        "cites_id": "15049749325315403042"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "Vagal cardiac control throughout the day: the relative importance of effort–reward imbalance and within-day measurements of mood, demand and satisfaction",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:uLbwQdceFCQC",
+      "citation_id": "cRt7JiIAAAAJ:uLbwQdceFCQC",
+      "authors": "EKS Hanson, GLR Godaert, CJM Maas, TF Meijman",
+      "publication": "Biological Psychology 56 (1), 23-44, 2001",
+      "cited_by": {
+        "value": 99,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=17294790541122912611",
+        "serpapi_link": "https://serpapi.com/search.json?cites=17294790541122912611&engine=google_scholar&hl=nl",
+        "cites_id": "17294790541122912611"
+      },
+      "year": "2001"
+    },
+    {
+      "title": "Light and diurnal cycle affect autonomic cardiac balance in human; possible role for the biological clock",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:SdhP9T11ey4C",
+      "citation_id": "cRt7JiIAAAAJ:SdhP9T11ey4C",
+      "authors": "FAJL Scheer, LJP Van Doornen, RM Buijs",
+      "publication": "Autonomic neuroscience 110 (1), 44-48, 2004",
+      "cited_by": {
+        "value": 97,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=16107764703356852583",
+        "serpapi_link": "https://serpapi.com/search.json?cites=16107764703356852583&engine=google_scholar&hl=nl",
+        "cites_id": "16107764703356852583"
+      },
+      "year": "2004"
+    },
+    {
+      "title": "Decision‐making in ADHD: sensitive to frequency but blind to the magnitude of penalty?",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:uWQEDVKXjbEC",
+      "citation_id": "cRt7JiIAAAAJ:uWQEDVKXjbEC",
+      "authors": "M Luman, J Oosterlaan, DL Knol, JA Sergeant",
+      "publication": "Journal of Child Psychology and Psychiatry 49 (7), 712-722, 2008",
+      "cited_by": {
+        "value": 95,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=2892758846686396457",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2892758846686396457&engine=google_scholar&hl=nl",
+        "cites_id": "2892758846686396457"
+      },
+      "year": "2008"
+    },
+    {
+      "title": "Elevated sympathetic nervous system activity in patients with recently diagnosed rheumatoid arthritis with active disease",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:JoZmwDi-zQgC",
+      "citation_id": "cRt7JiIAAAAJ:JoZmwDi-zQgC",
+      "authors": "JC Dekkers, R Geenen, GLR Godaert, JWJ Bijlsma, LJP van Doornen",
+      "publication": "Clinical and experimental rheumatology 22 (1), 63, 2004",
+      "cited_by": {
+        "value": 95,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=2454159862560647667",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2454159862560647667&engine=google_scholar&hl=nl",
+        "cites_id": "2454159862560647667"
+      },
+      "year": "2004"
+    },
+    {
+      "title": "Biosocial bases of reactive and proactive aggression: The roles of community violence exposure and heart rate",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:KxtntwgDAa4C",
+      "citation_id": "cRt7JiIAAAAJ:KxtntwgDAa4C",
+      "authors": "A Scarpa, A Tanaka, S Chiara Haden",
+      "publication": "Journal of Community Psychology 36 (8), 969-988, 2008",
+      "cited_by": {
+        "value": 94,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=3125454182883272583",
+        "serpapi_link": "https://serpapi.com/search.json?cites=3125454182883272583&engine=google_scholar&hl=nl",
+        "cites_id": "3125454182883272583"
+      },
+      "year": "2008"
+    },
+    {
+      "title": "Validation of the thoracic impedance derived respiratory signal using multilevel analysis",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:J-pR_7NvFogC",
+      "citation_id": "cRt7JiIAAAAJ:J-pR_7NvFogC",
+      "authors": "JH Houtveen, PFC Groot, EJC de Geus",
+      "publication": "International Journal of Psychophysiology 59 (2), 97-106, 2006",
+      "cited_by": {
+        "value": 94,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=4635064363188668806",
+        "serpapi_link": "https://serpapi.com/search.json?cites=4635064363188668806&engine=google_scholar&hl=nl",
+        "cites_id": "4635064363188668806"
+      },
+      "year": "2006"
+    },
+    {
+      "title": "Twin-sibling study and meta-analysis on the heritability of maximal oxygen consumption",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:z_wVstp3MssC",
+      "citation_id": "cRt7JiIAAAAJ:z_wVstp3MssC",
+      "authors": "NM Schutte, I Nederend, JJ Hudziak, M Bartels, EJC de Geus",
+      "publication": "Physiological Genomics 48 (3), 210-219, 2016",
+      "cited_by": {
+        "value": 93,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=7725173210576139608",
+        "serpapi_link": "https://serpapi.com/search.json?cites=7725173210576139608&engine=google_scholar&hl=nl",
+        "cites_id": "7725173210576139608"
+      },
+      "year": "2016"
+    },
+    {
+      "title": "A discrete emotions approach to positive emotion disturbance in depression",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:O3NaXMp0MMsC",
+      "citation_id": "cRt7JiIAAAAJ:O3NaXMp0MMsC",
+      "authors": "J Gruber, C Oveis, D Keltner, SL Johnson",
+      "publication": "Cognition and Emotion 25 (1), 40-52, 2011",
+      "cited_by": {
+        "value": 93,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=12920088224606045740",
+        "serpapi_link": "https://serpapi.com/search.json?cites=12920088224606045740&engine=google_scholar&hl=nl",
+        "cites_id": "12920088224606045740"
+      },
+      "year": "2011"
+    },
+    {
+      "title": "Overcommitment to work is associated with changes in cardiac sympathetic regulation",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:d1gkVwhDpl0C",
+      "citation_id": "cRt7JiIAAAAJ:d1gkVwhDpl0C",
+      "authors": "TGM Vrijkotte, LJP van Doornen, EJC de Geus",
+      "publication": "Psychosomatic medicine 66 (5), 656-663, 2004",
+      "cited_by": {
+        "value": 93,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=13867709905755685151",
+        "serpapi_link": "https://serpapi.com/search.json?cites=13867709905755685151&engine=google_scholar&hl=nl",
+        "cites_id": "13867709905755685151"
+      },
+      "year": "2004"
+    },
+    {
+      "title": "Physiological reactivity to infant crying: a behavioral genetic study",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:fPk4N6BV_jEC",
+      "citation_id": "cRt7JiIAAAAJ:fPk4N6BV_jEC",
+      "authors": "D Out, S Pieper, MJ Bakermans‐Kranenburg, MH Van IJzendoorn",
+      "publication": "Genes, Brain and Behavior 9 (8), 868-876, 2010",
+      "cited_by": {
+        "value": 90,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=17271568943040324674",
+        "serpapi_link": "https://serpapi.com/search.json?cites=17271568943040324674&engine=google_scholar&hl=nl",
+        "cites_id": "17271568943040324674"
+      },
+      "year": "2010"
+    },
+    {
+      "title": "Secretory immunoglobulin A and cardiovascular activity during mental arithmetic and paced breathing",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:2KloaMYe4IUC",
+      "citation_id": "cRt7JiIAAAAJ:2KloaMYe4IUC",
+      "authors": "C Ring, D Carroll, G Willemsen, J Cooke, A Ferraro, M Drayson",
+      "publication": "Psychophysiology 36 (5), 602-609, 1999",
+      "cited_by": {
+        "value": 89,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=993134281951531268",
+        "serpapi_link": "https://serpapi.com/search.json?cites=993134281951531268&engine=google_scholar&hl=nl",
+        "cites_id": "993134281951531268"
+      },
+      "year": "1999"
+    },
+    {
+      "title": "Effects of variation in posture and respiration on RSA and pre‐ejection period",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:XiVPGOgt02cC",
+      "citation_id": "cRt7JiIAAAAJ:XiVPGOgt02cC",
+      "authors": "JH Houtveen, PFC Groot, EJC De Geus",
+      "publication": "Psychophysiology 42 (6), 713-719, 2005",
+      "cited_by": {
+        "value": 87,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=12102013489693805419",
+        "serpapi_link": "https://serpapi.com/search.json?cites=12102013489693805419&engine=google_scholar&hl=nl",
+        "cites_id": "12102013489693805419"
+      },
+      "year": "2005"
+    },
+    {
+      "title": "Effects of sleep pressure on endogenous cardiac autonomic activity and body temperature",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:PR6Y55bgFSsC",
+      "citation_id": "cRt7JiIAAAAJ:PR6Y55bgFSsC",
+      "authors": "AL Holmes, HJ Burgess, D Dawson",
+      "publication": "Journal of Applied Physiology 92 (6), 2578-2584, 2002",
+      "cited_by": {
+        "value": 85,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=9045259946206157964",
+        "serpapi_link": "https://serpapi.com/search.json?cites=9045259946206157964&engine=google_scholar&hl=nl",
+        "cites_id": "9045259946206157964"
+      },
+      "year": "2002"
+    },
+    {
+      "title": "Adiposity, leptin and stress reactivity in humans",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:ns9cj8rnVeAC",
+      "citation_id": "cRt7JiIAAAAJ:ns9cj8rnVeAC",
+      "authors": "L Brydon",
+      "publication": "Biological psychology 86 (2), 114-120, 2011",
+      "cited_by": {
+        "value": 82,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=1070227783870955936",
+        "serpapi_link": "https://serpapi.com/search.json?cites=1070227783870955936&engine=google_scholar&hl=nl",
+        "cites_id": "1070227783870955936"
+      },
+      "year": "2011"
+    },
+    {
+      "title": "Heart rate and skin conductance in four-year-old children with aggressive behavior",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:NhqRSupF_l8C",
+      "citation_id": "cRt7JiIAAAAJ:NhqRSupF_l8C",
+      "authors": "JA Posthumus, KBE Böcker, MAJ Raaijmakers, H Van Engeland, ...",
+      "publication": "Biological Psychology 82 (2), 164-168, 2009",
+      "cited_by": {
+        "value": 82,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=7395505217079149703",
+        "serpapi_link": "https://serpapi.com/search.json?cites=7395505217079149703&engine=google_scholar&hl=nl",
+        "cites_id": "7395505217079149703"
+      },
+      "year": "2009"
+    },
+    {
+      "title": "Estimating cardiac autonomic activity during sleep: impedance cardiography, spectral analysis, and Poincare plots",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:dTyEYWd-f8wC",
+      "citation_id": "cRt7JiIAAAAJ:dTyEYWd-f8wC",
+      "authors": "HJ Burgess, PD Penev, R Schneider, E Van Cauter",
+      "publication": "Clinical Neurophysiology 115 (1), 19-28, 2004",
+      "cited_by": {
+        "value": 81,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=6498420516732566484",
+        "serpapi_link": "https://serpapi.com/search.json?cites=6498420516732566484&engine=google_scholar&hl=nl",
+        "cites_id": "6498420516732566484"
+      },
+      "year": "2004"
+    },
+    {
+      "title": "Autonomic nervous system responses to viewing green and built settings: differentiating between sympathetic and parasympathetic activity",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:_FxGoFyzp5QC",
+      "citation_id": "cRt7JiIAAAAJ:_FxGoFyzp5QC",
+      "authors": "MMHE Van den Berg, J Maas, R Muller, A Braun, W Kaandorp, ...",
+      "publication": "International journal of environmental research and public health 12 (12 …, 2015",
+      "cited_by": {
+        "value": 78,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=11138105096511499457",
+        "serpapi_link": "https://serpapi.com/search.json?cites=11138105096511499457&engine=google_scholar&hl=nl",
+        "cites_id": "11138105096511499457"
+      },
+      "year": "2015"
+    },
+    {
+      "title": "Hostility and anger in: cardiovascular reactivity and recovery to mental arithmetic stress",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:xtRiw3GOFMkC",
+      "citation_id": "cRt7JiIAAAAJ:xtRiw3GOFMkC",
+      "authors": "EJ Vella, BH Friedman",
+      "publication": "International Journal of Psychophysiology 72 (3), 253-259, 2009",
+      "cited_by": {
+        "value": 78,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=489295760018930719",
+        "serpapi_link": "https://serpapi.com/search.json?cites=489295760018930719&engine=google_scholar&hl=nl",
+        "cites_id": "489295760018930719"
+      },
+      "year": "2009"
+    },
+    {
+      "title": "Effects of antidepressants, but not psychopathology, on cardiac sympathetic control: a longitudinal study",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:bEWYMUwI8FkC",
+      "citation_id": "cRt7JiIAAAAJ:bEWYMUwI8FkC",
+      "authors": "CMM Licht, BWJH Penninx, EJ De Geus",
+      "publication": "Neuropsychopharmacology 37 (11), 2487-2495, 2012",
+      "cited_by": {
+        "value": 73,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=17445542055164270028",
+        "serpapi_link": "https://serpapi.com/search.json?cites=17445542055164270028&engine=google_scholar&hl=nl",
+        "cites_id": "17445542055164270028"
+      },
+      "year": "2012"
+    },
+    {
+      "title": "Hyperventilation syndrome: an elegant but scientifically untenable concept",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:evX43VCCuoAC",
+      "citation_id": "cRt7JiIAAAAJ:evX43VCCuoAC",
+      "authors": "H Hornsveld, B Garssen",
+      "publication": "The Netherlands journal of medicine 50 (1), 13-20, 1997",
+      "cited_by": {
+        "value": 73,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=18222730092635133526",
+        "serpapi_link": "https://serpapi.com/search.json?cites=18222730092635133526&engine=google_scholar&hl=nl",
+        "cites_id": "18222730092635133526"
+      },
+      "year": "1997"
+    },
+    {
+      "title": "Cardiovascular activity during laboratory tasks in women with high and low worry",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:dshw04ExmUIC",
+      "citation_id": "cRt7JiIAAAAJ:dshw04ExmUIC",
+      "authors": "MM Knepp, BH Friedman",
+      "publication": "Biological psychology 79 (3), 287-293, 2008",
+      "cited_by": {
+        "value": 71,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=15150596108593527376",
+        "serpapi_link": "https://serpapi.com/search.json?cites=15150596108593527376&engine=google_scholar&hl=nl",
+        "cites_id": "15150596108593527376"
+      },
+      "year": "2008"
+    },
+    {
+      "title": "Natural killer cell and proinflammatory cytokine responses to mental stress: associations with heart rate and heart rate variability",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:ZuybSZzF8UAC",
+      "citation_id": "cRt7JiIAAAAJ:ZuybSZzF8UAC",
+      "authors": "N Owen, A Steptoe",
+      "publication": "Biological psychology 63 (2), 101-115, 2003",
+      "cited_by": {
+        "value": 71,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=17649529761131342349",
+        "serpapi_link": "https://serpapi.com/search.json?cites=17649529761131342349&engine=google_scholar&hl=nl",
+        "cites_id": "17649529761131342349"
+      },
+      "year": "2003"
+    },
+    {
+      "title": "Salivary MUC5B-mediated adherence (ex vivo) of Helicobacter pylori during acute stress",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:_Re3VWB3Y0AC",
+      "citation_id": "cRt7JiIAAAAJ:_Re3VWB3Y0AC",
+      "authors": "JA Bosch, EJC de Geus, TJM Ligtenberg, K Nazmi, ECI Veerman, ...",
+      "publication": "Psychosomatic Medicine 62 (1), 40-49, 2000",
+      "cited_by": {
+        "value": 71,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=11841090854768313716",
+        "serpapi_link": "https://serpapi.com/search.json?cites=11841090854768313716&engine=google_scholar&hl=nl",
+        "cites_id": "11841090854768313716"
+      },
+      "year": "2000"
+    },
+    {
+      "title": "Maternal overreactive sympathetic nervous system responses to repeated infant crying predicts risk for impulsive harsh discipline of infants",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:IWHjjKOFINEC",
+      "citation_id": "cRt7JiIAAAAJ:IWHjjKOFINEC",
+      "authors": "KJ Joosen, J Mesman, MJ Bakermans-Kranenburg, MH van IJzendoorn",
+      "publication": "Child maltreatment 18 (4), 252-263, 2013",
+      "cited_by": {
+        "value": 70,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=11013493382598626233",
+        "serpapi_link": "https://serpapi.com/search.json?cites=11013493382598626233&engine=google_scholar&hl=nl",
+        "cites_id": "11013493382598626233"
+      },
+      "year": "2013"
+    },
+    {
+      "title": "Comparison between the Fourier and Wavelet methods of spectral analysis applied to stationary and nonstationary heart period data",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:JQOojiI6XY0C",
+      "citation_id": "cRt7JiIAAAAJ:JQOojiI6XY0C",
+      "authors": "JH Houtveen, PCM Molenaar",
+      "publication": "Psychophysiology 38 (5), 729-735, 2001",
+      "cited_by": {
+        "value": 68,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=13789820766151156089",
+        "serpapi_link": "https://serpapi.com/search.json?cites=13789820766151156089&engine=google_scholar&hl=nl",
+        "cites_id": "13789820766151156089"
+      },
+      "year": "2001"
+    },
+    {
+      "title": "The predictive value of low heart rate and heart rate variability during stress for reoffending in delinquent male adolescents",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:35N4QoGY0k4C",
+      "citation_id": "cRt7JiIAAAAJ:35N4QoGY0k4C",
+      "authors": "M De Vries‐Bouw, A Popma, R Vermeiren, TAH Doreleijers, ...",
+      "publication": "Psychophysiology 48 (11), 1597-1604, 2011",
+      "cited_by": {
+        "value": 67,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=18369733372920315465",
+        "serpapi_link": "https://serpapi.com/search.json?cites=18369733372920315465&engine=google_scholar&hl=nl",
+        "cites_id": "18369733372920315465"
+      },
+      "year": "2011"
+    },
+    {
+      "title": "Autonomic reactivity of children to separation and reunion with foster parents",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:B3FOqHPlNUQC",
+      "citation_id": "cRt7JiIAAAAJ:B3FOqHPlNUQC",
+      "authors": "M Oosterman, C Schuengel",
+      "publication": "Journal of the American Academy of Child & Adolescent Psychiatry 46 (9 …, 2007",
+      "cited_by": {
+        "value": 66,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=359333034543893003",
+        "serpapi_link": "https://serpapi.com/search.json?cites=359333034543893003&engine=google_scholar&hl=nl",
+        "cites_id": "359333034543893003"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "Heavy alcohol use, rather than alcohol dependence, is associated with dysregulation of the hypothalamic–pituitary–adrenal axis and the autonomic nervous system",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:BqipwSGYUEgC",
+      "citation_id": "cRt7JiIAAAAJ:BqipwSGYUEgC",
+      "authors": "L Boschloo, N Vogelzangs, CMM Licht, SA Vreeburg, JH Smit, ...",
+      "publication": "Drug and Alcohol Dependence 116 (1-3), 170-176, 2011",
+      "cited_by": {
+        "value": 65,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=16642684975534337056",
+        "serpapi_link": "https://serpapi.com/search.json?cites=16642684975534337056&engine=google_scholar&hl=nl",
+        "cites_id": "16642684975534337056"
+      },
+      "year": "2011"
+    },
+    {
+      "title": "Modulation of response timing in ADHD, effects of reinforcement valence and magnitude",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:u9iWguZQMMsC",
+      "citation_id": "cRt7JiIAAAAJ:u9iWguZQMMsC",
+      "authors": "M Luman, J Oosterlaan, JA Sergeant",
+      "publication": "Journal of abnormal child psychology 36 (3), 445-456, 2008",
+      "cited_by": {
+        "value": 65,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=1299504217270405319",
+        "serpapi_link": "https://serpapi.com/search.json?cites=1299504217270405319&engine=google_scholar&hl=nl",
+        "cites_id": "1299504217270405319"
+      },
+      "year": "2008"
+    },
+    {
+      "title": "Heart rate and reinforcement sensitivity in ADHD",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:LPZeul_q3PIC",
+      "citation_id": "cRt7JiIAAAAJ:LPZeul_q3PIC",
+      "authors": "M Luman, J Oosterlaan, C Hyde, CS Van Meel, JA Sergeant",
+      "publication": "Journal of Child Psychology and Psychiatry 48 (9), 890-898, 2007",
+      "cited_by": {
+        "value": 64,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=12886161239314884620",
+        "serpapi_link": "https://serpapi.com/search.json?cites=12886161239314884620&engine=google_scholar&hl=nl",
+        "cites_id": "12886161239314884620"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "Validity concerns of common heart-rate variability indices",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:UHK10RUVsp4C",
+      "citation_id": "cRt7JiIAAAAJ:UHK10RUVsp4C",
+      "authors": "BH Friedman, MT Allen, IC Christie, AK Santucci",
+      "publication": "IEEE Engineering in Medicine and Biology Magazine 21 (4), 35-40, 2002",
+      "cited_by": {
+        "value": 64,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=6019405441585911362",
+        "serpapi_link": "https://serpapi.com/search.json?cites=6019405441585911362&engine=google_scholar&hl=nl",
+        "cites_id": "6019405441585911362"
+      },
+      "year": "2002"
+    },
+    {
+      "title": "Differential autonomic nervous system reactivity in depression and anxiety during stress depending on type of stressor",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:uJ-U7cs_P_0C",
+      "citation_id": "cRt7JiIAAAAJ:uJ-U7cs_P_0C",
+      "authors": "MX Hu, F Lamers, EJC de Geus, BWJH Penninx",
+      "publication": "Psychosomatic medicine 78 (5), 562-572, 2016",
+      "cited_by": {
+        "value": 63,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=10383527297270877436",
+        "serpapi_link": "https://serpapi.com/search.json?cites=10383527297270877436&engine=google_scholar&hl=nl",
+        "cites_id": "10383527297270877436"
+      },
+      "year": "2016"
+    },
+    {
+      "title": "Is stress a trigger factor for migraine?",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:fQNAKQ3IYiAC",
+      "citation_id": "cRt7JiIAAAAJ:fQNAKQ3IYiAC",
+      "authors": "GG Schoonman, DJ Evers, BE Ballieux, EJ De Geus, ER De Kloet, ...",
+      "publication": "Psychoneuroendocrinology 32 (5), 532-538, 2007",
+      "cited_by": {
+        "value": 63,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=697729327381258733",
+        "serpapi_link": "https://serpapi.com/search.json?cites=697729327381258733&engine=google_scholar&hl=nl",
+        "cites_id": "697729327381258733"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "Children with disrupted attachment histories: Interventions and psychophysiological indices of effects",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=nl&user=cRt7JiIAAAAJ&pagesize=100&citation_for_view=cRt7JiIAAAAJ:_xSYboBqXhAC",
+      "citation_id": "cRt7JiIAAAAJ:_xSYboBqXhAC",
+      "authors": "C Schuengel, M Oosterman, PS Sterkenburg",
+      "publication": "Child and Adolescent Psychiatry and Mental Health 3 (1), 1-10, 2009",
+      "cited_by": {
+        "value": 62,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=nl&cites=12890860056134624390",
+        "serpapi_link": "https://serpapi.com/search.json?cites=12890860056134624390&engine=google_scholar&hl=nl",
+        "cites_id": "12890860056134624390"
+      },
+      "year": "2009"
     }
   ],
-  "pagination": {
-    "current": 1,
-    "next": "https://scholar.google.com/scholar?start=20&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
-    "other_pages": {
-      "2": "https://scholar.google.com/scholar?start=20&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
-      "3": "https://scholar.google.com/scholar?start=40&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
-      "4": "https://scholar.google.com/scholar?start=60&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
-      "5": "https://scholar.google.com/scholar?start=80&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
-      "6": "https://scholar.google.com/scholar?start=100&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
-      "7": "https://scholar.google.com/scholar?start=120&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
-      "8": "https://scholar.google.com/scholar?start=140&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
-      "9": "https://scholar.google.com/scholar?start=160&q=VU-AMS&hl=en&num=20&as_sdt=0,33",
-      "10": "https://scholar.google.com/scholar?start=180&q=VU-AMS&hl=en&num=20&as_sdt=0,33"
-    }
+  "cited_by": {
+    "table": [
+      {
+        "citaties": {
+          "all": 22127,
+          "sinds_2017": 9665
+        }
+      },
+      {
+        "h_index": {
+          "all": 81,
+          "sinds_2017": 53
+        }
+      },
+      {
+        "i10_index": {
+          "all": 234,
+          "sinds_2017": 201
+        }
+      }
+    ],
+    "graph": [
+      {
+        "year": 2001,
+        "citations": 55
+      },
+      {
+        "year": 2002,
+        "citations": 83
+      },
+      {
+        "year": 2003,
+        "citations": 125
+      },
+      {
+        "year": 2004,
+        "citations": 185
+      },
+      {
+        "year": 2005,
+        "citations": 258
+      },
+      {
+        "year": 2006,
+        "citations": 332
+      },
+      {
+        "year": 2007,
+        "citations": 443
+      },
+      {
+        "year": 2008,
+        "citations": 471
+      },
+      {
+        "year": 2009,
+        "citations": 769
+      },
+      {
+        "year": 2010,
+        "citations": 914
+      },
+      {
+        "year": 2011,
+        "citations": 1081
+      },
+      {
+        "year": 2012,
+        "citations": 1182
+      },
+      {
+        "year": 2013,
+        "citations": 1415
+      },
+      {
+        "year": 2014,
+        "citations": 1520
+      },
+      {
+        "year": 2015,
+        "citations": 1589
+      },
+      {
+        "year": 2016,
+        "citations": 1655
+      },
+      {
+        "year": 2017,
+        "citations": 1748
+      },
+      {
+        "year": 2018,
+        "citations": 1865
+      },
+      {
+        "year": 2019,
+        "citations": 1801
+      },
+      {
+        "year": 2020,
+        "citations": 1790
+      },
+      {
+        "year": 2021,
+        "citations": 1969
+      },
+      {
+        "year": 2022,
+        "citations": 478
+      }
+    ]
   },
-  "serpapi_pagination": {
-    "current": 1,
-    "next_link": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=20",
-    "next": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=20",
-    "other_pages": {
-      "2": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=20",
-      "3": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=40",
-      "4": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=60",
-      "5": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=80",
-      "6": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=100",
-      "7": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=120",
-      "8": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=140",
-      "9": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=160",
-      "10": "https://serpapi.com/search.json?as_sdt=0%2C33&engine=google_scholar&hl=en&num=20&q=VU-AMS&start=180"
+  "co_authors": [
+    {
+      "name": "Ineke Nederend",
+      "link": "https://scholar.google.com/citations?user=w7k7jR8AAAAJ&hl=nl",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=w7k7jR8AAAAJ&engine=google_scholar_author&hl=nl&num=100",
+      "author_id": "w7k7jR8AAAAJ",
+      "affiliations": "PhD student",
+      "email": "Geverifieerd e-mailadres voor vu.nl",
+      "thumbnail": "https://scholar.google.com/citations/images/avatar_scholar_56.png"
+    },
+    {
+      "name": "Nienke M Schutte",
+      "link": "https://scholar.google.com/citations?user=IZU2OhIAAAAJ&hl=nl",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=IZU2OhIAAAAJ&engine=google_scholar_author&hl=nl&num=100",
+      "author_id": "IZU2OhIAAAAJ",
+      "affiliations": "Sciensano",
+      "email": "Geverifieerd e-mailadres voor sciensano.be",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=IZU2OhIAAAAJ&citpid=1"
     }
+  ],
+  "serpapi_pagination": {
+    "next": "https://serpapi.com/search.json?author_id=cRt7JiIAAAAJ&engine=google_scholar_author&hl=nl&num=100&start=100"
   }
 }
