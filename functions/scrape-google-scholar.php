@@ -1,10 +1,12 @@
 <?php
+if ( !function_exists('post_exists') ) {
+    require_once ABSPATH . 'wp-admin/includes/post.php';
+}
 
 
 add_action('init', 'run');
 function run()
 {
-    $count = 0;
     $args = array(
         'author_id' => 'cRt7JiIAAAAJ',
         'hl'        => 'nl'
@@ -18,31 +20,50 @@ function run()
     $decodedData = json_decode($newData);
 
     foreach ( $decodedData as $article ) {
-        $count++;
-
-        if ( $count <= 50 ) {
-
-            if ( defined('WP_DEBUG') ) {
-                error_log('========== ARTICLE DATA =========');
-                error_log('TITLE: ' . $article->title);
-                error_log('AUTHORS: ' . print_r($article->authors, true));
-                error_log('URL: ' . $article->link);
-                error_log('PUBLICATION YEAR: ' . $article->year);
+        if ( defined('WP_DEBUG') ) {
+            error_log('========== ARTICLE DATA =========');
+            error_log('TITLE: ' . $article->title);
+            error_log('AUTHORS: ' . print_r($article->authors, true));
+            error_log('URL: ' . $article->link);
+            error_log('PUBLICATION YEAR: ' . $article->year);
 //                sleep(5);
-            }
+        }
+
+        $postArgs = array(
+            'post_content' => implode(', ', $article->authors),
+        );
+
+        if ( post_exists($article->title) === 0 ) {
+            save_publication($article->title, $postArgs, $article->link);
         }
     }
 }
 
 /**
+ * Creates a new publication post-type post and saves it as a private post
+ *
+ * @param $title
+ * @param $args
  * @param $url
- * @return bool|DOMDocument
+ * @return void
  */
-function openScholarUrl( $url )
+function save_publication( $title, $args, $url )
 {
-    $xml = new DOMDocument();
-    $dom = $xml->loadHTMLFile($url, LIBXML_NOERROR);
+    $defaults = array(
+        'post_title'     => $title,
+        'post_content'   => '',
+        'post_status'    => 'private',
+        'comment_status' => 'closed',
+        'post_type'      => 'publication',
 
-    return $dom;
+    );
+    $args = array_merge($defaults, $args);
+    $newPost = wp_insert_post($args);
+    update_field('google_scholar_url', $url, $newPost);
+
+    if ( defined('WP_DEBUG') ) {
+        error_log('NEW POST ID: ' . $newPost);
+    }
+
 }
 
