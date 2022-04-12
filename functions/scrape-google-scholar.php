@@ -4,7 +4,7 @@ if ( !function_exists('post_exists') ) {
 }
 
 
-add_action('init', 'run');
+//add_action('init', 'run');
 function run()
 {
     $args = array(
