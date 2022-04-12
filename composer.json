@@ -9,6 +9,7 @@
       "ext-json": "*",
       "ext-dom": "*",
       "ext-libxml": "*",
-        "serpapi/google-search-results-php": "^2.0"
+        "serpapi/google-search-results-php": "^2.0",
+      "ext-curl": "*"
     }
 }
