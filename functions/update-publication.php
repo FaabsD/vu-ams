@@ -1,7 +1,37 @@
 <?php
-add_action('post_updated', 'update_publication_content');
+$oldSourceUrl = '';
+$oldPostContent = '';
 
-function update_publication_content( $post_ID )
+add_action('pre_post_update', 'get_post_data_before_update', 10, 2);
+add_action('post_updated', 'update_publication_content', 10, 3);
+
+
+function get_post_data_before_update( $post_id, $post_data )
+{
+    if ( get_post_type($post_id) != 'publication' ) {
+        error_log('========== POST IS NOT A PUBLICATION ==========');
+        return false;
+    }
+    global $oldSourceUrl;
+    global $oldPostContent;
+    // Set Variables
+    $oldSourceUrl = get_field('old_source_url', $post_id) ? get_field('old_source_url', $post_id) : null;
+    $oldPostContent = $post_data['post_content'];
+
+    if ( defined('WP_DEBUG') ) {
+        error_log('========== POST CONTENT BEFORE UPDATE ==========');
+        error_log($oldPostContent);
+        error_log('========== POST SOURCE URL BEFORE UPDATE ==========');
+        if ( isset($oldSourceUrl) ) {
+            error_log($oldSourceUrl);
+        } else {
+            error_log('No old source url');
+        }
+    }
+
+}
+
+function update_publication_content( $post_ID, $post_after, $post_before )
 {
     if ( get_post_type($post_ID) != 'publication' ) {
         if ( defined('WP_DEBUG') ) {
@@ -9,6 +39,9 @@ function update_publication_content( $post_ID )
         }
         return false;
     }
+
+    global $oldPostContent;
+    global $oldSourceUrl;
 
     if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
         if ( defined('WP_DEBUG') ) {
@@ -23,6 +56,14 @@ function update_publication_content( $post_ID )
 
     $sourceUrl = get_field('source_url', $post_ID);
 
+    if ( isset($oldSourceUrl) && $oldSourceUrl != $sourceUrl ) {
+        $sourceUrlHasChanged = true;
+    } else {
+        $sourceUrlHasChanged = false;
+        error_log($oldSourceUrl);
+    }
+
+
     if ( defined('WP_DEBUG') ) {
         error_log('==== POST_ID ====');
         error_log($post_ID);
@@ -31,14 +72,65 @@ function update_publication_content( $post_ID )
         error_log($sourceUrl);
     }
 
-    $urlType = get_field('type_of_url');
+    $urlType = get_field('type_of_url', $post_ID);
     error_log('======== TYPE OF URL =========');
-    error_log(print_r($urlType, true));
+    error_log($urlType);
 
-    if ( isset($sourceUrl) && str_contains($sourceUrl, 'pdf') ) {
-        error_log('Link is a PDF');
+    if ( isset($urlType) && $urlType === "pdf" ) {
 
-    } else {
+        if ( defined('WP_DEBUG') ) {
+            error_log("========== DEBUGGING PDF SOURCE URLS ==========");
+            error_log('====== HAS THE SOURCE URL CHANGED? ======');
+            if ( $sourceUrlHasChanged ) {
+                error_log('Yes');
+            } else {
+                error_log('No');
+            }
+        }
+
+        // Download the pdf file to the WordPress media folder and attach it to the post
+        if ( $sourceUrlHasChanged ) {
+            $file_ID = wp_sideload_file($sourceUrl);
+        }
+
+        if (isset($file_ID)) {
+            $fileUrl = wp_get_attachment_url($file_ID);
+            $fileName = get_the_title($file_ID);
+
+
+            $fileBlock = create_download_block($file_ID, $fileName, $fileUrl, 'auto');
+            if (defined('WP_DEBUG')) {
+                error_log('========== FILE METADATA ==========');
+                error_log('====== FILE URL ======');
+                error_log($fileUrl);
+                error_log('====== FILE TITLE ======');
+                error_log($fileName);
+                error_log('========== FILE WORDPRESS BLOCK DATA ==========');
+                error_log($fileBlock);
+            }
+
+            // update post with file download
+            if (!empty($oldPostContent)) {
+                $newContent = $oldSourceUrl . $fileBlock;
+            } else {
+                $newContent = $fileBlock;
+            }
+            if ($sourceUrlHasChanged) {
+                error_log('========== UPDATE OLD_SOURCE_URL_FIELD ==========');
+                $field_updated = update_field('old_source_url', $sourceUrl, $post_ID);
+                error_log("====== HMMMMMMMMMMMMM ======");
+                error_log(get_field('old_source_url', $post_ID));
+                if ($field_updated){
+                    error_log('UPDATED FIELD');
+                } else {
+                    error_log('FIELD NOT UPDATED');
+                }
+            }
+        }
+
+
+    }
+    else {
         $html = get_html_from_url($sourceUrl);
 
         $dom = new DOMDocument();
@@ -89,9 +181,15 @@ function update_publication_content( $post_ID )
 
 
             $newBody = $dom->saveHTML($body);
-            error_log('==== STRIPPED HTML BODY ====');
-            error_log($newBody);
+
+            if ( publication_changed($post_before, $post_after) ) {
+                wp_update_post(array(
+                    'ID'           => $post_ID,
+                    'post_content' => $newBody
+                ));
+            }
         }
+
 
     }
 
@@ -118,4 +216,114 @@ function get_html_from_url( $url )
     curl_close($ch);
 
     return $html;
+}
+
+/**
+ * Determine if the Posts content actually changed
+ * @param $post_id
+ * @param $content
+ * @return bool
+ */
+function publication_changed( $post_before, $post_after ): bool
+{
+    if ( $post_before->post_content !== $post_after->post_content ) {
+        if ( defined('WP_DEBUG') ) {
+            error_log('========== NEW CONTENT IS NOT THE SAME AS OLD CONTENT ==========');
+            error_log('====== OLD CONTENT ======');
+            error_log(print_r($post_before, true));
+            error_log('====== NEW CONTENT ======');
+            error_log(print_r($post_after, true));
+        }
+        return true;
+    }
+
+    return false;
+
+
+}
+
+/**
+ * A modified version of the media_sideload_image function
+ * to download a PDF from an url to the WordPress media folder
+ * @param $file
+ * @param $post_id
+ * @param $desc
+ * @return int|WP_Error
+ */
+function wp_sideload_file( $file, $post_id = 0, $desc = null )
+{
+    require_once( ABSPATH . "wp-admin" . '/includes/image.php' );
+    require_once( ABSPATH . "wp-admin" . '/includes/file.php' );
+    require_once( ABSPATH . "wp-admin" . '/includes/media.php' );
+
+    if ( empty($file) ) {
+        return new WP_Error('error', 'File is empty');
+    }
+
+    $file_array = array();
+
+    // Get filename and store in into $file_array
+    // Add more file types if necessary
+    preg_match('/[^\?]+\.(jpe?g|jpe|gif|png|pdf)\b/i', $file, $matches);
+    $file_array['name'] = basename($matches[0]);
+
+    //Download file into temp location
+    $file_array['tmp_name'] = download_url($file);
+
+    // If error storing temporarily, return the error.
+    if ( is_wp_error($file_array['tmp_name']) ) {
+        return new WP_Error('error', 'Error while storing file temporarily');
+    }
+
+    // Store and validate
+    $id = media_handle_sideload($file_array, $post_id, $desc);
+
+    // Unlink if couldn't store permanently
+    if ( is_wp_error($id) ) {
+        unlink($file_array['tmp_name']);
+        return new WP_Error('error', "Couldn't store upload permanently");
+    }
+    if ( empty($id) ) {
+        return new WP_Error('error', "Upload ID is empty");
+    }
+
+    return $id;
+}
+
+/**
+ * @param $file_id
+ * @param $file_name
+ * @param $file_url
+ * @param $height
+ * @return string
+ */
+function create_download_block( $file_id, $file_name, $file_url, $height = 'auto' )
+{
+    $fileBlock = array();
+
+    $fileBlock['blockName'] = 'core/file';
+    $fileBlock['attrs'] = array(
+        'id'             => $file_id,
+        'href'           => $file_url,
+        'displayPreview' => 1,
+        'previewHeight'  => $height,
+
+    );
+    $fileBlock['innerBlocks'] = array();
+    $fileBlock['innerHTML'] = '<div class="wp-block-file" >' .
+        '<object class="wp-block-file__embed" data = "' . $fileBlock['attrs']['href'] . '" type = "application/pdf" style = "width:100%;height:' . $fileBlock['attrs']['previewHeight'] . '" aria - label = "Embed of' . $file_name . '" ></object >' .
+        '<a id = "wp-block-file--media-38670589-6333-4bcd-b1c5-3d26780528fc" href = "' . $fileBlock['attrs']['href'] . '" >' . $file_name . '</a>' .
+        '</div >';
+    $fileBlock['innerContent'] = array(
+        0 => '<div class="wp-block-file" >' .
+            '<object class="wp-block-file__embed" data = "' . $fileBlock['attrs']['href'] . '" type = "application/pdf" style = "width:100%;height:' . $fileBlock['attrs']['previewHeight'] . '" aria - label = "Embed of' . $file_name . '" ></object >' .
+            '<a id = "wp-block-file--media-38670589-6333-4bcd-b1c5-3d26780528fc" href = "' . $fileBlock['attrs']['href'] . '" >' . $file_name . '</a >' .
+            '<a href = "' . $fileBlock['attrs']['href'] . '" class="wp-block-file__button" download aria - describedby = "wp-block-file--media-38670589-6333-4bcd-b1c5-3d26780528fc" > Download</a >' .
+            '</div >',
+    );
+
+
+    // return a rendered block
+
+    return render_block($fileBlock);
 }
