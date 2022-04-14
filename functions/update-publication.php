@@ -116,21 +116,28 @@ function update_publication_content( $post_ID, $post_after, $post_before )
                 error_log( $fileBlock );
             }
 
-            // update post with file download
-            if ( !empty( $oldPostContent ) && $post_before->post_content !== $post_after->post_content ) {
-                $newContent = $oldPostContent . $fileBlock;
-            } else {
+            // add download link if not present or different
+            if ( !str_contains( $post_after->post_content, 'Download' ) && !empty( $post_after->post_content ) ) {
+                // add PDF download + written text if the download is not yet present.
+                $newContent = $fileBlock . $post_after->post_content;
+            } elseif ( empty( $post_after->post_content ) ) {
+                // Add the PDF download if content is completely empty
                 $newContent = $fileBlock;
+            } else {
+                // don't actually update the content
+                $newContent = $post_after->post_content;
+            }
+            // log the new content if WP_DEBUG is set to true
+            if ( defined( 'WP_DEBUG' ) ) {
+                error_log( '========== NEW POST CONTENT ==========' );
+                error_log( $newContent );
             }
 
+            // update post with PDF attached
             wp_update_post( array(
                 'ID'           => $post_ID,
                 'post_content' => $newContent,
             ) );
-
-
-            $field_updated = update_field( 'field_6256e07f9f66e', $sourceUrl, $post_after->ID );
-
 
         }
 
@@ -310,7 +317,7 @@ function create_download_block( $file_id, $file_name, $file_url, $height = 'auto
     $fileBlock['attrs'] = array(
         'id'             => $file_id,
         'href'           => $file_url,
-        'displayPreview' => 1,
+        'displayPreview' => 0,
         'previewHeight'  => $height,
 
     );
