@@ -311,6 +311,7 @@ function wp_sideload_file( $file, $post_id = 0, $desc = null )
  */
 function create_download_block( $file_id, $file_name, $file_url, $height = 'auto' )
 {
+    // TODO: make download link a better widget
     $fileBlock = array();
 
     $fileBlock['blockName'] = 'core/file';
