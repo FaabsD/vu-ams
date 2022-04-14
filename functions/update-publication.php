@@ -74,12 +74,30 @@ function update_publication_content( $post_ID, $post_after, $post_before )
     error_log( $urlType );
 
     if ( isset( $urlType ) && $urlType === "pdf" ) {
-        // log the $post_after data
 
-        // Download the pdf file to the WordPress media folder and attach it to the post
-        if ( $post_before->post_content !== $post_after->post_content ) {
-            error_log( '========== DOWNLOAD FILE ==========' );
+        // Get the file basename from the provided source URL
+        $file_basename = basename( $sourceUrl );
+        if ( defined( 'WP_DEBUG' ) ) {
+            error_log( '========== BASE FILE ==========' );
+            error_log( $file_basename );
+        }
+
+        // Check if the file already exists within the WP media folder
+        if ( does_file_exist( $file_basename ) >= 1 ) {
+            // if the file does exist, make $file_ID the id of the existing file
+            $file_ID = does_file_exist( $file_basename );
+            if ( defined( 'WP_DEBUG' ) ) {
+                error_log( '====== EXISTING FILE ID IS ======' );
+                error_log( $file_ID );
+            }
+        } else {
+            // Download the file from the source URL & set $file_ID to the ID of the newly uploaded file
             $file_ID = wp_sideload_file( $sourceUrl );
+            if ( defined( 'WP_DEBUG' ) ) {
+                error_log( '========== DOWNLOAD FILE ==========' );
+                error_log( '====== NEW FILE ID IS ======' );
+                error_log( $file_ID );
+            }
         }
 
         if ( isset( $file_ID ) ) {
@@ -104,26 +122,15 @@ function update_publication_content( $post_ID, $post_after, $post_before )
             } else {
                 $newContent = $fileBlock;
             }
-            // TODO: fix check for changes
 
-            if ( $post_before->post_content !== $post_after->post_content ) {
-                if ( defined( 'WP_DEBUG' ) ) {
-                    error_log( '========== UPDATE POST ==========' );
-                    error_log( '====== OLD POST CONTENT ======' );
-                    error_log( $post_before->post_modified );
-                    error_log( '====== NEW POST CONTENT ======' );
-                    error_log( $post_after->post_modified );
+            wp_update_post( array(
+                'ID'           => $post_ID,
+                'post_content' => $newContent,
+            ) );
 
-                }
-                wp_update_post( array(
-                    'ID'           => $post_ID,
-                    'post_content' => $newContent,
-                ) );
-            } else {
-                return false;
-            }
 
             $field_updated = update_field( 'field_6256e07f9f66e', $sourceUrl, $post_after->ID );
+
 
         }
 
@@ -337,4 +344,18 @@ function post_modified_time_difference( $timeModifiedBefore, $timeModifiedAfter 
     $timeBefore = strtotime( $timeModifiedBefore );
     $timeAfter = strtotime( $timeModifiedAfter );
     return $timeAfter - $timeBefore;
+}
+
+/**
+ * check if file already exists in media folder
+ * @param $fileName
+ * @return int
+ */
+function does_file_exist( $fileName )
+{
+    global $wpdb;
+
+    $query = "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_value LIKE '%/$fileName' AND meta_key = '_wp_attached_file'";
+
+    return intval( $wpdb->get_var( $query ) );
 }
