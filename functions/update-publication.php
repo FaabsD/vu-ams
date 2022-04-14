@@ -2,30 +2,30 @@
 $oldSourceUrl = '';
 $oldPostContent = '';
 
-add_action('pre_post_update', 'get_post_data_before_update', 10, 2);
-add_action('post_updated', 'update_publication_content', 10, 3);
+add_action( 'pre_post_update', 'get_post_data_before_update', 10, 2 );
+add_action( 'post_updated', 'update_publication_content', 10, 3 );
 
 
 function get_post_data_before_update( $post_id, $post_data )
 {
-    if ( get_post_type($post_id) != 'publication' ) {
-        error_log('========== POST IS NOT A PUBLICATION ==========');
+    if ( get_post_type( $post_id ) != 'publication' ) {
+        error_log( '========== POST IS NOT A PUBLICATION ==========' );
         return false;
     }
     global $oldSourceUrl;
     global $oldPostContent;
     // Set Variables
-    $oldSourceUrl = get_field('old_source_url', $post_id) ? get_field('old_source_url', $post_id) : null;
+    $oldSourceUrl = get_field( 'old_source_url', $post_id ) ? get_field( 'old_source_url', $post_id ) : null;
     $oldPostContent = $post_data['post_content'];
 
-    if ( defined('WP_DEBUG') ) {
-        error_log('========== POST CONTENT BEFORE UPDATE ==========');
-        error_log($oldPostContent);
-        error_log('========== POST SOURCE URL BEFORE UPDATE ==========');
-        if ( isset($oldSourceUrl) ) {
-            error_log($oldSourceUrl);
+    if ( defined( 'WP_DEBUG' ) ) {
+        error_log( '========== POST CONTENT BEFORE UPDATE ==========' );
+        error_log( $oldPostContent );
+        error_log( '========== POST SOURCE URL BEFORE UPDATE ==========' );
+        if ( isset( $oldSourceUrl ) ) {
+            error_log( $oldSourceUrl );
         } else {
-            error_log('No old source url');
+            error_log( 'No old source url' );
         }
     }
 
@@ -33,122 +33,120 @@ function get_post_data_before_update( $post_id, $post_data )
 
 function update_publication_content( $post_ID, $post_after, $post_before )
 {
-    if ( get_post_type($post_ID) != 'publication' ) {
-        if ( defined('WP_DEBUG') ) {
-            error_log('========== POST IS NOT A PUBLICATION ==========');
-        }
-        return false;
-    }
-
     global $oldPostContent;
-    global $oldSourceUrl;
-
-    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
-        if ( defined('WP_DEBUG') ) {
-            error_log('========== PUBLICATION WAS SAVED AUTOMATICALLY ==========');
+    if ( post_modified_time_difference( $post_before->post_modified, $post_after->post_modified ) < 10 ) {
+        if ( defined( 'WP_DEBUG' ) ) {
+            error_log( post_modified_time_difference( $post_before->post_modified, $post_after->post_modified ) );
         }
         return false;
     }
 
-    if ( defined('WP_DEBUG') ) {
-        error_log('========== UPDATE PUBLICATION WITH CONTENT ==========');
-    }
-
-    $sourceUrl = get_field('source_url', $post_ID);
-
-    if ( isset($oldSourceUrl) && $oldSourceUrl != $sourceUrl ) {
-        $sourceUrlHasChanged = true;
-    } else {
-        $sourceUrlHasChanged = false;
-        error_log($oldSourceUrl);
-    }
-
-
-    if ( defined('WP_DEBUG') ) {
-        error_log('==== POST_ID ====');
-        error_log($post_ID);
-
-        error_log('==== SOURCE_URL ====');
-        error_log($sourceUrl);
-    }
-
-    $urlType = get_field('type_of_url', $post_ID);
-    error_log('======== TYPE OF URL =========');
-    error_log($urlType);
-
-    if ( isset($urlType) && $urlType === "pdf" ) {
-
-        if ( defined('WP_DEBUG') ) {
-            error_log("========== DEBUGGING PDF SOURCE URLS ==========");
-            error_log('====== HAS THE SOURCE URL CHANGED? ======');
-            if ( $sourceUrlHasChanged ) {
-                error_log('Yes');
-            } else {
-                error_log('No');
-            }
+    if ( get_post_type( $post_ID ) != 'publication' ) {
+        if ( defined( 'WP_DEBUG' ) ) {
+            error_log( '========== POST IS NOT A PUBLICATION ==========' );
         }
+        return false;
+    }
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        if ( defined( 'WP_DEBUG' ) ) {
+            error_log( '========== PUBLICATION WAS SAVED AUTOMATICALLY ==========' );
+        }
+        return false;
+    }
+
+    if ( defined( 'WP_DEBUG' ) ) {
+        error_log( '========== UPDATE PUBLICATION WITH CONTENT ==========' );
+    }
+
+    $sourceUrl = get_field( 'source_url', $post_ID );
+
+    if ( defined( 'WP_DEBUG' ) ) {
+        error_log( '==== POST_ID ====' );
+        error_log( $post_ID );
+
+        error_log( '==== SOURCE_URL ====' );
+        error_log( $sourceUrl );
+    }
+
+    $urlType = get_field( 'type_of_url', $post_ID );
+    error_log( '======== TYPE OF URL =========' );
+    error_log( $urlType );
+
+    if ( isset( $urlType ) && $urlType === "pdf" ) {
+        // log the $post_after data
 
         // Download the pdf file to the WordPress media folder and attach it to the post
-        if ( $sourceUrlHasChanged ) {
-            $file_ID = wp_sideload_file($sourceUrl);
+        if ( $post_before->post_content !== $post_after->post_content ) {
+            error_log( '========== DOWNLOAD FILE ==========' );
+            $file_ID = wp_sideload_file( $sourceUrl );
         }
 
-        if (isset($file_ID)) {
-            $fileUrl = wp_get_attachment_url($file_ID);
-            $fileName = get_the_title($file_ID);
+        if ( isset( $file_ID ) ) {
+            $fileUrl = wp_get_attachment_url( $file_ID );
+            $fileName = get_the_title( $file_ID );
 
 
-            $fileBlock = create_download_block($file_ID, $fileName, $fileUrl, 'auto');
-            if (defined('WP_DEBUG')) {
-                error_log('========== FILE METADATA ==========');
-                error_log('====== FILE URL ======');
-                error_log($fileUrl);
-                error_log('====== FILE TITLE ======');
-                error_log($fileName);
-                error_log('========== FILE WORDPRESS BLOCK DATA ==========');
-                error_log($fileBlock);
+            $fileBlock = create_download_block( $file_ID, $fileName, $fileUrl, 'auto' );
+            if ( defined( 'WP_DEBUG' ) ) {
+                error_log( '========== FILE METADATA ==========' );
+                error_log( '====== FILE URL ======' );
+                error_log( $fileUrl );
+                error_log( '====== FILE TITLE ======' );
+                error_log( $fileName );
+                error_log( '========== FILE WORDPRESS BLOCK DATA ==========' );
+                error_log( $fileBlock );
             }
 
             // update post with file download
-            if (!empty($oldPostContent)) {
-                $newContent = $oldSourceUrl . $fileBlock;
+            if ( !empty( $oldPostContent ) && $post_before->post_content !== $post_after->post_content ) {
+                $newContent = $oldPostContent . $fileBlock;
             } else {
                 $newContent = $fileBlock;
             }
-            if ($sourceUrlHasChanged) {
-                error_log('========== UPDATE OLD_SOURCE_URL_FIELD ==========');
-                $field_updated = update_field('old_source_url', $sourceUrl, $post_ID);
-                error_log("====== HMMMMMMMMMMMMM ======");
-                error_log(get_field('old_source_url', $post_ID));
-                if ($field_updated){
-                    error_log('UPDATED FIELD');
-                } else {
-                    error_log('FIELD NOT UPDATED');
+            // TODO: fix check for changes
+
+            if ( $post_before->post_content !== $post_after->post_content ) {
+                if ( defined( 'WP_DEBUG' ) ) {
+                    error_log( '========== UPDATE POST ==========' );
+                    error_log( '====== OLD POST CONTENT ======' );
+                    error_log( $post_before->post_modified );
+                    error_log( '====== NEW POST CONTENT ======' );
+                    error_log( $post_after->post_modified );
+
                 }
+                wp_update_post( array(
+                    'ID'           => $post_ID,
+                    'post_content' => $newContent,
+                ) );
+            } else {
+                return false;
             }
+
+            $field_updated = update_field( 'field_6256e07f9f66e', $sourceUrl, $post_after->ID );
+
         }
 
 
-    }
-    else {
-        $html = get_html_from_url($sourceUrl);
+    } else {
+        $html = get_html_from_url( $sourceUrl );
 
         $dom = new DOMDocument();
-        @$dom->loadHTML($html);
-        $xpath = new DOMXPath($dom);
+        @$dom->loadHTML( $html );
+        $xpath = new DOMXPath( $dom );
 
-        $elements = $xpath->query("/html/body");
+        $elements = $xpath->query( "/html/body" );
 
         $childrenToRemove = array();
 
         if ( $elements->length === 1 ) {
 
-            $body = $elements->item(0);
+            $body = $elements->item( 0 );
             foreach ( $body->childNodes as $node ) {
 
-                if ( defined('WP_DEBUG') ) {
-                    error_log('==== NODE NAME ====');
-                    error_log($node->nodeName);
+                if ( defined( 'WP_DEBUG' ) ) {
+                    error_log( '==== NODE NAME ====' );
+                    error_log( $node->nodeName );
                 }
                 switch ( $node->nodeName ) {
                     case "noscript":
@@ -161,32 +159,32 @@ function update_publication_content( $post_ID, $post_after, $post_before )
                 }
                 if ( $node->attributes ) {
                     for ( $i = $node->attributes->length; --$i >= 0; ) {
-                        $name = $node->attributes->item($i)->name;
+                        $name = $node->attributes->item( $i )->name;
                         if ( 'href' !== $name ) {
-                            $node->removeAttribute($name);
+                            $node->removeAttribute( $name );
                         }
                     }
                 }
             }
-            if ( count($childrenToRemove) > 0 ) {
-                if ( defined('WP_DEBUG') ) {
-                    error_log('==== TAGS TO REMOVE ====');
-                    error_log(print_r($childrenToRemove, true));
+            if ( count( $childrenToRemove ) > 0 ) {
+                if ( defined( 'WP_DEBUG' ) ) {
+                    error_log( '==== TAGS TO REMOVE ====' );
+                    error_log( print_r( $childrenToRemove, true ) );
                 }
 
                 foreach ( $childrenToRemove as $child ) {
-                    $child->parentNode->removeChild($child);
+                    $child->parentNode->removeChild( $child );
                 }
             }
 
 
-            $newBody = $dom->saveHTML($body);
+            $newBody = $dom->saveHTML( $body );
 
-            if ( publication_changed($post_before, $post_after) ) {
-                wp_update_post(array(
+            if ( publication_changed( $post_before, $post_after ) ) {
+                wp_update_post( array(
                     'ID'           => $post_ID,
-                    'post_content' => $newBody
-                ));
+                    'post_content' => $newBody,
+                ) );
             }
         }
 
@@ -203,17 +201,17 @@ function get_html_from_url( $url )
 {
     $ch = curl_init();
     $timeout = 5;
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+    curl_setopt( $ch, CURLOPT_URL, $url );
+    curl_setopt( $ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36' );
+    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+    curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
+    curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
+    curl_setopt( $ch, CURLOPT_MAXREDIRS, 10 );
+    curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1 );
+    curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, $timeout );
 
-    $html = curl_exec($ch);
-    curl_close($ch);
+    $html = curl_exec( $ch );
+    curl_close( $ch );
 
     return $html;
 }
@@ -227,12 +225,12 @@ function get_html_from_url( $url )
 function publication_changed( $post_before, $post_after ): bool
 {
     if ( $post_before->post_content !== $post_after->post_content ) {
-        if ( defined('WP_DEBUG') ) {
-            error_log('========== NEW CONTENT IS NOT THE SAME AS OLD CONTENT ==========');
-            error_log('====== OLD CONTENT ======');
-            error_log(print_r($post_before, true));
-            error_log('====== NEW CONTENT ======');
-            error_log(print_r($post_after, true));
+        if ( defined( 'WP_DEBUG' ) ) {
+            error_log( '========== NEW CONTENT IS NOT THE SAME AS OLD CONTENT ==========' );
+            error_log( '====== OLD CONTENT ======' );
+            error_log( print_r( $post_before, true ) );
+            error_log( '====== NEW CONTENT ======' );
+            error_log( print_r( $post_after, true ) );
         }
         return true;
     }
@@ -256,35 +254,35 @@ function wp_sideload_file( $file, $post_id = 0, $desc = null )
     require_once( ABSPATH . "wp-admin" . '/includes/file.php' );
     require_once( ABSPATH . "wp-admin" . '/includes/media.php' );
 
-    if ( empty($file) ) {
-        return new WP_Error('error', 'File is empty');
+    if ( empty( $file ) ) {
+        return new WP_Error( 'error', 'File is empty' );
     }
 
     $file_array = array();
 
     // Get filename and store in into $file_array
     // Add more file types if necessary
-    preg_match('/[^\?]+\.(jpe?g|jpe|gif|png|pdf)\b/i', $file, $matches);
-    $file_array['name'] = basename($matches[0]);
+    preg_match( '/[^\?]+\.(jpe?g|jpe|gif|png|pdf)\b/i', $file, $matches );
+    $file_array['name'] = basename( $matches[0] );
 
     //Download file into temp location
-    $file_array['tmp_name'] = download_url($file);
+    $file_array['tmp_name'] = download_url( $file );
 
     // If error storing temporarily, return the error.
-    if ( is_wp_error($file_array['tmp_name']) ) {
-        return new WP_Error('error', 'Error while storing file temporarily');
+    if ( is_wp_error( $file_array['tmp_name'] ) ) {
+        return new WP_Error( 'error', 'Error while storing file temporarily' );
     }
 
     // Store and validate
-    $id = media_handle_sideload($file_array, $post_id, $desc);
+    $id = media_handle_sideload( $file_array, $post_id, $desc );
 
     // Unlink if couldn't store permanently
-    if ( is_wp_error($id) ) {
-        unlink($file_array['tmp_name']);
-        return new WP_Error('error', "Couldn't store upload permanently");
+    if ( is_wp_error( $id ) ) {
+        unlink( $file_array['tmp_name'] );
+        return new WP_Error( 'error', "Couldn't store upload permanently" );
     }
-    if ( empty($id) ) {
-        return new WP_Error('error', "Upload ID is empty");
+    if ( empty( $id ) ) {
+        return new WP_Error( 'error', "Upload ID is empty" );
     }
 
     return $id;
@@ -325,5 +323,18 @@ function create_download_block( $file_id, $file_name, $file_url, $height = 'auto
 
     // return a rendered block
 
-    return render_block($fileBlock);
+    return render_block( $fileBlock );
+}
+
+/**
+ * calculate the difference in seconds between two timestamps
+ * @param $timeModifiedBefore
+ * @param $timeModifiedAfter
+ * @return false|int
+ */
+function post_modified_time_difference( $timeModifiedBefore, $timeModifiedAfter )
+{
+    $timeBefore = strtotime( $timeModifiedBefore );
+    $timeAfter = strtotime( $timeModifiedAfter );
+    return $timeAfter - $timeBefore;
 }
