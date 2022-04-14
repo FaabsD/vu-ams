@@ -311,7 +311,6 @@ function wp_sideload_file( $file, $post_id = 0, $desc = null )
  */
 function create_download_block( $file_id, $file_name, $file_url, $height = 'auto' )
 {
-    // TODO: make download link a better widget
     $fileBlock = array();
 
     $fileBlock['blockName'] = 'core/file';
@@ -323,22 +322,20 @@ function create_download_block( $file_id, $file_name, $file_url, $height = 'auto
 
     );
     $fileBlock['innerBlocks'] = array();
-    $fileBlock['innerHTML'] = '<div class="wp-block-file" >' .
-        '<object class="wp-block-file__embed" data = "' . $fileBlock['attrs']['href'] . '" type = "application/pdf" style = "width:100%;height:' . $fileBlock['attrs']['previewHeight'] . '" aria - label = "Embed of' . $file_name . '" ></object >' .
-        '<a id = "wp-block-file--media-38670589-6333-4bcd-b1c5-3d26780528fc" href = "' . $fileBlock['attrs']['href'] . '" >' . $file_name . '</a>' .
+    $fileBlock['innerHTML'] = '<div class="wp-block-file">' .
+        '<a id="wp-block-file--media-38670589-6333-4bcd-b1c5-3d26780528fc" href="' . $fileBlock['attrs']['href'] . '" >' . $file_name . '</a>' .
         '</div >';
     $fileBlock['innerContent'] = array(
-        0 => '<div class="wp-block-file" >' .
-            '<object class="wp-block-file__embed" data = "' . $fileBlock['attrs']['href'] . '" type = "application/pdf" style = "width:100%;height:' . $fileBlock['attrs']['previewHeight'] . '" aria - label = "Embed of' . $file_name . '" ></object >' .
-            '<a id = "wp-block-file--media-38670589-6333-4bcd-b1c5-3d26780528fc" href = "' . $fileBlock['attrs']['href'] . '" >' . $file_name . '</a >' .
-            '<a href = "' . $fileBlock['attrs']['href'] . '" class="wp-block-file__button" download aria - describedby = "wp-block-file--media-38670589-6333-4bcd-b1c5-3d26780528fc" > Download</a >' .
-            '</div >',
+        0 => '<div class="wp-block-file">' .
+            '<a id="wp-block-file--media-38670589-6333-4bcd-b1c5-3d26780528fc" href="' . $fileBlock['attrs']['href'] . '">' . $file_name . '</a>' .
+            '<a href="' . $fileBlock['attrs']['href'] . '" class="wp-block-file__button" download="" aria-describedby="wp-block-file--media-38670589-6333-4bcd-b1c5-3d26780528fc"> Download</a>' .
+            '</div>',
     );
 
 
     // return a rendered block
 
-    return render_block( $fileBlock );
+    return serialize_block( $fileBlock );
 }
 
 /**
