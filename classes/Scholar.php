@@ -5,7 +5,7 @@
  * We will be using this class to make API calls to the SerpApi
  * and to return the data we need.
  */
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 
 class Scholar
@@ -17,10 +17,10 @@ class Scholar
 
     private array $defaultArgs = [
         "engine"    => "google_scholar_author",
-        "hl"        => "",
-        "author_id" => "",
-        "num"       => "",
-        "start"     => "",
+        "hl"        => "nl",
+        "author_id" => "cRt7JiIAAAAJ",
+        "num"       => 0,
+        "start"     => 0,
     ];
 
     /**
@@ -37,15 +37,25 @@ class Scholar
      */
     public function make_api_call( $key = null, $args = [] )
     {
-        $this->jsonData = file_get_contents($this->url);
-        if ( isset($key) ) {
-            if ( count($args) >= 1 ) {
-                $args = array_merge($this->defaultArgs, $args);
-                if (defined('WP_DEBUG')) {
-                    error_log('======= API arguments ====');
-                    error_log(print_r($args, true));
+        $this->jsonData = file_get_contents( $this->url );
+        if ( isset( $key ) && !empty( $key ) ) {
+            if ( count( $args ) >= 1 ) {
+                $args = array_merge( $this->defaultArgs, $args );
+                if ( defined( 'WP_DEBUG' ) ) {
+                    error_log( '======= API arguments ====' );
+                    error_log( print_r( $args, true ) );
+                }
+            } else {
+                $args = $this->defaultArgs;
+                if ( define( 'WP_DEBUG' ) ) {
+                    error_log( '========== API arguments ==========' );
+                    error_log( print_r( $args, true ) );
                 }
             }
+            // TODO: Make an Actual API call
+            $search = new GoogleSearch( $key );
+            $this->jsonData = $search->get_json( $args );
+
         }
 
         return $this->jsonData;
@@ -59,7 +69,7 @@ class Scholar
      */
     public function strip_data( $json )
     {
-        $decodedJson = json_decode($json);
+        $decodedJson = json_decode( $json );
 //        error_log('========[Google Scholar Data]========');
 //        error_log('==== data ====');
         foreach ( $decodedJson->articles as $index => $article ) {
@@ -67,7 +77,7 @@ class Scholar
 
             $newArr['title'] = $article->title;
             $newArr['link'] = $article->link;
-            $newArr['authors'] = explode(', ', $article->authors);
+            $newArr['authors'] = explode( ', ', $article->authors );
             $newArr['year'] = $article->year;
 
             $this->return[$index] = $newArr;
@@ -75,7 +85,7 @@ class Scholar
 //            error_log(print_r($newArr, true));
         }
 
-        return json_encode($this->return);
+        return json_encode( $this->return );
 
     }
 }
