@@ -193,7 +193,11 @@ function update_publication_content( $post_ID, $post_after, $post_before )
 
             $newBody = $dom->saveHTML( $body );
 
-            if ( publication_changed( $post_before, $post_after ) ) {
+            if ( publication_changed( $post_before, $post_after ) && empty($post_after->post_content) ) {
+
+                if (defined('WP_DEBUG')) {
+                    error_log('========== UPDATE EMPTY (HTML source) PUBLICATION WITH HTML FROM SOURCE ==========');
+                }
                 wp_update_post( array(
                     'ID'           => $post_ID,
                     'post_content' => $newBody,
