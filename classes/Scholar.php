@@ -19,7 +19,7 @@ class Scholar
         "engine"    => "google_scholar_author",
         "hl"        => "nl",
         "author_id" => "cRt7JiIAAAAJ",
-        "num"       => 0,
+        "num"       => 100,
         "start"     => 0,
     ];
 
