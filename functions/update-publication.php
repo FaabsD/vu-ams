@@ -33,7 +33,6 @@ function get_post_data_before_update( $post_id, $post_data )
 
 function update_publication_content( $post_ID, $post_after, $post_before )
 {
-    global $oldPostContent;
     if ( post_modified_time_difference( $post_before->post_modified, $post_after->post_modified ) < 10 ) {
         if ( defined( 'WP_DEBUG' ) ) {
             error_log( post_modified_time_difference( $post_before->post_modified, $post_after->post_modified ) );
