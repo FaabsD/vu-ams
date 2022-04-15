@@ -52,7 +52,7 @@ class Scholar
                     error_log( print_r( $args, true ) );
                 }
             }
-            // TODO: Make an Actual API call
+            
             $search = new GoogleSearch( $key );
             $this->jsonData = $search->get_json( $args );
 
