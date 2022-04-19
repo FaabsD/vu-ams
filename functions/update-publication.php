@@ -99,7 +99,7 @@ function update_publication_content( $post_ID, $post_after, $post_before )
             }
         }
 
-        if ( isset( $file_ID ) ) {
+        if ( isset( $file_ID ) && gettype($file_ID) === "integer" ) {
             $fileUrl = wp_get_attachment_url( $file_ID );
             $fileName = get_the_title( $file_ID );
 
@@ -193,10 +193,10 @@ function update_publication_content( $post_ID, $post_after, $post_before )
 
             $newBody = $dom->saveHTML( $body );
 
-            if ( publication_changed( $post_before, $post_after ) && empty($post_after->post_content) ) {
+            if ( publication_changed( $post_before, $post_after ) && empty( $post_after->post_content ) ) {
 
-                if (defined('WP_DEBUG')) {
-                    error_log('========== UPDATE EMPTY (HTML source) PUBLICATION WITH HTML FROM SOURCE ==========');
+                if ( defined( 'WP_DEBUG' ) ) {
+                    error_log( '========== UPDATE EMPTY (HTML source) PUBLICATION WITH HTML FROM SOURCE ==========' );
                 }
                 wp_update_post( array(
                     'ID'           => $post_ID,
@@ -280,13 +280,28 @@ function wp_sideload_file( $file, $post_id = 0, $desc = null )
     // Get filename and store in into $file_array
     // Add more file types if necessary
     preg_match( '/[^\?]+\.(jpe?g|jpe|gif|png|pdf)\b/i', $file, $matches );
+
+    if ( defined( 'WP_DEBUG' ) ) {
+        error_log( '====== NO. OF MATCHES ======' );
+        error_log( 'TYPE IS ' . gettype( $matches ) );
+        error_log( 'COUNT MATCHES: ' . count( $matches ) );
+        error_log( '====== FILE ======' );
+        error_log( $file );
+        error_log( 'BASENAME: ' . basename( $file ) );
+    }
+
     $file_array['name'] = basename( $matches[0] );
+
 
     //Download file into temp location
     $file_array['tmp_name'] = download_url( $file );
 
     // If error storing temporarily, return the error.
     if ( is_wp_error( $file_array['tmp_name'] ) ) {
+        if ( defined( 'WP_DEBUG' ) ) {
+            error_log( '====== ERROR ======' );
+            error_log( "Couldn't store the file temporarily" );
+        }
         return new WP_Error( 'error', 'Error while storing file temporarily' );
     }
 
@@ -295,10 +310,18 @@ function wp_sideload_file( $file, $post_id = 0, $desc = null )
 
     // Unlink if couldn't store permanently
     if ( is_wp_error( $id ) ) {
+        if ( defined( 'WP_DEBUG' ) ) {
+            error_log( '====== ERROR ======' );
+            error_log( "Couldn't store upload permanently" );
+        }
         unlink( $file_array['tmp_name'] );
         return new WP_Error( 'error', "Couldn't store upload permanently" );
     }
     if ( empty( $id ) ) {
+        if ( defined( 'WP_DEBUG' ) ) {
+            error_log( '====== ERROR ======' );
+            error_log( "Upload ID is empty" );
+        }
         return new WP_Error( 'error', "Upload ID is empty" );
     }
 
