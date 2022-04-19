@@ -34,12 +34,16 @@ function retrieve_google_scholar_publications()
         }
 
         $postArgs = array(
-            'post_content' => implode( ', ', $article->authors ),
+            'post_content' => $article->authors,
+        );
+
+        $extraPostArgs = array(
+            'authors'          => $article->authors,
+            'publication_date' => $article->year,
         );
 
         if ( post_exists( $article->title ) === 0 ) {
-            // TODO: save more (wished) data to a publication
-            save_publication( $article->title, $postArgs, $article->link );
+            save_publication( $article->title, $postArgs, $article->link, $extraPostArgs );
         }
     }
 
@@ -61,12 +65,16 @@ function retrieve_google_scholar_publications()
             // loop through the articles from the new call
             foreach ( $data->articles as $article ) {
                 $postArgs = array(
-                    'post_content' => implode( ', ', $article->authors ),
+                    'post_content' => $article->authors,
+                );
+
+                $extraPostArgs = array(
+                    'authors'          => $article->authors,
+                    'publication_date' => $article->year,
                 );
                 // save any post that doesn't exist by the given title
                 if ( post_exists( $article->title ) === 0 ) {
-                    // TODO: save more (wished) data to a publication
-                    save_publication( $article->title, $postArgs, $article->link );
+                    save_publication( $article->title, $postArgs, $article->link, $extraPostArgs );
                 }
             }
             // set $runContinues to false. To stop the while loop
@@ -87,9 +95,8 @@ function retrieve_google_scholar_publications()
  * @param $url
  * @return void
  */
-function save_publication( $title, $args, $url )
+function save_publication( $title, $args, $url, $extraPostArgs = null )
 {
-    // TODO: save more (wished) data to a publication
     $defaults = array(
         'post_title'     => $title,
         'post_content'   => '',
@@ -101,6 +108,34 @@ function save_publication( $title, $args, $url )
     $args = array_merge( $defaults, $args );
     $newPost = wp_insert_post( $args );
     update_field( 'google_scholar_url', $url, $newPost );
+
+    // save extra publication data to publication when extra post args are given
+    if ( isset( $extraPostArgs ) && is_array( $extraPostArgs ) ) {
+        if ( defined( 'WP_DEBUG' ) ) {
+            error_log( '========== SET PUBLICATION DATA FIELDS ==========' );
+            error_log( '====== EXTRA POST ARGS ======' );
+            error_log( print_r( $extraPostArgs, true ) );
+        }
+
+        // if authors are given in the extraPostArgs save them in the extra authors field
+        if ( array_key_exists( 'authors', $extraPostArgs ) ) {
+            if ( defined( 'WP_DEBUG' ) ) {
+                error_log( '========== FILL AUTHORS FIELD ==========' );
+                error_log( '====== AUTHORS ======' );
+                error_log( $extraPostArgs['authors'] );
+            }
+            update_field( 'authors', $extraPostArgs['authors'], $newPost );
+        }
+
+        if ( array_key_exists( 'publication_date', $extraPostArgs ) ) {
+            if ( defined( 'WP_DEBUG' ) ) {
+                error_log( '========== FILL PUBLICATION DATE FIELD ==========' );
+                error_log( '====== PUBLICATION DATE ======' );
+                error_log( $extraPostArgs['publication_date'] );
+            }
+            update_field( 'publication_date', $extraPostArgs['publication_date'], $newPost );
+        }
+    }
 
     if ( defined( 'WP_DEBUG' ) ) {
         error_log( 'NEW POST ID: ' . $newPost );
