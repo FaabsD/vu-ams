@@ -7,8 +7,8 @@ $oldPostContent = '';
 add_action('pre_post_update', 'get_post_data_before_update', 10, 2);
 add_action('post_updated', 'update_publication_content', 10, 3);
 
-add_action('wp_after_insert_post', 'provide_publication_with_extra_data', 10, 4);
-
+// add_action('wp_after_insert_post', 'provide_publication_with_extra_data', 10, 4);
+add_action('VU_after_insert_publication', 'provide_publication_with_extra_data', 10, 1);
 
 /**
  * provide_publication_with_extra_data
@@ -19,22 +19,31 @@ add_action('wp_after_insert_post', 'provide_publication_with_extra_data', 10, 4)
  * @param  mixed $post_before
  * @return void
  */
-function provide_publication_with_extra_data($post_id, $post, $update, $post_before)
+function provide_publication_with_extra_data($newPost)
 {
     // Don't fire when $update is true or when the post isn't a publication
-    if ($update === true) {
+    /*if ($update === true) {
+        return false;
+    }*/
+    if (get_post_type($newPost) != 'publication') {
         return false;
     }
-    if (get_post_type($post_id) != 'publication') {
-        return false;
+
+    // Debugging
+    if (defined('WP_DEBUG')) {
+        error_log('========== START PUBLICATION UPDATE AFTER PUBLICATION INSERTION ==========');
     }
 
     // get relevant data from the publication
 
-    $source_url = get_field('source_url');
+    $source_url = get_field('google_scholar_url', $newPost);
 
     if (!empty($source_url)) {
         $page_html = get_html_from_url($source_url);
+        if (defined('WP_DEBUG')) {
+            error_log('====== PAGE HTML TYPE ======');
+            error_log(gettype($page_html));
+        }
 
         if ($page_html !== false) {
             if (defined('WP_DEBUG')) {
