@@ -35,6 +35,12 @@ function provide_publication_with_extra_data($post_id, $post, $update, $post_bef
 
     if (!empty($source_url)) {
         $page_html = get_html_from_url($source_url);
+
+        if ($page_html !== false) {
+            if (defined('WP_DEBUG')) {
+                error_log('====== GOT HTML FROM SOURCE LINK ======');
+            }
+        }
     } else {
         if (defined('WP_DEBUG')) {
             error_log("====== NO SOURCE URL FOUND ======");
