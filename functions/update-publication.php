@@ -7,6 +7,42 @@ $oldPostContent = '';
 add_action('pre_post_update', 'get_post_data_before_update', 10, 2);
 add_action('post_updated', 'update_publication_content', 10, 3);
 
+add_action('wp_after_insert_post', 'provide_publication_with_extra_data', 10, 4);
+
+
+/**
+ * provide_publication_with_extra_data
+ *
+ * @param  mixed $post_id
+ * @param  mixed $post
+ * @param  mixed $update
+ * @param  mixed $post_before
+ * @return void
+ */
+function provide_publication_with_extra_data($post_id, $post, $update, $post_before)
+{
+    // Don't fire when $update is true or when the post isn't a publication
+    if ($update === true) {
+        return false;
+    }
+    if (get_post_type($post_id) != 'publication') {
+        return false;
+    }
+
+    // get relevant data from the publication
+
+    $source_url = get_field('source_url');
+
+    if (!empty($source_url)) {
+        $page_html = get_html_from_url($source_url);
+    } else {
+        if (defined('WP_DEBUG')) {
+            error_log("====== NO SOURCE URL FOUND ======");
+        }
+        return false;
+    }
+}
+
 
 function get_post_data_before_update($post_id, $post_data)
 {
@@ -201,8 +237,9 @@ function update_publication_content($post_ID, $post_after, $post_before)
         }
     }
 }
-
+// TODO remove/comment helper functions which become redundant
 /**
+ * Retrieve HTML code from a provided url
  * @param $url
  * @return bool|string
  */
@@ -211,6 +248,8 @@ function get_html_from_url($url)
     $ch = curl_init();
     $timeout = 5;
     curl_setopt($ch, CURLOPT_URL, $url);
+    // for errors
+    curl_setopt($ch, CURLOPT_FAILONERROR, true);
     curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -220,7 +259,18 @@ function get_html_from_url($url)
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 
     $html = curl_exec($ch);
+    if (curl_errno($ch)) {
+        $err_msg = curl_error($ch);
+    }
     curl_close($ch);
+
+    if (isset($err_msg)) {
+        if (defined('WP_DEBUG')) {
+            error_log('====== ERROR WHILE RETRIEVING PUBLICATION FROM SOURCE LINK ======');
+            error_log($err_msg);
+        }
+        return false;
+    }
 
     return $html;
 }
