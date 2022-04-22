@@ -141,5 +141,8 @@ function save_publication( $title, $args, $url, $extraPostArgs = null )
         error_log( 'NEW POST ID: ' . $newPost );
     }
 
+    // fire a new custom hook
+    do_action('VU_after_insert_publication', $newPost);
+
 }
 
