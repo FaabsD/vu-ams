@@ -4584,7 +4584,7 @@
   dependencies:
     "icss-utils" "^5.0.0"
 
-"postcss-nested@5.0.6":
+"postcss-nested@^5.0.6", "postcss-nested@5.0.6":
   "integrity" "sha512-rKqm2Fk0KbA8Vt3AdGN0FB9OBOMDVajMG6ZCf/GoHgdxUJ4sBFp0A/uMIRm+MJUdo33YXEtjqIz8u7DAp8B7DA=="
   "resolved" "https://registry.npmjs.org/postcss-nested/-/postcss-nested-5.0.6.tgz"
   "version" "5.0.6"
