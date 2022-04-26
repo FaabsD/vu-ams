@@ -3,7 +3,6 @@
 $oldSourceUrl = '';
 $oldPostContent = '';
 
-// TODO Change actions to fire after publication was created
 // add_action( 'pre_post_update', 'get_post_data_before_update', 10, 2 );
 // add_action( 'post_updated', 'update_publication_content', 10, 3 );
 
@@ -181,7 +180,7 @@ function provide_publication_with_extra_data( $newPost )
 }
 
 
-function get_post_data_before_update( $post_id, $post_data )
+/*function get_post_data_before_update( $post_id, $post_data )
 {
     if ( get_post_type( $post_id ) != 'publication' ) {
         error_log( '========== POST IS NOT A PUBLICATION ==========' );
@@ -203,9 +202,8 @@ function get_post_data_before_update( $post_id, $post_data )
             error_log( 'No old source url' );
         }
     }
-}
+}*/
 
-// TODO Change function to get extra data from the publication when publication was created
 /*function update_publication_content( $post_ID, $post_after, $post_before )
 {
     if ( post_modified_time_difference( $post_before->post_modified, $post_after->post_modified ) < 10 ) {
