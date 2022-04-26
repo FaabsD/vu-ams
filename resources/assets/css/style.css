@@ -1,5 +1,6 @@
 @import "tailwindcss/base";
 @import "./partials/base-styles.css";
+@import "./partials/home-page.css";
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
