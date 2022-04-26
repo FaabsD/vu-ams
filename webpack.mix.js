@@ -20,6 +20,7 @@ mix.browserSync({
 
 mix.postCss('resources/assets/css/style.css', 'build/css/app.css', [
     require('postcss-import'),
+    require('tailwindcss/nesting'),
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
