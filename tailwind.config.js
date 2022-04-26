@@ -7,7 +7,13 @@ module.exports = {
         './single-*.php',
     ]),
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                ams: {
+                   yellow: 'rgb(255, 189, 16)',
+                }
+            }
+        },
     },
     plugins: [
         require('@tailwindcss/typography'),
