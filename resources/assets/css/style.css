@@ -4,3 +4,77 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+/* Font Faces */
+/* Heebo Thin  */
+@font-face {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 100;
+    src: url("../../resources/fonts/Heebo/static/Heebo-Thin.ttf") format("truetype");
+}
+
+/* Heebo ExtraLight */
+@font-face {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 200;
+    src: url("../../resources/fonts/Heebo/static/Heebo-ExtraLight.ttf") format("truetype");
+}
+
+/* Heebo Light */
+@font-face {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../../resources/fonts/Heebo/static/Heebo-Light.ttf") format("truetype");
+}
+
+/* Heebo Regular */
+@font-face {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../resources/fonts/Heebo/static/Heebo-Regular.ttf") format("truetype");
+}
+
+/* Heebo Medium */
+@font-face {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../resources/fonts/Heebo/static/Heebo-Medium.ttf") format("truetype");
+}
+
+/* Heebo Semibold */
+@font-face {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../../resources/fonts/Heebo/static/Heebo-SemiBold.ttf") format("truetype");
+}
+
+/* Heebo Bold */
+@font-face {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../../resources/fonts/Heebo/static/Heebo-Bold.ttf") format("truetype");
+}
+
+/* Heebo ExtraBold */
+@font-face {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../../resources/fonts/Heebo/static/Heebo-ExtraBold.ttf") format("truetype");
+}
+
+/* Heebo Black */
+@font-face {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../../resources/fonts/Heebo/static/Heebo-Black.ttf") format("truetype");
+}
+
