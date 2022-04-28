@@ -51,6 +51,30 @@
 
 </header>
 
+<!-- Approved by section -->
+<div class="approved">
+    <?php if ( get_field( 'approved_by' ) ) : ?>
+        <?php the_field( 'approved_by' ); ?>
+    <?php endif; ?>
+</div>
+
+<!-- Placeholder -->
+<!-- Placeholder -->
+
+<div class="what-is">
+    <?php if ( get_field( 'what_is_title' ) ): ?>
+        <h3 class="what-is__heading">
+            <!-- TODO: Manier vinden om laatste woord andere kleur te geven -->
+            <?php the_field( 'what_is_title' ); ?>
+        </h3>
+    <?php endif; ?>
+    <?php if ( get_field( 'what_is_description' ) ) : ?>
+        <div class="what-is__description">
+            <?php the_field( 'what_is_description' ); ?>
+        </div>
+    <?php endif; ?>
+</div>
+
 <?php if ( have_posts() ) : while ( have_posts() ) :
     the_post(); ?>
     <div class="container prose">
