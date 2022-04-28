@@ -121,5 +121,36 @@
         }
 
     }
+
+    .approved {
+        @apply
+        prose
+        prose-h3:text-ams-dark
+        lg:prose
+        mx-8
+        my-8
+        lg:mx-32;
+
+        h3 {
+            @apply mb-8;
+        }
+
+        p {
+            @apply flex justify-around items-center mt-8 mb-8;
+
+            a {
+                img {
+                    @apply m-0;
+                }
+            }
+        }
+    }
+
+    .what-is {
+        @apply prose-sm lg:prose;
+        &__heading  {
+            @apply lg:text-5xl
+        }
+    }
 }
 
