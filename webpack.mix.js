@@ -23,7 +23,9 @@ mix.postCss('resources/assets/css/style.css', 'build/css/app.css', [
     require('tailwindcss/nesting'),
     require('tailwindcss'),
     require('autoprefixer'),
-]);
+]).options({
+    processCssUrls: false
+});
 mix.js('resources/assets/scripts/app.js', 'build/scripts/app.js');
 mix.webpackConfig({
     stats: {
