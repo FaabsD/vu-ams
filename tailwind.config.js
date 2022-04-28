@@ -10,7 +10,12 @@ module.exports = {
         extend: {
             colors: {
                 ams: {
-                   yellow: 'rgb(255, 189, 16)',
+                    yellow: 'rgb(247, 200, 12)',
+                    grey: 'rgb(247, 247, 247)',
+                    dark: 'rgb(16, 20, 48)',
+                    blue: 'rgb(0, 182, 203)',
+
+
                 }
             }
         },
