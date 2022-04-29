@@ -15,6 +15,7 @@ module.exports = {
                     dark: 'rgb(16, 20, 48)',
                     cyan: 'rgb(0, 182, 203)',
                     strong_cyan: '#00b0d5',
+                    text_light: '#8989A2',
 
 
                 }
