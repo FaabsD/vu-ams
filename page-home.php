@@ -65,9 +65,15 @@
     <?php if ( get_field( 'what_is_title' ) ): ?>
 
         <?php
-            $what_is_title = colorize_last_string_word(get_field('what_is_title'));
+        $what_is_title = colorize_last_string_word( get_field( 'what_is_title' ) );
 
         ?>
+        <div class="what-is__heartbeat">
+            <svg height="55.172" viewBox="0 0 177 55.172" width="177" xmlns="http://www.w3.org/2000/svg">
+                <path d="m0 0h94.723c4.69 0 10.541-32.693 15.335-32.693 7.329 0 13.185 52.172 20.1 52.172 7.051 0 13.572-19.479 19.67-19.479h27.172"
+                      transform="translate(0 34.193)"/>
+            </svg>
+        </div>
         <h3 class="what-is__heading">
             <!-- TODO: Manier vinden om laatste woord andere kleur te geven -->
             <?php echo $what_is_title; ?>
