@@ -63,9 +63,14 @@
 
 <div class="what-is">
     <?php if ( get_field( 'what_is_title' ) ): ?>
+
+        <?php
+            $what_is_title = colorize_last_string_word(get_field('what_is_title'));
+
+        ?>
         <h3 class="what-is__heading">
             <!-- TODO: Manier vinden om laatste woord andere kleur te geven -->
-            <?php the_field( 'what_is_title' ); ?>
+            <?php echo $what_is_title; ?>
         </h3>
     <?php endif; ?>
     <?php if ( get_field( 'what_is_description' ) ) : ?>
