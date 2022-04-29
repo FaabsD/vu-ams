@@ -15,7 +15,6 @@
         xl:gap-x-60
         2xl:gap-x-[23.5rem]
         ;
-        //column-gap: 23.5rem;
 
         .header__content {
             @apply shrink-0 grow-0 min-w-min basis-auto;
@@ -159,10 +158,69 @@
     }
 
     .what-is {
-        @apply prose-sm lg:prose;
+        @apply px-8 w-screen;
+
+        &__heartbeat {
+            @apply mx-auto max-w-max;
+
+            svg {
+                @apply stroke-[3] stroke-black opacity-[.25] fill-[none];
+            }
+        }
 
         &__heading {
-            @apply lg:text-5xl
+            @apply text-center text-3xl lg:text-5xl font-bold mt-8 mb-16 xl:mt-4;
+
+            .colored-word {
+                @apply text-ams-cyan;
+            }
+        }
+
+        &__description {
+            @apply prose-sm lg:prose;
+
+            h3 {
+                &:first-of-type {
+                    @apply
+                    mb-12
+                    max-w-max
+                    relative
+                    text-2xl
+                    ;
+                }
+
+                /* Create a dot before title */
+
+                &:before {
+                    @apply
+                    content-['']
+                    h-4
+                    w-4
+                    inline-block
+                    bg-ams-yellow
+                    rounded-full
+                    pr-4
+                    mr-4
+                    ;
+                }
+
+                /* create a full-width underline */
+
+                &:after {
+                    @apply
+                    content-['']
+                    h-[3px]
+                    absolute
+                    top-[200%]
+                    left-0
+                    right-0
+                    bg-gray-300
+                    ;
+                }
+            }
+            p {
+                @apply text-ams-text_light
+            }
         }
     }
 }
