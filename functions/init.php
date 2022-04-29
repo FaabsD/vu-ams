@@ -330,3 +330,21 @@ function template_view( $view, $name = null )
 
     return get_template_part('resources/views/' . str_replace( '.', '/', $view ) . $name );
 }
+
+/**
+ * Let's use a new helper function to wrap the last word of a string in
+ * a span width the class "colored-word"
+ * @param $str
+ * @return string
+ */
+function colorize_last_string_word($str) {
+    $strArr = explode(' ', $str);
+    // print_r($strArr);
+
+    foreach ($strArr as $iterator => $word) {
+        if (count($strArr) === $iterator + 1) {
+            $strArr[$iterator] = '<span class="colored-word">' . $word . '</span>';
+        }
+    }
+    return implode(' ', $strArr);
+}
