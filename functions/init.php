@@ -16,7 +16,7 @@ function theme_setup() {
     add_theme_support('get_avatar');
     add_theme_support('wp_list_comments');
 
-    add_theme_support('html', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'widgets'));
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'widgets'));
     add_theme_support('title-tag');
 
     add_theme_support('post-thumbnails');
