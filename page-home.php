@@ -75,7 +75,6 @@
             </svg>
         </div>
         <h3 class="what-is__heading">
-            <!-- TODO: Manier vinden om laatste woord andere kleur te geven -->
             <?php echo $what_is_title; ?>
         </h3>
     <?php endif; ?>
@@ -84,6 +83,10 @@
             <?php the_field( 'what_is_description' ); ?>
         </div>
     <?php endif; ?>
+    <!-- THREEJS Container -->
+    <div id="THREE_container">
+
+    </div>
 </div>
 
 <?php if ( have_posts() ) : while ( have_posts() ) :

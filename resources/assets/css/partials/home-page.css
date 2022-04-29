@@ -222,6 +222,9 @@
                 @apply text-ams-text_light
             }
         }
+        #THREE_container {
+            @apply h-96 w-96;
+        }
     }
 }
 
