@@ -59,6 +59,122 @@
 </div>
 
 <!-- Placeholder -->
+<!-- Learnmore section -->
+<div class="learn-more">
+    <?php if ( get_field( 'learn_more_head' ) ) : ?>
+
+        <?php
+        $learn_more_title = colorize_last_string_word( get_field( 'learn_more_head' ) );
+
+        ?>
+
+        <div class="learn-more__heartbeat">
+            <svg height="55.172" viewBox="0 0 177 55.172" width="177" xmlns="http://www.w3.org/2000/svg">
+                <path d="m0 0h94.723c4.69 0 10.541-32.693 15.335-32.693 7.329 0 13.185 52.172 20.1 52.172 7.051 0 13.572-19.479 19.67-19.479h27.172"
+                      transform="translate(0 34.193)"/>
+            </svg>
+        </div>
+
+        <h3 class="learn-more__heading">
+            <?php echo $learn_more_title; ?>
+        </h3>
+    <?php endif; ?>
+    <?php if ( get_field( 'learn_more_description' ) ) : ?>
+        <div class="learn-more__description">
+            <?php the_field( 'learn_more_description' ); ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( have_rows( 'learn_more_data' ) ) : ?>
+        <div class="learn-more__data-section">
+            <?php while ( have_rows( 'learn_more_data' ) ) : the_row(); ?>
+
+                <?php
+                $dataHead = get_sub_field( 'learn_more_data_head' );
+                $dataText = get_sub_field( 'learn_more_data_text' );
+                $dataUrl = get_sub_field( 'learn_more_data_url' );
+                ?>
+                <!-- Learn more Data Heading -->
+                <?php if ( $dataHead ) : ?>
+                    <h3>
+                        <?php the_sub_field( 'learn_more_data_head' ); ?>
+                    </h3>
+                <?php endif; ?>
+
+                <!-- Learn more Data text -->
+                <?php if ( $dataText ) : ?>
+                    <?php the_sub_field( 'learn_more_data_text' ); ?>
+                <?php endif; ?>
+
+                <!-- Learn more Data Link -->
+                <?php if ( $dataUrl ) : ?>
+                    <a href="<?php echo $dataUrl['url'] ?>" class="data-link" target="<?php echo $dataUrl['target'] ?>"
+                       title="<?php echo $dataUrl['title'] ?>">
+                        <?php echo $dataUrl['title'] ?>
+                    </a>
+                <?php endif; ?>
+
+            <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
+
+    <div class="learn-more__hard-software">
+
+        <div class="tabs">
+            <a href="*" class="tabs__tab tabs__tab--active" data-tab-for="Hardware">
+                Hardware
+            </a>
+            <a href="*" class="tabs__tab" data-tab-for="Software">
+                Software
+            </a>
+        </div>
+
+        <?php if ( have_rows( 'learn_more_hardware' ) ) : while ( have_rows( 'learn_more_hardware' ) ): the_row(); ?>
+            <div class="hardware">
+                <?php if ( get_sub_field( 'learn_more_hardware_text' ) ) : ?>
+                    <div class="hardware__text">
+                        <?php the_sub_field( 'learn_more_hardware_text' ); ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ( get_sub_field( 'learn_more_hardware_url' ) ) : ?>
+                    <?php
+                    $hardwareUrl = get_sub_field( 'learn_more_hardware_url' );
+                    ?>
+                    <a href="<?php echo $hardwareUrl['url'] ?>" class="hardware__link"
+                       target="<?php echo $hardwareUrl['target'] ?>"
+                       title="<?php echo $hardwareUrl['title'] ?>">
+                        <?php echo $hardwareUrl['title'] ?>
+                    </a>
+                <?php endif; ?>
+
+            </div>
+        <?php endwhile; endif; ?>
+
+        <?php if ( have_rows( 'learn_more_software' ) ) : while ( have_rows( 'learn_more_software' ) ) : the_row(); ?>
+            <div class="software">
+                <?php if ( get_sub_field( 'learn_more_software_text' ) ) : ?>
+                    <div class="software__text">
+                        <?php the_sub_field( 'learn_more_software_text' ); ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ( get_sub_field( 'learn_more_hardware_url' ) ) : ?>
+                    <?php
+                    $softwareUrl = get_sub_field( 'learn_more_software_url' );
+                    ?>
+                    <a href="<?php echo $softwareUrl['url'] ?>" class="hardware__link"
+                       target="<?php echo $softwareUrl['target'] ?>"
+                       title="<?php echo $softwareUrl['title'] ?>">
+                        <?php echo $softwareUrl['title'] ?>
+                    </a>
+                <?php endif; ?>
+
+            </div>
+        <?php endwhile; endif; ?>
+    </div>
+</div>
+
 <!-- Placeholder -->
 
 <div class="what-is">

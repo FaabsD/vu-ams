@@ -1,5 +1,5 @@
 .home {
-    @apply bg-white w-screen;
+    @apply bg-gray-50 w-screen;
 
     .header {
         @apply
@@ -157,6 +157,87 @@
         }
     }
 
+    .learn-more {
+        @apply lg:grid lg:grid-cols-3 px-32 lg:gap-x-4;
+
+        &__heartbeat {
+            @apply mx-auto max-w-max lg:col-span-full;
+
+            svg {
+                @apply stroke-[3] stroke-black opacity-[.25] fill-[none];
+            }
+        }
+
+        &__heading {
+            @apply text-center text-3xl lg:text-5xl font-bold mt-8 mb-8 xl:mt-4 lg:col-span-full;
+
+            .colored-word {
+                @apply text-ams-cyan;
+            }
+        }
+
+        &__description {
+            @apply lg:col-span-full text-center text-base lg:text-xl text-ams-text_light;
+        }
+
+        &__data-section {
+            @apply prose-sm lg:prose p-4 text-center;
+
+            h3 {
+                @apply text-xl lg:text-3xl text-ams-cyan;
+            }
+        }
+
+        &__hard-software {
+            @apply lg:col-span-2 shadow-lg;
+
+            .tabs {
+                @apply flex flex-row gap-x-6;
+
+                &__tab {
+                    @apply
+                    px-8
+                    lg:px-16
+                    py-4
+                    bg-ams-grey
+                    border-dashed
+                    border-2
+                    border-ams-text_light
+                    text-ams-text_light
+                    min-w-min
+                    max-w-max
+                    inline-block
+                    ;
+
+                    &--active {
+                        @apply bg-ams-dark border-none text-white;
+                    }
+                }
+            }
+
+            .hardware, .software {
+                @apply prose-sm lg:prose lg:grid lg:grid-cols-2 lg:max-w-[unset] bg-white relative;
+
+                &:after {
+                    content: "";
+                    @apply absolute w-full h-full inset-0 transform origin-top-left -rotate-2 bg-black -z-10 opacity-10;
+                }
+                &.tab--hidden {
+                    @apply hidden;
+                }
+
+                &__text {
+                    @apply lg:col-span-1;
+                }
+
+                &__link {
+                    @apply col-span-1;
+                }
+            }
+
+        }
+    }
+
     .what-is {
         @apply px-8 w-screen grid lg:grid-cols-2 lg:items-center lg:justify-center xl:px-32;
 
@@ -218,10 +299,12 @@
                     ;
                 }
             }
+
             p {
                 @apply text-ams-text_light
             }
         }
+
         #THREE_container {
             @apply w-full min-h-[300px] max-h-[350px] xl:h-[350px] xl:w-[350px] lg:mx-auto;
         }
