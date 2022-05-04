@@ -1,4 +1,5 @@
 // For debugging set const debugMode to true
+require( './modules/tabswitch');
 const {OBJLoader} = require("three/examples/jsm/loaders/OBJLoader");
 const {ArcballControls} = require("three/examples/jsm/controls/ArcballControls");
 const {RectAreaLightUniformsLib} = require("three/examples/jsm/lights/RectAreaLightUniformsLib");
