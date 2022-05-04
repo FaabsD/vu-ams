@@ -1,7 +1,10 @@
 // For debugging set const debugMode to true
 const {OBJLoader} = require("three/examples/jsm/loaders/OBJLoader");
 const {ArcballControls} = require("three/examples/jsm/controls/ArcballControls");
-const debugMode = true;
+const {RectAreaLightUniformsLib} = require("three/examples/jsm/lights/RectAreaLightUniformsLib");
+const {RectAreaLightHelper} = require("three/examples/jsm/helpers/RectAreaLightHelper");
+const THREE = require("three");
+const debugMode = false;
 
 // Loading a 3d render
 const threeContainer = document.querySelector('#THREE_container');
@@ -14,19 +17,35 @@ if (threeContainer) {
     const THREE = require('three');
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(50, containerWidth / containerHeight, 0.1, 100);
+    const camera = new THREE.PerspectiveCamera(50, containerWidth / containerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({alpha: true, antialias: true});
 
     // set camera position
-    camera.position.set(0, 0, -90);
+    camera.position.set(-19, 80, 26);
+
+    if (debugMode) {
+        const cameraHelper = new THREE.CameraHelper(camera);
+        scene.add(cameraHelper);
+    }
 
     renderer.setSize(containerWidth, containerHeight);
-    renderer.setClearColor('#6a6b6a', .5);
+    renderer.setClearColor('#6a6b6a', 0);
 
     const controls = new ArcballControls(camera, renderer.domElement, scene);
-    controls.enableZoom  = false;
+    controls.enableZoom = false;
     controls.update();
-    controls.setGizmosVisible(true);
+    if (debugMode) {
+        controls.setGizmosVisible(true);
+    } else {
+        controls.setGizmosVisible(false);
+    }
+
+    if (debugMode) {
+        controls.addEventListener('change', function (e) {
+            console.log('Update camera position');
+            console.log(camera.position);
+        });
+    }
 
     const loader = new OBJLoader();
 
@@ -35,7 +54,7 @@ if (threeContainer) {
         function (object) {
             object.position.set(0, -10, 0);
             scene.add(object);
-            setupSpotLight();
+            setupLight(object);
             renderer.render(scene, camera);
             console.log(camera);
         },
@@ -52,25 +71,25 @@ if (threeContainer) {
 
     window.addEventListener('resize', onWindowResize);
 
-    function setupSpotLight() {
-        const spotlight = new THREE.SpotLight(0xffffff, 1.6);
-        spotlight.position.set(-5, 5, 15);
-        spotlight.castShadow = true;
+    function setupLight(target) {
 
-        spotlight.shadow.mapSize.width = threeContainer.clientWidth;
-        spotlight.shadow.mapSize.height = threeContainer.clientHeight;
+        const dirLight1 = new THREE.DirectionalLight(0xffffff);
+        dirLight1.position.set(30, 30, 0);
 
-        spotlight.shadow.camera.near = 0.1;
-        spotlight.shadow.camera.far = 100;
-        spotlight.shadow.camera.fov = 50;
+        const dirLight2 = new THREE.DirectionalLight(0xffffff);
+        dirLight2.position.set(-30, -30, 0);
 
-        // scene.add(spotlight);
-        camera.add(spotlight);
+        scene.add(dirLight1);
+        scene.add(dirLight2);
 
         if (debugMode) {
-            const SpotlightHelper = new THREE.SpotLightHelper(spotlight, 'rgb(255, 255, 0)');
-            scene.add(SpotlightHelper);
+            const helper1 = new THREE.DirectionalLightHelper(dirLight1, 8);
+            scene.add(helper1);
+            const helper2 = new THREE.DirectionalLightHelper(dirLight2, 8);
+            scene.add(helper2);
         }
+
+
     }
 
     function onWindowResize() {

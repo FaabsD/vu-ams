@@ -158,10 +158,10 @@
     }
 
     .what-is {
-        @apply px-8 w-screen;
+        @apply px-8 w-screen grid lg:grid-cols-2 lg:items-center lg:justify-center xl:px-32;
 
         &__heartbeat {
-            @apply mx-auto max-w-max;
+            @apply mx-auto max-w-max lg:col-span-full;
 
             svg {
                 @apply stroke-[3] stroke-black opacity-[.25] fill-[none];
@@ -169,7 +169,7 @@
         }
 
         &__heading {
-            @apply text-center text-3xl lg:text-5xl font-bold mt-8 mb-16 xl:mt-4;
+            @apply text-center text-3xl lg:text-5xl font-bold mt-8 mb-16 xl:mt-4 lg:col-span-full;
 
             .colored-word {
                 @apply text-ams-cyan;
@@ -223,7 +223,7 @@
             }
         }
         #THREE_container {
-            @apply h-96 w-96;
+            @apply w-full min-h-[300px] max-h-[350px] xl:h-[350px] xl:w-[350px] lg:mx-auto;
         }
     }
 }
