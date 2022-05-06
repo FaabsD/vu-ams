@@ -1,5 +1,5 @@
 .home {
-    @apply bg-gray-50 w-screen;
+    @apply bg-white w-screen;
 
     .header {
         @apply
@@ -158,7 +158,7 @@
     }
 
     .learn-more {
-        @apply lg:grid lg:grid-cols-3 px-32 lg:gap-x-4;
+        @apply px-8 lg:grid lg:grid-cols-3 xl:px-32 lg:gap-x-4 lg:my-32;
 
         &__heartbeat {
             @apply mx-auto max-w-max lg:col-span-full;
@@ -177,19 +177,34 @@
         }
 
         &__description {
-            @apply lg:col-span-full text-center text-base lg:text-xl text-ams-text_light;
+            @apply lg:col-span-full text-center text-base lg:text-xl text-ams-text_light lg:mb-32;
         }
 
         &__data-section {
-            @apply prose-sm lg:prose p-4 text-center;
+            @apply prose-sm lg:prose p-0 text-center lg:shadow-2xl;
 
-            h3 {
-                @apply text-xl lg:text-3xl text-ams-cyan;
+            .image {
+                img {
+                    @apply w-full m-0;
+                }
             }
+
+            section {
+                @apply lg:p-6;
+
+                h3 {
+                    @apply text-xl lg:text-3xl text-ams-cyan;
+                }
+
+                .data-link {
+                    @apply lg:px-8 lg:py-4 bg-ams-cyan no-underline lg:text-lg inline-block box-border;
+                }
+            }
+
         }
 
         &__hard-software {
-            @apply lg:col-span-2 shadow-lg;
+            @apply lg:col-span-2;
 
             .tabs {
                 @apply flex flex-row gap-x-6;
@@ -216,22 +231,71 @@
             }
 
             .hardware, .software {
-                @apply prose-sm lg:prose lg:grid lg:grid-cols-2 lg:max-w-[unset] bg-white relative;
+                @apply
+                prose-sm
+                lg:prose
+                lg:grid
+                lg:grid-cols-2
+                lg:gap-x-8
+                lg:max-w-[unset]
+                bg-white
+                relative
+                lg:shadow-2xl
+                lg:items-center
+                lg:justify-center
+                lg:p-8
+                ;
 
                 &:after {
                     content: "";
                     @apply absolute w-full h-full inset-0 transform origin-top-left -rotate-2 bg-black -z-10 opacity-10;
                 }
+
                 &.tab--hidden {
                     @apply hidden;
                 }
 
                 &__text {
-                    @apply lg:col-span-1;
+                    @apply lg:col-start-1 lg:col-end-2;
+
+                    h2 {
+                        @apply
+                        mb-16
+                        relative
+                        text-2xl
+                        whitespace-nowrap
+                        ;
+
+                        &:after {
+                            @apply
+                            content-['']
+                            h-[3px]
+                            absolute
+                            top-[200%]
+                            left-0
+                            right-0
+                            bg-gray-300
+                            ;
+                        }
+                    }
                 }
 
                 &__link {
-                    @apply col-span-1;
+                    @apply
+                    lg:col-start-1
+                    lg:col-end-2
+                    lg:px-8
+                    lg:py-4
+                    bg-ams-yellow
+                    no-underline
+                    lg:text-lg
+                    inline-block
+                    box-border
+                    max-w-max;
+                }
+
+                &__image {
+                    @apply lg:row-start-1 lg:col-start-2
                 }
             }
 

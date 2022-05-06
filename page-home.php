@@ -90,29 +90,40 @@
             <?php while ( have_rows( 'learn_more_data' ) ) : the_row(); ?>
 
                 <?php
+                $dataImageArr = get_sub_field( 'learn_more_data_image' );
                 $dataHead = get_sub_field( 'learn_more_data_head' );
                 $dataText = get_sub_field( 'learn_more_data_text' );
                 $dataUrl = get_sub_field( 'learn_more_data_url' );
                 ?>
-                <!-- Learn more Data Heading -->
-                <?php if ( $dataHead ) : ?>
-                    <h3>
-                        <?php the_sub_field( 'learn_more_data_head' ); ?>
-                    </h3>
-                <?php endif; ?>
 
-                <!-- Learn more Data text -->
-                <?php if ( $dataText ) : ?>
-                    <?php the_sub_field( 'learn_more_data_text' ); ?>
+                <!-- Learn more Data Img -->
+                <?php if ( $dataImageArr ) : ?>
+                    <div class="image">
+                        <img src="<?php echo $dataImageArr['url'] ?>" alt="<?php echo $dataImageArr['alt'] ?>">
+                    </div>
                 <?php endif; ?>
+                <section>
+                    <!-- Learn more Data Heading -->
+                    <?php if ( $dataHead ) : ?>
+                        <h3>
+                            <?php the_sub_field( 'learn_more_data_head' ); ?>
+                        </h3>
+                    <?php endif; ?>
 
-                <!-- Learn more Data Link -->
-                <?php if ( $dataUrl ) : ?>
-                    <a href="<?php echo $dataUrl['url'] ?>" class="data-link" target="<?php echo $dataUrl['target'] ?>"
-                       title="<?php echo $dataUrl['title'] ?>">
-                        <?php echo $dataUrl['title'] ?>
-                    </a>
-                <?php endif; ?>
+                    <!-- Learn more Data text -->
+                    <?php if ( $dataText ) : ?>
+                        <?php the_sub_field( 'learn_more_data_text' ); ?>
+                    <?php endif; ?>
+
+                    <!-- Learn more Data Link -->
+                    <?php if ( $dataUrl ) : ?>
+                        <a href="<?php echo $dataUrl['url'] ?>" class="data-link"
+                           target="<?php echo $dataUrl['target'] ?>"
+                           title="<?php echo $dataUrl['title'] ?>">
+                            <?php echo $dataUrl['title'] ?>
+                        </a>
+                    <?php endif; ?>
+                </section>
 
             <?php endwhile; ?>
         </div>
@@ -148,6 +159,15 @@
                     </a>
                 <?php endif; ?>
 
+                <?php if ( get_sub_field( 'learn_more_hardware_image' ) ) : ?>
+                    <?php
+                    $hardwareImageArr = get_sub_field( 'learn_more_hardware_image' );
+                    ?>
+                    <div class="hardware__image">
+                        <img src="<?php echo $hardwareImageArr['url'] ?>" alt="<?php echo $hardwareImageArr['alt'] ?>">
+                    </div>
+                <?php endif; ?>
+
             </div>
         <?php endwhile; endif; ?>
 
@@ -159,7 +179,7 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if ( get_sub_field( 'learn_more_hardware_url' ) ) : ?>
+                <?php if ( get_sub_field( 'learn_more_software_url' ) ) : ?>
                     <?php
                     $softwareUrl = get_sub_field( 'learn_more_software_url' );
                     ?>
@@ -168,6 +188,15 @@
                        title="<?php echo $softwareUrl['title'] ?>">
                         <?php echo $softwareUrl['title'] ?>
                     </a>
+                <?php endif; ?>
+
+                <?php if ( get_sub_field( 'learn_more_software_image' ) ) : ?>
+                    <?php
+                    $softwareImageArr = get_sub_field( 'learn_more_software_image' )
+                    ?>
+                    <div class="software__image">
+                        <img src="<?php echo $softwareImageArr['url'] ?>" alt="<?php echo $softwareImageArr['alt'] ?>">
+                    </div>
                 <?php endif; ?>
 
             </div>
