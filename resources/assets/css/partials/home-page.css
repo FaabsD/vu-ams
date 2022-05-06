@@ -158,7 +158,7 @@
     }
 
     .learn-more {
-        @apply px-8 lg:grid lg:grid-cols-3 xl:px-32 lg:gap-x-4 lg:my-32;
+        @apply px-8 lg:grid lg:grid-cols-3 xl:px-32 lg:gap-x-4 lg:my-32 my-16;
 
         &__heartbeat {
             @apply mx-auto max-w-max lg:col-span-full;
@@ -177,11 +177,18 @@
         }
 
         &__description {
-            @apply lg:col-span-full text-center text-base lg:text-xl text-ams-text_light lg:mb-32;
+            @apply
+            lg:col-span-full
+            text-center
+            text-base
+            lg:text-xl
+            text-ams-text_light
+            mb-8
+            lg:mb-32;
         }
 
         &__data-section {
-            @apply prose-sm lg:prose p-0 text-center lg:shadow-2xl;
+            @apply prose-sm mb-32 lg:mb-0 shadow-xl lg:prose p-0 text-center lg:shadow-2xl;
 
             .image {
                 img {
@@ -190,14 +197,29 @@
             }
 
             section {
-                @apply lg:p-6;
+                @apply p-6;
 
                 h3 {
-                    @apply text-xl lg:text-3xl text-ams-cyan;
+                    @apply font-bold text-2xl lg:text-3xl text-ams-cyan;
+                }
+
+                p {
+                    @apply text-lg;
                 }
 
                 .data-link {
-                    @apply lg:px-8 lg:py-4 bg-ams-cyan no-underline lg:text-lg inline-block box-border;
+                    @apply
+                    px-8
+                    py-4
+                    font-semibold
+                    text-ams-dark
+                    lg:px-8
+                    lg:py-4
+                    bg-ams-cyan
+                    no-underline
+                    text-lg
+                    inline-block
+                    box-border;
                 }
             }
 
@@ -233,6 +255,8 @@
             .hardware, .software {
                 @apply
                 prose-sm
+                shadow-xl
+                p-4
                 lg:prose
                 lg:grid
                 lg:grid-cols-2
@@ -248,7 +272,7 @@
 
                 &:after {
                     content: "";
-                    @apply absolute w-full h-full inset-0 transform origin-top-left -rotate-2 bg-black -z-10 opacity-10;
+                    @apply hidden lg:inline-block absolute w-full h-full inset-0 transform origin-top-left -rotate-2 bg-black -z-10 opacity-10;
                 }
 
                 &.tab--hidden {
@@ -256,14 +280,17 @@
                 }
 
                 &__text {
-                    @apply lg:col-start-1 lg:col-end-2;
+                    @apply
+                    lg:col-start-1
+                    lg:col-end-2;
 
                     h2 {
                         @apply
                         mb-16
                         relative
                         text-2xl
-                        whitespace-nowrap
+                        font-bold
+                        lg:whitespace-nowrap
                         ;
 
                         &:after {
@@ -271,7 +298,8 @@
                             content-['']
                             h-[3px]
                             absolute
-                            top-[200%]
+                            top-[150%]
+                            lg:top-[200%]
                             left-0
                             right-0
                             bg-gray-300
@@ -284,18 +312,20 @@
                     @apply
                     lg:col-start-1
                     lg:col-end-2
-                    lg:px-8
-                    lg:py-4
+                    px-8
+                    py-4
                     bg-ams-yellow
                     no-underline
-                    lg:text-lg
+                    text-lg
+                    font-semibold
+                    text-ams-dark
                     inline-block
                     box-border
                     max-w-max;
                 }
 
                 &__image {
-                    @apply lg:row-start-1 lg:col-start-2
+                    @apply lg:row-start-1 lg:col-start-2 lg:block hidden;
                 }
             }
 
