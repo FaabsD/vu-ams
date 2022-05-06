@@ -58,7 +58,6 @@
     <?php endif; ?>
 </div>
 
-<!-- Placeholder -->
 <!-- Learnmore section -->
 <div class="learn-more">
     <?php if ( get_field( 'learn_more_head' ) ) : ?>
@@ -204,7 +203,35 @@
     </div>
 </div>
 
-<!-- Placeholder -->
+<!-- Innovative Experience section -->
+<div class="innovative-experience">
+    <?php if ( have_rows( 'innovative_experience_section' ) ) : while ( have_rows( 'innovative_experience_section' ) ) :
+        the_row(); ?>
+
+        <?php if ( get_sub_field( 'innovative_experience_head' ) && get_sub_field( 'innovative_experience_description' ) ) : ?>
+        <?php
+        $innovative_head = colorize_last_string_word( get_sub_field( 'innovative_experience_head' ) );
+        ?>
+        <section>
+            <h2 class="innovative-experience__head">
+                <?php echo $innovative_head; ?>
+            </h2>
+            <?php the_sub_field( 'innovative_experience_description' ); ?>
+        </section>
+    <?php endif; ?>
+        <section class="innovative-experience__image-box">
+            <?php for ( $i = 1; $i <= 4; $i++ ) : ?>
+                <?php if ( get_sub_field( 'innovative_experience_image_' . $i ) ) : ?>
+                    <?php $innovativeImgArr = get_sub_field( 'innovative_experience_image_' . $i ); ?>
+                    <div class="innovative-experience__img--<?php echo $i; ?>">
+                        <img src="<?php echo $innovativeImgArr['url'] ?>" alt="<?php echo $innovativeImgArr['alt'] ?>">
+                    </div>
+                <?php endif; ?>
+            <?php endfor; ?>
+        </section>
+
+    <?php endwhile; endif; ?>
+</div>
 
 <div class="what-is">
     <?php if ( get_field( 'what_is_title' ) ): ?>
