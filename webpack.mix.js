@@ -18,6 +18,7 @@ mix.browserSync({
     open: 'local',
     https: false,
     browser: "Firefox Developer Edition",
+    injectChanges: false,
 });
 
 mix.postCss('resources/assets/css/style.css', 'build/css/app.css', [
