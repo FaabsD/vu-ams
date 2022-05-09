@@ -346,7 +346,7 @@
 
         section {
             &:first-of-type {
-                @apply prose-sm text-ams-text_light lg:prose;
+                @apply prose-sm !text-ams-text_light lg:prose;
             }
         }
 
@@ -363,6 +363,7 @@
             lg:mb-16
             xl:mt-4
             xl:w-2/4
+            lg:leading-snug
             !important;
 
             :after {
@@ -411,6 +412,7 @@
                 -left-1/3
                 lg:-left-14
                 xl:-left-28
+                2xl:left-28
                 top-8;
             }
 
@@ -434,9 +436,12 @@
                 absolute
                 -bottom-12
                 xl:bottom-0
+                2xl:-bottom-10
                 -left-1/4
                 lg:-left-20
-                xl:left-0;
+                xl:left-0
+                2xl:left-52
+                ;
             }
 
             /* style image bottom-right */
@@ -445,9 +450,12 @@
                 @apply absolute
                 -bottom-2
                 xl:-bottom-8
+                    2xl:bottom-9
                 -right-1/3
                 lg:right-4
-                xl:right-8;
+                xl:right-8
+                2xl:right-0
+                ;
             }
         }
     }
