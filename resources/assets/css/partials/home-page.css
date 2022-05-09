@@ -450,7 +450,7 @@
                 @apply absolute
                 -bottom-2
                 xl:-bottom-8
-                    2xl:bottom-9
+                2xl:bottom-9
                 -right-1/3
                 lg:right-4
                 xl:right-8
@@ -458,6 +458,148 @@
                 ;
             }
         }
+    }
+
+    .call-to-action {
+        @apply flex flex-col px-8 prose-sm;
+
+        @apply lg:prose-lg  lg:flex-row xl:px-32;
+
+        section {
+            &:first-of-type {
+                /*Style before content */
+                @apply
+                before:absolute
+                before:inline-block
+                before:content-[""]
+                before:w-1/6
+                lg:before:w-12
+                before:top-0
+                before:bottom-0
+                before:max-h-full
+                before:bg-ams-yellow;
+                /* Style the first section by itself */
+                @apply relative lg:basis-2/3;
+
+                .call-to-action__heading {
+                    @apply
+                    lg:ml-24
+                    ml-[25%]
+                    mb-6
+                    lg:mb-10
+                    xl:mt-12
+                    w-3/4
+                    lg:w-1/2
+                    text-3xl
+                    lg:text-5xl
+                    font-bold
+                    relative
+                    lg:leading-tight
+                    ;
+
+                    &:after {
+                        @apply
+                        content-['']
+                        h-[3px]
+                        absolute
+                        lg:top-[115%]
+                        top-[110%]
+                        left-0
+                        right-0
+                        bg-gray-300
+                    }
+
+                    .colored-word {
+                        @apply text-ams-cyan
+                    }
+                }
+
+                p {
+                    @apply text-ams-text_light
+                    ml-[25%]
+                    lg:ml-24
+                    lg:text-2xl;
+                }
+            }
+
+            &:last-of-type {
+                @apply
+                bg-gradient-to-r
+                from-ams-cyan
+                to-ams-dark
+                block;
+
+                .wpcf7 {
+                    @apply lg:h-full;
+
+                    &-form {
+                        @apply grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3 items-start py-8 px-4 lg:px-16 lg:items-center lg:h-full;
+
+                        p {
+                            @apply m-0;
+
+                            &:first-of-type {
+                                @apply col-span-2 md:col-span-3 lg:col-span-2
+                            }
+
+                            .wpcf7-form-control-wrap {
+                                @apply w-full;
+                                input[type="email"] {
+                                    @apply
+                                    max-w-full
+                                    bg-transparent
+                                    placeholder-white
+                                    text-white
+                                    border-ams-yellow
+                                    border-2
+                                    border-solid
+                                    text-sm
+                                    lg:text-base
+                                }
+
+                                .wpcf7-not-valid-tip {
+                                    @apply text-white;
+                                }
+                            }
+                        }
+
+                        .subscribe-btn {
+                            @apply bg-ams-yellow py-1 px-2 box-border relative;
+
+                            @apply
+                            after:content-["\2192"]
+                            after:min-w-min
+                            after:max-w-max
+                            after:top-2/4
+                            after:right-0
+                                lg:after:right-2
+                            after:absolute
+                            after:transform
+                            after:-translate-y-2/4
+                            after:text-xl
+                            after:m-0
+                            after:leading-none;
+
+                            input[type="submit"] {
+                                @apply text-ams-dark text-xs lg:text-base lg:leading-7 leading-6;
+                            }
+
+                            .wpcf7-spinner {
+                                @apply hidden;
+                            }
+                        }
+
+                        .wpcf7-response-output {
+                            @apply
+                            col-span-full
+                            text-white
+                            border-ams-yellow;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 
     .what-is {

@@ -233,6 +233,27 @@
     <?php endwhile; endif; ?>
 </div>
 
+<!-- Call to action -->
+<div class="call-to-action">
+    <section>
+        <?php if ( get_field( 'call_to_action_head' ) ): ?>
+            <?php $call_to_action_head = colorize_last_string_word( get_field( 'call_to_action_head' ) ) ?>
+            <h3 class="call-to-action__heading">
+                <?php echo $call_to_action_head; ?>
+            </h3>
+        <?php endif; ?>
+
+        <?php if ( get_field( 'call_to_action_text' ) ) : ?>
+            <?php the_field( 'call_to_action_text' ); ?>
+        <?php endif; ?>
+    </section>
+    <?php if ( get_field( 'call_to_action_form' ) ) : ?>
+        <section>
+            <?php the_field( 'call_to_action_form' ); ?>
+        </section>
+    <?php endif; ?>
+</div>
+
 <div class="what-is">
     <?php if ( get_field( 'what_is_title' ) ): ?>
 
