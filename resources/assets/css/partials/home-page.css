@@ -461,7 +461,7 @@
     }
 
     .call-to-action {
-        @apply flex flex-col px-8 prose-sm;
+        @apply flex flex-col px-8 prose-sm mb-32;
 
         @apply lg:prose-lg  lg:flex-row xl:px-32;
 
