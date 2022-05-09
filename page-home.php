@@ -254,6 +254,34 @@
     <?php endif; ?>
 </div>
 
+<!-- Meat the Team -->
+<div class="meet-the-team">
+    <?php
+    $memberArgs = array( 'post_type' => 'team-member' );
+    $teamMembers = new WP_Query( $memberArgs );
+    ?>
+
+    <?php if ( $teamMembers->have_posts() ) : ?>
+        <div class="meet-the-team__members">
+            <?php while ( $teamMembers->have_posts() ) : $teamMembers->the_post(); ?>
+                <div class="members__member">
+                    <div class="member__image-block">
+                        <?php the_post_thumbnail(); ?>
+                    </div>
+                    <div class="member__info-block">
+                        <h2 class="member__heading">
+                            <?php the_title(); ?>
+                        </h2>
+                        <p class="member__text">
+                            <?php the_excerpt(); ?>
+                        </p>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
 <div class="what-is">
     <?php if ( get_field( 'what_is_title' ) ): ?>
 
