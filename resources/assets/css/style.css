@@ -4,6 +4,15 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+.bg-dots {
+    background-image: radial-gradient(theme('colors.ams.cyan') 20%, transparent 10%);
+    background-color: transparent;
+    background-position: 0 0;
+    background-size: theme('width.5') theme('height.5');
+    height: 100px;
+    width: 100%;
+    @apply opacity-25;
+}
 
 /* Font Faces */
 /* Heebo Thin  */
