@@ -783,6 +783,7 @@
                             rounded-lg
                             overflow-hidden
                             border
+                                border-dashed
                             border-ams-dark;
 
                             .member {
@@ -806,8 +807,6 @@
                                         rounded-full
                                         w-40 h-40
                                         mx-auto
-                                        border-4
-                                        border-white
                                         object-cover
                                         object-center
                                         lg:absolute
@@ -841,7 +840,7 @@
                         @apply min-w-min max-w-full w-72;
 
                         .members__member {
-                            @apply bg-white !flex flex-col justify-center rounded-lg overflow-hidden border border-ams-dark;
+                            @apply bg-white !flex flex-col justify-center rounded-lg overflow-hidden border border-solid border-ams-dark;
 
                             .member {
                                 &__image-block {
@@ -858,7 +857,7 @@
                                     img {
                                         @apply
                                         rounded-full
-                                        w-40 h-40
+                                        w-52 h-52
                                         mx-auto
                                         border-4
                                         border-white
