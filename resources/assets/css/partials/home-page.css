@@ -131,6 +131,13 @@
             }
         }
 
+        .dots1 {
+            @apply hidden lg:block lg:absolute lg:top-1/4 lg:right-16 -z-20 w-72 h-48;
+        }
+        .dots2 {
+            @apply hidden lg:block lg:absolute lg:bottom-0 lg:right-8 -z-20 w-72 h-8
+        }
+
     }
 
     .approved {
@@ -158,13 +165,13 @@
     }
 
     .learn-more {
-        @apply px-8 lg:grid lg:grid-cols-3 xl:px-32 lg:gap-x-4 lg:my-32 my-16;
+        @apply px-8 lg:grid lg:grid-cols-3 xl:px-32 lg:gap-x-4 lg:my-32 my-16 lg:relative;
 
         &__heartbeat {
-            @apply mx-auto max-w-max lg:col-span-full;
+            @apply mx-auto lg:col-span-full w-60;
 
             svg {
-                @apply stroke-[3] stroke-black opacity-[.25] fill-[none];
+                @apply stroke-black opacity-[.25] fill-black;
             }
         }
 
@@ -174,6 +181,9 @@
             .colored-word {
                 @apply text-ams-cyan;
             }
+        }
+        .dots  {
+            @apply hidden lg:block lg:absolute lg:top-44 lg:right-0 lg:w-48 xl:w-64 h-52;
         }
 
         &__description {
@@ -461,13 +471,13 @@
     }
 
     .what-is {
-        @apply px-8 w-screen grid lg:grid-cols-2 lg:items-center lg:justify-center xl:px-32 mb-32;
+        @apply px-8 w-screen grid lg:grid-cols-2 lg:items-center lg:justify-center xl:px-32 mb-32 lg:relative;
 
         &__heartbeat {
-            @apply mx-auto max-w-max lg:col-span-full;
+            @apply mx-auto lg:col-span-full w-60;
 
             svg {
-                @apply stroke-[3] stroke-black opacity-[.25] fill-[none];
+                @apply stroke-black opacity-[.25] fill-black;
             }
         }
 
@@ -477,6 +487,13 @@
             .colored-word {
                 @apply text-ams-cyan;
             }
+        }
+
+        .dots1 {
+            @apply hidden lg:block lg:absolute lg:top-32 lg:right-0 lg:w-1/4 lg:h-60
+        }
+        .dots2 {
+            @apply hidden lg:block lg:absolute lg:top-48 lg:left-0 lg:w-1/5 lg:h-48
         }
 
         &__description {
