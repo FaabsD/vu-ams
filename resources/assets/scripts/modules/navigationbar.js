@@ -1,4 +1,5 @@
 // element references
+const navigationContainer = document.querySelector('.navigation');
 const navbar = document.querySelector("#siteNavbar");
 const body = document.querySelector('body');
 const siteNavigation = navbar.querySelector('#navbarNavigation');
@@ -8,9 +9,9 @@ $(document).ready(function () {
         const handleScroll = (entries) => {
             const spotIsVisible = entries[0].isIntersecting;
             if (spotIsVisible) {
-                navbar.classList.remove("navbar--fixed")
+                navigationContainer.classList.remove("navigation--fixed")
             } else {
-                navbar.classList.add("navbar--fixed");
+                navigationContainer.classList.add("navigation--fixed");
                 console.log('scrollposition');
                 console.log(window.scrollY);
             }
