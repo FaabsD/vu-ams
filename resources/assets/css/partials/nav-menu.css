@@ -1,52 +1,111 @@
-.navbar {
-    @apply flex justify-between bg-gradient-to-r from-ams-cyan to-ams-dark;
+.navigation {
+    @apply
+    hidden
+    flex-row
+    justify-between
+    px-32
+    items-center
+    bg-gradient-to-r
+    from-ams-cyan
+    to-ams-dark
+    xl:flex
+    ;
 
-    &__navigation {
-        @apply flex justify-between grow-0 shrink-0;
+    &--fixed {
+        @apply fixed z-[9999] w-screen;
+    }
 
-        .menu-item {
-            @apply text-white grow-0 shrink-0;
+    .custom-logo-link {
+        @apply grow-0 shrink-0;
 
-            a {
-                @apply font-normal text-lg px-8 py-8 block box-border leading-tight;
-            }
+        .custom-logo {
+            @apply max-h-16 w-auto
+        }
+    }
 
+    .navbar {
+        @apply flex justify-between min-h-min;
 
-            &-has-children {
-                @apply relative;
+        &__navigation {
+            @apply flex justify-between gap-x-16 grow-0 shrink-0;
 
-                > a {
-                    @apply relative
-                    after:content-['']
-                    after:absolute
-                    after:w-3
-                    after:h-3
-                    after:border-b-2
-                    after:border-r-2
-                    after:transform
-                    after:rotate-45
-                    after:top-1/2
-                    after:-translate-y-3/4
-                    after:right-4
-                    ;
+            .menu-item {
+                @apply text-white grow-0 shrink-0;
+
+                a {
+                    @apply font-normal text-lg pr-5 py-8 block box-border leading-tight;
                 }
 
-                .sub-menu {
-                    @apply block absolute z-50 w-auto max-w-sm bg-ams-dark divide-y px-4;
 
-                    > .menu-item {
-                        @apply min-w-min;
+                &-has-children {
+                    @apply relative;
 
-                        a {
-                            @apply min-w-min whitespace-pre text-left py-4 px-2;
-                        }
+                    > a {
+                        @apply relative
+                        after:content-['']
+                        after:absolute
+                        after:w-3
+                        after:h-3
+                        after:border-b-2
+                        after:border-r-2
+                        after:transform
+                        after:rotate-45
+                        after:top-1/2
+                        after:-translate-y-3/4
+                        after:right-0
+                        ;
                     }
 
-                    &__show {
-                        @apply block;
+                    .sub-menu {
+                        @apply hidden absolute z-50 w-auto max-w-sm bg-ams-dark divide-y px-4;
+
+                        > .menu-item {
+                            @apply min-w-min;
+
+                            a {
+                                @apply min-w-min whitespace-pre text-left py-4 px-2;
+                            }
+                        }
+
+                        &--show {
+                            @apply block;
+                        }
                     }
                 }
             }
         }
     }
+
+    &__cta {
+        .wp-block-buttons {
+            @apply inline-block;
+
+            .wp-block-button {
+                &__link {
+                    @apply bg-ams-yellow rounded-none text-ams-dark font-bold font-heebo text-lg leading-normal;
+                }
+            }
+        }
+    }
 }
+
+/*style mobile menu from mobilemenu plugin*/
+
+.mobmenu {
+    @apply bg-gradient-to-r from-ams-cyan to-ams-dark font-heebo;
+}
+
+.mob-right-alignment, .mobmenu-panel, .mobmenu-right-panel, .show-panel {
+    .mobmenu-content {
+        @apply font-heebo;
+
+        .rightmtop {
+            @apply hidden;
+        }
+    }
+
+    .mob-menu-right-bg-holder {
+        @apply bg-ams-dark
+    }
+}
+

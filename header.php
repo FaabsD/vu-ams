@@ -10,10 +10,10 @@
 <body <?php body_class(); ?>>
 <!-- Site Navigation -->
 <div class="navigation">
+    <?php if ( function_exists( 'the_custom_logo' ) ) :?>
+        <?php the_custom_logo(); ?>
+    <?php endif; ?>
     <?php if ( function_exists( 'wp_nav_menu' ) ) : ?>
-        <?php if ( function_exists( 'the_custom_logo' ) ) {
-            the_custom_logo();
-        } ?>
         <?php
         $navbarArgs = array(
             'menu'                 => 'navbar',
@@ -29,5 +29,9 @@
         wp_nav_menu( $navbarArgs );
         ?>
 
+    <?php endif; ?>
+
+    <?php if (function_exists('dynamic_sidebar')) : ?>
+    <?php dynamic_sidebar('navbar_menu_section'); ?>
     <?php endif; ?>
 </div>
