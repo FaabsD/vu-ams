@@ -9,20 +9,25 @@
 </head>
 <body <?php body_class(); ?>>
 <!-- Site Navigation -->
-<?php if ( function_exists( 'wp_nav_menu' ) ) : ?>
-    <?php
-    $navbarArgs = array(
-        'menu'                 => 'navbar',
-        'menu_class'           => 'navbar__navigation',
-        'menu_id'              => 'navbarNavigation',
-        'container'            => 'nav',
-        'container_class'      => 'navbar',
-        'container_id'         => 'siteNavbar',
-        'container_aria_label' => '',
-        'echo'                 => true,
+<div class="navigation">
+    <?php if ( function_exists( 'wp_nav_menu' ) ) : ?>
+        <?php if ( function_exists( 'the_custom_logo' ) ) {
+            the_custom_logo();
+        } ?>
+        <?php
+        $navbarArgs = array(
+            'menu'                 => 'navbar',
+            'menu_class'           => 'navbar__navigation',
+            'menu_id'              => 'navbarNavigation',
+            'container'            => 'nav',
+            'container_class'      => 'navbar',
+            'container_id'         => 'siteNavbar',
+            'container_aria_label' => '',
+            'echo'                 => true,
 
-    );
-    wp_nav_menu( $navbarArgs );
-    ?>
+        );
+        wp_nav_menu( $navbarArgs );
+        ?>
 
-<?php endif; ?>
+    <?php endif; ?>
+</div>
