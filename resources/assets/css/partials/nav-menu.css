@@ -1,0 +1,52 @@
+.navbar {
+    @apply flex justify-between bg-gradient-to-r from-ams-cyan to-ams-dark;
+
+    &__navigation {
+        @apply flex justify-between grow-0 shrink-0;
+
+        .menu-item {
+            @apply text-white grow-0 shrink-0;
+
+            a {
+                @apply font-normal text-lg px-8 py-8 block box-border leading-tight;
+            }
+
+
+            &-has-children {
+                @apply relative;
+
+                > a {
+                    @apply relative
+                    after:content-['']
+                    after:absolute
+                    after:w-3
+                    after:h-3
+                    after:border-b-2
+                    after:border-r-2
+                    after:transform
+                    after:rotate-45
+                    after:top-1/2
+                    after:-translate-y-3/4
+                    after:right-4
+                    ;
+                }
+
+                .sub-menu {
+                    @apply block absolute z-50 w-auto max-w-sm bg-ams-dark divide-y px-4;
+
+                    > .menu-item {
+                        @apply min-w-min;
+
+                        a {
+                            @apply min-w-min whitespace-pre text-left py-4 px-2;
+                        }
+                    }
+
+                    &__show {
+                        @apply block;
+                    }
+                }
+            }
+        }
+    }
+}
