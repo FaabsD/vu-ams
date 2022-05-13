@@ -17,7 +17,9 @@ mix.browserSync({
     watch: true,
     open: 'local',
     https: false,
-    browser: "Firefox Developer Edition",
+    online: true,
+    cors: false,
+    browser: "firefox developer edition",
     injectChanges: false,
 });
 
