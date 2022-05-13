@@ -1,0 +1,33 @@
+.get-a-quote {
+    @apply bg-white w-screen;
+
+    .header {
+        @apply gap-y-24 w-screen relative flex flex-col lg:flex-row justify-center items-center xl:gap-x-60 2xl:gap-x-[23.5rem];
+
+        &__left {
+            @apply lg:basis-auto grow-0 shrink;
+
+            .header {
+                &__heading {
+                    @apply text-3xl lg:text-6xl text-ams-cyan;
+                }
+
+                &__text {
+                    @apply prose lg:prose-lg
+                }
+            }
+        }
+
+        &__right {
+            @apply lg:basis-auto grow-0 shrink;
+
+            .wpcf7 {
+                .wpcf7-form {
+                    .col-2 {
+                        @apply lg:flex lg:flex-row
+                    }
+                }
+            }
+        }
+    }
+}

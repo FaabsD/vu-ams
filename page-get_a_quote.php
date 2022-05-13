@@ -7,13 +7,18 @@
 <header class="header">
     <div class="header__left">
         <?php if ( get_field( 'page_head' ) ) : ?>
-            <div class="header__text">
+            <div class="header__heading">
                 <?php the_field( 'page_head' ); ?>
             </div>
         <?php endif; ?>
         <?php if ( get_field( 'page_image' ) ) : ?>
             <?php $headerImg = get_field( 'page_image' ); ?>
             <img src="<?php echo $headerImg['url'] ?>" alt="<?php echo $headerImg['alt'] ?>" class="header__image">
+        <?php endif; ?>
+        <?php if ( get_field( 'page_text' ) ) : ?>
+            <div class="header__text">
+                <?php the_field( 'page_text' ); ?>
+            </div>
         <?php endif; ?>
     </div>
     <div class="header__right">
