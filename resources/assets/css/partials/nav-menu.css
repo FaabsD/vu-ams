@@ -95,17 +95,71 @@
     @apply bg-gradient-to-r from-ams-cyan to-ams-dark font-heebo;
 }
 
-.mob-right-alignment, .mobmenu-panel, .mobmenu-right-panel, .show-panel {
-    .mobmenu-content {
-        @apply font-heebo;
+.mobmenu-overlay {
+    @apply !bg-transparent;
+}
 
-        .rightmtop {
-            @apply hidden;
+.mob-right-alignment, .mobmenu-panel, .mobmenu-right-panel {
+    @apply !transform !translate-x-0 !-translate-y-full !h-auto;
+
+    .mobmenu-content {
+        @apply
+        !font-heebo
+        !mt-4
+        !mb-0
+        !pb-4
+        !pt-2
+        ;
+
+        .menu-main-container {
+            ul {
+                @apply divide-y !px-8;
+
+                .menu-item {
+                    -webkit-tap-highlight-color: transparent !important;
+
+                    @apply px-0;
+
+                    a {
+                        @apply !text-base !font-normal px-0 !py-4;
+
+                        .mob-expand-submenu {
+                            @apply !right-[55%] md:!right-[80%] lg:!right-[85%] !ml-4;
+                        }
+                    }
+
+                    .sub-menu {
+                        @apply !bg-transparent !pr-0 !pl-4;
+
+                        .menu-item {
+                            @apply !px-0 !text-base;
+
+                            &:first-of-type {
+                                @apply !border-t;
+                            }
+
+                            a {
+                                @apply !min-w-min !whitespace-pre-wrap !px-4 !text-sm;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
     .mob-menu-right-bg-holder {
-        @apply bg-ams-dark
+        @apply !bg-ams-dark !opacity-70;
+    }
+}
+
+.mobmenu-right-panel {
+    @apply !bg-transparent !w-full;
+}
+
+.mobmenu-right-alignment, .mobmenu-left-alignment {
+    &.show-panel {
+        @apply !transform !translate-y-0 !top-[72px];
     }
 }
 
