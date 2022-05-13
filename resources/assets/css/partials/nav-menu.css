@@ -12,7 +12,19 @@
     ;
 
     &--fixed {
-        @apply fixed z-[9999] w-screen;
+        @apply fixed z-[9999] w-screen ;
+
+        animation-name: flow-in;
+        animation-duration: 1.5s;
+        
+        @keyframes flow-in {
+            from {
+                transform: translateY(-100%);
+            }
+            to{
+                transform: translateY(0%);
+            }
+        }
     }
 
     .custom-logo-link {
@@ -69,6 +81,19 @@
 
                         &--show {
                             @apply block;
+                            animation-name: flap-open;
+                            animation-duration: .7s;
+
+                            @keyframes flap-open {
+                                from {
+                                    transform: scaleY(0%);
+                                    transform-origin: top;
+                                }
+                                to {
+                                    transform: scaleY(100%);
+                                    transform-origin: top;
+                                }
+                            }
                         }
                     }
                 }
