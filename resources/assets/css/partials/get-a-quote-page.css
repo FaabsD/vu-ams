@@ -1,0 +1,232 @@
+.get-a-quote {
+    @apply bg-white w-screen;
+
+    .header {
+        @apply
+        gap-y-24
+        w-screen
+        relative
+        flex
+        flex-col
+        lg:flex-row
+        justify-between
+        items-center
+        px-8
+        xl:px-32
+        lg:gap-x-16
+        2xl:gap-x-[23.5rem]
+        mt-16
+        mb-32
+        lg:my-32;
+
+        &__left {
+            @apply min-h-[24rem] basis-1/2 grow-0 shrink lg:self-start space-y-2;
+
+            .header {
+                &__heading {
+                    @apply text-3xl lg:text-6xl text-ams-cyan font-bold;
+                }
+
+                &__text {
+                    @apply prose lg:prose-lg
+                }
+
+                &__image {
+                    @apply
+                    absolute
+                    left-0
+                    w-auto
+                    sm:max-w-sm
+                    md:max-w-2xl
+                    lg:max-w-md
+                    xl:max-w-xl
+                    2xl:max-w-max
+                    2xl:w-1/2
+                    ;
+                }
+            }
+        }
+
+        &__right {
+            @apply
+            lg:basis-1/2
+            bg-white
+            grow-0
+            shrink
+            p-4
+            md:p-6
+            lg:p-4
+            shadow-md
+            md:shadow-2xl
+            lg:shadow-xl
+            xl:p-16
+            xl:shadow-2xl
+            relative
+            after:content-['']
+            after:absolute
+            after:inset-0
+            after:bg-black
+            after:opacity-10
+            after:-z-10
+            after:transform
+            after:origin-top-left
+            after:-rotate-1
+            lg:after:-rotate-2
+
+            ;
+
+            .wpcf7 {
+                .wpcf7-form {
+                    @apply flex flex-col gap-y-2;
+
+                    .col-2 {
+                        @apply md:flex md:flex-row xl:flex-row md:gap-x-2 xl:gap-x-4;
+
+                        label {
+                            @apply font-bold text-ams-dark leading-loose;
+
+                            .wpcf7-form-control-wrap {
+                                .wpcf7-form-control {
+                                    @apply
+                                    border
+                                    border-black
+                                    w-full
+                                    border-opacity-25
+                                    focus:border-transparent
+                                    focus:ring-2
+                                    focus:ring-ams-cyan;
+                                }
+                            }
+                        }
+                    }
+
+                    > p {
+                        label {
+                            @apply font-bold text-ams-dark leading-loose;
+
+                            .wpcf7-form-control-wrap {
+                                .wpcf7-form-control {
+                                    @apply
+                                    border
+                                    border-black
+                                    border-opacity-25
+                                    w-full
+                                    focus:border-transparent
+                                    focus:ring-2
+                                    focus:ring-ams-cyan;
+                                }
+
+                                .wpcf7-not-valid {
+                                    @apply !border-red-600 placeholder-red-400 !border-opacity-100;
+                                }
+                            }
+                        }
+
+                        &:last-of-type {
+                            .wpcf7-submit {
+                                @apply
+                                bg-ams-cyan
+                                w-full
+                                text-center
+                                py-4
+                                text-lg
+                                font-bold
+                                text-ams-dark
+                                ;
+                            }
+                        }
+                    }
+
+                    .wpcf7-response-output {
+                        @apply border-red-400
+                    }
+                }
+            }
+
+            .frame {
+                @apply
+                hidden
+                lg:block
+                lg:border-[3px]
+                lg:border-ams-dark
+                lg:absolute
+                lg:-z-10
+                lg:top-4
+                xl:top-12
+                lg:left-4
+                xl:left-auto
+                xl:-right-12
+                lg:h-full
+                lg:w-full
+                xl:w-1/2
+            }
+        }
+
+        .dotted-shape {
+            @apply hidden lg:block bg-dots lg:absolute lg:bottom-0 lg:left-0 lg:!w-64 lg:!h-40;
+        }
+    }
+
+    .about {
+        @apply
+        text-center
+        relative
+        lg:grid
+        lg:grid-cols-3
+        lg:gap-x-16
+        px-8
+        xl:px-32
+        space-y-8
+        lg:space-y-16
+        pb-32
+        ;
+
+        .dotted-shape {
+            @apply hidden lg:block lg:absolute lg:top-16 lg:right-0 bg-dots lg:!w-24 lg:!h-48;
+        }
+
+        &__heartbeat {
+            @apply mx-auto lg:col-span-full w-60;
+
+            svg {
+                @apply stroke-black opacity-[.25] fill-black;
+            }
+        }
+
+        &__heading {
+            @apply lg:col-span-full lg:mb-16;
+
+            h2 {
+                @apply text-3xl lg:text-6xl text-center font-bold;
+
+                .colored-word {
+                    @apply text-ams-cyan;
+                }
+            }
+        }
+
+        .section {
+            @apply p-8 shadow-[0_0_30px_0_rgba(0,0,0,0.2)] prose-sm lg:prose text-center space-y-2;
+
+            &__img {
+                @apply w-1/2 h-auto mx-auto object-cover;
+            }
+
+            &__heading {
+                @apply leading-loose;
+            }
+
+            &__text {
+                @apply prose-sm lg:prose
+            }
+
+            &__link {
+                @apply text-ams-cyan font-bold no-underline inline-block !mt-10;
+            }
+        }
+
+        &__more {
+            @apply inline-block bg-ams-yellow lg:col-start-2 lg:col-end-3 box-border max-w-max mx-auto px-8 py-4 font-bold text-ams-dark
+        }
+    }
+}

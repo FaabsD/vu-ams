@@ -12,7 +12,7 @@
     ;
 
     &--fixed {
-        @apply fixed z-[9999] w-screen ;
+        @apply fixed z-[9999] w-screen top-0;
 
         animation-name: flow-in;
         animation-duration: 1.5s;
