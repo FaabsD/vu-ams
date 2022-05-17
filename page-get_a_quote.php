@@ -11,21 +11,24 @@
                 <?php the_field( 'page_head' ); ?>
             </div>
         <?php endif; ?>
-        <?php if ( get_field( 'page_image' ) ) : ?>
-            <?php $headerImg = get_field( 'page_image' ); ?>
-            <img src="<?php echo $headerImg['url'] ?>" alt="<?php echo $headerImg['alt'] ?>" class="header__image">
-        <?php endif; ?>
         <?php if ( get_field( 'page_text' ) ) : ?>
             <div class="header__text">
                 <?php the_field( 'page_text' ); ?>
             </div>
+        <?php endif; ?>
+        <?php if ( get_field( 'page_image' ) ) : ?>
+            <?php $headerImg = get_field( 'page_image' ); ?>
+            <img src="<?php echo $headerImg['url'] ?>" alt="<?php echo $headerImg['alt'] ?>" class="header__image">
         <?php endif; ?>
     </div>
     <div class="header__right">
         <?php if ( get_field( 'contact_form' ) ) : ?>
             <?php the_field( 'contact_form' ); ?>
         <?php endif; ?>
+
+        <div class="frame"></div>
     </div>
+    <div class="dotted-shape"></div>
 </header>
 
 <div class="about">

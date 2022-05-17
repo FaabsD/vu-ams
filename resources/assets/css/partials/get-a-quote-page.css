@@ -15,10 +15,12 @@
         xl:px-32
         lg:gap-x-16
         2xl:gap-x-[23.5rem]
+        mt-16
+        mb-32
         lg:my-32;
 
         &__left {
-            @apply lg:basis-1/2 grow-0 shrink;
+            @apply min-h-[24rem] basis-1/2 grow-0 shrink lg:self-start space-y-2;
 
             .header {
                 &__heading {
@@ -27,6 +29,20 @@
 
                 &__text {
                     @apply prose lg:prose-lg
+                }
+
+                &__image {
+                    @apply
+                    absolute
+                    left-0
+                    w-auto
+                    sm:max-w-sm
+                    md:max-w-2xl
+                    lg:max-w-md
+                    xl:max-w-xl
+                    2xl:max-w-max
+                    2xl:w-1/2
+                    ;
                 }
             }
         }
@@ -37,18 +53,25 @@
             bg-white
             grow-0
             shrink
+            p-4
+            md:p-6
+            lg:p-4
+            shadow-md
+            md:shadow-2xl
+            lg:shadow-xl
             xl:p-16
             xl:shadow-2xl
-            xl:relative
-            xl:after:content-['']
-            xl:after:absolute
-            xl:after:inset-0
-            xl:after:bg-black
-            xl:after:opacity-10
-            xl:after:-z-10
-            xl:after:transform
-            xl:after:origin-top-left
-            xl:after:-rotate-2
+            relative
+            after:content-['']
+            after:absolute
+            after:inset-0
+            after:bg-black
+            after:opacity-10
+            after:-z-10
+            after:transform
+            after:origin-top-left
+            after:-rotate-1
+            lg:after:-rotate-2
 
             ;
 
@@ -57,7 +80,7 @@
                     @apply flex flex-col gap-y-2;
 
                     .col-2 {
-                        @apply xl:flex xl:flex-row lg:gap-x-2 xl:gap-x-4;
+                        @apply md:flex md:flex-row xl:flex-row md:gap-x-2 xl:gap-x-4;
 
                         label {
                             @apply font-bold text-ams-dark leading-loose;
@@ -119,6 +142,28 @@
                     }
                 }
             }
+
+            .frame {
+                @apply
+                hidden
+                lg:block
+                lg:border-[3px]
+                lg:border-ams-dark
+                lg:absolute
+                lg:-z-10
+                lg:top-4
+                xl:top-12
+                lg:left-4
+                xl:left-auto
+                xl:-right-12
+                lg:h-full
+                lg:w-full
+                xl:w-1/2
+            }
+        }
+
+        .dotted-shape {
+            @apply block bg-dots absolute bottom-0 left-0 !w-64 !h-40;
         }
     }
 }
