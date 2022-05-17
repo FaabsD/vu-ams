@@ -2,6 +2,7 @@
 @import "./partials/base-styles.css";
 @import "./partials/home-page.css";
 @import "./partials/get-a-quote-page.css";
+@import "./partials/team-page.css";
 @import "./partials/nav-menu.css";
 @import "tailwindcss/components";
 

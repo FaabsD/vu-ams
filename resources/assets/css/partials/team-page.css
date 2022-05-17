@@ -1,0 +1,82 @@
+.teampage {
+    @apply bg-white w-screen;
+
+    .header {
+        @apply py-4 px-2 md:px-8 lg:px-16 lg:pt-16;
+
+        h1 {
+            @apply text-3xl lg:text-6xl text-ams-cyan leading-loose;
+        }
+    }
+
+    .team {
+        @apply
+        grid
+        grid-cols-1
+        gap-8
+        2xl:gap-16
+        auto-rows-fr
+        lg:grid-cols-2
+        px-2
+        md:px-8
+        lg:px-16
+        lg:py-16
+        xl:grid-cols-3
+        ;
+
+        &__member {
+            @apply
+            flex
+            flex-col
+            shadow-xl
+            border
+            border-dashed
+            border-ams-dark;
+
+            .member {
+                &__img-section {
+                    @apply
+                    basis-1/2
+                    grow
+                    shrink-0
+                    flex
+                    justify-center
+                    items-end
+                    bg-gradient-to-r
+                    from-ams-cyan
+                    to-ams-dark
+                    ;
+
+                    img {
+                        @apply
+                        w-60
+                        h-60
+                        rounded-full
+                        border-[6px]
+                        border-white
+                        object-cover
+                        object-center
+                    }
+                }
+
+                &__text-section {
+                    @apply basis-1/2 grow shrink prose-lg px-8 py-8 text-center;
+
+                    .member {
+                        &__name {
+                            @apply font-bold text-3xl m-0;
+                        }
+
+                        &__text {
+                            @apply text-ams-text_light;
+
+                            h2 {
+                                @apply m-0 leading-loose text-2xl font-normal text-black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
