@@ -14,15 +14,67 @@
 <?php endwhile; endif; ?>
 
 <?php
+$meta_query = array();
+if ( isset( $_GET['author'] ) && !empty( $_GET['author'] ) ) {
+    $meta_query[] = array(
+        'key'     => 'authors',
+        'value'   => $_GET['author'],
+        'compare' => "LIKE",
+    );
+}
+if ( isset( $_GET['date'] ) && $_GET['date'] != 'Date' ) {
+    $meta_query[] = array(
+        'key'     => 'publication_date',
+        'value'   => $_GET['date'],
+        'compare' => '=',
+    );
+}
 $args = array(
-    'post_type' => 'publication',
+    's'              => isset( $_GET['search'] ) && $_GET['search'] != '' ? $_GET['search'] : '',
+    'post_type'      => 'publication',
+    'meta_query'     => $meta_query,
+    'posts_per_page' => 10,
 );
 $query = new WP_Query( $args );
 ?>
-
-<?php if ( $query->have_posts() ) : ?>
+<form action="" method="get" id="pubForm">
     <table class="pub-table">
         <thead class="pub-table__head">
+        <tr>
+            <td colspan="2">
+                <input type="text" name="search" id="search"
+                       value="<?php echo isset( $_GET['search'] ) && !empty( $_GET['search'] ) ? $_GET['search'] : '' ?>"
+                       placeholder="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
+            </td>
+            <td>
+                <input type="text" name="author" id="author"
+                       value="<?php echo isset( $_GET['author'] ) && !empty( $_GET['author'] ) ? $_GET['author'] : '' ?>">
+            </td>
+            <td>
+                <?php
+                $dateArr = array();
+                $pubDates = getPublicationDates();
+                ?>
+                <?php if ( $pubDates ) {
+                    foreach ( $pubDates as $date ) {
+                        if ( !in_array( $date, $dateArr, ) ) {
+                            $dateArr[] = $date;
+                        }
+                    }
+
+                    arsort( $dateArr );
+                } ?>
+                <select name="date" id="date">
+                    <option value="Date">Date</option>
+                    <?php foreach ( $dateArr as $date ) : ?>
+                        <option <?php echo isset( $_GET['date'] ) && $_GET['date'] === $date ? 'selected' : '' ?>
+                                value="<?php echo $date ?>">
+                            <?php echo $date; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </td>
+        </tr>
         <tr>
             <td></td>
             <td>Title</td>
@@ -31,7 +83,7 @@ $query = new WP_Query( $args );
         </tr>
         </thead>
         <tbody class="pub-table__body">
-        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+        <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
             <tr>
                 <td></td>
                 <td>
@@ -51,10 +103,8 @@ $query = new WP_Query( $args );
                     ?>
                 </td>
             </tr>
-        <?php endwhile; ?>
+        <?php endwhile; endif; ?>
         </tbody>
     </table>
-
-<?php endif; ?>
-
+</form>
 <?php get_footer(); ?>
