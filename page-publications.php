@@ -89,8 +89,11 @@ $query = new WP_Query( $args );
             <tr>
                 <td></td>
                 <td>
-                    <?php the_title(); ?>
-                    <?php the_excerpt(); ?>
+                    <h3 class="pub-title"><?php the_title(); ?></h3>
+                    <p class="pub-excerpt">
+                        <?php the_excerpt(); ?>
+                    </p>
+
                 </td>
                 <td>
                     <?php if ( get_field( 'authors' ) ) : ?>
