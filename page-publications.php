@@ -29,15 +29,17 @@ if ( isset( $_GET['date'] ) && $_GET['date'] != 'Date' ) {
         'compare' => '=',
     );
 }
+$paged = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
 $args = array(
     's'              => isset( $_GET['search'] ) && $_GET['search'] != '' ? $_GET['search'] : '',
     'post_type'      => 'publication',
     'meta_query'     => $meta_query,
     'posts_per_page' => 10,
+    'paged'          => $paged,
 );
 $query = new WP_Query( $args );
 ?>
-<form action="" method="get" id="pubForm">
+<form action="<?php the_permalink();?>" method="get" id="pubForm">
     <table class="pub-table">
         <thead class="pub-table__head">
         <tr>
@@ -103,7 +105,13 @@ $query = new WP_Query( $args );
                     ?>
                 </td>
             </tr>
-        <?php endwhile; endif; ?>
+        <?php endwhile; ?>
+            <tr>
+                <td>
+                    <?php custom_pagination($query->max_num_pages) ?>
+                </td>
+            </tr>
+        <?php endif; ?>
         </tbody>
     </table>
 </form>
