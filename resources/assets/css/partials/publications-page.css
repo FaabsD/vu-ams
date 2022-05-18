@@ -1,0 +1,35 @@
+.publications {
+    @apply w-screen bg-white;
+
+    #pubForm {
+        .pub-table {
+            @apply table-fixed;
+            &__head {
+                tr {
+
+                    &:nth-of-type(2) {
+                        @apply bg-ams-dark text-white divide-x divide-ams-text_light;
+                        td {
+                            @apply py-4 px-4;
+                        }
+                    }
+
+                }
+            }
+
+            &__body {
+                @apply divide-y-2;
+                tr {
+                    @apply divide-x-2;
+                    &:nth-child(odd) {
+                        &>td {
+                            &:nth-child(1) {
+                                @apply bg-ams-yellow;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
