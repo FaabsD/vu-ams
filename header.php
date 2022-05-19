@@ -35,3 +35,4 @@
     <?php dynamic_sidebar('navbar_menu_section'); ?>
     <?php endif; ?>
 </div>
+<div class="h-1"></div>
