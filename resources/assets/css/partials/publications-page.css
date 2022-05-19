@@ -22,11 +22,28 @@
                             @apply py-4;
 
                             input {
-                                @apply w-full md:w-11/12
+                                @apply
+                                w-full
+                                md:w-11/12
+                                border-[0.5px]
+                                border-[#707070]
+                                placeholder-ams-dark
+                                placeholder-opacity-40
+                                font-normal
+                                    md:px-8
+                                ;
                             }
 
                             select {
-                                @apply w-full md:w-auto md:min-w-min;
+                                @apply
+                                w-full
+                                md:w-auto
+                                md:min-w-min
+                                border-[0.5px]
+                                border-[#707070]
+                                text-ams-dark
+                                text-opacity-40
+                                ;
                             }
                         }
                     }
@@ -56,8 +73,8 @@
                         first-of-type:p-0
                         first-of-type:bg-[#CCA509]
                         p-4
-                            align-top
-                            md:text-base
+                        align-top
+                        md:text-base
                         ;
 
                         &:nth-child(2) {
@@ -65,6 +82,7 @@
 
                             a {
                                 @apply no-underline;
+
                                 .pub-title {
                                     @apply line-clamp-1 font-bold my-0;
                                 }
@@ -96,6 +114,7 @@
                 td {
                     @apply first-of-type:hidden first-of-type:md:table-cell
                 }
+
                 .pagination-cell {
                     @apply py-8;
 
@@ -107,6 +126,7 @@
                                 @apply fill-[#707070] w-4 transform rotate-180
                             }
                         }
+
                         &-dots {
                             @apply self-end;
                         }

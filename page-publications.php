@@ -50,7 +50,8 @@ $query = new WP_Query( $args );
             </td>
             <td>
                 <input type="text" name="author" id="author"
-                       value="<?php echo isset( $_GET['author'] ) && !empty( $_GET['author'] ) ? $_GET['author'] : '' ?>">
+                       value="<?php echo isset( $_GET['author'] ) && !empty( $_GET['author'] ) ? $_GET['author'] : '' ?>"
+                       placeholder="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
             </td>
             <td>
                 <?php
@@ -117,20 +118,20 @@ $query = new WP_Query( $args );
             </tbody>
         <?php else: ?>
             <tbody class="pub-table__body--no-results">
-                <tr>
-                    <td colspan="3" class="prose-sm md:prose">
-                        <h2 class="!text-ams-strong_cyan my-2">
-                            <?php _e('No publications found using given criteria', THEME_TEXT_DOMAIN);?>
-                        </h2>
-                    </td>
-                </tr>
+            <tr>
+                <td colspan="3" class="prose-sm md:prose">
+                    <h2 class="!text-ams-strong_cyan my-2">
+                        <?php _e( 'No publications found using given criteria', THEME_TEXT_DOMAIN ); ?>
+                    </h2>
+                </td>
+            </tr>
             </tbody>
         <?php endif; ?>
         <tfoot class="pub-table__foot">
         <tr>
             <td></td>
             <td colspan="2" class="pagination-cell">
-                <?php custom_pagination( $query->max_num_pages) ?>
+                <?php custom_pagination( $query->max_num_pages ) ?>
             </td>
         </tr>
         </tfoot>
