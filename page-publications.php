@@ -29,7 +29,7 @@ if ( isset( $_GET['date'] ) && $_GET['date'] != 'Date' ) {
         'compare' => '=',
     );
 }
-$paged = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array(
     's'              => isset( $_GET['search'] ) && $_GET['search'] != '' ? $_GET['search'] : '',
     'post_type'      => 'publication',
@@ -39,11 +39,11 @@ $args = array(
 );
 $query = new WP_Query( $args );
 ?>
-<form action="<?php the_permalink();?>" method="get" id="pubForm">
+<form action="<?php the_permalink(); ?>" method="get" id="pubForm">
     <table class="pub-table">
         <thead class="pub-table__head">
         <tr>
-            <td colspan="2">
+            <td id="searchCell">
                 <input type="text" name="search" id="search"
                        value="<?php echo isset( $_GET['search'] ) && !empty( $_GET['search'] ) ? $_GET['search'] : '' ?>"
                        placeholder="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
@@ -84,38 +84,54 @@ $query = new WP_Query( $args );
             <td>Date</td>
         </tr>
         </thead>
-        <tbody class="pub-table__body">
-        <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-            <tr>
-                <td></td>
-                <td>
-                    <h3 class="pub-title"><?php the_title(); ?></h3>
-                    <p class="pub-excerpt">
-                        <?php the_excerpt(); ?>
-                    </p>
+        <?php if ( $query->have_posts() ) : ?>
+            <tbody class="pub-table__body">
+            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                <tr>
+                    <td width="10px"></td>
+                    <td>
+                        <a href="<?php the_permalink(); ?> "><h3 class="pub-title">
+                                <?php the_title(); ?>
+                            </h3></a>
+                        <div class="pub-excerpt">
+                            <?php the_excerpt(); ?>
+                        </div>
 
-                </td>
-                <td>
-                    <?php if ( get_field( 'authors' ) ) : ?>
-                        <?php the_field( 'authors' ); ?>
-                    <?php endif; ?>
-                </td>
-                <td>
-                    <?php
-                    if ( get_field( 'publication_date' ) ) {
-                        the_field( 'publication_date' );
-                    };
-                    ?>
-                </td>
-            </tr>
-        <?php endwhile; ?>
-            <tr>
-                <td>
-                    <?php custom_pagination($query->max_num_pages) ?>
-                </td>
-            </tr>
+                    </td>
+                    <td>
+                        <?php if ( get_field( 'authors' ) ) : ?>
+                            <?php the_field( 'authors' ); ?>
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        <?php
+                        if ( get_field( 'publication_date' ) ) {
+                            the_field( 'publication_date' );
+                        };
+                        ?>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+            </tbody>
+        <?php else: ?>
+            <tbody class="pub-table__body--no-results">
+                <tr>
+                    <td colspan="3" class="prose-sm md:prose">
+                        <h2 class="!text-ams-strong_cyan my-2">
+                            <?php _e('No publications found using given criteria', THEME_TEXT_DOMAIN);?>
+                        </h2>
+                    </td>
+                </tr>
+            </tbody>
         <?php endif; ?>
-        </tbody>
+        <tfoot class="pub-table__foot">
+        <tr>
+            <td></td>
+            <td colspan="2" class="pagination-cell">
+                <?php custom_pagination( $query->max_num_pages) ?>
+            </td>
+        </tr>
+        </tfoot>
     </table>
 </form>
 <?php get_footer(); ?>
