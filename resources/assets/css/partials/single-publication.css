@@ -1,0 +1,43 @@
+.single-publication {
+    @apply bg-white w-screen;
+
+    .publication {
+        @apply py-8 md:py-16;
+
+        header {
+            @apply px-8 xl:px-32 prose-sm md:prose md:max-w-full relative;
+
+            h1 {
+                @apply text-ams-cyan md:w-4/5 lg:w-3/4;
+            }
+
+            .authors {
+                @apply font-normal md:w-4/5 lg:w-3/4;
+
+                &__head {
+                    @apply font-bold;
+                }
+            }
+            .scholar-link {
+                @apply
+                absolute
+                top-0
+                right-0
+                xl:right-32
+                bg-ams-cyan
+                no-underline
+                text-ams-dark
+                font-bold
+                px-4
+                py-2
+                    md:px-8
+                    md:py-4
+                ;
+            }
+        }
+
+        article {
+            @apply prose-sm md:prose md:max-w-full px-8 xl:px-32;
+        }
+    }
+}
