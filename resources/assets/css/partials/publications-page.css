@@ -35,7 +35,7 @@
                         @apply bg-ams-dark text-white divide-x divide-ams-text_light;
 
                         td {
-                            @apply py-4 px-4 text-sm first-of-type:hidden first-of-type:md:table-cell;
+                            @apply py-4 px-4 text-sm md:text-base first-of-type:hidden first-of-type:md:table-cell;
                         }
                     }
 
@@ -56,17 +56,22 @@
                         first-of-type:p-0
                         first-of-type:bg-[#CCA509]
                         p-4
+                            align-top
+                            md:text-base
                         ;
 
                         &:nth-child(2) {
-                            @apply prose-sm;
+                            @apply prose-sm md:prose md:px-16;
 
-                            .pub-title {
-                                @apply line-clamp-1;
+                            a {
+                                @apply no-underline;
+                                .pub-title {
+                                    @apply line-clamp-1 font-bold my-0;
+                                }
                             }
 
                             .pub-excerpt {
-                                @apply line-clamp-2 md:line-clamp-3 text-ams-text_light font-light;
+                                @apply text-sm line-clamp-2 md:line-clamp-3 text-ams-text_light font-light;
 
                                 & > p {
                                     @apply my-[unset] leading-7

@@ -90,9 +90,11 @@ $query = new WP_Query( $args );
                 <tr>
                     <td width="10px"></td>
                     <td>
-                        <a href="<?php the_permalink(); ?> "><h3 class="pub-title">
+                        <a href="<?php the_permalink(); ?> ">
+                            <h3 class="pub-title">
                                 <?php the_title(); ?>
-                            </h3></a>
+                            </h3>
+                        </a>
                         <div class="pub-excerpt">
                             <?php the_excerpt(); ?>
                         </div>
