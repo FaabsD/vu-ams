@@ -21,5 +21,15 @@ $(document).ready(function (){
             }
         }
     }
+
+    const searchCell = document.getElementById('searchCell');
+
+    if (searchCell) {
+        console.log(window.innerWidth);
+
+        if (window.innerWidth >= 768) {
+            searchCell.colSpan = 2;
+        }
+    }
 })
 
