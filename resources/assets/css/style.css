@@ -5,9 +5,11 @@
 @import "./partials/team-page.css";
 @import "./partials/nav-menu.css";
 @import "./partials/publications-page.css";
+@import "./partials/footer.css";
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
 .bg-dots {
     background-image: radial-gradient(theme('colors.ams.cyan') 20%, transparent 10%);
     background-color: transparent;
