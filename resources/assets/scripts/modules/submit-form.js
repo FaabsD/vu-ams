@@ -31,5 +31,13 @@ $(document).ready(function (){
             searchCell.colSpan = 2;
         }
     }
+
+    const paginationCell = document.querySelector('.pagination-cell');
+
+    if (paginationCell) {
+        if (window.innerWidth <= 414) {
+            paginationCell.colSpan = 3;
+        }
+    }
 })
 
