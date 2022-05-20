@@ -2,6 +2,30 @@
     @apply bg-white w-screen;
 
     header {
-        @apply px-8 lg:px-32;
+        @apply
+        px-8
+        lg:px-32
+        flex
+        flex-col
+        lg:grid
+        lg:grid-cols-2
+        md:pt-16
+        ;
+
+        & > h1 {
+            @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 lg:my-8;
+        }
+
+        section {
+            @apply first-of-type:prose-sm first-of-type:md:prose
+        }
+
+    }
+
+    .content {
+        &__measurement {
+            @apply prose-sm md:prose;
+        }
+
     }
 }
