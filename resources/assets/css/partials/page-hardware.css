@@ -1,0 +1,7 @@
+.hardware {
+    @apply bg-white w-screen;
+
+    header {
+        @apply px-8 lg:px-32;
+    }
+}
