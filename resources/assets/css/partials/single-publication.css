@@ -5,7 +5,16 @@
         @apply py-8 md:py-16;
 
         header {
-            @apply px-8 xl:px-32 prose-sm md:prose md:max-w-full relative;
+            @apply
+            px-8
+            xl:px-32
+                py-8
+                xl:py-16
+            prose-sm
+            md:prose
+            md:max-w-full
+            relative
+            ;
 
             h1 {
                 @apply text-ams-cyan md:w-4/5 lg:w-3/4;
@@ -18,11 +27,12 @@
                     @apply font-bold;
                 }
             }
+
             .scholar-link {
                 @apply
                 absolute
                 top-0
-                right-0
+                right-8
                 xl:right-32
                 bg-ams-cyan
                 no-underline
@@ -30,14 +40,27 @@
                 font-bold
                 px-4
                 py-2
-                    md:px-8
-                    md:py-4
+                md:px-8
                 ;
             }
         }
 
         article {
             @apply prose-sm md:prose md:max-w-full px-8 xl:px-32;
+
+            h2, h3, h4, h5, h6 {
+                @apply
+                relative
+                after:absolute
+                after:content-['']
+                after:border-b
+                after:w-full
+                after:left-0
+                    after:-bottom-0
+                md:after:-bottom-2
+                after:border-[#707070]
+                ;
+            }
         }
     }
 }
