@@ -16,10 +16,29 @@
                 <?php the_field( 'page_text' ); ?>
             </div>
         <?php endif; ?>
-        <?php if ( get_field( 'page_image' ) ) : ?>
-            <?php $headerImg = get_field( 'page_image' ); ?>
-            <img src="<?php echo $headerImg['url'] ?>" alt="<?php echo $headerImg['alt'] ?>" class="header__image">
-        <?php endif; ?>
+        <?php if ( have_rows( 'page_images' ) ) : while ( have_rows( 'page_images' ) ) : the_row(); ?>
+            <div class="header__hand-animation">
+                <div class="inner">
+                    <?php if ( get_sub_field( 'page_image_hand' ) ) : ?>
+                        <?php $handImageArr = get_sub_field( 'page_image_hand' ); ?>
+                        <img src="<?php echo $handImageArr['url'] ?>" alt="<?php echo $handImageArr['alt'] ?>"
+                             class="hand">
+                    <?php endif; ?>
+
+                    <?php if ( get_sub_field( 'page_image_arrow' ) ) : ?>
+                        <?php $arrowImageArr = get_sub_field( 'page_image_arrow' ); ?>
+                        <img src="<?php echo $arrowImageArr['url'] ?>" alt="<?php echo $arrowImageArr['alt'] ?>"
+                             class="arrow">
+                    <?php endif; ?>
+
+                    <?php if ( get_sub_field( 'page_image_letter' ) ) : ?>
+                        <?php $letterImageArr = get_sub_field( 'page_image_letter' ); ?>
+                        <img src="<?php echo $letterImageArr['url'] ?>" alt="<?php echo $letterImageArr['alt'] ?>"
+                             class="letter">
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php endwhile; endif; ?>
         <div class="dotted-shape"></div>
     </div>
     <div class="header__right">
