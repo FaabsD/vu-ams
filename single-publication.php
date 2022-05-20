@@ -18,7 +18,8 @@
                     the_field( 'authors' );
                 } ?>
             </h2>
-            <a class="scholar-link" href="<?php the_field('google_scholar_url'); ?>">
+            <a class="scholar-link" href="<?php the_field( 'google_scholar_url' ); ?>"
+               title="<?php _e( 'View publication on Google Scholar' ); ?>">
                 Google Scholar
             </a>
         </header>
