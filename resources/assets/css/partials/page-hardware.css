@@ -4,13 +4,28 @@
     header {
         @apply
         px-8
-        lg:px-32
+        xl:px-32
         flex
         flex-col
         lg:grid
         lg:grid-cols-2
+        md:relative
         md:pt-16
+        before:hidden
+        before:xl:block
+        before:absolute
+        before:top-1/2
+        before:left-0
+        before:transform
+        before:-translate-y-1/2
+        before:!w-24
+        before:!h-48
+        before:content-['']
         ;
+
+        &:before {
+            @apply bg-dots
+        }
 
         & > h1 {
             @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 lg:my-8;
@@ -23,8 +38,88 @@
     }
 
     .content {
+        @apply
+        prose-sm
+        md:prose
+        px-2
+        xl:px-32
+        md:max-w-full
+        py-16
+        ;
+
         &__measurement {
-            @apply prose-sm md:prose;
+            @apply md:w-full md:max-w-full;
+
+            .table-container {
+                @apply
+                p-4
+                xl:p-8
+                bg-white
+                shadow-2xl
+                relative
+                before:absolute
+                before:-z-10
+                before:content-['']
+                before:bg-black
+                before:bg-opacity-20
+                before:inset-0 after:-z-10
+                before:transform
+                before:origin-top-left
+                before:-rotate-1
+                before:md:-rotate-2
+                before:xl:-rotate-1
+                after:hidden
+                after:xl:block
+                after:absolute
+                after:z-10
+                after:-right-32
+                after:top-0
+                after:!w-24
+                after:!h-48
+                ;
+
+                &:after {
+                    @apply bg-dots
+                }
+
+                table {
+                    @apply table-fixed max-w-full md:w-full;
+
+                    tbody {
+                        @apply !divide-y !divide-[#707070];
+
+                        tr {
+                            @apply !divide-x md:!divide-x md:!divide-[#707070] !divide-[#707070];
+
+                            &:first-of-type {
+                                td {
+                                    @apply
+                                    font-bold
+                                    lg:text-xl
+                                    text-ams-dark
+                                    lg:whitespace-normal
+                                    2xl:whitespace-nowrap
+                                    !border-b
+                                    !border-b-[#707070]
+                                    ;
+                                }
+                            }
+
+                            td {
+                                @apply py-1 px-2 md:py-2 md:px-4;
+
+                                &:last-of-type {
+                                    @apply hidden md:table-cell
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__content {
+            @apply pt-16
         }
 
     }

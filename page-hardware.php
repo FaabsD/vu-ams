@@ -31,14 +31,19 @@
     <section class="content__measurement">
         <?php if ( have_rows( 'measurement' ) ) : while ( have_rows( 'measurement' ) ) : the_row(); ?>
             <?php if ( get_sub_field( 'head' ) ) : ?>
-                <h3>
+                <h2>
                     <?php the_sub_field( 'head' ); ?>
-                </h3>
+                </h2>
             <?php endif; ?>
             <?php if ( get_sub_field( 'content' ) ) : ?>
-                <?php the_sub_field( 'content' ); ?>
+                <div class="table-container">
+                    <?php the_sub_field( 'content' ); ?>
+                </div>
             <?php endif; ?>
         <?php endwhile; endif; ?>
+    </section>
+    <section class="content__content">
+        <?php the_content(); ?>
     </section>
 </main>
 <?php get_footer(); ?>
