@@ -4,7 +4,20 @@
     header {
         @apply px-8 xl:px-32
         md:relative
-        md:pt-16;
+        md:pt-16
+        before:hidden
+        before:xl:block
+        before:absolute
+        before:top-[40%]
+        before:left-0
+        before:!w-24
+        before:!h-48
+        before:content-['']
+        ;
+
+        &:before {
+            @apply bg-dots
+        }
 
         h1 {
             @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 lg:my-8;
@@ -18,6 +31,7 @@
 
     & > .content {
         @apply prose-sm md:prose !max-w-full pt-16;
+
         & > h2 {
             @apply px-8 xl:px-32
         }
@@ -35,10 +49,29 @@
             !max-w-full
             ;
 
+            &:nth-last-of-type(even) {
+                @apply
+                relative
+                after:hidden
+                after:xl:block
+                after:content-['']
+                after:absolute
+                after:!w-24
+                after:!h-48
+                after:right-0
+                after:-top-1/4
+                ;
+
+                &:after {
+                    @apply bg-dots;
+                }
+            }
+
             .wp-block-column {
                 h2 {
                     @apply font-bold;
                 }
+
                 p {
                     a {
                         @apply text-ams-cyan font-semibold
