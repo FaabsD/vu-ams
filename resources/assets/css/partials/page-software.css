@@ -1,0 +1,50 @@
+.software {
+    @apply w-screen bg-white;
+
+    header {
+        @apply px-8 xl:px-32
+        md:relative
+        md:pt-16;
+
+        h1 {
+            @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 lg:my-8;
+        }
+
+        & > .content {
+            @apply prose-sm md:prose;
+        }
+
+    }
+
+    & > .content {
+        @apply prose-sm md:prose !max-w-full pt-16;
+        & > h2 {
+            @apply px-8 xl:px-32
+        }
+
+        .wp-block-columns {
+            @apply
+            px-8
+            xl:px-32
+            md:py-8
+            xl:py-16
+            prose-sm
+            md:prose
+            even:bg-[#f7f7f7]
+            odd:md:text-right
+            !max-w-full
+            ;
+
+            .wp-block-column {
+                h2 {
+                    @apply font-bold;
+                }
+                p {
+                    a {
+                        @apply text-ams-cyan font-semibold
+                    }
+                }
+            }
+        }
+    }
+}
