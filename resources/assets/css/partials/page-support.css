@@ -11,7 +11,9 @@
         flex
         flex-col
         lg:flex-row
-        lg:gap-x-16
+            gap-8
+            md:gap-4
+        lg:gap-16
         py-16
         ;
 
@@ -28,7 +30,29 @@
         }
 
         aside {
-            @apply bg-white p-4 lg:p-8 xl:p-16 shadow-2xl max-h-max flex-grow-0;
+            @apply
+            bg-white
+            p-4
+            lg:p-8
+            xl:p-16
+            shadow-2xl
+            max-h-max
+            h-max
+            flex-grow-0
+            basis-auto
+                relative
+                after:content-['']
+                after:absolute
+                after:inset-0
+                after:-z-10
+                after:bg-black
+                after:bg-opacity-20
+                after:transform
+                after:origin-top-left
+                after:-rotate-1
+                md:after:-rotate-2
+                after:xl:-rotate-3
+            ;
 
             img {
                 &:first-of-type {
