@@ -16,11 +16,11 @@ mix.browserSync({
     ],
     watch: true,
     open: 'local',
-    https: false,
+    https: true,
     online: true,
     cors: false,
-    browser: ["microsoft edge", "firefox developer edition"],
-    injectChanges: false,
+    browser: ["microsoft edge", "firefox developer edition", "firefox"],
+    injectChanges: true,
 });
 
 mix.postCss('resources/assets/css/style.css', 'build/css/app.css', [
