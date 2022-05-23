@@ -1,0 +1,64 @@
+.support {
+    @apply bg-white w-screen;
+
+    .content {
+        @apply
+        px-8
+        xl:px-32
+        prose-sm
+        md:prose
+        !max-w-full
+        flex
+        flex-col
+        lg:flex-row
+            gap-8
+            md:gap-4
+        lg:gap-16
+        py-16
+        ;
+
+        main {
+            & > h1 {
+                @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 lg:my-8;
+            }
+
+            p {
+                a {
+                    @apply text-ams-cyan font-semibold no-underline;
+                }
+            }
+        }
+
+        aside {
+            @apply
+            bg-white
+            p-4
+            lg:p-8
+            xl:p-16
+            shadow-2xl
+            max-h-max
+            h-max
+            flex-grow-0
+            basis-auto
+                relative
+                after:content-['']
+                after:absolute
+                after:inset-0
+                after:-z-10
+                after:bg-black
+                after:bg-opacity-20
+                after:transform
+                after:origin-top-left
+                after:-rotate-1
+                md:after:-rotate-2
+                after:xl:-rotate-3
+            ;
+
+            img {
+                &:first-of-type {
+                    @apply mt-0;
+                }
+            }
+        }
+    }
+}

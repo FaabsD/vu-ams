@@ -1,3 +1,3 @@
 body {
-    @apply bg-teal-400 font-heebo xl:overflow-x-hidden;
+    @apply bg-white font-heebo xl:overflow-x-hidden;
 }
