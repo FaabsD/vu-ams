@@ -1,4 +1,4 @@
-.support {
+.ams {
     @apply bg-white w-screen;
 
     .content {
@@ -23,7 +23,6 @@
         before:xl:left-0
         before:xl:!w-24
         before:xl:!h-48
-
         after:hidden
         after:xl:block
         after:xl:absolute
@@ -38,6 +37,7 @@
         }
 
         main {
+            @apply lg:basis-2/3;
             & > h1 {
                 @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 lg:my-8;
             }
@@ -51,33 +51,9 @@
 
         aside {
             @apply
-            bg-white
-            p-4
-            lg:p-8
-            xl:p-16
-            shadow-2xl
-            max-h-max
-            h-max
-            flex-grow-0
-            basis-auto
-            relative
-            after:content-['']
-            after:absolute
-            after:inset-0
-            after:-z-10
-            after:bg-black
-            after:bg-opacity-20
-            after:transform
-            after:origin-top-left
-            after:-rotate-1
-            md:after:-rotate-2
-            ;
-
-            img {
-                &:first-of-type {
-                    @apply mt-0;
-                }
-            }
+            lg:flex
+            lg:items-center
+            lg:basis-1/3
         }
     }
 }
