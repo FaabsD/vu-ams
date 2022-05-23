@@ -42,4 +42,13 @@ function register_widgets()
         'before_title'  => '<h2>',
         'after_title'   => '</h2>',
     ) );
+
+    register_sidebar( array(
+        'name'          => 'Footer Bottom',
+        'id'            => 'footer_bottom',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h2>',
+        'after_title'   => '</h2>',
+    ) );
 }
