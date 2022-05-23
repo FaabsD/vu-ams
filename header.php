@@ -35,4 +35,4 @@
     <?php dynamic_sidebar('navbar_menu_section'); ?>
     <?php endif; ?>
 </div>
-<div class="h-1"></div>
+<div class="h-[1px] bg-gradient-to-r from-ams-cyan to-ams-dark"></div>
