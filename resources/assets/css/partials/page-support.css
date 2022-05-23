@@ -11,11 +11,31 @@
         flex
         flex-col
         lg:flex-row
-            gap-8
-            md:gap-4
+        gap-8
+        md:gap-4
         lg:gap-16
         py-16
+        xl:relative
+        before:hidden
+        before:xl:block
+        before:xl:absolute
+        before:xl:top-48
+        before:xl:left-0
+        before:xl:!w-24
+        before:xl:!h-48
+
+        after:hidden
+        after:xl:block
+        after:xl:absolute
+        after:xl:bottom-1/4
+        after:xl:right-0
+        after:xl:!w-24
+        after:xl:!h-48
         ;
+
+        &:before, &:after {
+            @apply bg-dots;
+        }
 
         main {
             & > h1 {
@@ -40,18 +60,17 @@
             h-max
             flex-grow-0
             basis-auto
-                relative
-                after:content-['']
-                after:absolute
-                after:inset-0
-                after:-z-10
-                after:bg-black
-                after:bg-opacity-20
-                after:transform
-                after:origin-top-left
-                after:-rotate-1
-                md:after:-rotate-2
-                after:xl:-rotate-3
+            relative
+            after:content-['']
+            after:absolute
+            after:inset-0
+            after:-z-10
+            after:bg-black
+            after:bg-opacity-20
+            after:transform
+            after:origin-top-left
+            after:-rotate-1
+            md:after:-rotate-2
             ;
 
             img {
