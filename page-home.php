@@ -5,7 +5,8 @@
 <?php get_header(); ?>
 
 <!-- Homepage Header -->
-<header class="header">
+<header class="header" style="
+        background-image: url(<?php echo get_field( 'header_background_image' ) ? get_field( 'header_background_image' )['url'] : '' ?>);">
     <div class="header__content">
         <div class="header__text">
             <?php if ( get_field( 'header_text' ) && !empty( get_field( 'header_text' ) ) ) : ?>
@@ -31,25 +32,33 @@
             <?php endwhile; endif; ?>
         </div>
     </div>
-    <div class="header__shape"></div>
 
 
     <!-- Header images -->
     <?php if ( get_field( 'header_image_1' ) || get_field( 'header_image_2' ) ) : ?>
-        <div class="header__images">
-            <div class="header__images--1">
-                <?php $img1 = get_field( 'header_image_1' ); ?>
+        <?php
+        $img1 = get_field( 'header_image_1' );
+        $img2 = get_field( 'header_image_2' );
+        ?>
+        <div class="header__slider">
+            <div class="slider__img">
                 <img src="<?php echo $img1['url'] ?>" alt="<?php echo $img1['alt'] ?>">
             </div>
-            <div class="header__images--2">
-                <?php $img2 = get_field( 'header_image_2' ); ?>
+            <div class="slider__img slider__img--hidden">
                 <img src="<?php echo $img2['url'] ?>" alt="<?php echo $img2['alt'] ?>">
             </div>
-
+            <div class="slider__nav">
+                <div class="nav__thumb">
+                    <img src="<?php echo $img1['url'] ?>" alt="<?php echo $img1['alt'] ?>">
+                </div>
+                <div class="nav__thumb nav__thumb--inactive">
+                    <img src="<?php echo $img2['url'] ?>" alt="<?php echo $img2['alt'] ?>">
+                </div>
+            </div>
         </div>
     <?php endif; ?>
 
-<!-- Header dots -->
+    <!-- Header dots -->
     <div class="dots1 bg-dots"></div>
 
     <div class="dots2 bg-dots"></div>
@@ -84,7 +93,7 @@
         <h3 class="learn-more__heading">
             <?php echo $learn_more_title; ?>
         </h3>
-    <div class="dots bg-dots"></div>
+        <div class="dots bg-dots"></div>
     <?php endif; ?>
     <?php if ( get_field( 'learn_more_description' ) ) : ?>
         <div class="learn-more__description">
@@ -262,8 +271,8 @@
         <h3 class="what-is__heading">
             <?php echo $what_is_title; ?>
         </h3>
-    <div class="dots1 bg-dots"></div>
-    <div class="dots2 bg-dots"></div>
+        <div class="dots1 bg-dots"></div>
+        <div class="dots2 bg-dots"></div>
     <?php endif; ?>
     <?php if ( get_field( 'what_is_description' ) ) : ?>
         <div class="what-is__description">
