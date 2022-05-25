@@ -11,13 +11,13 @@
         lg:flex-row
         py-20
         justify-start
-            lg:justify-center
+        lg:justify-center
         max-h-max
         lg:min-h-screen
         items-center
-            lg:items-start
-            lg:py-32
-            lg:gap-x-32
+        lg:items-start
+        lg:py-32
+        lg:gap-x-32
         xl:gap-x-60
         2xl:gap-x-[23.5rem]
         after:absolute
@@ -236,6 +236,7 @@
 
             .hardware, .software {
                 @apply
+                !max-w-full
                 prose-sm
                 shadow-xl
                 p-4
