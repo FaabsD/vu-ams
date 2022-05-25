@@ -276,10 +276,10 @@
         }
 
         &__heartbeat {
-            @apply mx-auto lg:col-span-full w-60;
+            @apply mx-auto lg:col-span-full w-44;
 
             svg {
-                @apply stroke-black opacity-[.25] fill-black;
+                @apply opacity-[.25] fill-black;
             }
         }
 
