@@ -63,7 +63,7 @@
         }
 
         .footer__heart-rate {
-            @apply relative max-w-sm overflow-hidden;
+            @apply relative max-w-full overflow-hidden self-center;
 
             svg {
                 @apply w-full fill-ams-dark;
