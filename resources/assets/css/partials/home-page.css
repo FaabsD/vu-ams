@@ -139,10 +139,10 @@
         @apply px-8 lg:grid lg:grid-cols-3 xl:px-32 lg:gap-x-4 lg:my-32 my-16 lg:relative;
 
         &__heartbeat {
-            @apply mx-auto lg:col-span-full w-60;
+            @apply mx-auto lg:col-span-full w-44;
 
             svg {
-                @apply stroke-black opacity-[.25] fill-black;
+                @apply opacity-[.25] fill-black;
             }
         }
 
@@ -447,10 +447,10 @@
         @apply px-8 w-screen grid lg:grid-cols-2 lg:items-center lg:justify-center xl:px-32 mb-32 lg:relative;
 
         &__heartbeat {
-            @apply mx-auto lg:col-span-full w-60;
+            @apply mx-auto lg:col-span-full w-44;
 
             svg {
-                @apply stroke-black opacity-[.25] fill-black;
+                @apply opacity-[.25] fill-black;
             }
         }
 
@@ -671,7 +671,7 @@
         @apply px-8 xl:px-32 mb-32;
 
         &__heartbeat {
-            @apply mx-auto w-60;
+            @apply mx-auto w-44;
 
             svg {
                 @apply opacity-[.25] fill-black;
