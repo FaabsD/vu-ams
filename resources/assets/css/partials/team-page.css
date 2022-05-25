@@ -5,7 +5,7 @@
         @apply py-4 px-2 md:px-8 lg:px-32 lg:pt-16;
 
         h1 {
-            @apply text-3xl lg:text-6xl text-ams-cyan leading-loose;
+            @apply font-bold text-3xl lg:text-6xl text-ams-cyan leading-loose;
         }
     }
 
