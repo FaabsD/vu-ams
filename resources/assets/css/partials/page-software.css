@@ -20,7 +20,7 @@
         }
 
         h1 {
-            @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 lg:my-8;
+            @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 py-4;
         }
 
         & > .content {

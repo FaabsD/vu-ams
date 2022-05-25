@@ -14,7 +14,8 @@
         gap-8
         md:gap-4
         lg:gap-16
-        py-16
+        pt-4
+        pb-16
         xl:relative
         before:hidden
         before:xl:block

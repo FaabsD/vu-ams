@@ -5,7 +5,7 @@
         @apply px-8 xl:px-32 pt-8 md:pt-16;
 
         h1 {
-            @apply text-3xl lg:text-6xl text-ams-cyan font-bold
+            @apply text-3xl lg:text-6xl text-ams-cyan font-bold py-4
         }
     }
 
