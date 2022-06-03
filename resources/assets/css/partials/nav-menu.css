@@ -39,13 +39,13 @@
         @apply flex justify-between min-h-min;
 
         &__navigation {
-            @apply flex justify-between gap-x-16 grow-0 shrink-0;
+            @apply flex justify-between gap-x-12 2xl:gap-x-16 grow-0 shrink-0;
 
             .menu-item {
                 @apply text-white grow-0 shrink-0;
 
                 a {
-                    @apply font-normal text-lg pr-5 py-8 block box-border leading-tight;
+                    @apply font-normal text-base pr-5 py-8 block box-border leading-tight;
                 }
 
 
