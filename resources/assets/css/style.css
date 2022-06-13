@@ -10,6 +10,7 @@
 @import "./partials/page-support.css";
 @import "./partials/publications-page.css";
 @import "./partials/single-publication.css";
+@import "./partials/single-sofware-release.css";
 @import "./partials/footer.css";
 @import "tailwindcss/components";
 
