@@ -51,4 +51,28 @@ function register_post_types()
         'supports'     => array( 'title', 'thumbnail', 'editor', 'excerpt' ),
         'show_in_rest' => false,
     ) );
+
+    register_post_type('software-release', array(
+        'labels' => array(
+            'name' => 'Software Releases',
+            'singular_name' => 'Software Release',
+            'add_new' => 'Add Software Release',
+            'add_new_item' => 'Add new Software Release',
+            'all_items' => 'All Software Releases',
+            'edit_item' => 'Edit Software Release',
+            'name_admin_bar' => 'Software Releases',
+            'menu_name' => 'Software Releases',
+            'new_item' => 'New Software Release',
+            'not_found' => 'No Software Release found',
+            'not_found_in_trash' => 'No Software Release found in trash',
+            'search_items' => 'Search Software Releases',
+            'view_item' => 'View Software Release',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-media-archive',
+        'rewrite'      => array( 'with_front' => true ),
+        'supports'     => array( 'title', 'editor', 'excerpt'),
+        'show_in_rest' => true,
+    ));
 }
