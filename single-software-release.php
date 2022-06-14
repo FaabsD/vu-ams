@@ -24,7 +24,7 @@
 
                 <a href="<?php echo $windowsDownload['url'] ?>" class="download-link" download>
                     <?php echo get_sub_field( 'download_text' ) ? get_sub_field( 'download_text' ) : 'Download'; ?>
-                    <? xml version = "1.0" encoding = "iso-8859-1"?>
+                    <!-- xml version = "1.0" encoding = "iso-8859-1"-->
                     <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 497.886 497.886"
@@ -83,7 +83,7 @@
 
                 <a href="<?php echo $macDownload['url'] ?>" class="download-link" download>
                     <?php echo get_sub_field( 'download_text' ) ? get_sub_field( 'download_text' ) : "Download"; ?>
-                    <? xml version = "1.0" encoding = "iso-8859-1"?>
+                    <!-- xml version = "1.0" encoding = "iso-8859-1"-->
                     <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 305 305" style="enable-background:new 0 0 305 305;" xml:space="preserve">
