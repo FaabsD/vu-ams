@@ -58,7 +58,7 @@
             md:grid
             md:grid-cols-2
             text-center
-                md:text-left
+            md:text-left
             ;
 
             h3 {
@@ -130,6 +130,7 @@
             bg-ams-dark
             divide-y
             divide-ams-grey
+            h-auto
             max-h-[500px]
             overflow-y-scroll
             transform
@@ -141,7 +142,7 @@
             ;
 
             &--closed {
-                @apply transform scale-y-0;
+                @apply transform scale-y-0 h-0;
             }
 
             .release {
@@ -176,6 +177,25 @@
 
                         .brand-logo {
                             @apply w-6 md:w-8 inline-block fill-ams-grey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        @apply prose-sm md:prose !max-w-full;
+
+        .wp-block-columns {
+            @apply px-8 lg:px-32;
+
+            .wp-block-column {
+                .wp-block-group {
+                    &__inner-container {
+
+                        h1, h2, h3, h4, h5, h6 {
+                            @apply text-ams-cyan;
                         }
                     }
                 }
