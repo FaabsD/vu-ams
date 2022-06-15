@@ -8,8 +8,7 @@
     }
 
     .header {
-        @apply
-        px-8
+        @apply px-8
         py-4
         xl:px-32
         prose-sm
@@ -18,16 +17,14 @@
         flex-row
         justify-between
         items-start
-        !max-w-full
-        ;
+        !max-w-full;
 
         h2 {
-            @apply my-0
+            @apply my-0;
         }
 
         .btn {
-            @apply
-            px-4
+            @apply px-4
             py-2
             md:px-8
             md:py-4
@@ -43,23 +40,50 @@
         }
 
         img {
-            @apply w-32 md:w-72 xl:w-80
+            @apply w-32 md:w-72 xl:w-80;
         }
-
     }
 
     .releases {
-        @apply prose-sm md:prose mx-auto !max-w-full px-8 lg:px-32;
+        @apply prose-sm md:prose mx-auto !max-w-full px-8 lg:px-32 py-16;
 
         &__current {
-            @apply bg-ams-cyan border-b border-ams-grey py-4 px-8;
+            @apply
+            bg-ams-cyan
+            border-b
+            border-ams-grey
+            py-4 px-8
+            space-y-2
+            md:space-y-0
+            md:grid
+            md:grid-cols-2
+            text-center
+                md:text-left
+            ;
+
             h3 {
                 @apply mt-0 text-ams-dark;
             }
+
+            & > a {
+                @apply text-ams-dark md:mb-0 md:text-right;
+            }
+
             .downloads {
-                @apply flex flex-col md:flex-row items-end md:items-start space-y-2 md:space-y-0 justify-between;
+                @apply flex
+                flex-col
+                md:flex-row
+                items-center
+                md:items-start
+                justify-between
+                space-y-2
+                md:space-y-0
+                md:col-span-2
+                md:!mt-4;
+
                 &__download {
-                    @apply inline-flex flex-row gap-x-2 items-center;
+                    @apply inline-flex flex-row gap-x-2 items-start;
+
                     .brand-logo {
                         @apply w-6 md:w-8 inline-block fill-ams-dark;
                     }
@@ -67,23 +91,89 @@
             }
         }
 
+        &__opener {
+            @apply
+            p-4
+            bg-ams-cyan
+            !max-w-full
+            prose-sm
+            md:prose
+            flex
+            flex-row
+            justify-around
+            items-center
+            md:justify-between
+            md:py-4
+            md:px-8
+            select-none
+            ;
+
+            h3 {
+                @apply !m-0;
+            }
+
+            .opener-btn {
+                @apply hover:cursor-pointer transform transition-transform ease-in-out duration-100;
+
+                svg {
+                    @apply w-8 md:w-10 fill-ams-dark;
+                }
+
+                &--rotated {
+                    @apply transform rotate-180;
+                }
+            }
+        }
+
         &__previous {
-            @apply bg-ams-dark divide-y divide-ams-grey max-h-[500px] overflow-y-scroll;
+            @apply
+            bg-ams-dark
+            divide-y
+            divide-ams-grey
+            max-h-[500px]
+            overflow-y-scroll
+            transform
+            scale-y-100
+            transition-transform
+            ease-in-out
+            duration-100
+            origin-top
+            ;
+
+            &--closed {
+                @apply transform scale-y-0;
+            }
 
             .release {
-                @apply py-4 px-8;
+                @apply py-4 px-8 space-y-2 md:space-y-0 text-center md:grid md:grid-cols-2 select-none;
 
                 h4 {
-                    @apply mt-0 text-ams-grey
+                    @apply mt-0 md:!m-0 text-ams-grey;
                 }
-                &> a {
-                    @apply text-ams-grey
+
+                & > a {
+                    @apply text-ams-grey md:mb-0;
                 }
 
                 &__downloads {
-                    @apply flex flex-col md:flex-row items-end md:items-start justify-between space-y-2 md:space-y-0;
+                    @apply flex
+                    flex-col
+                    md:flex-row
+                    items-center
+                    md:items-start
+                    justify-around
+                    space-y-2
+                    md:space-y-0
+                    md:col-span-2
+                    md:!mt-4;
+
                     a {
-                        @apply inline-flex flex-row gap-x-2 items-center text-ams-grey;
+                        @apply inline-flex
+                        flex-row
+                        gap-x-2
+                        items-center
+                        text-ams-grey;
+
                         .brand-logo {
                             @apply w-6 md:w-8 inline-block fill-ams-grey;
                         }
