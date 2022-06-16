@@ -14,9 +14,11 @@
         prose-sm
         md:prose
         flex
-        flex-row
+        flex-col
+        md:flex-row
         justify-between
-        items-start
+        items-center
+        md:items-start
         !max-w-full;
 
         h2 {
@@ -45,7 +47,11 @@
     }
 
     .releases {
-        @apply prose-sm md:prose mx-auto !max-w-full px-8 lg:px-32 py-16;
+        @apply prose-sm md:prose mx-auto !max-w-full px-8 xl:px-32 py-16;
+
+        &__heading {
+            @apply text-ams-cyan text-2xl md:text-3xl;
+        }
 
         &__current {
             @apply
@@ -185,10 +191,10 @@
     }
 
     .content {
-        @apply prose-sm md:prose !max-w-full;
+        @apply prose-sm md:prose !max-w-full px-8 xl:px-32;
 
         .wp-block-columns {
-            @apply px-8 lg:px-32;
+            @apply lg:gap-x-16;
 
             .wp-block-column {
                 .wp-block-group {
@@ -197,9 +203,30 @@
                         h1, h2, h3, h4, h5, h6 {
                             @apply text-ams-cyan;
                         }
+
+                        .wp-block-file {
+                            a {
+                                &:not(.wp-block-file__button) {
+                                    @apply hidden;
+                                }
+                            }
+
+                            &__button {
+                                @apply bg-ams-cyan px-4 md:px-8 py-2 md:py-4 text-base text-white rounded-none hover:bg-ams-dark;
+                            }
+                        }
                     }
                 }
             }
+        }
+
+        > .wp-block-group {
+            @apply pb-16;
+
+            h1, h2, h3, h4, h5, h6 {
+                @apply text-ams-cyan;
+            }
+
         }
     }
 }

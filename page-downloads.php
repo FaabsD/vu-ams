@@ -41,6 +41,13 @@
     ?>
 
     <div class="releases">
+
+        <?php if ( get_field( 'releases_heading_text' ) ) : ?>
+            <h2 class="releases__heading">
+                <?php the_field( 'releases_heading_text' ); ?>
+            </h2>
+        <?php endif; ?>
+
         <?php if ( $releaseQuery->have_posts() ) : ?>
             <?php $current_release = $releaseQuery->get_posts()[0]; ?>
             <div class="releases__current">
