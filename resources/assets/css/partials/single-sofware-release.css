@@ -1,0 +1,63 @@
+.single-software-release {
+    @apply bg-white w-screen;
+
+    .software-release {
+        @apply py-8 md:py-16 lg:grid lg:grid-cols-3;
+
+        header {
+            @apply
+            px-8
+            xl:px-32
+            py-8
+            xl:py-16
+            prose-sm
+            md:prose
+            md:max-w-full
+            lg:col-span-full
+            ;
+
+            h1 {
+                @apply text-ams-cyan md:w-4/5 lg:w-3/4 font-bold;
+            }
+        }
+
+        article {
+            @apply prose-sm md:prose md:max-w-full px-8 xl:px-32 lg:col-start-1 lg:col-end-3;
+
+            h2, h3, h4, h5, h6 {
+                @apply
+                relative
+                after:absolute
+                after:content-['']
+                after:border-b
+                after:w-full
+                after:left-0
+                after:-bottom-0
+                md:after:-bottom-2
+                after:border-[#707070]
+                ;
+            }
+        }
+
+        .downloads {
+            @apply space-y-4 prose-sm md:prose md:max-w-full px-8 xl:px-32 py-8 md:py-16 lg:py-0 lg:col-start-3 lg:col-end-4;
+
+            header {
+                @apply m-0 p-0;
+                h2{
+                    @apply mt-0 text-ams-dark;
+                }
+            }
+
+            section {
+                .download-link {
+                    @apply no-underline text-ams-cyan flex flex-row justify-around lg:justify-between items-center gap-x-4;
+
+                    .brand-logo {
+                        @apply w-10 inline-block fill-ams-dark;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -19,7 +19,7 @@ mix.browserSync({
     https: true,
     online: true,
     cors: false,
-    browser: ["microsoft edge", "firefox developer edition", "firefox"],
+    browser: ["microsoft edge"],
     injectChanges: true,
 });
 
