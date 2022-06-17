@@ -10,7 +10,6 @@
         !max-w-full
         flex
         flex-col
-        lg:flex-row
         gap-8
         md:gap-4
         lg:gap-16
@@ -48,6 +47,35 @@
                     @apply text-ams-cyan font-semibold no-underline;
                 }
             }
+
+            .wp-block-columns {
+                @apply
+                px-8
+                xl:px-32
+                md:py-8
+                xl:py-16
+                prose-sm
+                md:prose
+                even:bg-[#f7f7f7]
+                odd:md:text-right
+                !max-w-[unset]
+                xl:-mx-32
+                -mx-8
+                w-screen
+                ;
+
+                .wp-block-column {
+                    h2 {
+                        @apply font-bold;
+                    }
+
+                    p {
+                        a {
+                            @apply text-ams-cyan font-semibold
+                        }
+                    }
+                }
+            }
         }
 
         aside {
@@ -59,8 +87,11 @@
             shadow-2xl
             max-h-max
             h-max
-            flex-grow-0
-            basis-auto
+            md:grid
+            md:grid-flow-col
+            md:auto-cols-max
+            md:justify-between
+            md:items-center
             relative
             after:content-['']
             after:absolute
@@ -75,6 +106,8 @@
             ;
 
             img {
+                @apply md:max-h-96;
+
                 &:first-of-type {
                     @apply mt-0;
                 }
