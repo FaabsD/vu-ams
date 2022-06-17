@@ -8,7 +8,9 @@
     }
 
     .header {
-        @apply px-8
+        @apply
+        relative
+        px-8
         py-4
         xl:px-32
         prose-sm
@@ -19,7 +21,28 @@
         justify-between
         items-center
         md:items-start
-        !max-w-full;
+        !max-w-full
+        before:hidden
+        before:xl:block
+        before:absolute
+        before:top-0
+        before:left-0
+        before:content-['']
+        before:!h-48
+        before:!w-24
+        after:hidden
+        after:xl:block
+        after:absolute
+        after:bottom-0
+        after:right-0
+        after:content-['']
+        after:!h-48
+        after:!w-24
+        ;
+
+        &:before, &:after {
+            @apply bg-dots;
+        }
 
         h2 {
             @apply my-0;
@@ -191,7 +214,33 @@
     }
 
     .content {
-        @apply prose-sm md:prose !max-w-full px-8 xl:px-32;
+        @apply
+        relative
+        prose-sm
+        md:prose
+        !max-w-full
+        px-8 xl:px-32
+        before:hidden
+        before:xl:block
+        before:absolute
+        before:top-0
+        before:left-0
+        before:content-['']
+        before:!h-48
+        before:!w-24
+            after:hidden
+            after:xl:block
+            after:absolute
+            after:bottom-16
+            after:right-0
+            after:content-['']
+            after:!h-48
+            after:!w-24
+        ;
+
+        &:before, &:after {
+            @apply bg-dots;
+        }
 
         .wp-block-columns {
             @apply lg:gap-x-16;
