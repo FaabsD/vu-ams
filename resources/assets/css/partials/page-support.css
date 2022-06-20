@@ -1,9 +1,8 @@
 .support {
-    @apply bg-white w-screen;
+  @apply bg-white w-screen;
 
-    .content {
-        @apply
-        px-8
+  .content {
+    @apply px-8
         xl:px-32
         prose-sm
         md:prose
@@ -30,27 +29,26 @@
         after:xl:bottom-1/4
         after:xl:right-0
         after:xl:!w-24
-        after:xl:!h-48
-        ;
+        after:xl:!h-48;
 
-        &:before, &:after {
-            @apply bg-dots;
+    &:before,
+    &:after {
+      @apply bg-dots;
+    }
+
+    main {
+      & > h1 {
+        @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 lg:my-8;
+      }
+
+      p {
+        a {
+          @apply text-ams-cyan font-semibold no-underline;
         }
+      }
 
-        main {
-            & > h1 {
-                @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 lg:my-8;
-            }
-
-            p {
-                a {
-                    @apply text-ams-cyan font-semibold no-underline;
-                }
-            }
-
-            .wp-block-columns {
-                @apply
-                px-8
+      .wp-block-columns {
+        @apply px-8
                 xl:px-32
                 md:py-8
                 xl:py-16
@@ -61,37 +59,54 @@
                 !max-w-[unset]
                 xl:-mx-32
                 -mx-8
-                w-screen
-                ;
+                w-screen;
 
-                .wp-block-column {
-                    h2 {
-                        @apply font-bold;
-                    }
+        .wp-block-column {
+          h2 {
+            @apply font-bold;
+          }
 
-                    p {
-                        a {
-                            @apply text-ams-cyan font-semibold
-                        }
-                    }
-                }
+          p {
+            a {
+              @apply text-ams-cyan font-semibold;
             }
+          }
+          .wp-block-image {
+            @apply md:my-0 lg:my-14;
+            img {
+              @apply md:max-h-96
+              md:object-contain
+              xl:max-h-[500px];
+            }
+          }
+          .wonderplugin-pdf-iframe {
+            @apply min-h-[500px]
+            shadow-md
+            md:shadow-xl
+            -mx-8
+            w-screen
+            md:w-full
+            md:-mx-0
+            2xl:min-h-[500px];
+          }
         }
+      }
+    }
 
-        aside {
-            @apply
-            bg-white
+    aside {
+      @apply bg-white
             p-4
-            lg:p-8
+            md:p-8
             xl:p-16
             shadow-2xl
             max-h-max
             h-max
             md:grid
             md:grid-flow-col
-            md:auto-cols-max
+            md:auto-cols-fr
             md:justify-between
             md:items-center
+            md:gap-x-4
             relative
             after:content-['']
             after:absolute
@@ -102,16 +117,15 @@
             after:transform
             after:origin-top-left
             after:-rotate-1
-            md:after:-rotate-2
-            ;
+            md:after:-rotate-2;
 
-            img {
-                @apply md:max-h-96;
+      img {
+        @apply md:max-h-96;
 
-                &:first-of-type {
-                    @apply mt-0;
-                }
-            }
+        &:first-of-type {
+          @apply mt-0;
         }
+      }
     }
+  }
 }
