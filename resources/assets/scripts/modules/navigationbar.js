@@ -21,7 +21,7 @@ $(document).ready(function () {
             rootMargin: "0px",
             threshhold: 1.0,
         };
-// initialize and start the observer.
+        // initialize and start the observer.
         const observer = new IntersectionObserver(handleScroll, options);
         observer.observe(body.children[1]);
 
@@ -36,9 +36,11 @@ $(document).ready(function () {
                 let menu = subMenu.querySelector('ul.sub-menu');
 
                 // trigger a click event on the trigger link
-                triggerBtn.addEventListener('click', function (e) {
+                triggerBtn.addEventListener('mouseenter', function (e) {
                     // prevent the link from performing the default action
-                    e.preventDefault();
+                    if (triggerBtn.href === 'http://*' || triggerBtn.href.includes('*')) {
+                        e.preventDefault();
+                    }
 
                     // for closing other open sub-menus
                     let openSubmenus = document.querySelectorAll('.sub-menu--show');
