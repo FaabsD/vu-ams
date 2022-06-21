@@ -2,8 +2,12 @@ const mix = require('laravel-mix');
 
 mix.browserSync({
     proxy: {
-        target: 'https://vu-ams.test',
+        target: 'http://vu-ams.test',
         ws: true,
+        middleware: function (req, res, next) {
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            next();
+        },
     },
     files: [
         'index.php',
@@ -16,11 +20,12 @@ mix.browserSync({
     ],
     watch: true,
     open: 'local',
-    https: true,
+    https: false,
     online: true,
-    cors: false,
+    cors: true,
     browser: ["microsoft edge"],
     injectChanges: true,
+    logLevel: 'debug',
 });
 
 mix.postCss('resources/assets/css/style.css', 'build/css/app.css', [
@@ -34,6 +39,6 @@ mix.postCss('resources/assets/css/style.css', 'build/css/app.css', [
 mix.js('resources/assets/scripts/app.js', 'build/scripts/app.js');
 mix.webpackConfig({
     stats: {
-        children: false
+        children: true
     }
 });
