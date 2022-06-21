@@ -2,7 +2,7 @@ const mix = require('laravel-mix');
 
 mix.browserSync({
     proxy: {
-        target: 'https://vu-ams.test',
+        target: 'http://vu-ams.test',
         ws: true,
         middleware: function (req, res, next) {
             res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,7 +20,7 @@ mix.browserSync({
     ],
     watch: true,
     open: 'local',
-    https: true,
+    https: false,
     online: true,
     cors: true,
     browser: ["microsoft edge"],
