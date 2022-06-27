@@ -132,7 +132,7 @@
 								&__inner-container {
 									.wp-block-audio {
 										> audio {
-											@apply !min-w-full w-full rounded-full shadow-lg;
+											@apply !min-w-full w-full rounded-full shadow-lg xl:shadow-xl;
 										}
 									}
 								}
