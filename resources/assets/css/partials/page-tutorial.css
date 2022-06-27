@@ -1,0 +1,147 @@
+.tutorial-page {
+	@apply bg-white w-screen;
+
+	.content {
+		@apply px-8
+        xl:px-32
+        prose-sm
+        md:prose
+        !max-w-full
+        flex
+        flex-col
+        gap-8
+        md:gap-4
+        lg:gap-16
+        pt-4
+        pb-16
+        xl:relative
+        before:hidden
+        before:xl:block
+        before:xl:absolute
+        before:xl:top-48
+        before:xl:left-0
+        before:xl:!w-24
+        before:xl:!h-48
+
+        after:hidden
+        after:xl:block
+        after:xl:absolute
+        after:xl:bottom-1/4
+        after:xl:right-0
+        after:xl:!w-24
+        after:xl:!h-48;
+
+		&:before,
+		&:after {
+			@apply bg-dots;
+		}
+
+		main {
+			& > h1 {
+				@apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 lg:my-8;
+			}
+
+			p {
+				a {
+					@apply text-ams-cyan font-semibold no-underline;
+				}
+			}
+
+			> .wp-block-columns {
+				@apply px-8
+                    xl:px-32
+                    md:py-8
+                    xl:py-16
+                    prose-sm
+                    md:prose
+                    even:bg-[#f7f7f7]
+                    odd:md:text-right
+                    !max-w-[unset]
+                    xl:-mx-32
+                    -mx-8
+                    w-screen
+                    first-of-type:lg:space-x-4
+                    first-of-type:2xl:space-x-8;
+
+				&.small-gap {
+					@apply gap-x-2;
+				}
+
+				&.signals {
+					@apply text-center;
+					> .wp-block-column {
+						.wp-block-group {
+							&__inner-container {
+								.wp-block-image {
+									@apply !my-0;
+									img {
+										@apply md:w-3/4 2xl:w-2/3;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.wp-block-column {
+					h2 {
+						@apply font-bold;
+					}
+
+					p {
+						a {
+							@apply text-ams-cyan font-semibold;
+						}
+					}
+
+					.wp-block-image {
+						@apply md:my-0 lg:my-14;
+						img {
+							@apply md:max-h-96
+                                md:object-contain
+                                xl:max-h-[500px]
+                                mx-auto;
+						}
+
+						&--less-margin {
+							@apply lg:my-7;
+
+							.alignleft,
+							.alignright,
+							img {
+								@apply lg:my-7;
+							}
+						}
+					}
+
+					.wp-block-embed {
+						&__wrapper {
+							iframe {
+								@apply w-full md:min-h-[350px] lg:min-h-[250px] xl:min-h-[300px] 2xl:min-h-[450px] max-h-fit h-auto;
+							}
+						}
+					}
+
+					& > .wp-block-columns {
+						&.small-gap {
+							@apply gap-x-2;
+						}
+
+						& > .wp-block-column {
+							.wp-block-group {
+								&__inner-container {
+									.wp-block-audio {
+										> audio {
+											@apply !min-w-full w-full rounded-full shadow-lg xl:shadow-xl;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
