@@ -17,6 +17,7 @@
 @import "tailwindcss/components";
 /* import woocommerce stylings */
 @import "./woocommerce/pages/shop-page.css";
+@import "./woocommerce/pages/single-product.css";
 
 @import "tailwindcss/utilities";
 
