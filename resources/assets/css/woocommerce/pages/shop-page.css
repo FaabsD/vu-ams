@@ -1,9 +1,36 @@
 .woocommerce-shop {
 	.content-area {
+		@apply py-8 lg:py-16;
 		main.site-main {
-			@apply px-8 xl:px-32;
+			@apply px-8 xl:px-32 space-y-4;
+
+			.woocommerce-breadcrumb {
+				@apply prose-sm md:prose text-ams-text_light;
+
+				a {
+					@apply no-underline;
+				}
+			}
+
+			.woocommerce-products-header {
+				&__title {
+					@apply font-bold text-3xl lg:text-6xl text-ams-cyan;
+				}
+			}
+
+			.woocommerce-result-count {
+				@apply prose-sm md:prose float-none md:float-left md:pb-4 lg:pb-8;
+			}
+
+			.woocommerce-ordering {
+				@apply inline-block float-none md:float-right md:pb-4 lg:pb-8;
+				.orderby {
+					@apply focus:ring-1 focus:ring-ams-cyan;
+				}
+			}
+
 			.products {
-				@apply grid before:hidden;
+				@apply grid gap-8 md:gap-8 2xl:gap-16 before:hidden;
 
 				&.columns-2 {
 					@apply grid-cols-1 md:grid-cols-2 md:justify-items-center;
@@ -20,12 +47,19 @@
 				.product {
 					@apply prose-sm 
                     md:prose 
-                    shadow 
-                    md:shadow-md 
-                    lg:shadow-xl 
-                    p-4
+                    shadow-lg
+                    xl:shadow-xl
+                    py-4
+                    px-4
+                    md:py-8
+                    lg:py-4
+                    2xl:p-8
                     float-none
-                    w-auto;
+                    w-full
+                    m-0
+                    border
+                    border-dashed
+                    border-ams-dark;
 
 					.woocommerce-loop-product__link {
 						@apply no-underline;
@@ -35,11 +69,16 @@
 							@apply m-0 object-contain w-full;
 						}
 
+						.woocommerce-placeholder {
+							@apply object-cover object-center;
+						}
+
 						.woocommerce-loop-product__title {
-							@apply text-ams-cyan;
+							@apply text-ams-cyan mt-4 mb-0;
 						}
 
 						.price {
+							@apply m-0 text-base;
 							.amount {
 								@apply text-ams-dark;
 							}
