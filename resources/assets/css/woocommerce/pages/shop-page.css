@@ -1,0 +1,53 @@
+.woocommerce-shop {
+	.content-area {
+		main.site-main {
+			@apply px-8 xl:px-32;
+			.products {
+				@apply grid before:hidden;
+
+				&.columns-2 {
+					@apply grid-cols-1 md:grid-cols-2 md:justify-items-center;
+				}
+
+				&.columns-3 {
+					@apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+				}
+
+				&.columns-4 {
+					@apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+				}
+
+				.product {
+					@apply prose-sm 
+                    md:prose 
+                    shadow 
+                    md:shadow-md 
+                    lg:shadow-xl 
+                    p-4
+                    float-none
+                    w-auto;
+
+					.woocommerce-loop-product__link {
+						@apply no-underline;
+
+						.attachment-woocommerce_thumbnail,
+						.woocommerce-placeholder {
+							@apply m-0 object-contain w-full;
+						}
+
+						.woocommerce-loop-product__title {
+							@apply text-ams-cyan;
+						}
+
+						.price {
+							.amount {
+								@apply text-ams-dark;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
