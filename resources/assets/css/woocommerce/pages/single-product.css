@@ -36,6 +36,16 @@
 
 				.cart {
 					@apply float-left;
+
+					.screen-reader-text {
+						@apply sr-only;
+					}
+
+					.input-text,
+					.qty,
+					text {
+						@apply focus:ring-1 focus:ring-ams-cyan;
+					}
 				}
 
 				/* Style the add to Quote button container  */
@@ -54,10 +64,72 @@
 						}
 					}
 				}
+
+				.product_meta {
+					.posted_in {
+						a {
+							@apply text-ams-cyan;
+						}
+					}
+				}
 			}
 
-			.woocommerce-tabs {
+			.woocommerce-tabs,
+			.wc-tabs-wrapper {
 				@apply col-span-full;
+
+				.tabs,
+				.wc-tabs {
+					li {
+						&.active {
+							a {
+								@apply text-ams-dark;
+							}
+						}
+						a {
+							@apply text-ams-text_light;
+						}
+					}
+				}
+
+				.woocommerce-Tabs-panel {
+					&--description {
+						@apply prose-sm md:prose;
+					}
+
+					&--reviews {
+						@apply prose-sm md:prose;
+
+						.woocommerce-Reviews {
+							#review_form_wrapper {
+								#review_form {
+									.comment-respond {
+										.comment-form {
+											&-author,
+											&-email {
+												input {
+													@apply w-full focus:ring-1 focus:ring-ams-cyan;
+												}
+											}
+
+											&-cookies-consent {
+												input[type="checkbox"] {
+													@apply focus:ring-1 focus:ring-ams-cyan checked:bg-ams-cyan;
+												}
+											}
+
+											.form-submit {
+												.submit {
+													@apply bg-ams-yellow text-ams-dark rounded-none py-2 px-4 text-lg font-bold;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
