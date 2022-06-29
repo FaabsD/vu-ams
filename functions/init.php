@@ -23,6 +23,9 @@ function theme_setup()
 
     // add theme support for Woocommerce
     add_theme_support('woocommerce');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
 
     add_theme_support('post-thumbnails');
     add_image_size('custom-thumbnail-image-size', 570, 380, true);
