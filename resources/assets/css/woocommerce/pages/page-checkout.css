@@ -257,6 +257,7 @@
 				}
 
 				/* style woocommerce order */
+				/* TODO: Create styling for the confirmed order */
 				.woocommerce-order {
 					.woocommerce-order-details {
 						h2 {
