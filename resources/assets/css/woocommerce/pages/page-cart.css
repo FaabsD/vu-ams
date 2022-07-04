@@ -1,0 +1,165 @@
+.shopping-cart,
+.woocommerce-cart {
+	.content {
+		@apply prose-sm md:prose !max-w-full;
+
+		header {
+			@apply px-8 xl:px-32;
+			& > h1 {
+				@apply text-3xl lg:text-6xl text-ams-cyan font-bold my-4 lg:my-8;
+			}
+		}
+
+		main {
+			@apply px-8 xl:px-32;
+
+			.woocommerce {
+				@apply lg:grid lg:grid-cols-2;
+
+				&-notices-wrapper {
+					@apply lg:col-span-full;
+
+					.woocommerce-message {
+						@apply border-t-2 
+                        border-t-ams-cyan 
+                        bg-ams-grey 
+                        text-ams-dark
+                        px-12
+                        py-4
+                        before:text-ams-cyan
+                        before:content-["\e015"]
+                        m-0;
+					}
+				}
+
+				&-cart-form {
+					/* Style shopping cart table */
+					&__contents {
+						@apply table-fixed rounded-none;
+
+						tbody {
+							@apply divide-y divide-ams-dark;
+
+							/* Style table rows */
+							tr.cart_item {
+								/* basic styling for all table data (td) */
+								td {
+									@apply even:bg-ams-grey 
+                                    bg-white 
+                                    first-of-type:bg-ams-grey;
+									/* Style product info heading on mobile */
+									&:before {
+										@apply text-ams-dark font-semibold;
+									}
+									/* style td containing the quantity */
+									&.product-quantity {
+										/* style the quantity input with its label */
+										.quantity {
+											& > .input-text,
+											& > .qty {
+												@apply border-ams-dark 
+                                                focus:border-transparent 
+                                                focus:ring-2 
+                                                focus:ring-ams-cyan
+                                                w-auto
+                                                py-1 
+                                                px-2
+                                                text-sm;
+											}
+										}
+									}
+									/* style the product removal container and button */
+									&.product-remove {
+										/* style the product removal button */
+										.remove {
+											@apply block text-2xl text-red-600 px-2 h-auto w-auto max-w-max max-h-max leading-tight;
+										}
+									}
+								}
+							}
+							/* Style coupon section */
+							tr:last-of-type {
+								.actions {
+									/* Style the coupon code input and apply button container */
+									.coupon {
+										@apply flex flex-row justify-between before:hidden after:hidden;
+										/* style coupon code input */
+										#coupon_code {
+											@apply focus:border-transparent focus:ring-2 focus:ring-ams-cyan float-none m-0;
+										}
+										/* Style apply button */
+										& > .button {
+											@apply bg-ams-yellow 
+                                            text-ams-dark 
+                                            grow-0 
+                                            shrink-0 
+                                            rounded-none 
+                                            min-w-min 
+                                            max-w-max 
+                                            px-4 
+                                            py-2 
+                                            m-0 
+                                            float-none;
+										}
+									}
+
+									/* Style the update cart button */
+									& > .button {
+										@apply py-2 px-4 bg-ams-cyan !text-ams-dark text-sm rounded-none;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				/* Style totals container */
+				.cart-collaterals {
+					@apply before:hidden;
+					/* Style totals */
+					.cart_totals {
+						@apply space-y-4;
+						/* Style totals heading */
+						h2 {
+							@apply !text-ams-cyan;
+						}
+
+						/* style totals price table */
+						.shop_table,
+						.shop_table_responsive {
+							@apply rounded-none m-0;
+
+							tbody {
+								tr {
+									@apply bg-white last-of-type:bg-ams-grey;
+									/* basic styling for all table data (td) */
+									td {
+										/* Style product info heading on mobile */
+										&:before {
+											@apply text-ams-dark font-semibold;
+										}
+									}
+								}
+							}
+						}
+
+						/* style checkout section */
+						.wc-proceed-to-checkout {
+							@apply p-0;
+							/* Style checkout button */
+							.checkout-button {
+								@apply bg-ams-yellow 
+                                text-ams-dark 
+                                hover:bg-ams-dark 
+                                hover:text-ams-grey
+                                font-semibold 
+                                rounded-none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
