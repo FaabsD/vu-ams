@@ -84,6 +84,24 @@
 							}
 						}
 					}
+
+					.add_to_cart_button {
+						@apply bg-ams-yellow 
+						no-underline 
+						text-ams-dark 
+						rounded-none 
+						py-2 
+						px-4
+						text-base
+						xl:py-3
+						xl:px-6
+						hover:bg-ams-dark
+						hover:text-ams-grey
+						mr-4;
+					}
+					.added_to_cart {
+						@apply text-base text-ams-dark hover:text-ams-cyan;
+					}
 				}
 			}
 		}
