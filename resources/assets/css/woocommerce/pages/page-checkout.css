@@ -257,11 +257,87 @@
 				}
 
 				/* style woocommerce order */
-				/* TODO: Create styling for the confirmed order */
+				/* TODO Create styling for the confirmed order */
 				.woocommerce-order {
+					.woocommerce-order-overview {
+						@apply divide-y 
+						divide-dashed 
+						divide-ams-dark 
+						p-0 
+						m-0 
+						md:grid 
+						md:grid-flow-col
+						md:auto-cols-fr
+						md:divide-y-0
+						md:divide-x
+						md:before:hidden
+						md:after:hidden;
+						li {
+							@apply m-0 
+							float-none 
+							px-0 
+							py-1.5 
+							leading-loose 
+							border-x-0 
+							uppercase
+							md:py-2
+							md:px-4
+							md:text-xs;
+							& > strong {
+								@apply text-ams-dark;
+							}
+						}
+					}
+					/* Style woocommerce order details */
 					.woocommerce-order-details {
+						@apply space-y-6;
 						h2 {
 							@apply text-ams-cyan;
+						}
+						/* Style the order details table */
+						.order_details {
+							@apply border border-solid border-ams-text_light rounded-none shadow-lg border-collapse table-fixed m-0;
+							thead {
+								tr {
+									@apply divide-x divide-ams-text_light;
+									th {
+										@apply bg-ams-dark text-ams-grey;
+									}
+								}
+							}
+							tbody {
+								tr {
+									@apply divide-x odd:bg-ams-grey;
+									td {
+										@apply text-ams-dark;
+										a {
+											@apply md:text-ams-cyan md:no-underline md:font-medium;
+										}
+									}
+								}
+							}
+							tfoot {
+								tr {
+									@apply odd:bg-ams-grey divide-x;
+									th {
+										@apply text-ams-dark font-black;
+									}
+									td {
+										@apply text-ams-dark font-semibold;
+									}
+								}
+							}
+						}
+						/* style view order details view button */
+						.button,
+						.btn {
+							@apply bg-ams-yellow 
+							rounded-none 
+							text-ams-dark 
+							hover:bg-ams-dark 
+							hover:text-ams-grey
+							py-3
+							px-4;
 						}
 					}
 				}
