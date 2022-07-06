@@ -83,7 +83,7 @@
 					}
 
 					.cart {
-						@apply float-left;
+						@apply float-none flex flex-row justify-start items-center gap-x-2 before:hidden;
 
 						.screen-reader-text {
 							@apply sr-only;
@@ -93,6 +93,20 @@
 						.qty,
 						text {
 							@apply focus:ring-2 focus:ring-ams-cyan focus:border-transparent w-20;
+						}
+
+						/* Style the Add to cart button */
+						.single_add_to_cart_button {
+							@apply bg-ams-yellow 
+							text-ams-dark 
+							hover:bg-ams-dark 
+							hover:text-ams-grey
+							float-none
+							py-2 
+							px-4
+							leading-normal
+							text-base
+							font-medium;
 						}
 					}
 
