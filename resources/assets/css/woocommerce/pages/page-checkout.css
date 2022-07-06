@@ -44,6 +44,11 @@
 						}
 					}
 				}
+
+				/* style error message */
+				.woocommerce-error {
+					@apply pl-10;
+				}
 				/* Style coupon form */
 				.woocommerce-form-coupon {
 					@apply grid grid-flow-row auto-rows-auto md:grid-cols-2;
@@ -74,6 +79,20 @@
 
 				/* Style checkout form */
 				.woocommerce-checkout {
+					/* style errors in checkoutform */
+					> .woocommerce-NoticeGroup-checkout {
+						> .woocommerce-error {
+							@apply pl-10
+							md:pl-14
+							pr-4
+							md:pr-8 
+							text-sm
+							md:text-base
+							before:left-4
+							md:before:left-6
+							before:content-["\e016"];
+						}
+					}
 					/* style customer detailt section */
 					#customer_details,
 					.col2-set {
