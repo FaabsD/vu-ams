@@ -13,6 +13,41 @@
 				}
 			}
 
+			/* Style the woocommerce notification */
+			.woocommerce-notices-wrapper {
+				.woocommerce-message {
+					@apply bg-ams-grey border-ams-cyan
+					before:content-["\e015"]
+					before:text-ams-cyan
+					text-sm
+					flex
+					flex-col-reverse
+					md:text-base
+					md:flex-row-reverse
+					md:justify-between
+					md:items-center
+					md:before:top-[unset]
+					md:after:hidden;
+
+					.button,
+					.wc-forward {
+						@apply bg-ams-yellow 
+						text-ams-dark 
+						hover:bg-ams-dark 
+						hover:text-ams-grey
+						rounded-none
+						py-2 
+						px-4
+						leading-normal
+						text-sm
+						grow-0
+						shrink-0
+						max-w-max
+						md:text-base;
+					}
+				}
+			}
+
 			> .product {
 				@apply grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 lg:gap-x-12 xl:gap-x-32;
 
