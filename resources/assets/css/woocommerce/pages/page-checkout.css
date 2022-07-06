@@ -257,7 +257,6 @@
 				}
 
 				/* style woocommerce order */
-				/* TODO Create styling for the confirmed order */
 				.woocommerce-order {
 					.woocommerce-order-overview {
 						@apply divide-y 
