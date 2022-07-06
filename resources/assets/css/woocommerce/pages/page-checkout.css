@@ -296,10 +296,19 @@
 						}
 						/* Style the order details table */
 						.order_details {
-							@apply border border-solid border-ams-text_light rounded-none shadow-lg border-collapse table-fixed m-0;
+							@apply border 
+							border-solid 
+							border-ams-grey
+							rounded-none 
+							shadow-lg 
+							border-collapse 
+							table-fixed 
+							m-0
+							xl:shadow-2xl;
+
 							thead {
 								tr {
-									@apply divide-x divide-ams-text_light;
+									@apply divide-x divide-ams-text_light xl:text-sm 2xl:text-base;
 									th {
 										@apply bg-ams-dark text-ams-grey;
 									}
@@ -309,16 +318,16 @@
 								tr {
 									@apply divide-x odd:bg-ams-grey;
 									td {
-										@apply text-ams-dark;
+										@apply text-ams-dark xl:text-sm 2xl:text-base;
 										a {
-											@apply md:text-ams-cyan md:no-underline md:font-medium;
+											@apply md:text-ams-cyan md:no-underline md:font-medium hover:text-ams-dark hover:underline;
 										}
 									}
 								}
 							}
 							tfoot {
 								tr {
-									@apply odd:bg-ams-grey divide-x;
+									@apply odd:bg-ams-grey divide-x xl:text-sm 2xl:text-base;
 									th {
 										@apply text-ams-dark font-black;
 									}
@@ -337,7 +346,8 @@
 							hover:bg-ams-dark 
 							hover:text-ams-grey
 							py-3
-							px-4;
+							px-4
+							xl:!mt-10;
 						}
 					}
 				}
