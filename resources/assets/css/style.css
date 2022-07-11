@@ -18,6 +18,7 @@
 /* import woocommerce stylings */
 @import "./woocommerce/pages/page-cart.css";
 @import "./woocommerce/pages/page-checkout.css";
+@import "./woocommerce/pages/page-my_account.css";
 @import "./woocommerce/pages/product-category.css";
 @import "./woocommerce/pages/shop-page.css";
 @import "./woocommerce/pages/single-product.css";
