@@ -199,6 +199,23 @@
 							}
 						}
 					}
+
+					/* style adresses section */
+					.woocommerce-Addresses {
+						@apply w-full flex flex-col;
+
+						.woocommerce-Address {
+							.woocommerce-Address-title {
+								@apply flex flex-row justify-between items-end before:hidden after:hidden px-0 my-2;
+								> h3 {
+									@apply text-ams-cyan basis-auto m-0;
+								}
+								.edit {
+									@apply px-4 py-2 bg-ams-cyan text-ams-dark max-h-max h-min;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
