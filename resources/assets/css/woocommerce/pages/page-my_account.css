@@ -62,7 +62,9 @@
 						border 
 						border-collapse 
 						rounded-none 
-						shadow-md;
+						shadow-md
+						lg:shadow-lg
+						xl:shadow-xl;
 
 						/* style table head */
 						thead {
@@ -117,6 +119,82 @@
 											hover:bg-ams-dark;
 										}
 									}
+								}
+							}
+						}
+					}
+
+					/* style order details of single order */
+					p {
+						> mark {
+							&.order-number,
+							&.order-date,
+							&.order-status {
+								@apply bg-ams-yellow;
+							}
+						}
+					}
+					/* style the details section of the order */
+					.woocommerce-order-details {
+						&__title {
+							@apply text-ams-cyan;
+						}
+						/* style the table containing the order details */
+						& > .woocommerce-table {
+							@apply rounded-none 
+							border-collapse 
+							shadow-md 
+							lg:shadow-lg 
+							xl:shadow-xl;
+
+							thead {
+								tr {
+									@apply bg-ams-dark divide-x divide-ams-text_light;
+									th {
+										@apply text-ams-grey;
+									}
+								}
+							}
+							tbody {
+								tr {
+									@apply divide-x even:bg-ams-grey;
+								}
+							}
+							tfoot {
+								tr {
+									@apply even:bg-ams-grey;
+								}
+							}
+						}
+						/* style View button */
+						& > .button {
+							@apply bg-ams-yellow 
+							text-ams-dark 
+							hover:bg-ams-dark
+							hover:text-ams-grey
+							rounded-none 
+							py-2.5
+							lg:py-3 
+							px-4
+							lg:px-8;
+						}
+					}
+
+					.woocommerce-customer-details {
+						& > .woocommerce-column__title {
+							@apply text-ams-cyan;
+						}
+
+						address {
+							@apply rounded-none 
+							border 
+							shadow-md
+							lg:shadow-lg
+							xl:shadow-xl;
+							& > p {
+								&.woocommerce-customer-details--phone,
+								&.woocommerce-customer-details--email {
+									@apply max-w-full break-words my-0;
 								}
 							}
 						}
