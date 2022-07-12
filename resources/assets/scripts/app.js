@@ -2,6 +2,7 @@ $ = jQuery;
 
 require('./modules/3d-preview');
 require('./modules/home-header-slider');
+require('./modules/my-account');
 require('./modules/navigationbar');
 require('./modules/previous-downloads');
 require('./modules/set-image-height-client');
