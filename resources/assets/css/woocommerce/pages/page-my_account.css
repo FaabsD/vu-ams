@@ -202,7 +202,7 @@
 
 					/* style adresses section */
 					.woocommerce-Addresses {
-						@apply w-full flex flex-col;
+						@apply w-full flex flex-col lg:flex-row lg:before:hidden lg:after:hidden lg:justify-between;
 
 						.woocommerce-Address {
 							.woocommerce-Address-title {
@@ -211,7 +211,7 @@
 									@apply text-ams-cyan basis-auto m-0;
 								}
 								.edit {
-									@apply px-4 py-2 bg-ams-cyan text-ams-dark max-h-max h-min;
+									@apply px-4 py-2 bg-ams-yellow text-ams-dark max-h-max h-min md:no-underline hover:text-ams-grey hover:bg-ams-dark;
 								}
 							}
 						}
