@@ -31,6 +31,69 @@
                         m-0;
 					}
 				}
+
+				/* style login form toggle  */
+				.woocommerce-form-login-toggle {
+					@apply lg:col-span-full;
+					.woocommerce-info {
+						@apply border-t-[3px] 
+                        border-t-ams-cyan 
+                        bg-ams-grey before:content-["\e028"] 
+                        before:text-ams-cyan;
+						.showlogin {
+							@apply font-bold;
+						}
+					}
+				}
+
+				/* Style login form  */
+				.woocommerce-form-login,
+				.login {
+					@apply grid grid-flow-row auto-rows-auto md:grid-cols-2 gap-y-4 md:gap-4 lg:gap-8;
+					& > p {
+						@apply col-span-full lg:mb-0;
+					}
+					.form-row {
+						@apply float-none 
+                        col-span-1
+                        before:hidden
+                        after:hidden
+                        w-full
+						m-0 
+						p-0;
+						input {
+							@apply w-full 
+                            focus:border-transparent
+                            focus:ring-2
+                            focus:ring-ams-cyan;
+						}
+						.button {
+							@apply bg-ams-cyan 
+                            text-ams-dark
+                            rounded-none
+                            py-3
+                            px-4;
+						}
+						.woocommerce-form__label,
+						.woocommerce-form__label-for-checkbox,
+						.woocommerce-form-login__rememberme {
+							@apply float-none lg:shrink-0 lg:text-sm 2xl:text-base;
+							.woocommerce-form__input-checkbox {
+								@apply checked:bg-ams-cyan 
+								focus:ring-2 
+								focus:border-ams-dark 
+								focus:ring-ams-cyan
+								w-4 h-4;
+							}
+						}
+					}
+					.lost_password {
+						@apply col-span-1 md:text-right md:m-0;
+					}
+					.clear {
+						@apply hidden;
+					}
+				}
 				/* style coupon form toggle */
 				.woocommerce-form-coupon-toggle {
 					@apply lg:col-span-full;
