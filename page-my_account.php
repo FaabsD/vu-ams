@@ -1,5 +1,11 @@
 <?php
-// Template name: My account
+/**
+ * Template name: My account
+ *
+ * @package    WordPress
+ * @subpackage VU-AMS
+ */
+
 ?>
 
 <?php get_header(); ?>
