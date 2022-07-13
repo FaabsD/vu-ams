@@ -46,7 +46,8 @@
 							md:text-base
 							before:left-4
 							md:before:left-6
-							before:content-["\e016"];
+							before:content-["\e016"]
+							mb-0;
 						}
 					}
 
@@ -145,6 +146,84 @@
 							a {
 								@apply text-sm text-ams-dark;
 							}
+						}
+					}
+
+					/* style password reset */
+					.woocommerce-ResetPassword,
+					.lost_reset_password {
+						@apply px-4 
+						py-6 
+						border 
+						border-ams-grey 
+						rounded-none 
+						shadow-md
+						md:p-8
+						lg:shadow-lg
+						xl:shadow-xl
+						space-y-4
+						lg:space-y-0
+						lg:grid
+						lg:grid-cols-2
+						lg:gap-x-4;
+						> p {
+							@apply first-of-type:mt-0 
+							first-of-type:lg:col-span-full 
+							last-of-type:lg:flex 
+							last-of-type:lg:items-end;
+						}
+
+						.woocommerce-form-row,
+						.form-row {
+							@apply m-0
+							float-none
+							w-full
+							p-0
+							before:hidden 
+							after:hidden;
+							&--wide {
+								@apply col-span-full;
+							}
+
+							label {
+								@apply text-ams-dark;
+								.required {
+									@apply text-red-600;
+								}
+							}
+
+							.woocommerce-Input--text,
+							.input-text {
+								@apply text-ams-dark
+								focus:border-transparent
+								focus:ring-2
+								focus:ring-ams-cyan
+								text-sm
+								md:text-base
+								border
+								border-ams-dark
+								w-full;
+							}
+
+							.woocommerce-Button,
+							.button {
+								@apply bg-ams-cyan 
+								text-ams-dark 
+								px-4 
+								py-2.5 
+								lg:px-8 
+								lg:py-3
+								lg:leading-tight
+								hover:text-ams-grey 
+								hover:bg-ams-dark
+								rounded-none
+								grow-0
+								shrink-0
+								lg:max-h-[42px];
+							}
+						}
+						.clear {
+							@apply lg:hidden;
 						}
 					}
 				}
