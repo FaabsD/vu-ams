@@ -1,0 +1,670 @@
+/* Style the My account page for webshop users */
+.page-template-page-my_account {
+	.content {
+		@apply prose-sm md:prose !max-w-full pb-8 xl:pb-16;
+
+		header {
+			@apply px-8 xl:px-32;
+
+			& > h1 {
+				@apply text-3xl lg:text-6xl text-ams-cyan font-bold my-4 lg:my-8;
+			}
+		}
+
+		main {
+			@apply px-8 xl:px-32 min-h-[250px] max-h-max;
+
+			.woocommerce {
+				@apply before:hidden after:hidden flex flex-col gap-8 lg:flex-row;
+
+				&__login {
+					@apply flex-col gap-x-0 gap-y-0 space-y-4;
+					/* Style the woocommerce my account login */
+					/* style woocommerce my account login notices */
+					> .woocommerce-notices-wrapper {
+						@apply lg:col-span-full;
+
+						/* style notices */
+						.woocommerce-message {
+							@apply border-t-2 
+							border-t-ams-cyan 
+							bg-ams-grey 
+							text-ams-dark
+							px-12
+							py-4
+							before:text-ams-cyan
+							before:content-["\e015"]
+							m-0;
+						}
+						/* Style errors */
+						.woocommerce-error {
+							@apply pl-10
+							md:pl-14
+							pr-4
+							md:pr-8 
+							text-sm
+							md:text-base
+							before:left-4
+							md:before:left-6
+							before:content-["\e016"]
+							mb-0;
+						}
+					}
+
+					.u-columns {
+						&.col2-set {
+							@apply w-full lg:grid lg:grid-cols-2 before:hidden after:hidden lg:gap-x-8 xl:gap-x-32;
+							.u-column1,
+							col-1 {
+								@apply w-full float-none;
+								> h2 {
+									@apply text-ams-dark;
+								}
+								> .woocommerce-form-login,
+								> .login {
+									@apply border 
+									border-ams-grey 
+									rounded-none 
+									shadow-md 
+									py-6 
+									px-4 
+									flex
+									flex-col
+									gap-y-4
+									md:grid 
+									md:grid-cols-2
+									md:p-8
+									lg:shadow-lg
+									xl:shadow-xl;
+
+									.woocommerce-form-row,
+									.form-row {
+										@apply m-0
+										float-none
+										w-full
+										p-0
+										before:hidden 
+										after:hidden;
+										&--wide {
+											@apply col-span-full;
+										}
+
+										label {
+											@apply text-ams-dark;
+											.required {
+												@apply text-red-600;
+											}
+										}
+
+										.woocommerce-Input--text,
+										.input-text {
+											@apply text-ams-dark
+											focus:border-transparent
+											focus:ring-2
+											focus:ring-ams-cyan
+											text-sm
+											md:text-base
+											border
+											border-ams-dark
+											w-full;
+										}
+										&:nth-child(3) {
+											@apply flex 
+											flex-row-reverse 
+											justify-between
+											items-center
+											md:justify-end
+											md:items-start
+											md:gap-x-4
+											lg:gap-x-1.5
+											2xl:gap-x-4;
+
+											/* style woocommerce remember me on login screen */
+											.woocommerce-form__label,
+											.woocommerce-form__label-for-checkbox,
+											.woocommerce-form-login__rememberme {
+												@apply float-none inline lg:shrink-0 lg:text-sm 2xl:text-base;
+												.woocommerce-form__input-checkbox {
+													@apply checked:bg-ams-cyan 
+													focus:ring-2 
+													focus:border-ams-dark 
+													focus:ring-ams-cyan;
+												}
+											}
+											/* Style woocommerce login button */
+											.woocommerce-button,
+											.button .woocommerce-form-login__submit {
+												@apply bg-ams-cyan 
+												text-ams-dark
+												px-4
+												py-2.5
+												rounded-none
+												hover:text-ams-grey
+												hover:bg-ams-dark
+												m-0
+												2xl:px-8
+												xl:py-3
+												lg:shrink-0;
+											}
+										}
+									}
+									.woocommerce-LostPassword,
+									.lost-password {
+										@apply m-0 md:text-right;
+
+										a {
+											@apply text-sm text-ams-dark;
+										}
+									}
+								}
+							}
+							.u-column2,
+							.col-2 {
+								@apply w-full float-none;
+								> h2 {
+									@apply text-ams-dark;
+								}
+								> .woocommerce-form-register,
+								> .register {
+									@apply border 
+									border-ams-grey 
+									rounded-none 
+									shadow-md 
+									py-6 
+									px-4 
+									flex
+									flex-col
+									gap-y-4
+									md:grid 
+									md:grid-cols-2
+									md:p-8
+									lg:shadow-lg
+									xl:shadow-xl;
+
+									.woocommerce-form-row,
+									.form-row {
+										@apply m-0
+										float-none
+										w-full
+										p-0
+										before:hidden 
+										after:hidden;
+										&--wide {
+											@apply col-span-full;
+										}
+
+										label {
+											@apply text-ams-dark;
+											.required {
+												@apply text-red-600;
+											}
+										}
+
+										.woocommerce-Input--text,
+										.input-text {
+											@apply text-ams-dark
+											focus:border-transparent
+											focus:ring-2
+											focus:ring-ams-cyan
+											text-sm
+											md:text-base
+											border
+											border-ams-dark
+											w-full;
+										}
+									}
+
+									p {
+										&:nth-child(2) {
+											@apply col-span-full my-0;
+										}
+									}
+
+									.woocommerce-privacy-policy-text {
+										@apply col-span-full;
+										p {
+											@apply my-0;
+										}
+									}
+
+									.woocommerce-Button,
+									.woocommerce-button,
+									.button,
+									.woocommerce-form-register__submit {
+										@apply bg-ams-cyan text-ams-dark hover:text-ams-grey hover:bg-ams-dark py-2.5 px-4 xl:py-3 xl:px-8 rounded-none;
+									}
+								}
+							}
+						}
+					}
+
+					/* style password reset */
+					.woocommerce-ResetPassword,
+					.lost_reset_password {
+						@apply px-4 
+						py-6 
+						border 
+						border-ams-grey 
+						rounded-none 
+						shadow-md
+						md:p-8
+						lg:shadow-lg
+						xl:shadow-xl
+						space-y-4
+						lg:space-y-0
+						lg:grid
+						lg:grid-cols-2
+						lg:gap-x-4;
+						> p {
+							@apply first-of-type:mt-0 
+							first-of-type:lg:col-span-full 
+							last-of-type:lg:flex 
+							last-of-type:lg:items-end;
+						}
+
+						.woocommerce-form-row,
+						.form-row {
+							@apply m-0
+							float-none
+							w-full
+							p-0
+							before:hidden 
+							after:hidden;
+							&--wide {
+								@apply col-span-full;
+							}
+
+							label {
+								@apply text-ams-dark;
+								.required {
+									@apply text-red-600;
+								}
+							}
+
+							.woocommerce-Input--text,
+							.input-text {
+								@apply text-ams-dark
+								focus:border-transparent
+								focus:ring-2
+								focus:ring-ams-cyan
+								text-sm
+								md:text-base
+								border
+								border-ams-dark
+								w-full;
+							}
+
+							.woocommerce-Button,
+							.button {
+								@apply bg-ams-cyan 
+								text-ams-dark 
+								px-4 
+								py-2.5 
+								lg:px-8 
+								lg:py-3
+								lg:leading-tight
+								hover:text-ams-grey 
+								hover:bg-ams-dark
+								rounded-none
+								grow-0
+								shrink-0
+								lg:max-h-[42px];
+							}
+						}
+						.clear {
+							@apply lg:hidden;
+						}
+					}
+				}
+				/* style the navigation menu on the my account page */
+				.woocommerce-MyAccount-navigation {
+					@apply float-none w-full lg:basis-1/3 lg:shrink-0 lg:grow-0;
+					ul {
+						@apply pl-0 md:list-none;
+						.woocommerce-MyAccount-navigation-link {
+							@apply text-ams-dark ml-0 pl-0;
+							&.is-active {
+								@apply text-ams-cyan;
+							}
+							a {
+								@apply text-inherit md:no-underline;
+							}
+						}
+					}
+				}
+				/* Style the my account page content */
+				.woocommerce-MyAccount-content {
+					@apply w-full lg:basis-2/3 lg:shrink lg:grow-0;
+					/* style woocommerce my account page notices */
+					.woocommerce-notices-wrapper {
+						@apply lg:col-span-full;
+
+						/* style notices */
+						.woocommerce-message {
+							@apply border-t-2 
+							border-t-ams-cyan 
+							bg-ams-grey 
+							text-ams-dark
+							px-12
+							py-4
+							before:text-ams-cyan
+							before:content-["\e015"]
+							m-0;
+						}
+						/* Style errors */
+						.woocommerce-error {
+							@apply pl-10
+							md:pl-14
+							pr-4
+							md:pr-8 
+							text-sm
+							md:text-base
+							before:left-4
+							md:before:left-6
+							before:content-["\e016"];
+						}
+					}
+
+					/* Style woocommerce MyAccount orders */
+					/* style the table itself */
+					.woocommerce-MyAccount-orders {
+						@apply table-fixed
+						lg:table-auto
+						2xl:table-fixed 
+						border 
+						border-collapse 
+						rounded-none 
+						shadow-md
+						lg:shadow-lg
+						xl:shadow-xl;
+
+						/* style table head */
+						thead {
+							@apply hidden lg:table-header-group;
+
+							tr {
+								@apply bg-ams-dark divide-x divide-ams-text_light;
+								th {
+									@apply text-ams-grey;
+								}
+							}
+						}
+
+						/* Style table body with the order data */
+						tbody {
+							@apply divide-y divide-ams-dark divide-solid lg:divide-y-0;
+
+							/* style the table rows within the table body */
+							tr,
+							.woocommerce-orders-table__row {
+								@apply divide-x lg:even:bg-ams-grey lg:odd:bg-white;
+
+								/* style the table cell */
+								.woocommerce-orders-table__cell {
+									@apply even:bg-ams-grey 
+									odd:bg-white 
+									lg:even:bg-transparent 
+									lg:odd:bg-transparent;
+
+									& > a {
+										@apply text-ams-cyan;
+									}
+
+									/* style this only for mobile and tablet in portrait mode this is the stiling for each table data head */
+									&:before {
+										@apply text-ams-dark;
+									}
+
+									/* style the order action button */
+									&-order-actions {
+										.button {
+											@apply bg-ams-cyan 
+											text-ams-dark 
+											rounded-none 
+											py-2.5 
+											px-4 
+											tracking-wide
+											lg:px-8
+											lg:py-3
+											lg:tracking-normal
+											hover:text-ams-grey
+											hover:bg-ams-dark;
+										}
+									}
+								}
+							}
+						}
+					}
+
+					/* style order details of single order */
+					p {
+						> mark {
+							&.order-number,
+							&.order-date,
+							&.order-status {
+								@apply bg-ams-yellow;
+							}
+						}
+					}
+					/* style the details section of the order */
+					.woocommerce-order-details {
+						&__title {
+							@apply text-ams-cyan;
+						}
+						/* style the table containing the order details */
+						& > .woocommerce-table {
+							@apply rounded-none 
+							border-collapse 
+							shadow-md 
+							lg:shadow-lg 
+							xl:shadow-xl;
+
+							thead {
+								tr {
+									@apply bg-ams-dark divide-x divide-ams-text_light;
+									th {
+										@apply text-ams-grey;
+									}
+								}
+							}
+							tbody {
+								tr {
+									@apply divide-x even:bg-ams-grey;
+								}
+							}
+							tfoot {
+								tr {
+									@apply even:bg-ams-grey;
+								}
+							}
+						}
+						/* style View button */
+						& > .button {
+							@apply bg-ams-yellow 
+							text-ams-dark 
+							hover:bg-ams-dark
+							hover:text-ams-grey
+							rounded-none 
+							py-2.5
+							lg:py-3 
+							px-4
+							lg:px-8;
+						}
+					}
+
+					.woocommerce-customer-details {
+						& > .woocommerce-column__title {
+							@apply text-ams-cyan;
+						}
+
+						address {
+							@apply rounded-none 
+							border 
+							shadow-md
+							lg:shadow-lg
+							xl:shadow-xl;
+							& > p {
+								&.woocommerce-customer-details--phone,
+								&.woocommerce-customer-details--email {
+									@apply max-w-full break-words my-0;
+								}
+							}
+						}
+					}
+
+					/* style adresses section */
+					.woocommerce-Addresses {
+						@apply w-full flex flex-col lg:flex-row lg:before:hidden lg:after:hidden lg:justify-between;
+
+						.woocommerce-Address {
+							.woocommerce-Address-title {
+								@apply flex flex-row justify-between items-end before:hidden after:hidden px-0 my-2;
+								> h3 {
+									@apply text-ams-cyan basis-auto m-0;
+								}
+								.edit {
+									@apply px-4 py-2 bg-ams-yellow text-ams-dark max-h-max h-min md:no-underline hover:text-ams-grey hover:bg-ams-dark;
+								}
+							}
+						}
+					}
+
+					/* style the forms for editing addresses  */
+					& > form {
+						> h3 {
+							@apply text-ams-cyan;
+						}
+						.woocommerce-address-fields {
+							&__field-wrapper {
+								@apply grid grid-cols-2 gap-x-1 md:gap-x-4 xl:gap-x-8 2xl:gap-x-16;
+								.form-row {
+									@apply p-0 
+									w-full
+									float-none
+									before:hidden
+									after:hidden;
+
+									/* form-row-first, form-rows-last & form-row-wide are used for setting the grid position based on the classnames set by woocommerce */
+									&-first {
+										@apply col-start-1 col-span-1;
+									}
+									&-last {
+										@apply col-start-2 col-span-1;
+									}
+									&-wide {
+										@apply col-span-full;
+									}
+
+									label {
+										@apply text-ams-dark;
+										.required {
+											@apply text-red-600;
+										}
+									}
+
+									.woocommerce-input-wrapper {
+										.input-text {
+											@apply text-ams-dark
+                                                focus:border-transparent
+                                                focus:ring-2
+                                                focus:ring-ams-cyan
+                                                text-sm
+                                                md:text-base
+                                                border border-ams-dark;
+										}
+										/* style the select box */
+										.select2-container {
+											.selection {
+												.select2-selection {
+													@apply rounded-none 
+                                                        focus:border-transparent 
+                                                        focus:ring-2 
+                                                        focus:ring-ams-cyan
+                                                        h-auto
+                                                        py-1.5
+                                                        border border-ams-dark;
+
+													&__arrow {
+														@apply top-2/4 transform -translate-y-1/2;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+
+							> p {
+								.button {
+									@apply bg-ams-cyan py-2 px-4 xl:py-3 xl:px-8 rounded-none text-ams-dark hover:text-ams-grey hover:bg-ams-dark;
+								}
+							}
+						}
+					}
+
+					/* Style account details form */
+					> .woocommerce-EditAccountForm,
+					.edit-account {
+						@apply grid grid-cols-2 gap-x-1 md:gap-x-4 xl:gap-x-8 2xl:gap-x-16;
+						.form-row {
+							@apply p-0 
+									w-full
+									float-none
+									before:hidden
+									after:hidden;
+
+							/* form-row-first, form-rows-last & form-row-wide are used for setting the grid position based on the classnames set by woocommerce */
+							&-first {
+								@apply col-start-1 col-span-1;
+							}
+							&-last {
+								@apply col-start-2 col-span-1;
+							}
+							&-wide {
+								@apply col-span-full;
+							}
+
+							label {
+								@apply text-ams-dark;
+								.required {
+									@apply text-red-600;
+								}
+							}
+
+							.input-text {
+								@apply text-ams-dark
+                                                focus:border-transparent
+                                                focus:ring-2
+                                                focus:ring-ams-cyan
+                                                text-sm
+                                                md:text-base
+                                                border border-ams-dark;
+							}
+						}
+
+						fieldset {
+							@apply col-span-full;
+						}
+						p {
+							&:last-of-type {
+								@apply col-start-1;
+								.button {
+									@apply bg-ams-cyan 
+									text-ams-dark 
+									hover:text-ams-grey 
+									hover:bg-ams-dark 
+									rounded-none 
+									py-2 
+									px-4 
+									xl:py-3 
+									xl:px-8;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

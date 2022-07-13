@@ -1,0 +1,110 @@
+.woocommerce-shop {
+	.content-area {
+		@apply py-8 lg:py-16;
+		main.site-main {
+			@apply px-8 xl:px-32 space-y-4;
+
+			.woocommerce-breadcrumb {
+				@apply prose-sm md:prose text-ams-text_light;
+
+				a {
+					@apply no-underline;
+				}
+			}
+
+			.woocommerce-products-header {
+				&__title {
+					@apply font-bold text-3xl lg:text-6xl text-ams-cyan;
+				}
+			}
+
+			.woocommerce-result-count {
+				@apply prose-sm md:prose float-none md:float-left md:pb-4 lg:pb-8;
+			}
+
+			.woocommerce-ordering {
+				@apply inline-block float-none md:float-right md:pb-4 lg:pb-8;
+				.orderby {
+					@apply focus:ring-2 focus:ring-ams-cyan focus:border-transparent;
+				}
+			}
+
+			.products {
+				@apply grid gap-8 md:gap-8 2xl:gap-16 before:hidden;
+
+				&.columns-2 {
+					@apply grid-cols-1 md:grid-cols-2 md:justify-items-center;
+				}
+
+				&.columns-3 {
+					@apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+				}
+
+				&.columns-4 {
+					@apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+				}
+
+				.product {
+					@apply prose-sm 
+                    md:prose 
+                    shadow-lg
+                    xl:shadow-xl
+                    py-4
+                    px-4
+                    md:py-8
+                    lg:py-4
+                    2xl:p-8
+                    float-none
+                    w-full
+                    m-0
+                    border
+                    border-dashed
+                    border-ams-dark;
+
+					.woocommerce-loop-product__link {
+						@apply no-underline;
+
+						.attachment-woocommerce_thumbnail,
+						.woocommerce-placeholder {
+							@apply m-0 object-contain w-full;
+						}
+
+						.woocommerce-placeholder {
+							@apply object-cover object-center;
+						}
+
+						.woocommerce-loop-product__title {
+							@apply text-ams-cyan mt-4 mb-0;
+						}
+
+						.price {
+							@apply m-0 text-base;
+							.amount {
+								@apply text-ams-dark;
+							}
+						}
+					}
+
+					.add_to_cart_button {
+						@apply bg-ams-yellow 
+						no-underline 
+						text-ams-dark 
+						rounded-none 
+						py-2 
+						px-4
+						text-base
+						xl:py-3
+						xl:px-6
+						hover:bg-ams-dark
+						hover:text-ams-grey
+						mr-4;
+					}
+					.added_to_cart {
+						@apply text-base text-ams-dark hover:text-ams-cyan;
+					}
+				}
+			}
+		}
+	}
+}
+

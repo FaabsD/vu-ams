@@ -15,6 +15,13 @@
 @import "./partials/single-sofware-release.css";
 @import "./partials/footer.css";
 @import "tailwindcss/components";
+/* import woocommerce stylings */
+@import "./woocommerce/pages/page-cart.css";
+@import "./woocommerce/pages/page-checkout.css";
+@import "./woocommerce/pages/page-my_account.css";
+@import "./woocommerce/pages/product-category.css";
+@import "./woocommerce/pages/shop-page.css";
+@import "./woocommerce/pages/single-product.css";
 
 @import "tailwindcss/utilities";
 

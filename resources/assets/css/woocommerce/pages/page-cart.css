@@ -1,0 +1,225 @@
+.shopping-cart,
+.woocommerce-cart {
+	.content {
+		@apply prose-sm md:prose !max-w-full pb-8 xl:pb-16;
+
+		header {
+			@apply px-8 xl:px-32;
+			& > h1 {
+				@apply text-3xl lg:text-6xl text-ams-cyan font-bold my-4 lg:my-8;
+			}
+		}
+
+		main {
+			@apply px-8 xl:px-32;
+
+			.woocommerce {
+				@apply lg:grid lg:grid-cols-3 lg:gap-x-8 xl:gap-x-32 space-y-2 lg:space-y-0 lg:gap-y-2;
+
+				&-notices-wrapper {
+					@apply lg:col-span-full;
+
+					.woocommerce-message {
+						@apply border-t-2 
+                        border-t-ams-cyan 
+                        bg-ams-grey 
+                        text-ams-dark
+                        px-12
+                        py-4
+                        before:text-ams-cyan
+                        before:content-["\e015"]
+                        m-0;
+					}
+				}
+
+				&-cart-form {
+					@apply lg:col-span-2 shadow-lg lg:shadow-xl;
+					/* Style shopping cart table */
+					&__contents {
+						@apply table-fixed 2xl:table-auto rounded-none lg:m-0;
+						/* style the table head (only visible on lg screen 1024px) */
+						thead {
+							@apply lg:bg-ams-dark;
+							tr {
+								@apply lg:divide-x divide-ams-text_light;
+								th {
+									@apply lg:text-ams-grey lg:py-2 px-4;
+								}
+							}
+						}
+
+						tbody {
+							@apply divide-y divide-ams-dark lg:divide-y-0;
+
+							/* Style table rows */
+							tr.cart_item {
+								@apply lg:even:bg-ams-grey lg:divide-x;
+								/* basic styling for all table data (td) */
+								td {
+									@apply even:bg-ams-grey 
+                                    bg-white 
+                                    first-of-type:bg-ams-grey
+                                    lg:bg-transparent 
+                                    lg:even:bg-inherit 
+                                    lg:first-of-type:bg-inherit
+                                    lg:py-4;
+									/* Style product info heading on mobile */
+									&:before {
+										@apply text-ams-dark font-semibold;
+									}
+									/* style td containing the quantity */
+									&.product-quantity {
+										/* style the quantity input with its label */
+										.quantity {
+											& > .input-text,
+											& > .qty {
+												@apply border-ams-dark 
+                                                focus:border-transparent 
+                                                focus:ring-2 
+                                                focus:ring-ams-cyan
+                                                w-auto
+                                                py-1 
+                                                px-2
+                                                text-sm
+                                                lg:w-full
+                                                lg:text-sm
+                                                xl:w-3/4
+                                                2xl:w-2/4;
+											}
+										}
+									}
+									/* style the product removal container and button */
+									&.product-remove {
+										/* style the product removal button */
+										.remove {
+											@apply block text-2xl text-red-600 px-2 h-auto w-auto max-w-max max-h-max leading-tight lg:mx-auto;
+										}
+									}
+
+									/* style the product thumbnail (visible from 1024px screenwidth */
+									&.product-thumbnail {
+										& > a {
+											img {
+												@apply lg:w-full lg:m-0 xl:w-28 2xl:mx-auto;
+											}
+										}
+									}
+
+									/* style product name/link */
+									&.product-name {
+										& > a {
+											@apply text-ams-cyan no-underline;
+										}
+									}
+								}
+							}
+							/* Style coupon section */
+							tr:last-of-type {
+								.actions {
+									@apply lg:relative;
+									/* Style the coupon code input and apply button container */
+									.coupon {
+										@apply flex 
+                                        flex-row 
+                                        justify-between 
+                                        before:hidden 
+                                        after:hidden
+                                        lg:absolute
+                                        lg:w-2/4
+                                        lg:left-[12px]
+                                        lg:gap-x-2;
+										/* style coupon code input */
+										#coupon_code {
+											@apply focus:border-transparent 
+                                            focus:ring-2 
+                                            focus:ring-ams-cyan 
+                                            float-none 
+                                            m-0
+                                            lg:w-full;
+										}
+										/* Style apply button */
+										& > .button {
+											@apply bg-ams-yellow 
+                                            text-ams-dark 
+                                            grow-0 
+                                            shrink-0 
+                                            rounded-none 
+                                            min-w-min 
+                                            max-w-max 
+                                            px-4 
+                                            py-2 
+                                            m-0 
+                                            float-none;
+										}
+									}
+
+									/* Style the update cart button */
+									& > .button {
+										@apply py-2 
+                                        px-4 
+                                        bg-ams-cyan 
+                                        !text-ams-dark 
+                                        text-sm 
+                                        rounded-none;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				/* Style totals container */
+				.cart-collaterals {
+					@apply before:hidden lg:w-full;
+					/* Style totals */
+					.cart_totals {
+						@apply space-y-4 lg:float-none lg:w-full lg:text-center;
+						/* Style totals heading */
+						h2 {
+							@apply !text-ams-cyan lg:mt-0;
+						}
+
+						/* style totals price table */
+						.shop_table,
+						.shop_table_responsive {
+							@apply rounded-none m-0 lg:w-full lg:mx-auto;
+
+							tbody {
+								tr {
+									@apply bg-white last-of-type:bg-ams-grey;
+									/* Style product info heading on mobile */
+									th {
+										@apply text-ams-dark font-semibold;
+									}
+									/* basic styling for all table data (td) */
+									td {
+										@apply lg:text-right;
+									}
+								}
+							}
+						}
+
+						/* style checkout section */
+						.wc-proceed-to-checkout {
+							@apply p-0;
+							/* Style checkout button */
+							.checkout-button {
+								@apply bg-ams-yellow 
+                                text-ams-dark 
+                                hover:bg-ams-dark 
+                                hover:text-ams-grey
+                                font-semibold 
+                                rounded-none
+                                lg:py-4 
+                                lg:px-8 
+                                lg:max-w-max
+                                lg:mx-auto;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
