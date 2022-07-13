@@ -234,6 +234,38 @@
 									}
 								}
 							}
+							.woocommerce-account-fields {
+								@apply grid grid-cols-2 gap-x-2;
+								.form-row,
+								.create-account {
+									@apply float-none 
+                                        w-full 
+                                        p-0
+                                        before:hidden
+                                        after:hidden;
+
+									&.form-row-first,
+									&.form-row-last {
+										@apply col-span-1;
+									}
+
+									&.form-row-wide {
+										@apply col-span-full;
+									}
+
+									.woocommerce-form__label,
+									.woocommerce-form__label-for-checkbox,
+									.checkbox {
+										@apply text-ams-dark;
+
+										.woocommerce-form__input,
+										.woocommerce-form__input-checkbox,
+										.input-checkbox {
+											@apply w-4 h-4 inline-block m-0 focus:ring-2 focus:ring-ams-cyan checked:bg-ams-cyan;
+										}
+									}
+								}
+							}
 						}
 						.col-2 {
 							@apply lg:w-full lg:float-none;
