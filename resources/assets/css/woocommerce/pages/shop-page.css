@@ -59,7 +59,7 @@
 						.wp-block-column {
 							@apply w-full min-h-full;
 							> .wonderplugin-pdf-iframe {
-								@apply min-h-[350px] md:min-h-[500px] xl:h-full;
+								@apply min-h-[350px] md:min-h-[500px] xl:min-h-[650px] 2xl:min-h-[750px] h-auto;
 							}
 						}
 					}
