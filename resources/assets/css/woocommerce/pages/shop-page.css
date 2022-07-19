@@ -27,9 +27,12 @@
 					@apply prose-sm 
 					md:prose
 					prose-headings:text-ams-cyan
-					md:prose-headings:text-ams-cyan 
+					md:prose-headings:text-ams-cyan
+					prose-a:underline
+					xl:prose-a:no-underline
+					xl:hover:prose-a:underline 
 					!max-w-full
-					pb-4
+					pb-0
 					xl:relative
 					before:hidden
 					before:xl:block
@@ -52,11 +55,11 @@
 					}
 
 					> .wp-block-columns {
-						@apply grid grid-flow-row auto-rows-auto lg:grid-cols-2 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32;
+						@apply grid grid-flow-row auto-rows-auto lg:grid-cols-2 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32 !items-start;
 						.wp-block-column {
-							@apply w-full;
+							@apply w-full min-h-full;
 							> .wonderplugin-pdf-iframe {
-								@apply min-h-[350px] md:min-h-[500px];
+								@apply min-h-[350px] md:min-h-[500px] xl:h-full;
 							}
 						}
 					}
