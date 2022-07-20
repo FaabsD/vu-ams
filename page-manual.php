@@ -17,7 +17,7 @@
 </header>
 
 <main class="content">
-	<?php the_content(); ?>
+		<?php the_content(); ?>
 </main>
 
 <?php endwhile; endif; ?>
