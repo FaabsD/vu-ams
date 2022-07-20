@@ -1,0 +1,72 @@
+.page-template-page-manual,
+.manual-page {
+	@apply w-screen bg-white;
+
+	header {
+		@apply px-8 xl:px-32;
+		& > h1 {
+			@apply text-3xl lg:text-6xl text-ams-cyan font-bold my-4;
+		}
+	}
+
+	.content {
+		@apply px-8
+		xl:px-32
+		prose-sm
+		md:prose
+		!max-w-full
+		flex
+		flex-col
+		pt-4
+		pb-16
+		xl:relative
+		before:hidden
+        before:xl:block
+        before:xl:absolute
+        before:xl:top-48
+        before:xl:left-0
+        before:xl:!w-24
+        before:xl:!h-48
+
+        after:hidden
+        after:xl:block
+        after:xl:absolute
+        after:xl:bottom-1/4
+        after:xl:right-0
+        after:xl:!w-24
+        after:xl:!h-48;
+
+		&:before,
+		&:after {
+			@apply bg-dots;
+		}
+
+		& > .wp-block-columns {
+			@apply my-0 lg:space-x-8;
+
+			.wp-block-column {
+				@apply space-y-4;
+
+				> .wp-block-image {
+					@apply my-0 max-w-max;
+
+					img {
+						@apply my-0;
+					}
+				}
+
+				> .wp-block-group {
+					.wp-block-group__inner-container {
+						> .wp-block-image {
+							@apply my-0 max-w-max;
+							img {
+								@apply my-0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

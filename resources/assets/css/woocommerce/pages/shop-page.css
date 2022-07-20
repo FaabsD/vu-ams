@@ -14,7 +14,55 @@
 
 			.woocommerce-products-header {
 				&__title {
-					@apply font-bold text-3xl lg:text-6xl text-ams-cyan;
+					@apply font-bold 
+					text-3xl 
+					lg:text-6xl 
+					text-ams-cyan 
+					mb-4 
+					lg:mb-8;
+				}
+
+				/* Style page contents */
+				.page-description {
+					@apply prose-sm 
+					md:prose
+					prose-headings:text-ams-cyan
+					md:prose-headings:text-ams-cyan
+					prose-a:underline
+					xl:prose-a:no-underline
+					xl:hover:prose-a:underline 
+					!max-w-full
+					pb-0
+					xl:relative
+					before:hidden
+					before:xl:block
+					before:xl:absolute
+					before:xl:top-0
+					before:xl:-left-32
+					before:xl:!w-24
+					before:xl:!h-48
+					after:hidden
+					after:xl:block
+					after:xl:absolute
+					after:xl:bottom-0
+					after:xl:-right-32
+					after:xl:!w-24
+					after:xl:!h-48;
+
+					&:before,
+					&:after {
+						@apply bg-dots;
+					}
+
+					> .wp-block-columns {
+						@apply grid grid-flow-row auto-rows-auto lg:grid-cols-2 lg:gap-x-8 xl:gap-x-16 2xl:gap-x-32 !items-start;
+						.wp-block-column {
+							@apply w-full min-h-full;
+							> .wonderplugin-pdf-iframe {
+								@apply min-h-[350px] md:min-h-[500px] xl:min-h-[650px] 2xl:min-h-[750px] h-auto;
+							}
+						}
+					}
 				}
 			}
 
