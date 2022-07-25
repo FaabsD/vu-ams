@@ -1,8 +1,8 @@
 .software {
-    @apply w-screen bg-white;
+	@apply w-screen bg-white;
 
-    header {
-        @apply px-8 xl:px-32
+	header {
+		@apply px-8 xl:px-32
         md:relative
         md:pt-16
         before:hidden
@@ -12,72 +12,51 @@
         before:left-0
         before:!w-24
         before:!h-48
-        before:content-['']
-        ;
+        before:content-[''];
 
-        &:before {
-            @apply bg-dots
-        }
+		&:before {
+			@apply bg-dots;
+		}
 
-        h1 {
-            @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 py-4;
-        }
+		h1 {
+			@apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 py-4;
+		}
 
-        & > .content {
-            @apply prose-sm md:prose;
-        }
+		& > .content {
+			@apply prose-sm md:prose;
+		}
+	}
 
-    }
+	& > .content {
+		@apply prose-sm prose-headings:text-ams-cyan md:prose-headings:text-ams-cyan md:prose !max-w-full pt-16 py-4 px-8 xl:px-32;
 
-    & > .content {
-        @apply prose-sm md:prose !max-w-full pt-16;
+		& > h2 {
+			@apply px-8 xl:px-32;
+		}
 
-        & > h2 {
-            @apply px-8 xl:px-32
-        }
-
-        .wp-block-columns {
-            @apply
-            px-8
+		.wp-block-columns {
+			@apply px-8
             xl:px-32
-            md:py-8
+            md:py-8 
             xl:py-16
-            prose-sm
-            md:prose
-            even:bg-[#f7f7f7]
-            odd:md:text-right
-            !max-w-full
-            ;
+			-mx-8
+			xl:-mx-32
+			w-screen
+			lg:gap-x-16
+            even:bg-[#f7f7f7];
 
-            &:nth-last-of-type(even) {
-                @apply
-                relative
-                after:hidden
-                after:xl:block
-                after:content-['']
-                after:absolute
-                after:!w-24
-                after:!h-48
-                after:right-0
-                after:-top-1/4
-                ;
+			.wp-block-column {
+				h2 {
+					@apply font-bold;
+				}
 
-                &:after {
-                    @apply bg-dots;
-                }
-            }
-
-            .wp-block-column {
-                h2 {
-                    @apply font-bold;
-                }
-
-                p {
-                    a {
-                        @apply text-ams-cyan font-semibold
-                    }
-                }
-            }
-        }
-    }
+				p {
+					a {
+						@apply text-ams-cyan font-semibold;
+					}
+				}
+			}
+		}
+	}
 }
+
