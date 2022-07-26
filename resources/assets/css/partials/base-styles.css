@@ -22,7 +22,7 @@ body,
 			}
 
 			& > a {
-				@apply text-ams-dark md:mb-0 md:text-right;
+				@apply text-ams-dark hover:text-ams-grey md:mb-0 md:text-right;
 			}
 
 			.downloads {
@@ -38,10 +38,10 @@ body,
                 md:!mt-4;
 
 				&__download {
-					@apply inline-flex flex-row gap-x-2 items-start;
+					@apply text-ams-dark hover:text-ams-grey inline-flex flex-row gap-x-2 items-start;
 
 					.brand-logo {
-						@apply w-6 md:w-8 inline-block fill-ams-dark;
+						@apply w-6 md:w-8 inline-block fill-current;
 					}
 				}
 			}
@@ -105,7 +105,7 @@ body,
 				}
 
 				& > a {
-					@apply text-ams-grey md:mb-0;
+					@apply text-ams-grey md:mb-0 hover:text-ams-cyan;
 				}
 
 				&__downloads {
@@ -125,10 +125,11 @@ body,
                         flex-row
                         gap-x-2
                         items-center
-                        text-ams-grey;
+                        text-ams-grey
+						hover:text-ams-cyan;
 
 						.brand-logo {
-							@apply w-6 md:w-8 inline-block fill-ams-grey;
+							@apply w-6 md:w-8 inline-block fill-current;
 						}
 					}
 				}
