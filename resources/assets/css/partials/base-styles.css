@@ -3,11 +3,7 @@ body,
 	@apply bg-white font-heebo xl:overflow-x-hidden;
 
 	.releases {
-		@apply prose-sm md:prose mx-auto !max-w-full px-8 xl:px-32 py-16;
-
-		&__heading {
-			@apply text-ams-cyan text-2xl md:text-3xl;
-		}
+		@apply prose-sm md:prose mx-auto !max-w-full;
 
 		&__current {
 			@apply bg-ams-cyan
@@ -67,7 +63,7 @@ body,
             select-none;
 
 			h3 {
-				@apply !m-0;
+				@apply !m-0 text-ams-dark;
 			}
 
 			.opener-btn {
