@@ -1,8 +1,8 @@
 .software {
-    @apply w-screen bg-white;
+	@apply w-screen bg-white;
 
-    header {
-        @apply px-8 xl:px-32
+	header {
+		@apply px-8 xl:px-32
         md:relative
         md:pt-16
         before:hidden
@@ -12,72 +12,122 @@
         before:left-0
         before:!w-24
         before:!h-48
-        before:content-['']
-        ;
+        before:content-[''];
 
-        &:before {
-            @apply bg-dots
-        }
+		&:before {
+			@apply bg-dots;
+		}
 
-        h1 {
-            @apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 py-4;
-        }
+		h1 {
+			@apply text-3xl lg:text-6xl text-ams-cyan font-bold lg:col-span-full my-4 py-4;
+		}
 
-        & > .content {
-            @apply prose-sm md:prose;
-        }
+		& > .content {
+			@apply prose-sm 
+			md:prose 
+			flex 
+			flex-col 
+			items-center 
+			lg:flex-row
+			md:max-w-none 
+			lg:items-start 
+			lg:gap-x-8
+			xl:gap-x-16
+			xl:justify-between;
 
-    }
+			.content__text {
+				@apply lg:grow-0 lg:shrink basis-2/3;
+			}
 
-    & > .content {
-        @apply prose-sm md:prose !max-w-full pt-16;
+			.content__image {
+				@apply m-0;
+				img {
+					@apply w-32 md:w-80 xl:w-80 lg:shrink-0 lg:grow-0 lg:basis-1/3 lg:w-full m-0;
+				}
+			}
+		}
+	}
 
-        & > h2 {
-            @apply px-8 xl:px-32
-        }
+	& > .content {
+		@apply prose-sm 
+		prose-headings:text-ams-cyan 
+		md:prose-headings:text-ams-cyan 
+		md:prose 
+		!max-w-full 
+		lg:pt-16 
+		pt-8 
+		px-8 
+		xl:px-32
+		prose-a:text-ams-cyan
+		md:prose-a:text-ams-cyan 
+		prose-a:font-semibold
+		md:prose-a:font-semibold
+		hover:prose-a:text-ams-dark;
 
-        .wp-block-columns {
-            @apply
-            px-8
+		.releases {
+			@apply py-4 md:py-6 xl:py-8;
+		}
+
+		.wp-block-columns {
+			@apply px-8
             xl:px-32
-            md:py-8
+            md:py-8 
             xl:py-16
-            prose-sm
-            md:prose
-            even:bg-[#f7f7f7]
-            odd:md:text-right
-            !max-w-full
-            ;
+			my-0
+			-mx-8
+			xl:-mx-32
+			w-screen
+			lg:gap-x-16
+			odd-of-type:bg-ams-grey;
 
-            &:nth-last-of-type(even) {
-                @apply
-                relative
-                after:hidden
-                after:xl:block
-                after:content-['']
-                after:absolute
-                after:!w-24
-                after:!h-48
-                after:right-0
-                after:-top-1/4
-                ;
+			&:nth-of-type(even),
+			&:nth-of-type(odd) {
+				&:not(:nth-of-type(2)) {
+					@apply after:hidden
+					xl:relative
+					xl:after:block
+					xl:after:absolute
+					xl:after:!h-48
+					xl:after:!w-24
+					xl:after:-top-24
+					even:xl:after:left-0
+					odd:xl:after:right-0;
+				}
+				&:after {
+					@apply bg-dots;
+				}
+			}
 
-                &:after {
-                    @apply bg-dots;
-                }
-            }
+			.wp-block-column {
+				h2 {
+					@apply font-bold;
+				}
 
-            .wp-block-column {
-                h2 {
-                    @apply font-bold;
-                }
+				.wp-block-group {
+					&__inner-container {
+						.wp-block-file {
+							a {
+								&:not(.wp-block-file__button) {
+									@apply sr-only;
+								}
+							}
 
-                p {
-                    a {
-                        @apply text-ams-cyan font-semibold
-                    }
-                }
-            }
-        }
-    }
+							&__button {
+								@apply bg-ams-cyan
+								px-4
+								md:px-8
+								py-2
+								md:py-4
+								text-base
+								text-white
+								rounded-none
+								hover:bg-ams-dark;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
+
