@@ -7,6 +7,7 @@ require_once 'functions/init.php';
 require_once 'functions/menus.php';
 require_once 'functions/posttypes.php';
 require_once 'functions/enqueue.php';
+require_once 'functions/full-publications-text.php';
 require_once 'functions/scrape-google-scholar.php';
 require_once 'functions/shortcodes.php';
 require_once 'functions/widgets.php';
