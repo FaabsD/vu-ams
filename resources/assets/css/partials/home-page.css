@@ -57,15 +57,25 @@
             }
 
             .header__buttons {
-                @apply flex flex-col lg:flex-row gap-y-4 lg:gap-x-8 justify-start;
+                @apply 
+				flex 
+				flex-col 
+				xl:flex-row 
+				gap-y-4 
+				xl:gap-x-8 
+				justify-start;
 
                 .buttons__btn1 {
-                    @apply text-center grow-0 shrink-0 w-2/4 lg:w-max px-8 py-2 bg-ams-yellow text-ams-dark;
+                    @apply text-center grow-0 shrink-0 w-max px-8 py-2 bg-ams-yellow text-ams-dark;
                 }
 
                 .buttons__btn2 {
-                    @apply text-center grow-0 shrink-0 w-2/4 lg:w-max px-8 py-2 bg-ams-cyan text-ams-dark;
+                    @apply text-center grow-0 shrink-0 w-max px-8 py-2 bg-ams-cyan text-ams-dark;
                 }
+
+				.buttons__btn3 {
+					@apply text-center grow-0 shrink-0 w-max px-8 py-2 bg-ams-yellow text-ams-dark;
+				}
             }
         }
 
