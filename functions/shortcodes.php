@@ -530,4 +530,42 @@ function ams_add_shortcodes()
 
 		return $html;
 	}
+
+	// add shortcode to display FAQ's at any position on the FAQ page
+
+	add_shortcode('ams_display_faq', 'get_all_faq');
+
+	function get_all_faq($atts) {
+		$atts = shortcode_atts(array(
+			'post_type' => 'faq',
+			'orderby' => 'date',
+			'order' => 'DESC',
+			'posts_per_page' => -1,
+		), $atts, 'ams_display_faq');
+
+		$query = new WP_Query($atts);
+
+		if ($query->have_posts()) {
+			$html = '<div class="questions">';
+
+			foreach($query->get_posts() as $faq) {
+				$html .= '<div class="questions__question">';
+
+				$html .= '<h4 class="question__title">' . $faq->post_title . '</h4>';
+
+				$html .= '<div class="question__answer">';
+				$html .= $faq->post_content;
+				$html .= '</div>';
+
+
+				$html .= '</div>';
+			}
+
+
+		} else {
+			return "No FAQ found";
+		}
+
+		return $html;
+	}
 }
