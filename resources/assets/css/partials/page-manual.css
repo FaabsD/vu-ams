@@ -71,6 +71,14 @@
 					}
 				}
 
+				>.wp-block-embed {
+					.wp-block-embed__wrapper {
+						iframe {
+							@apply w-full md:min-h-[350px] lg:min-h-[250px] xl:min-h-[300px] 2xl:min-h-[450px] max-h-fit h-auto;
+						}
+					}
+				}
+
 				> .wp-block-group {
 					.wp-block-group__inner-container {
 						> .wp-block-image {
