@@ -535,6 +535,13 @@ function ams_add_shortcodes()
 
 	add_shortcode('ams_display_faq', 'get_all_faq');
 
+	/**
+	 * Retrieve all FAQ items
+	 * and return them in a html markup for the ams_display_faq shortcode
+	 *
+	 * @param array $atts
+	 * @return html|string returns the FAQ items in a HTML markup or a string if none are found
+	 */
 	function get_all_faq($atts) {
 		$atts = shortcode_atts(array(
 			'post_type' => 'faq',
@@ -548,19 +555,48 @@ function ams_add_shortcodes()
 		if ($query->have_posts()) {
 			$html = '<div class="questions">';
 
-			foreach($query->get_posts() as $faq) {
-				$html .= '<div class="questions__question">';
+			foreach( array_chunk($query->get_posts(), 3) as $values) {
+				if (defined('WP_DEBUG')) {
+					if (count($values) > 1) {
+						error_log('======== FAQ GROUPED PER 3 ========');
+						error_log(print_r($values, true));
+					}
+					else {
+						error_log("======== FAQ ON IT'S OWN ========");
+						error_log(print_r($values[0], true));
+					}
+				}
 
-				$html .= '<h3 class="question__title">' . $faq->post_title . '</h3>';
+				if (count($values) > 1) {
+					$html .= '<div class="questions__col">';
+					foreach ($values as $faq) {
+						$html .= '<div class="question">';
 
-				$html .= '<div class="question__answer">';
-				$html .= $faq->post_content;
-				$html .= '</div>';
+						$html .= '<h3 class="question__title">' . $faq->post_title . '</h3>';
+
+						$html .= '<div class="question__answer">';
+						$html .= $faq->post_content;
+						$html .= '</div>';
 
 
-				$html .= '</div>';
+						$html .= '</div>';
+					}
+					$html .= '</div>';
+				} else {
+					$html .= '<div class="questions__col">';
+
+						$html .= '<div class="question">';
+
+						$html .= '<h3 class="question__title">' . $values[0]->post_title . '</h3>';
+
+						$html .= '<div class="question__answer">';
+						$html .= $values[0]->post_content;
+						$html .= '</div>';
+
+					$html .= '</div>';
+				}
 			}
-
+			$html .= '</div>';
 
 		} else {
 			return "No FAQ found";
