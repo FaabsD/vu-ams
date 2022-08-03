@@ -4,3 +4,4 @@ vendor
 build
 resources/.DS_Store
 publications_index.txt
+prettier.config.js
