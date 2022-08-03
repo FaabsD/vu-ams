@@ -17,10 +17,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.1",
+    "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/line-clamp": "^0.4.0",
-    "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "^10.4.7",
+    "@tailwindcss/typography": "^0.5.4",
+    "autoprefixer": "^10.4.8",
     "browser-sync": "^2.27.10",
     "browser-sync-webpack-plugin": "^2.3.0",
     "fast-glob": "^3.2.11",
@@ -30,9 +30,9 @@
     "postcss-nested": "^5.0.6",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
-    "tailwindcss": "^3.0.23"
+    "tailwindcss": "^3.1.7"
   },
   "dependencies": {
-    "three": "^0.141.0"
+    "three": "^0.143.0"
   }
 }
