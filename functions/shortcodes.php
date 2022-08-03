@@ -551,7 +551,7 @@ function ams_add_shortcodes()
 			foreach($query->get_posts() as $faq) {
 				$html .= '<div class="questions__question">';
 
-				$html .= '<h4 class="question__title">' . $faq->post_title . '</h4>';
+				$html .= '<h3 class="question__title">' . $faq->post_title . '</h3>';
 
 				$html .= '<div class="question__answer">';
 				$html .= $faq->post_content;
