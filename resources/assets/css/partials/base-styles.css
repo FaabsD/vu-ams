@@ -185,41 +185,92 @@ body,
 
   .questions {
     @apply prose-sm
-		grid 
-		max-w-none 
-		grid-flow-row 
-		auto-rows-fr
-		divide-y
-		divide-ams-dark
+		grid
+		max-w-none
+		grid-flow-row
+		auto-rows-auto 
+		gap-y-2 
+		py-8 
 		text-ams-dark
 		prose-headings:!text-ams-dark
 		md:prose
-		md:max-w-none;
+		md:max-w-none
+		md:grid-cols-2
+		md:gap-x-4
+		lg:gap-x-8
+		lg:gap-y-4
+		xl:gap-x-16
+		xl:py-16
+		2xl:gap-x-32;
 
-    &__question {
-      @apply relative
+    &__col {
+      @apply grid 
+	  grid-flow-row
+	  auto-rows-max
+	  divide-y
+	  divide-ams-dark;
+
+      .question {
+        @apply relative
 	  		box-border
+			max-h-[55px]
 			bg-ams-cyan
 			px-6
 			py-3
+			transition-all
+			duration-300
 			after:absolute
-			after:inset-y-1/2
+			after:top-3
 			after:right-6
+			after:box-border
+			after:inline-block
 			after:h-4
 			after:w-4
-			after:-translate-y-1/2
+			after:origin-center
 			after:rotate-45
 			after:transform
-			after:border-r-2
-			after:border-b-2
+			after:border-2
 			after:border-ams-dark
-			after:content-[""];
+			after:border-l-transparent
+			after:border-t-transparent
+			after:transition-transform
+			after:duration-300
+			after:content-[""]
+			first-of-type:border-t-2
+			first-of-type:border-t-ams-dark;
 
-      &:nth-child(3n + 1) {
-        @apply mt-1.5 !border-t-2 !border-t-ams-dark;
-      }
-      &:nth-child(1) {
-        @apply mt-0;
+        &__title {
+          @apply pointer-events-none 
+		  m-0 
+		  select-none;
+        }
+
+        &__answer {
+          @apply -mx-3
+		  max-h-0
+		  overflow-hidden
+		  bg-ams-grey
+		  p-3
+		  opacity-0
+		  transition-all
+		  duration-300
+		  ease-in-out;
+        }
+
+        &--opened {
+          @apply h-auto
+			max-h-[1000px]
+			after:translate-y-1/2
+			after:-rotate-[135deg];
+          .question__title {
+            @apply mb-2;
+          }
+
+          .question__answer {
+            @apply max-h-[1000px] 
+			opacity-100;
+          }
+        }
       }
     }
   }
