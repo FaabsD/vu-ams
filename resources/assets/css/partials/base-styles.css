@@ -1,295 +1,335 @@
 body,
 .theme-VU-AMS {
-	@apply bg-white font-heebo xl:overflow-x-hidden;
+  @apply bg-white font-heebo xl:overflow-x-hidden;
 
-	.releases {
-		@apply prose-sm md:prose mx-auto !max-w-full;
+  .releases {
+    @apply prose-sm mx-auto !max-w-full md:prose;
 
-		&__current {
-			@apply bg-ams-cyan
+    &__current {
+      @apply space-y-2
             border-b
             border-ams-grey
-            py-4 px-8
-            space-y-2
-            md:space-y-0
+            bg-ams-cyan py-4
+            px-8
+            text-center
             md:grid
             md:grid-cols-2
-            text-center
+            md:space-y-0
             md:text-left;
 
-			h3 {
-				@apply mt-0 text-ams-dark;
-			}
+      h3 {
+        @apply mt-0 text-ams-dark;
+      }
 
-			& > a {
-				@apply text-ams-dark hover:text-ams-grey md:mb-0 md:text-right;
-			}
+      & > a {
+        @apply text-ams-dark hover:text-ams-grey md:mb-0 md:text-right;
+      }
 
-			.downloads {
-				@apply flex
+      .downloads {
+        @apply flex
                 flex-col
-                md:flex-row
                 items-center
-                md:items-start
                 justify-between
                 space-y-2
-                md:space-y-0
                 md:col-span-2
-                md:!mt-4;
+                md:!mt-4
+                md:flex-row
+                md:items-start
+                md:space-y-0;
 
-				&__download {
-					@apply text-ams-dark hover:text-ams-grey inline-flex flex-row gap-x-2 items-start;
+        &__download {
+          @apply inline-flex flex-row items-start gap-x-2 text-ams-dark hover:text-ams-grey;
 
-					.brand-logo {
-						@apply w-6 md:w-8 inline-block fill-current;
-					}
-				}
-			}
-		}
+          .brand-logo {
+            @apply inline-block w-6 fill-current md:w-8;
+          }
+        }
+      }
+    }
 
-		&__opener {
-			@apply p-4
-            bg-ams-cyan
-            !max-w-full
-            prose-sm
-            md:prose
+    &__opener {
+      @apply prose-sm
             flex
+            !max-w-full
+            select-none
             flex-row
-            justify-around
             items-center
+            justify-around
+            bg-ams-cyan
+            p-4
+            md:prose
             md:justify-between
             md:py-4
-            md:px-8
-            select-none;
+            md:px-8;
 
-			h3 {
-				@apply !m-0 text-ams-dark;
-			}
+      h3 {
+        @apply !m-0 text-ams-dark;
+      }
 
-			.opener-btn {
-				@apply hover:cursor-pointer transform transition-transform ease-in-out duration-100;
+      .opener-btn {
+        @apply transform transition-transform duration-100 ease-in-out hover:cursor-pointer;
 
-				svg {
-					@apply w-8 md:w-10 fill-ams-dark;
-				}
+        svg {
+          @apply w-8 fill-ams-dark md:w-10;
+        }
 
-				&--rotated {
-					@apply transform rotate-180;
-				}
-			}
-		}
+        &--rotated {
+          @apply rotate-180 transform;
+        }
+      }
+    }
 
-		&__previous {
-			@apply bg-ams-dark
+    &__previous {
+      @apply h-auto
+            max-h-[500px]
+            origin-top
+            scale-y-100
+            transform
             divide-y
             divide-ams-grey
-            h-auto
-            max-h-[500px]
             overflow-y-scroll
-            transform
-            scale-y-100
+            bg-ams-dark
             transition-transform
-            ease-in-out
             duration-100
-            origin-top;
+            ease-in-out;
 
-			&--closed {
-				@apply transform scale-y-0 h-0;
-			}
+      &--closed {
+        @apply h-0 scale-y-0 transform;
+      }
 
-			.release {
-				@apply py-4 px-8 space-y-2 md:space-y-0 text-center md:grid md:grid-cols-2 select-none;
+      .release {
+        @apply select-none space-y-2 py-4 px-8 text-center md:grid md:grid-cols-2 md:space-y-0;
 
-				h4 {
-					@apply mt-0 md:!m-0 text-ams-grey;
-				}
+        h4 {
+          @apply mt-0 text-ams-grey md:!m-0;
+        }
 
-				& > a {
-					@apply text-ams-grey md:mb-0 hover:text-ams-cyan;
-				}
+        & > a {
+          @apply text-ams-grey hover:text-ams-cyan md:mb-0;
+        }
 
-				&__downloads {
-					@apply flex
+        &__downloads {
+          @apply flex
                     flex-col
-                    md:flex-row
                     items-center
-                    md:items-start
                     justify-around
                     space-y-2
-                    md:space-y-0
                     md:col-span-2
-                    md:!mt-4;
+                    md:!mt-4
+                    md:flex-row
+                    md:items-start
+                    md:space-y-0;
 
-					a {
-						@apply inline-flex
+          a {
+            @apply inline-flex
                         flex-row
-                        gap-x-2
                         items-center
+                        gap-x-2
                         text-ams-grey
 						hover:text-ams-cyan;
 
-						.brand-logo {
-							@apply w-6 md:w-8 inline-block fill-current;
-						}
-					}
-				}
-			}
-		}
-	}
+            .brand-logo {
+              @apply inline-block w-6 fill-current md:w-8;
+            }
+          }
+        }
+      }
+    }
+  }
 
-	.recent_software-release {
-		@apply prose-sm md:prose mx-auto max-w-none md:max-w-none;
+  .recent_software-release {
+    @apply prose-sm mx-auto max-w-none md:prose md:max-w-none;
 
-		&__inner {
-			@apply bg-ams-cyan
+    &__inner {
+      @apply space-y-2
             border-b
             border-ams-grey
-            py-4 px-8
-            space-y-2
-            md:space-y-0
+            bg-ams-cyan py-4
+            px-8
+            text-center
             md:grid
             md:grid-cols-2
-            text-center
+            md:space-y-0
             md:text-left;
 
-			h3 {
-				@apply mt-0 text-ams-dark;
-			}
+      h3 {
+        @apply mt-0 text-ams-dark;
+      }
 
-			& > a {
-				@apply text-ams-dark hover:text-ams-grey md:mb-0 md:text-right;
-			}
+      & > a {
+        @apply text-ams-dark hover:text-ams-grey md:mb-0 md:text-right;
+      }
 
-			.downloads {
-				@apply flex
+      .downloads {
+        @apply flex
                 flex-col
-                md:flex-row
                 items-center
-                md:items-start
                 justify-between
                 space-y-2
-                md:space-y-0
                 md:col-span-2
-                md:!mt-4;
+                md:!mt-4
+                md:flex-row
+                md:items-start
+                md:space-y-0;
 
-				&__download {
-					@apply text-ams-dark hover:text-ams-grey inline-flex flex-row gap-x-2 items-start;
+        &__download {
+          @apply inline-flex flex-row items-start gap-x-2 text-ams-dark hover:text-ams-grey;
 
-					.brand-logo {
-						@apply w-6 md:w-8 inline-block fill-current;
-					}
-				}
-			}
-		}
-	}
+          .brand-logo {
+            @apply inline-block w-6 fill-current md:w-8;
+          }
+        }
+      }
+    }
+  }
+
+  .questions {
+    @apply prose-sm
+		grid 
+		max-w-none 
+		grid-flow-row 
+		auto-rows-fr
+		divide-y
+		divide-ams-dark
+		text-ams-dark
+		prose-headings:!text-ams-dark
+		md:prose
+		md:max-w-none;
+
+    &__question {
+      @apply relative
+	  		box-border
+			bg-ams-cyan
+			px-6
+			py-3
+			after:absolute
+			after:inset-y-1/2
+			after:right-6
+			after:h-4
+			after:w-4
+			after:-translate-y-1/2
+			after:rotate-45
+			after:transform
+			after:border-r-2
+			after:border-b-2
+			after:border-ams-dark
+			after:content-[""];
+
+      &:nth-child(3n + 1) {
+        @apply mt-1.5 !border-t-2 !border-t-ams-dark;
+      }
+      &:nth-child(1) {
+        @apply mt-0;
+      }
+    }
+  }
 }
 
 /* Style default template */
 
 .page-template-default {
-	@apply w-screen bg-white;
-	header {
-		@apply py-4 lg:pt-16 px-8 xl:px-32;
-		& > h1 {
-			@apply text-3xl lg:text-6xl text-ams-cyan font-bold my-0;
-		}
-	}
+  @apply w-screen bg-white;
+  header {
+    @apply py-4 px-8 lg:pt-16 xl:px-32;
+    & > h1 {
+      @apply my-0 text-3xl font-bold text-ams-cyan lg:text-6xl;
+    }
+  }
 
-	.content {
-		@apply px-8
-		xl:px-32
-		prose-sm
-		md:prose
-		prose-headings:text-ams-cyan
-		md:prose-headings:text-ams-cyan
-		prose-headings:mt-0
-		md:prose-headings:mt-0
-		!max-w-full
+  .content {
+    @apply prose-sm
 		flex
+		!max-w-full
 		flex-col
+		px-8
 		pt-4
-		xl:relative
 		before:hidden
-        before:xl:block
+		after:hidden
+		prose-headings:mt-0
+		prose-headings:text-ams-cyan
+		md:prose
+		md:prose-headings:mt-0
+		md:prose-headings:text-ams-cyan
+		xl:relative
+        xl:px-32
         before:xl:absolute
         before:xl:top-48
         before:xl:left-0
-        before:xl:!w-24
+        before:xl:block
         before:xl:!h-48
 
-        after:hidden
-        after:xl:block
+        before:xl:!w-24
         after:xl:absolute
         after:xl:bottom-1/4
         after:xl:right-0
-        after:xl:!w-24
-        after:xl:!h-48;
+        after:xl:block
+        after:xl:!h-48
+        after:xl:!w-24;
 
-		&:before,
-		&:after {
-			@apply bg-dots;
-		}
+    &:before,
+    &:after {
+      @apply bg-dots;
+    }
 
-		& > .wp-block-columns {
-			@apply my-0 
-			lg:gap-x-8
-			xl:gap-x-16
-			2xl:gap-x-32 
-			-mx-8 
-			px-8 
-			xl:px-32 
-			xl:-mx-32
-			py-4;
+    & > .wp-block-columns {
+      @apply my-0 
+			-mx-8
+			px-8
+			py-4 
+			lg:gap-x-8 
+			xl:-mx-32 
+			xl:gap-x-16 
+			xl:px-32
+			2xl:gap-x-32;
 
-			.wp-block-column {
-				@apply space-y-2;
+      .wp-block-column {
+        @apply space-y-2;
 
-				> .wp-block-image {
-					@apply my-0 mx-auto;
-					img {
-						@apply my-0 mx-auto;
-					}
-					.alignleft {
-						@apply float-none ml-0 mr-auto my-0;
-					}
-					.alignright {
-						@apply float-none mr-0 ml-auto my-0;
-					}
-				}
+        > .wp-block-image {
+          @apply my-0 mx-auto;
+          img {
+            @apply my-0 mx-auto;
+          }
+          .alignleft {
+            @apply float-none my-0 ml-0 mr-auto;
+          }
+          .alignright {
+            @apply float-none my-0 mr-0 ml-auto;
+          }
+        }
 
-				>.wp-block-embed {
-					.wp-block-embed__wrapper {
-						iframe {
-							@apply w-full md:min-h-[350px] lg:min-h-[250px] xl:min-h-[300px] 2xl:min-h-[450px] max-h-fit h-auto;
-						}
-					}
-				}
+        > .wp-block-embed {
+          .wp-block-embed__wrapper {
+            iframe {
+              @apply h-auto max-h-fit w-full md:min-h-[350px] lg:min-h-[250px] xl:min-h-[300px] 2xl:min-h-[450px];
+            }
+          }
+        }
 
-				> .wp-block-group {
-					.wp-block-group__inner-container {
-						> .wp-block-image {
-							@apply my-0 mx-auto;
-							img {
-								@apply my-0 mx-auto;
-							}
-							.alignleft {
-								@apply float-none ml-0 mr-auto my-0;
-							}
-							.alignright {
-								@apply float-none mr-0 ml-auto my-0;
-							}
-						}
-						> .wp-block-columns {
-							@apply my-0 lg:gap-x-8;
-						}
-					}
-				}
+        > .wp-block-group {
+          .wp-block-group__inner-container {
+            > .wp-block-image {
+              @apply my-0 mx-auto;
+              img {
+                @apply my-0 mx-auto;
+              }
+              .alignleft {
+                @apply float-none my-0 ml-0 mr-auto;
+              }
+              .alignright {
+                @apply float-none my-0 mr-0 ml-auto;
+              }
+            }
+            > .wp-block-columns {
+              @apply my-0 lg:gap-x-8;
+            }
+          }
+        }
 
-				> .wp-block-columns {
-					@apply my-0 lg:gap-x-8;
-				}
-			}
-		}
-	}
+        > .wp-block-columns {
+          @apply my-0 lg:gap-x-8;
+        }
+      }
+    }
+  }
 }
-
