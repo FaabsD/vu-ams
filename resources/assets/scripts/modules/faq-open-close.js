@@ -13,6 +13,7 @@ if (faqContainer) {
 				question.classList.toggle('question--opened');
 
 				let openedQuestion = faqContainer.querySelector('.questions__col > .question--opened');
+				// TODO: fix closing other FAQ item(s) when clicking another FAQ item
 				if (openedQuestion && openedQuestion !== question) {
 					openedQuestion.classList.remove('question--opened');
 				}
