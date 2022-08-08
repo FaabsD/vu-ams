@@ -246,11 +246,11 @@ body,
         }
 
         &__answer {
-          @apply -mx-3
+          @apply
 		  max-h-0
 		  overflow-hidden
 		  bg-ams-grey
-		  p-3
+		  p-0
 		  opacity-0
 		  transition-all
 		  duration-300
@@ -268,7 +268,9 @@ body,
 
           .question__answer {
             @apply max-h-[1000px] 
-			opacity-100;
+			opacity-100
+			p-3
+			;
           }
         }
       }
