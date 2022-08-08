@@ -522,6 +522,8 @@ function ams_add_shortcodes()
 			// close downloads section
 			$html .= '</div>';
 
+			// close release__inner div
+			$html .= '</div>';
 			
 		}
 
