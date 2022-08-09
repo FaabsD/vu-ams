@@ -246,8 +246,7 @@ body,
         }
 
         &__answer {
-          @apply
-		  max-h-0
+          @apply max-h-0
 		  overflow-hidden
 		  bg-ams-grey
 		  p-0
@@ -268,9 +267,73 @@ body,
 
           .question__answer {
             @apply max-h-[1000px] 
-			opacity-100
 			p-3
-			;
+			opacity-100;
+          }
+        }
+      }
+    }
+  }
+
+  .old_software_releases {
+    @apply prose-sm mx-auto max-w-none py-4 md:prose md:max-w-none;
+    &__inner {
+      @apply max-h-[350px] gap-y-2 divide-y-2 divide-ams-grey overflow-y-scroll;
+
+      &::-webkit-scrollbar {
+        @apply w-3.5 bg-ams-dark;
+      }
+
+	  &::-webkit-scrollbar-track{
+		@apply bg-ams-cyan bg-opacity-60 border-l;
+	  }
+
+	  &::-webkit-scrollbar-thumb {
+		@apply bg-ams-cyan rounded-full;
+	  }
+
+      .release {
+        @apply select-none 
+			space-y-2 
+			bg-ams-dark 
+			py-4 
+			px-8 
+			text-center 
+			md:grid 
+			md:grid-cols-2 
+			md:space-y-0;
+
+        h3 {
+          @apply mt-0 text-ams-grey md:!m-0;
+        }
+
+        & > a {
+          @apply text-ams-grey hover:text-ams-cyan md:mb-0;
+        }
+
+        &__downloads {
+          @apply flex
+						flex-col
+						items-center
+						justify-around
+						space-y-2
+						md:col-span-2
+						md:!mt-4
+						md:flex-row
+						md:items-start
+						md:space-y-0;
+
+          a {
+            @apply inline-flex
+							flex-row
+							items-center
+							gap-x-2
+							text-ams-grey
+							hover:text-ams-cyan;
+
+            .brand-logo {
+              @apply inline-block w-6 fill-current md:w-8;
+            }
           }
         }
       }
