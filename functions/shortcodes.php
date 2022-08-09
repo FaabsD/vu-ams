@@ -561,7 +561,7 @@ function ams_add_shortcodes()
 
 			foreach($query->get_posts() as $index => $release) : if($index > 0):
 				$html .= '<div class="release">';
-					$html .= '<h4>' . $release->post_title . '</h4>';
+					$html .= '<h3>' . $release->post_title . '</h3>';
 					$html .= '<a href="' . get_permalink($release->ID) . '">';
 					$html .= 'View changelog';
 					$html .= '</a>';
