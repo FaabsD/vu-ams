@@ -7,7 +7,7 @@
     <header class="header">
         <h1> <?php the_title(); ?></h1>
     </header>
-    <div>
+    <div class="publications__content">
         <?php the_content(); ?>
     </div>
     <?php wp_reset_query(); ?>
