@@ -554,7 +554,7 @@ function ams_add_shortcodes()
 
 		if ($query->have_posts()) {
 			// open a new div
-			$html = '<div class="old_software_releases>';
+			$html = '<div class="old_software_releases">';
 
 			//open the inner container
 			$html .= '<div class="old_software_releases__inner">';
