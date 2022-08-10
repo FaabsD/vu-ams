@@ -123,6 +123,6 @@ function register_post_types()
 		'menu_icon'    => 'dashicons-portfolio',
 		'rewrite'      => array( 'with_front' => true ),
 		'supports'     => array( 'title', 'thumbnail', 'editor', 'excerpt' ),
-		'show_in_rest' => false,
+		'show_in_rest' => true,
 	));
 }
