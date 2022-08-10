@@ -1,0 +1,140 @@
+.page-template-page-projects {
+  @apply w-screen bg-white;
+
+  .header {
+    @apply px-8 pt-8 md:pt-16 xl:px-32;
+
+    h1 {
+      @apply py-4
+			text-3xl
+			font-bold
+			text-ams-cyan
+			lg:text-6xl;
+    }
+    .header__content {
+      @apply prose-sm
+		flex
+		!max-w-full
+		flex-col
+		px-8
+		pt-4
+		before:hidden
+		after:hidden
+		prose-headings:mt-0
+		prose-headings:text-ams-cyan
+		md:prose
+		md:prose-headings:mt-0
+		md:prose-headings:text-ams-cyan
+		xl:relative
+		xl:px-32
+		;
+
+      & > .wp-block-columns {
+        @apply my-0 
+			-mx-8
+			px-8
+			py-4 
+			lg:gap-x-8 
+			xl:-mx-32 
+			xl:gap-x-16 
+			xl:px-32
+			2xl:gap-x-32;
+
+        .wp-block-column {
+          @apply space-y-2;
+
+          > .wp-block-image {
+            @apply my-0 mx-auto;
+            img {
+              @apply my-0 mx-auto;
+            }
+            .alignleft {
+              @apply float-none my-0 ml-0 mr-auto;
+            }
+            .alignright {
+              @apply float-none my-0 mr-0 ml-auto;
+            }
+          }
+
+          > .wp-block-embed {
+            .wp-block-embed__wrapper {
+              iframe {
+                @apply h-auto max-h-fit w-full md:min-h-[350px] lg:min-h-[250px] xl:min-h-[300px] 2xl:min-h-[450px];
+              }
+            }
+          }
+
+          > .wp-block-group {
+            .wp-block-group__inner-container {
+              > .wp-block-image {
+                @apply my-0 mx-auto;
+                img {
+                  @apply my-0 mx-auto;
+                }
+                .alignleft {
+                  @apply float-none my-0 ml-0 mr-auto;
+                }
+                .alignright {
+                  @apply float-none my-0 mr-0 ml-auto;
+                }
+              }
+              > .wp-block-columns {
+                @apply my-0 lg:gap-x-8;
+              }
+            }
+          }
+
+          > .wp-block-columns {
+            @apply my-0 lg:gap-x-8;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    @apply prose-sm 
+		max-w-none
+		px-8
+		prose-headings:text-ams-cyan
+		prose-a:text-ams-cyan
+		hover:prose-a:text-ams-dark
+		md:prose
+		md:max-w-none
+		md:prose-headings:text-ams-cyan
+		md:prose-a:text-ams-cyan
+		xl:px-32;
+
+    .project {
+      @apply mb-8;
+
+      &:not(:last-child) {
+        @apply border-b
+		border-dotted
+		border-b-ams-dark
+		md:border-b-2;
+      }
+      &__content {
+        p {
+          @apply line-clamp-6;
+        }
+      }
+
+      &__read-more {
+        @apply text-right;
+        .read-more__button {
+          @apply box-border 
+		  inline-block 
+		  bg-ams-yellow 
+		  px-4 
+		  py-2 
+		  font-medium 
+		  text-ams-dark
+		  md:no-underline
+		  xl:hover:bg-ams-dark
+		  xl:hover:text-ams-grey;
+        }
+      }
+    }
+  }
+}
