@@ -100,4 +100,29 @@ function register_post_types()
 		'supports' => array('title', 'editor', 'excerpt'),
 		'show_in_rest' =>false,
 	));
+
+	// create a Projects posttype
+	register_post_type('project', array (
+		'labels' => array(
+			'name'               => __( 'Projects', THEME_TEXT_DOMAIN ),
+			'singular_name'      => __( 'Project', THEME_TEXT_DOMAIN ),
+			'add_new'            => __( 'Add project', THEME_TEXT_DOMAIN ),
+			'add_new_item'       => __( 'Add new project', THEME_TEXT_DOMAIN ),
+			'all_items'          => __( 'All projects', THEME_TEXT_DOMAIN ),
+			'edit_item'          => __( 'Edit project', THEME_TEXT_DOMAIN ),
+			'name_admin_bar'     => __( 'Projects', THEME_TEXT_DOMAIN ),
+			'menu_name'          => __( 'Projects', THEME_TEXT_DOMAIN ),
+			'new_item'           => __( 'New project', THEME_TEXT_DOMAIN ),
+			'not_found'          => __( 'No projects found', THEME_TEXT_DOMAIN ),
+			'not_found_in_trash' => __( 'No projects found in trash', THEME_TEXT_DOMAIN ),
+			'search_items'       => __( 'Search projects', THEME_TEXT_DOMAIN ),
+			'view_item'          => __( 'View project', THEME_TEXT_DOMAIN ),
+		),
+		'public'       => true,
+		'has_archive'  => true,
+		'menu_icon'    => 'dashicons-portfolio',
+		'rewrite'      => array( 'with_front' => true ),
+		'supports'     => array( 'title', 'thumbnail', 'editor', 'excerpt' ),
+		'show_in_rest' => true,
+	));
 }

@@ -373,3 +373,34 @@ function getPublicationDates()
     return false;
     endif;
 }
+
+/**
+ * Determine if the full post content word count is greater 
+ * then the excerpt word count and if excerpt word count is greater then 1
+ *
+ * @param string $excerpt
+ * @param string $full_text
+ * @return boolean
+ */
+function check_longer_than_excerpt($excerpt, $full_text = null) {
+	// get excerpt length
+	$excerptWordCount = (str_word_count($excerpt) > 1) ? str_word_count($excerpt) -1 : str_word_count($excerpt);
+	$full_text_word_count = preg_split('/[\s,.:]+/', htmlentities(strip_tags($full_text)));
+
+
+	if (defined('WP_DEBUG')) {
+		error_log("======== DEBUGGING THE CHECK_LONGER_THAN_EXCERPT FUNCTION ========");
+		error_log("Full text wordcount = " . count($full_text_word_count));
+		error_log("excerp wordcount = " . $excerptWordCount);
+
+		error_log("fulltext wordcount higher then or equal to excerpt wordcount =  ". (count($full_text_word_count) >= $excerptWordCount) ? "true" : "false");
+		error_log('====== Original text stripped from tags ======');
+		error_log(htmlentities(strip_tags($full_text)));
+	}
+
+	if(is_array($full_text_word_count) && count($full_text_word_count) >= $excerptWordCount && $excerptWordCount > 1) {
+		return true;
+	}
+
+	return false;
+}
