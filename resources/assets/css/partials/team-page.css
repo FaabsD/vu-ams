@@ -1,71 +1,105 @@
 .teampage {
-  @apply bg-white w-screen;
+  @apply w-screen bg-white;
 
   .header {
     @apply py-4 px-8 md:px-8 lg:px-32 lg:pt-16;
 
     h1 {
-      @apply font-bold text-3xl lg:text-6xl text-ams-cyan leading-loose;
+      @apply text-3xl font-bold leading-loose text-ams-cyan lg:text-6xl;
     }
   }
 
   .team {
-    @apply grid
-        grid-cols-1
-        gap-8
-        2xl:gap-16
-        auto-rows-fr
-        lg:grid-cols-2
-        px-8
+    @apply px-8
         md:px-8
         lg:px-32
-        lg:py-16
-        xl:grid-cols-3;
+        lg:py-16;
 
-    &__member {
-      @apply flex
-            flex-col
-            shadow-xl
-            border
-            border-dashed
-            border-ams-dark;
-
-      .member {
-        &__img-section {
-          @apply basis-1/2
-                    grow
-                    shrink-0
-                    flex
-                    justify-center
-                    items-end
-                    bg-gradient-to-r
-                    from-ams-cyan
-                    to-ams-dark;
-
-          img {
-            @apply w-60
-                        h-60
-                        rounded-full
-                        border-[6px]
-                        border-white
-                        object-cover
-                        object-center;
+    .role {
+      &:nth-child(1) {
+        .role__info {
+          h2 {
+            @apply mt-0;
           }
         }
+      }
+      &__info {
+        @apply prose-sm 
+			max-w-none 
+			prose-headings:text-ams-dark 
+			md:prose 
+			md:max-w-none;
+      }
+      &__members {
+        @apply grid
+			auto-rows-fr
+			grid-cols-1
+			gap-8
+			lg:grid-cols-2
+			xl:grid-cols-3
+			2xl:gap-16;
 
-        &__text-section {
-          @apply basis-1/2 grow shrink prose-lg px-8 py-8 text-center;
+        .member {                             
+          @apply flex
+			flex-col
+			border
+			border-dashed
+			border-ams-dark
+			shadow-xl;
 
-          .member {
-            &__name {
-              @apply font-bold text-2xl 2xl:text-3xl m-0;
+          &__img-section {
+            @apply flex
+								shrink-0
+								grow
+								basis-1/2
+								items-end
+								justify-center
+								bg-gradient-to-r
+								from-ams-cyan
+								to-ams-dark;
+
+            img {
+              @apply h-60
+									w-60
+									rounded-full
+									border-[6px]
+									border-white
+									object-cover
+									object-center;
             }
+          }
 
-            &__text {
-              @apply text-ams-text_light line-clamp-5 md:line-clamp-6;
+          &__text-section {
+            @apply prose-lg 
+			shrink 
+			grow 
+			basis-1/2 
+			px-8 
+			py-8 
+			text-center;
 
-              h2 {
-                @apply m-0 leading-loose text-xl 2xl:text-2xl font-normal text-black;
+            .member {
+              &__name {
+                @apply m-0 
+				text-2xl 
+				font-bold 
+				2xl:text-3xl;
+              }
+
+              &__text {
+                @apply 
+				text-ams-text_light 
+				line-clamp-5 
+				md:line-clamp-6;
+
+                h2 {
+                  @apply m-0 
+				  text-xl 
+				  font-normal 
+				  leading-loose 
+				  text-black 
+				  2xl:text-2xl;
+                }
               }
             }
           }
