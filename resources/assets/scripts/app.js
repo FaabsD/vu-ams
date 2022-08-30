@@ -9,5 +9,6 @@ require('./modules/previous-downloads');
 require('./modules/set-image-height-client');
 require('./modules/submit-form');
 require('./modules/tabswitch');
+require('./modules/team-readmore');
 require('./modules/team-slider');
 
