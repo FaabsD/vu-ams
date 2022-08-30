@@ -763,7 +763,6 @@
                             flex-col
                             lg:!grid
                             lg:grid-rows-2
-                            justify-center
                             rounded-lg
                             overflow-hidden
                             border
@@ -802,14 +801,28 @@
                                 }
 
                                 &__info-block {
-                                    @apply basis-1/2 shrink-0 pt-4 px-8 pb-8 prose text-center lg:pt-16 lg:pb-4;
+                                    @apply basis-1/2 shrink-0 pt-4 px-8 pb-8 prose text-center lg:pt-16 lg:pb-4 max-h-max min-w-full;
 
                                     .member__heading {
                                         @apply text-xl font-bold text-ams-dark
                                     }
 
                                     .member__text {
-                                        @apply !text-ams-text_light;
+                                        @apply !text-ams-text_light 
+										max-h-24 
+										overflow-hidden
+										relative
+										after:content-[""]
+										after:absolute
+										after:inset-x-0
+										after:bottom-0
+										after:bg-gradient-to-b
+										after:from-transparent
+										after:to-white
+										after:h-12;
+										& > p {
+											@apply first-of-type:mt-0
+										}
                                     }
 
                                     .member__readmore {

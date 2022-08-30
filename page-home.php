@@ -353,9 +353,9 @@ $teamMembers = new WP_Query($memberArgs);
                         <h2 class="member__heading">
                             <?php the_title(); ?>
                         </h2>
-                        <p class="member__text">
+                        <div class="member__text">
                             <?php the_excerpt(); ?>
-                        </p>
+                        </div>
                         <?php if (isset($readMore)) : ?>
                             <a href="<?php echo $readMore['url'] ?>" target="<?php echo $readMore['target'] ?>"
                                title="<?php echo $readMore['title'] ?>" class="member__readmore">
