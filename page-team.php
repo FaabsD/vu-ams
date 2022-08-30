@@ -15,8 +15,8 @@
 		'type' =>'team-member',
 		'hide_empty' => false,
 		'parent' => 0,
-		'order_by' => 'date',
-		'order' => 'DESC',
+		'orderby' => 'ID',
+		'order' => 'ASC',
 
 	));
 	?>

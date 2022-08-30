@@ -39,9 +39,10 @@
 			xl:grid-cols-3
 			2xl:gap-16;
 
-        .member {                             
-          @apply flex
-			flex-col
+        .member {
+          @apply grid
+			grid-flow-row
+			auto-rows-max
 			border
 			border-dashed
 			border-ams-dark
@@ -49,57 +50,72 @@
 
           &__img-section {
             @apply flex
-								shrink-0
-								grow
-								basis-1/2
-								items-end
-								justify-center
-								bg-gradient-to-r
-								from-ams-cyan
-								to-ams-dark;
+				shrink-0
+				grow
+				items-end
+				justify-center
+				bg-gradient-to-r
+				from-ams-cyan
+				to-ams-dark
+				pt-8
+				md:pt-16
+				lg:pt-20;
 
             img {
-              @apply h-60
-									w-60
-									rounded-full
-									border-[6px]
-									border-white
-									object-cover
-									object-center;
+              @apply h-52
+				w-52
+				rounded-full
+				border-[6px]
+				border-white
+				object-cover
+				object-center
+				md:h-60
+				md:w-60;
             }
           }
 
           &__text-section {
-            @apply prose-lg 
-			shrink 
+            @apply prose-sm
+			shrink
 			grow 
 			basis-1/2 
 			px-8 
 			py-8 
-			text-center;
+			text-center 
+			md:prose 
+			md:max-w-none;
 
-            .member {
-              &__name {
-                @apply m-0 
+            .member__name {
+              @apply m-0 
+				min-h-min 
 				text-2xl 
-				font-bold 
-				2xl:text-3xl;
-              }
+				font-bold
+				2xl:text-3xl
+				;
+            }
 
-              &__text {
-                @apply 
-				text-ams-text_light 
-				line-clamp-5 
-				md:line-clamp-6;
+            .member__text {
+              @apply relative
+				max-h-36
+				overflow-hidden
+				text-ams-text_light
+				after:absolute
+				after:inset-x-0
+				after:bottom-0
+				after:h-1/5
+				after:bg-gradient-to-b
+				after:from-transparent
+				after:to-white
+				after:content-[""];
 
-                h2 {
-                  @apply m-0 
-				  text-xl 
-				  font-normal 
-				  leading-loose 
-				  text-black 
-				  2xl:text-2xl;
-                }
+              h2 {
+                @apply m-0 
+					text-xl 
+					font-normal 
+					leading-loose 
+					text-black 
+					2xl:text-2xl
+					;
               }
             }
           }
