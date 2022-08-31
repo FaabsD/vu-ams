@@ -38,9 +38,11 @@ $(document).ready(function () {
                 // trigger a click event on the trigger link
                 triggerBtn.addEventListener('mouseenter', function (e) {
                     // prevent the link from performing the default action
-                    if (triggerBtn.href === 'http://*' || triggerBtn.href.includes('*')) {
-                        e.preventDefault();
-                    }
+					if(triggerBtn.getAttribute('href').includes('*') || triggerBtn.getAttribute('href').includes("#")) {
+						triggerBtn.addEventListener('click', function(event) {
+							event.preventDefault();
+						});
+					}
 
                     // for closing other open sub-menus
                     let openSubmenus = document.querySelectorAll('.sub-menu--show');
