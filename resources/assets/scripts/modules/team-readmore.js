@@ -74,6 +74,12 @@ $(document).ready(function () {
 						// add a click event to the read more button
 						readMoreBtn.on("click", function(event) {
 							textContainer.toggleClass('member__text--opened');
+
+							if (textContainer.hasClass('member__text--opened')) {
+								readMoreBtn.text('Read less');
+							} else {
+								readMoreBtn.text("Read more");
+							}
 						}) 
 					}
 				}
