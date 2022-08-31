@@ -31,11 +31,14 @@ if ( isset( $_GET['date'] ) && $_GET['date'] != 'Date' ) {
 }
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array(
-    's'              => isset( $_GET['search'] ) && $_GET['search'] != '' ? $_GET['search'] : '',
-    'post_type'      => 'publication',
-    'meta_query'     => $meta_query,
-    'posts_per_page' => 10,
-    'paged'          => $paged,
+	's'              => isset( $_GET['search'] ) && $_GET['search'] != '' ? $_GET['search'] : '',
+	'post_type'      => 'publication',
+	'meta_query'     => $meta_query,
+	'posts_per_page' => 10,
+	'paged'          => $paged,
+	'meta_key' 		 => 'publication_date',
+	'orderby'	     => 'meta_value_num',
+	'order'			 => 'DESC',
 );
 $query = new WP_Query( $args );
 ?>
