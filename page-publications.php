@@ -92,17 +92,13 @@ $query = new WP_Query( $args );
             <tbody class="pub-table__body">
             <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                 <tr>
-                    <td width="10px"></td>
+                    <td width="10px" style="width: 10px;"></td>
                     <td>
                         <a href="<?php the_permalink(); ?> ">
                             <h3 class="pub-title">
                                 <?php the_title(); ?>
                             </h3>
                         </a>
-                        <div class="pub-excerpt">
-                            <?php the_excerpt(); ?>
-                        </div>
-
                     </td>
                     <td>
                         <?php if ( get_field( 'authors' ) ) : ?>

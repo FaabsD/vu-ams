@@ -37,23 +37,23 @@
 
               input {
                 @apply w-full
-                                border-[0.5px]
-                                border-[#707070]
-                                font-normal
-                                placeholder-ams-dark
-                                placeholder-opacity-40
-                                md:w-11/12
-                                    md:px-8;
+					border-[0.5px]
+					border-[#707070]
+					font-normal
+					placeholder-ams-dark
+					placeholder-opacity-40
+					md:w-11/12
+					md:px-8;
               }
 
               select {
                 @apply w-full
-                                border-[0.5px]
-                                border-[#707070]
-                                text-ams-dark
-                                text-opacity-40
-                                md:w-auto
-                                md:min-w-min;
+					border-[0.5px]
+					border-[#707070]
+					text-ams-dark
+					text-opacity-40
+					md:w-auto
+					md:min-w-min;
               }
             }
           }
@@ -76,13 +76,14 @@
 
           td {
             @apply p-4
-                        align-top
-                        text-sm
-                        first-of-type:hidden
-                        first-of-type:bg-[#CCA509]
-                        first-of-type:p-0
-                        md:text-base
-                        first-of-type:md:table-cell;
+				align-top
+				text-sm
+				first-of-type:hidden
+				first-of-type:bg-[#CCA509]
+				first-of-type:p-0
+				md:text-base
+				first-of-type:md:table-cell
+				max-w-min;
 
             &:nth-child(2) {
               @apply prose-sm md:prose md:px-16;
@@ -91,15 +92,7 @@
                 @apply no-underline;
 
                 .pub-title {
-                  @apply my-0 font-bold line-clamp-1;
-                }
-              }
-
-              .pub-excerpt {
-                @apply text-sm font-light text-ams-text_light line-clamp-2 md:line-clamp-3;
-
-                & > p {
-                  @apply my-[unset] leading-7;
+                  @apply my-0 font-bold line-clamp-4 md:line-clamp-none;
                 }
               }
             }
