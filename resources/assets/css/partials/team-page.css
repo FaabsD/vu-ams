@@ -106,7 +106,15 @@
 				after:bg-gradient-to-b
 				after:from-transparent
 				after:to-white
-				after:content-[""];
+				after:content-[""]
+				transition-all
+				ease-in-out
+				duration-500;
+
+				&--opened {
+					@apply max-h-screen
+					after:hidden;
+				}
 
               h2 {
                 @apply m-0 
@@ -118,6 +126,10 @@
 					;
               }
             }
+
+			.member__read-more {
+				@apply text-ams-cyan text-xl xl:text-lg py-4 xl:hover:text-ams-dark;
+			}
           }
         }
       }
