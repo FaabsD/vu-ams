@@ -524,7 +524,21 @@
             }
 
             p {
-                @apply text-ams-text_light
+                @apply text-ams-text_light;
+
+                &:last-of-type {
+                    /* @apply bg-red-600; */
+
+                    & > a {
+                        @apply  
+                            no-underline 
+                            bg-ams-yellow
+                            px-8
+                            py-2
+                            text-ams-dark
+                            font-medium;
+                    }
+                }
             }
         }
 
