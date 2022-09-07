@@ -27,7 +27,7 @@
             @apply m-0;
 
             img {
-              @apply m-0 w-full lg:w-auto xl:max-w-xs;
+              @apply m-0 w-full lg:w-auto xl:max-w-[256px] 2xl:max-w-sm;
             }
           }
 
@@ -65,7 +65,6 @@
         max-w-full
         self-center
         overflow-hidden
-        xl:min-w-[300px]
         xl:max-w-xs 
         2xl:min-w-[500px] 
         2xl:max-w-xl;
@@ -116,7 +115,13 @@
     }
 
     .footer__cta {
-      @apply prose-sm text-center !text-white md:prose lg:text-left;
+      @apply 
+      prose-sm 
+      text-center 
+      !text-white 
+      md:prose 
+      lg:text-left
+      xl:min-w-[300px];
 
       h2 {
         @apply mb-2 text-white;
@@ -141,7 +146,20 @@
                   }
 
                   .wpcf7-not-valid-tip {
-                    @apply absolute whitespace-nowrap px-4 py-2;
+                    @apply absolute 
+                    whitespace-nowrap 
+                    px-4 
+                    py-2 
+                    md:-top-2/4 
+                    md:right-0 
+                    lg:top-8
+                    lg:right-auto
+                    lg:left-0
+                    2xl:-top-2/4
+                    2xl:right-0
+                    2xl:left-auto
+                    text-red-500
+                    ;
                   }
                 }
               }
@@ -159,7 +177,15 @@
               }
 
               .wpcf7-response-output {
-                @apply absolute top-full mx-0 mt-8 border-0 px-4 py-2;
+                @apply absolute 
+                top-28 
+                md:top-10
+                lg:top-28
+                2xl:top-10 
+                m-0 
+                border-0 
+                px-4 
+                py-2;
               }
             }
           }
