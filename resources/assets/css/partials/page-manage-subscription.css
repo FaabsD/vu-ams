@@ -1,0 +1,98 @@
+.page-template-page-manage-subscription {
+  @apply w-screen bg-white;
+
+  header {
+    @apply py-4 px-8 lg:pt-16 xl:px-32;
+
+    & > h1 {
+      @apply my-0 text-3xl font-bold text-ams-cyan lg:text-6xl;
+    }
+  }
+
+  .content {
+    @apply prose-sm
+    flex
+    !max-w-full
+    flex-col
+    px-8
+    pt-4
+    pb-8
+    xl:pb-16
+    before:hidden
+    after:hidden
+    prose-headings:mt-0
+    prose-headings:text-ams-cyan
+    md:prose
+    md:prose-headings:mt-0
+    md:prose-headings:text-ams-cyan
+    xl:relative
+    xl:px-32
+    before:xl:absolute
+    before:xl:top-48
+    before:xl:left-0
+    before:xl:block
+    before:xl:!h-48
+    before:xl:!w-24
+    
+    after:xl:absolute
+    after:xl:bottom-1/4
+    after:xl:right-0
+    after:xl:block
+    after:xl:!h-48
+    after:xl:!w-24;
+
+    main {
+      form.mailpoet-manage-subscription {
+        @apply space-y-2 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 lg:gap-x-8 xl:gap-x-32;
+        p.mailpoet_paragraph {
+            @apply md:col-span-full;
+          label {
+            strong {
+              @apply text-ams-cyan;
+            }
+          }
+          .mailpoet-change-email-info {
+            @apply text-xs md:text-sm;
+          }
+        }
+
+        div.mailpoet_paragraph {
+          @apply space-y-1 md:[&:nth-of-type(4)]:col-span-full;
+          label.mailpoet_text_label,
+          label.mailpoet_select_label {
+            @apply text-ams-cyan;
+          }
+
+          input[type="text"],
+          input.mailpoet_text {
+            @apply w-full border font-bold text-ams-dark focus:border-transparent focus:ring-2 focus:ring-ams-cyan disabled:border-ams-text_light disabled:text-ams-text_light;
+          }
+          select,
+          select.mailpoet_select {
+            @apply w-full border font-bold text-ams-dark focus:border-transparent focus:ring-2 focus:ring-ams-cyan;
+          }
+
+          fieldset {
+            @apply md:col-span-full;
+            legend,
+            legend.mailpoet_segment_label {
+              @apply text-ams-cyan;
+            }
+
+            label,
+            label.mailpoet_checkbox_label {
+              input[type="checkbox"],
+              input.mailpoet_checkbox {
+                @apply mr-1 border checked:bg-ams-cyan focus:border-transparent focus:ring-2 focus:ring-ams-cyan;
+              }
+            }
+          }
+
+          input[type="submit"], input.mailpoet_submit {
+            @apply bg-ams-yellow !text-ams-dark py-2 px-8 border-none;
+          }
+        }
+      }
+    }
+  }
+}
