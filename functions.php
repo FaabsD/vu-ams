@@ -6,6 +6,9 @@ require_once 'functions/init.php';
 
 require_once 'functions/menus.php';
 require_once 'functions/posttypes.php';
+
+require_once 'functions/custom-subscription.php';
+
 require_once 'functions/enqueue.php';
 require_once 'functions/full-publications-text.php';
 require_once 'functions/scrape-google-scholar.php';
