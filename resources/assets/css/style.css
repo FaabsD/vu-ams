@@ -5,13 +5,17 @@
 @import "./partials/team-page.css";
 @import "./partials/nav-menu.css";
 @import "./partials/page-AMS.css";
+@import "./partials/page-confirm-unsubscribe.css";
 @import "./partials/page-downloads.css";
 @import "./partials/page-hardware.css";
+@import "./partials/page-manage-subscription.css";
 @import "./partials/page-manual.css";
 @import "./partials/page-projects.css";
 @import "./partials/page-software.css";
+@import "./partials/page-subscribed.css";
 @import "./partials/page-support.css";
 @import "./partials/page-tutorial.css";
+@import "./partials/page-unsubscibed.css";
 @import "./partials/publications-page.css";
 @import "./partials/single-project.css";
 @import "./partials/single-publication.css";

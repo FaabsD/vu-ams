@@ -1,0 +1,53 @@
+.page-template-page-subscribed {
+    @apply w-screen bg-white;
+
+    header {
+        @apply py-4 px-8 lg:pt-16 xl:px-32;
+    
+        & > h1 {
+          @apply my-0 text-3xl font-bold text-ams-cyan lg:text-6xl;
+        }
+      }
+
+    .content {
+      @apply prose-sm
+      flex
+      !max-w-full
+      flex-col
+      px-8
+      pt-4
+      pb-8
+      xl:pb-16
+      before:hidden
+      after:hidden
+      prose-headings:mt-0
+      prose-headings:text-ams-cyan
+      md:prose
+      md:prose-headings:mt-0
+      md:prose-headings:text-ams-cyan
+  
+      prose-a:text-ams-cyan
+      md:prose-a:text-ams-cyan
+      md:hover:prose-a:text-ams-dark
+      xl:relative
+      xl:px-32
+      before:xl:absolute
+      before:xl:top-48
+      before:xl:left-0
+      before:xl:block
+      before:xl:!h-48
+      before:xl:!w-24
+      
+      after:xl:absolute
+      after:xl:bottom-1/4
+      after:xl:right-0
+      after:xl:block
+      after:xl:!h-48
+      after:xl:!w-24;
+  
+      &:before,
+      &:after {
+        @apply bg-dots;
+      }
+    }
+}
