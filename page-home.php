@@ -84,6 +84,13 @@
     <div class="dots2 bg-dots"></div>
 </header>
 
+<!-- Homepage (caption Slider) -->
+<?php if (get_field('image_caption_slider')) : ?>
+<div class="caption-slider-container">
+    <?php echo do_shortcode(get_field('image_caption_slider')); ?>
+</div>
+<?php endif ?>
+
 <!-- Approved by section -->
 <div class="approved">
     <?php if (get_field('approved_by')) : ?>
