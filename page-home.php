@@ -99,7 +99,7 @@
 </div>
 
 <!-- Learnmore section -->
-<div class="learn-more">
+<!--<div class="learn-more">
     <?php if (get_field('learn_more_head')) : ?>
 
         <?php
@@ -139,26 +139,26 @@
                 $dataUrl = get_sub_field('learn_more_data_url');
                 ?>
 
-                <!-- Learn more Data Img -->
+                <!- - Learn more Data Img - ->
                 <?php if ($dataImageArr) : ?>
                     <div class="image">
                         <img src="<?php echo $dataImageArr['url'] ?>" alt="<?php echo $dataImageArr['alt'] ?>">
                     </div>
                 <?php endif; ?>
                 <section>
-                    <!-- Learn more Data Heading -->
+                    <!- - Learn more Data Heading - ->
                     <?php if ($dataHead) : ?>
                         <h3>
                             <?php the_sub_field('learn_more_data_head'); ?>
                         </h3>
                     <?php endif; ?>
 
-                    <!-- Learn more Data text -->
+                    <!- - Learn more Data text - ->
                     <?php if ($dataText) : ?>
                         <?php the_sub_field('learn_more_data_text'); ?>
                     <?php endif; ?>
 
-                    <!-- Learn more Data Link -->
+                    <!- - Learn more Data Link - ->
                     <?php if ($dataUrl) : ?>
                         <a href="<?php echo $dataUrl['url'] ?>" class="data-link"
                            target="<?php echo $dataUrl['target'] ?>"
@@ -245,7 +245,7 @@
             </div>
         <?php endwhile; endif; ?>
     </div>
-</div>
+</div> -->
 
 <!-- Innovative Experience section -->
 <div class="innovative-experience">
