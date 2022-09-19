@@ -15,10 +15,10 @@
 		<div class="header__buttons">
 			<?php if (have_rows('homepage_header_buttons')) : while (have_rows('homepage_header_buttons')) : the_row(); ?>
 				<?php
-					$btn1 = get_sub_field('header_button_1');
-					$btn2 = get_sub_field('header_button_2');
-					$btn3 = get_sub_field('header_button_3');
-				?>
+                    $btn1 = get_sub_field('header_button_1');
+			    $btn2 = get_sub_field('header_button_2');
+			    $btn3 = get_sub_field('header_button_3');
+			    ?>
 
 				<a href="<?php echo $btn1['url'] ?>" class="buttons__btn1" target="<?php echo $btn1['target'] ?>"
 					title="<?php echo $btn1['title'] ?>">
@@ -43,22 +43,36 @@
     <!-- Header images -->
     <?php if (get_field('header_image_1') || get_field('header_image_2')) : ?>
         <?php
-        $img1 = get_field('header_image_1');
-        $img2 = get_field('header_image_2');
+
+        $imgGroup1 = get_field('header_image_1');
+        $imgGroup2 = get_field('header_image_2');
+
         ?>
         <div class="header__slider">
             <div class="slider__img">
-                <img src="<?php echo $img1['url'] ?>" alt="<?php echo $img1['alt'] ?>">
+                <?php if (isset($imgGroup1['url']) && is_array($imgGroup1['url']) && count($imgGroup1['url']) >= 1) : ?>
+                    <a href="<?php echo $imgGroup1['url']['url'] ?>" title="<?php echo $imgGroup1['url']['title'] ?>" target="<?php echo $imgGroup1['url']['target']?>">
+                    <img src="<?php echo $imgGroup1['image']['url'] ?>" alt="<?php echo $imgGroup1['image']['alt'] ?>">
+                    </a>
+                    <?php else : ?>
+                        <img src="<?php echo $imgGroup1['image']['url'] ?>" alt="<?php echo $imgGroup1['image']['alt'] ?>">
+                <?php endif; ?>
             </div>
             <div class="slider__img slider__img--hidden">
-                <img src="<?php echo $img2['url'] ?>" alt="<?php echo $img2['alt'] ?>">
+                <?php if (isset($imgGroup2['url']) && is_array($imgGroup2['url']) && count($imgGroup2['url']) >= 1) : ?>
+                    <a href="<?php echo $imgGroup2['url']['url'] ?>" title="<?php echo $imgGroup2['url']['title']?>" target="<?php echo $imgGroup2['url']['target']?>">
+                        <img src="<?php echo $imgGroup2['image']['url'] ?>" alt="<?php echo $imgGroup2['image']['alt'] ?>">
+                    </a>
+                    <?php else : ?>
+                        <img src="<?php echo $imgGroup2['image']['url'] ?>" alt="<?php echo $imgGroup2['image']['alt'] ?>">
+                <?php endif; ?>
             </div>
             <div class="slider__nav">
                 <div class="nav__thumb">
-                    <img src="<?php echo $img1['url'] ?>" alt="<?php echo $img1['alt'] ?>">
+                    <img src="<?php echo $imgGroup1['image']['url'] ?>" alt="<?php echo $imgGroup1['image']['alt'] ?>">
                 </div>
                 <div class="nav__thumb nav__thumb--inactive">
-                    <img src="<?php echo $img2['url'] ?>" alt="<?php echo $img2['alt'] ?>">
+                    <img src="<?php echo $imgGroup2['image']['url'] ?>" alt="<?php echo $imgGroup2['image']['alt'] ?>">
                 </div>
             </div>
         </div>
