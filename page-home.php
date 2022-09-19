@@ -91,13 +91,6 @@
 </div>
 <?php endif ?>
 
-<!-- Approved by section -->
-<div class="approved">
-    <?php if (get_field('approved_by')) : ?>
-        <?php the_field('approved_by'); ?>
-    <?php endif; ?>
-</div>
-
 <!-- Learnmore section -->
 <!--<div class="learn-more">
     <?php if (get_field('learn_more_head')) : ?>
@@ -313,7 +306,7 @@
 </div>
 
 <!-- Call to action -->
-<div class="call-to-action">
+<!-- <div class="call-to-action">
     <section>
         <?php if (get_field('call_to_action_head')): ?>
             <?php $call_to_action_head = colorize_last_string_word(get_field('call_to_action_head')) ?>
@@ -331,14 +324,21 @@
             <?php the_field('call_to_action_form'); ?>
         </section>
     <?php endif; ?>
+</div> -->
+
+<!-- Approved by section -->
+<div class="approved">
+    <?php if (get_field('approved_by')) : ?>
+        <?php the_field('approved_by'); ?>
+    <?php endif; ?>
 </div>
 
 <!-- Meet the Team -->
 <div class="meet-the-team">
     <?php
     $memberArgs = [ 'post_type' => 'team-member' ];
-$teamMembers = new WP_Query($memberArgs);
-?>
+    $teamMembers = new WP_Query($memberArgs);
+    ?>
 
     <?php if (get_field('meet_the_team_head')) : ?>
         <?php
