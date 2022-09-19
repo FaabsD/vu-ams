@@ -273,7 +273,7 @@
 
 <!-- What is -->
 <div class="what-is">
-    <?php if (get_field('what_is_title')): ?>
+    <!-- <?php if (get_field('what_is_title')): ?>
 
         <?php
             $what_is_title = colorize_last_string_word(get_field('what_is_title'));
@@ -293,7 +293,7 @@
         </h3>
         <div class="dots1 bg-dots"></div>
         <div class="dots2 bg-dots"></div>
-    <?php endif; ?>
+    <?php endif; ?> -->
     <?php if (get_field('what_is_description')) : ?>
         <div class="what-is__description">
             <?php the_field('what_is_description'); ?>
