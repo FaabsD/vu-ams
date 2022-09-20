@@ -5,33 +5,33 @@
 <?php get_header(); ?>
 
 <!-- Homepage Header -->
-<header class="header" style="background-image: url(<?php echo get_field('header_background_image') ? get_field('header_background_image')['url'] : '' ?>);">
+<header class="header" style="background-image: url(<?php echo get_field( 'header_background_image' ) ? get_field( 'header_background_image' )['url'] : ''; ?>);">
 	<div class="header__content">
 		<div class="header__text">
-			<?php if (get_field('header_text') && !empty(get_field('header_text'))) : ?>
-				<?php the_field('header_text'); ?>
+			<?php if ( get_field( 'header_text' ) && !empty( get_field( 'header_text' ) ) ) : ?>
+				<?php the_field( 'header_text' ); ?>
 			<?php endif; ?>
 		</div>
 		<div class="header__buttons">
-			<?php if (have_rows('homepage_header_buttons')) : while (have_rows('homepage_header_buttons')) : the_row(); ?>
+			<?php if ( have_rows( 'homepage_header_buttons' ) ) : while ( have_rows( 'homepage_header_buttons' ) ) : the_row(); ?>
 				<?php
-                    $btn1 = get_sub_field('header_button_1');
-			    $btn2 = get_sub_field('header_button_2');
-			    $btn3 = get_sub_field('header_button_3');
+                    $btn1 = get_sub_field( 'header_button_1' );
+			    $btn2              = get_sub_field( 'header_button_2' );
+			    $btn3              = get_sub_field( 'header_button_3' );
 			    ?>
 
-				<a href="<?php echo $btn1['url'] ?>" class="buttons__btn1" target="<?php echo $btn1['target'] ?>"
-					title="<?php echo $btn1['title'] ?>">
-					<?php echo $btn1['title'] ?>
+				<a href="<?php echo $btn1['url']; ?>" class="buttons__btn1" target="<?php echo $btn1['target']; ?>"
+					title="<?php echo $btn1['title']; ?>">
+					<?php echo $btn1['title']; ?>
 				</a>
 
-				<a href="<?php echo $btn2['url'] ?>" class="buttons__btn2" target="<?php echo $btn2['target'] ?>"
-					title="<?php echo $btn2['title'] ?>">
-					<?php echo $btn2['title'] ?>
+				<a href="<?php echo $btn2['url']; ?>" class="buttons__btn2" target="<?php echo $btn2['target']; ?>"
+					title="<?php echo $btn2['title']; ?>">
+					<?php echo $btn2['title']; ?>
 				</a>
-				<?php if ($btn3) : ?>
-					<a href="<?php echo $btn3['url'] ?>" class="buttons__btn3" target="<?php echo $btn3['target'] ?>" 
-						target="<?php echo $btn3['title'] ?>">
+				<?php if ( $btn3 ) : ?>
+					<a href="<?php echo $btn3['url']; ?>" class="buttons__btn3" target="<?php echo $btn3['target']; ?>" 
+						target="<?php echo $btn3['title']; ?>">
 						<?php echo $btn3['title']; ?>
 					</a>
 				<?php endif; ?>
@@ -41,38 +41,38 @@
 
 
     <!-- Header images -->
-    <?php if (get_field('header_image_1') || get_field('header_image_2')) : ?>
+    <?php if ( get_field( 'header_image_1' ) || get_field( 'header_image_2' ) ) : ?>
         <?php
 
-        $imgGroup1 = get_field('header_image_1');
-        $imgGroup2 = get_field('header_image_2');
+        $imgGroup1 = get_field( 'header_image_1' );
+        $imgGroup2 = get_field( 'header_image_2' );
 
         ?>
         <div class="header__slider">
             <div class="slider__img">
-                <?php if (isset($imgGroup1['url']) && is_array($imgGroup1['url']) && count($imgGroup1['url']) >= 1) : ?>
-                    <a href="<?php echo $imgGroup1['url']['url'] ?>" title="<?php echo $imgGroup1['url']['title'] ?>" target="<?php echo $imgGroup1['url']['target']?>">
-                    <img src="<?php echo $imgGroup1['image']['url'] ?>" alt="<?php echo $imgGroup1['image']['alt'] ?>">
+                <?php if ( isset( $imgGroup1['url'] ) && is_array( $imgGroup1['url'] ) && count( $imgGroup1['url'] ) >= 1 ) : ?>
+                    <a href="<?php echo $imgGroup1['url']['url']; ?>" title="<?php echo $imgGroup1['url']['title']; ?>" target="<?php echo $imgGroup1['url']['target']; ?>">
+                    <img src="<?php echo $imgGroup1['image']['url']; ?>" alt="<?php echo $imgGroup1['image']['alt']; ?>">
                     </a>
                     <?php else : ?>
-                        <img src="<?php echo $imgGroup1['image']['url'] ?>" alt="<?php echo $imgGroup1['image']['alt'] ?>">
+                        <img src="<?php echo $imgGroup1['image']['url']; ?>" alt="<?php echo $imgGroup1['image']['alt']; ?>">
                 <?php endif; ?>
             </div>
             <div class="slider__img slider__img--hidden">
-                <?php if (isset($imgGroup2['url']) && is_array($imgGroup2['url']) && count($imgGroup2['url']) >= 1) : ?>
-                    <a href="<?php echo $imgGroup2['url']['url'] ?>" title="<?php echo $imgGroup2['url']['title']?>" target="<?php echo $imgGroup2['url']['target']?>">
-                        <img src="<?php echo $imgGroup2['image']['url'] ?>" alt="<?php echo $imgGroup2['image']['alt'] ?>">
+                <?php if ( isset( $imgGroup2['url'] ) && is_array( $imgGroup2['url'] ) && count( $imgGroup2['url'] ) >= 1 ) : ?>
+                    <a href="<?php echo $imgGroup2['url']['url']; ?>" title="<?php echo $imgGroup2['url']['title']; ?>" target="<?php echo $imgGroup2['url']['target']; ?>">
+                        <img src="<?php echo $imgGroup2['image']['url']; ?>" alt="<?php echo $imgGroup2['image']['alt']; ?>">
                     </a>
                     <?php else : ?>
-                        <img src="<?php echo $imgGroup2['image']['url'] ?>" alt="<?php echo $imgGroup2['image']['alt'] ?>">
+                        <img src="<?php echo $imgGroup2['image']['url']; ?>" alt="<?php echo $imgGroup2['image']['alt']; ?>">
                 <?php endif; ?>
             </div>
             <div class="slider__nav">
                 <div class="nav__thumb">
-                    <img src="<?php echo $imgGroup1['image']['url'] ?>" alt="<?php echo $imgGroup1['image']['alt'] ?>">
+                    <img src="<?php echo $imgGroup1['image']['url']; ?>" alt="<?php echo $imgGroup1['image']['alt']; ?>">
                 </div>
                 <div class="nav__thumb nav__thumb--inactive">
-                    <img src="<?php echo $imgGroup2['image']['url'] ?>" alt="<?php echo $imgGroup2['image']['alt'] ?>">
+                    <img src="<?php echo $imgGroup2['image']['url']; ?>" alt="<?php echo $imgGroup2['image']['alt']; ?>">
                 </div>
             </div>
         </div>
@@ -85,18 +85,18 @@
 </header>
 
 <!-- Homepage (caption Slider) -->
-<?php if (get_field('image_caption_slider')) : ?>
+<?php if ( get_field( 'image_caption_slider' ) ) : ?>
 <div class="caption-slider-container">
-    <?php echo do_shortcode(get_field('image_caption_slider')); ?>
+    <?php echo do_shortcode( get_field( 'image_caption_slider' ) ); ?>
 </div>
-<?php endif ?>
+<?php endif; ?>
 
 <!-- Learnmore section -->
 <!--<div class="learn-more">
-    <?php if (get_field('learn_more_head')) : ?>
+    <?php if ( get_field( 'learn_more_head' ) ) : ?>
 
         <?php
-        $learn_more_title = colorize_last_string_word(get_field('learn_more_head'));
+        $learn_more_title = colorize_last_string_word( get_field( 'learn_more_head' ) );
 
         ?>
 
@@ -115,48 +115,48 @@
         </h3>
         <div class="dots bg-dots"></div>
     <?php endif; ?>
-    <?php if (get_field('learn_more_description')) : ?>
+    <?php if ( get_field( 'learn_more_description' ) ) : ?>
         <div class="learn-more__description">
-            <?php the_field('learn_more_description'); ?>
+            <?php the_field( 'learn_more_description' ); ?>
         </div>
     <?php endif; ?>
 
-    <?php if (have_rows('learn_more_data')) : ?>
+    <?php if ( have_rows( 'learn_more_data' ) ) : ?>
         <div class="learn-more__data-section">
-            <?php while (have_rows('learn_more_data')) : the_row(); ?>
+            <?php while ( have_rows( 'learn_more_data' ) ) : the_row(); ?>
 
                 <?php
-                $dataImageArr = get_sub_field('learn_more_data_image');
-                $dataHead = get_sub_field('learn_more_data_head');
-                $dataText = get_sub_field('learn_more_data_text');
-                $dataUrl = get_sub_field('learn_more_data_url');
+                $dataImageArr = get_sub_field( 'learn_more_data_image' );
+                $dataHead     = get_sub_field( 'learn_more_data_head' );
+                $dataText     = get_sub_field( 'learn_more_data_text' );
+                $dataUrl      = get_sub_field( 'learn_more_data_url' );
                 ?>
 
                 <!- - Learn more Data Img - ->
-                <?php if ($dataImageArr) : ?>
+                <?php if ( $dataImageArr ) : ?>
                     <div class="image">
-                        <img src="<?php echo $dataImageArr['url'] ?>" alt="<?php echo $dataImageArr['alt'] ?>">
+                        <img src="<?php echo $dataImageArr['url']; ?>" alt="<?php echo $dataImageArr['alt']; ?>">
                     </div>
                 <?php endif; ?>
                 <section>
                     <!- - Learn more Data Heading - ->
-                    <?php if ($dataHead) : ?>
+                    <?php if ( $dataHead ) : ?>
                         <h3>
-                            <?php the_sub_field('learn_more_data_head'); ?>
+                            <?php the_sub_field( 'learn_more_data_head' ); ?>
                         </h3>
                     <?php endif; ?>
 
                     <!- - Learn more Data text - ->
-                    <?php if ($dataText) : ?>
-                        <?php the_sub_field('learn_more_data_text'); ?>
+                    <?php if ( $dataText ) : ?>
+                        <?php the_sub_field( 'learn_more_data_text' ); ?>
                     <?php endif; ?>
 
                     <!- - Learn more Data Link - ->
-                    <?php if ($dataUrl) : ?>
-                        <a href="<?php echo $dataUrl['url'] ?>" class="data-link"
-                           target="<?php echo $dataUrl['target'] ?>"
-                           title="<?php echo $dataUrl['title'] ?>">
-                            <?php echo $dataUrl['title'] ?>
+                    <?php if ( $dataUrl ) : ?>
+                        <a href="<?php echo $dataUrl['url']; ?>" class="data-link"
+                           target="<?php echo $dataUrl['target']; ?>"
+                           title="<?php echo $dataUrl['title']; ?>">
+                            <?php echo $dataUrl['title']; ?>
                         </a>
                     <?php endif; ?>
                 </section>
@@ -176,62 +176,62 @@
             </a>
         </div>
 
-        <?php if (have_rows('learn_more_hardware')) : while (have_rows('learn_more_hardware')): the_row(); ?>
+        <?php if ( have_rows( 'learn_more_hardware' ) ) : while ( have_rows( 'learn_more_hardware' ) ): the_row(); ?>
             <div class="hardware">
-                <?php if (get_sub_field('learn_more_hardware_text')) : ?>
+                <?php if ( get_sub_field( 'learn_more_hardware_text' ) ) : ?>
                     <div class="hardware__text">
-                        <?php the_sub_field('learn_more_hardware_text'); ?>
+                        <?php the_sub_field( 'learn_more_hardware_text' ); ?>
                     </div>
                 <?php endif; ?>
 
-                <?php if (get_sub_field('learn_more_hardware_url')) : ?>
+                <?php if ( get_sub_field( 'learn_more_hardware_url' ) ) : ?>
                     <?php
-                    $hardwareUrl = get_sub_field('learn_more_hardware_url');
+                    $hardwareUrl = get_sub_field( 'learn_more_hardware_url' );
                     ?>
-                    <a href="<?php echo $hardwareUrl['url'] ?>" class="hardware__link"
-                       target="<?php echo $hardwareUrl['target'] ?>"
-                       title="<?php echo $hardwareUrl['title'] ?>">
-                        <?php echo $hardwareUrl['title'] ?>
+                    <a href="<?php echo $hardwareUrl['url']; ?>" class="hardware__link"
+                       target="<?php echo $hardwareUrl['target']; ?>"
+                       title="<?php echo $hardwareUrl['title']; ?>">
+                        <?php echo $hardwareUrl['title']; ?>
                     </a>
                 <?php endif; ?>
 
-                <?php if (get_sub_field('learn_more_hardware_image')) : ?>
+                <?php if ( get_sub_field( 'learn_more_hardware_image' ) ) : ?>
                     <?php
-                    $hardwareImageArr = get_sub_field('learn_more_hardware_image');
+                    $hardwareImageArr = get_sub_field( 'learn_more_hardware_image' );
                     ?>
                     <div class="hardware__image">
-                        <img src="<?php echo $hardwareImageArr['url'] ?>" alt="<?php echo $hardwareImageArr['alt'] ?>">
+                        <img src="<?php echo $hardwareImageArr['url']; ?>" alt="<?php echo $hardwareImageArr['alt']; ?>">
                     </div>
                 <?php endif; ?>
 
             </div>
         <?php endwhile; endif; ?>
 
-        <?php if (have_rows('learn_more_software')) : while (have_rows('learn_more_software')) : the_row(); ?>
+        <?php if ( have_rows( 'learn_more_software' ) ) : while ( have_rows( 'learn_more_software' ) ) : the_row(); ?>
             <div class="software">
-                <?php if (get_sub_field('learn_more_software_text')) : ?>
+                <?php if ( get_sub_field( 'learn_more_software_text' ) ) : ?>
                     <div class="software__text">
-                        <?php the_sub_field('learn_more_software_text'); ?>
+                        <?php the_sub_field( 'learn_more_software_text' ); ?>
                     </div>
                 <?php endif; ?>
 
-                <?php if (get_sub_field('learn_more_software_url')) : ?>
+                <?php if ( get_sub_field( 'learn_more_software_url' ) ) : ?>
                     <?php
-                    $softwareUrl = get_sub_field('learn_more_software_url');
+                    $softwareUrl = get_sub_field( 'learn_more_software_url' );
                     ?>
-                    <a href="<?php echo $softwareUrl['url'] ?>" class="hardware__link"
-                       target="<?php echo $softwareUrl['target'] ?>"
-                       title="<?php echo $softwareUrl['title'] ?>">
-                        <?php echo $softwareUrl['title'] ?>
+                    <a href="<?php echo $softwareUrl['url']; ?>" class="hardware__link"
+                       target="<?php echo $softwareUrl['target']; ?>"
+                       title="<?php echo $softwareUrl['title']; ?>">
+                        <?php echo $softwareUrl['title']; ?>
                     </a>
                 <?php endif; ?>
 
-                <?php if (get_sub_field('learn_more_software_image')) : ?>
+                <?php if ( get_sub_field( 'learn_more_software_image' ) ) : ?>
                     <?php
-                    $softwareImageArr = get_sub_field('learn_more_software_image')
+                    $softwareImageArr = get_sub_field( 'learn_more_software_image' );
                     ?>
                     <div class="software__image">
-                        <img src="<?php echo $softwareImageArr['url'] ?>" alt="<?php echo $softwareImageArr['alt'] ?>">
+                        <img src="<?php echo $softwareImageArr['url']; ?>" alt="<?php echo $softwareImageArr['alt']; ?>">
                     </div>
                 <?php endif; ?>
 
@@ -242,26 +242,26 @@
 
 <!-- Innovative Experience section -->
 <div class="innovative-experience">
-    <?php if (have_rows('innovative_experience_section')) : while (have_rows('innovative_experience_section')) :
+    <?php if ( have_rows( 'innovative_experience_section' ) ) : while ( have_rows( 'innovative_experience_section' ) ) :
         the_row(); ?>
 
-        <?php if (get_sub_field('innovative_experience_head') && get_sub_field('innovative_experience_description')) : ?>
+        <?php if ( get_sub_field( 'innovative_experience_head' ) && get_sub_field( 'innovative_experience_description' ) ) : ?>
         <?php
-        $innovative_head = colorize_last_string_word(get_sub_field('innovative_experience_head'));
+        $innovative_head = colorize_last_string_word( get_sub_field( 'innovative_experience_head' ) );
             ?>
         <section>
             <h2 class="innovative-experience__head">
                 <?php echo $innovative_head; ?>
             </h2>
-            <?php the_sub_field('innovative_experience_description'); ?>
+            <?php the_sub_field( 'innovative_experience_description' ); ?>
         </section>
     <?php endif; ?>
         <section class="innovative-experience__image-box">
-            <?php for ($i = 1; $i <= 4; $i++) : ?>
-                <?php if (get_sub_field('innovative_experience_image_' . $i)) : ?>
-                    <?php $innovativeImgArr = get_sub_field('innovative_experience_image_' . $i); ?>
+            <?php for ( $i = 1; $i <= 4; $i++ ) : ?>
+                <?php if ( get_sub_field( 'innovative_experience_image_' . $i ) ) : ?>
+                    <?php $innovativeImgArr = get_sub_field( 'innovative_experience_image_' . $i ); ?>
                     <div class="innovative-experience__img--<?php echo $i; ?>">
-                        <img src="<?php echo $innovativeImgArr['url'] ?>" alt="<?php echo $innovativeImgArr['alt'] ?>">
+                        <img src="<?php echo $innovativeImgArr['url']; ?>" alt="<?php echo $innovativeImgArr['alt']; ?>">
                     </div>
                 <?php endif; ?>
             <?php endfor; ?>
@@ -273,10 +273,10 @@
 
 <!-- What is -->
 <div class="what-is">
-    <!-- <?php if (get_field('what_is_title')): ?>
+    <!-- <?php if ( get_field( 'what_is_title' ) ): ?>
 
         <?php
-            $what_is_title = colorize_last_string_word(get_field('what_is_title'));
+            $what_is_title = colorize_last_string_word( get_field( 'what_is_title' ) );
 
         ?>
         <div class="what-is__heartbeat">
@@ -294,9 +294,9 @@
         <div class="dots1 bg-dots"></div>
         <div class="dots2 bg-dots"></div>
     <?php endif; ?> -->
-    <?php if (get_field('what_is_description')) : ?>
+    <?php if ( get_field( 'what_is_description' ) ) : ?>
         <div class="what-is__description">
-            <?php the_field('what_is_description'); ?>
+            <?php the_field( 'what_is_description' ); ?>
         </div>
     <?php endif; ?>
     <!-- THREEJS Container -->
@@ -308,41 +308,64 @@
 <!-- Call to action -->
 <!-- <div class="call-to-action">
     <section>
-        <?php if (get_field('call_to_action_head')): ?>
-            <?php $call_to_action_head = colorize_last_string_word(get_field('call_to_action_head')) ?>
+        <?php if ( get_field( 'call_to_action_head' ) ): ?>
+            <?php $call_to_action_head = colorize_last_string_word( get_field( 'call_to_action_head' ) ); ?>
             <h3 class="call-to-action__heading">
                 <?php echo $call_to_action_head; ?>
             </h3>
         <?php endif; ?>
 
-        <?php if (get_field('call_to_action_text')) : ?>
-            <?php the_field('call_to_action_text'); ?>
+        <?php if ( get_field( 'call_to_action_text' ) ) : ?>
+            <?php the_field( 'call_to_action_text' ); ?>
         <?php endif; ?>
     </section>
-    <?php if (get_field('call_to_action_form')) : ?>
+    <?php if ( get_field( 'call_to_action_form' ) ) : ?>
         <section>
-            <?php the_field('call_to_action_form'); ?>
+            <?php the_field( 'call_to_action_form' ); ?>
         </section>
     <?php endif; ?>
 </div> -->
 
 <!-- Approved by section -->
 <div class="approved">
-    <?php if (get_field('approved_by')) : ?>
-        <?php the_field('approved_by'); ?>
+    <?php if ( get_field( 'approved_by' ) ) : ?>
+        <?php the_field( 'approved_by' ); ?>
     <?php endif; ?>
 </div>
 
 <!-- Meet the Team -->
 <div class="meet-the-team">
     <?php
-    $memberArgs = [ 'post_type' => 'team-member' ];
-    $teamMembers = new WP_Query($memberArgs);
+
+        $terms =  get_terms( 'roles', array(
+            'fields'       => 'slugs',
+            'hierarchical' => true,
+            'hide_empty'   => false,
+        ) );
+
+        $filteredTerms = preg_grep( '/alumni/', $terms );
+
+        $memberArgs = array(
+            'post_type' => 'team-member',
+            'tax_query' => array(
+                array(
+                'taxonomy' => 'roles',
+                'field'    => 'slug',
+                'terms'    => $filteredTerms,
+                'operator' => 'NOT IN',
+                ),
+            ),
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'ASC',
+        );
+
+        $teamMembers = new WP_Query( $memberArgs );
     ?>
 
-    <?php if (get_field('meet_the_team_head')) : ?>
+    <?php if ( get_field( 'meet_the_team_head' ) ) : ?>
         <?php
-    $meet_heading = colorize_last_string_word(get_field('meet_the_team_head'));
+        $meet_heading = colorize_last_string_word( get_field( 'meet_the_team_head' ) );
         ?>
         <div class="meet-the-team__heartbeat">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.31 76.61">
@@ -359,13 +382,13 @@
         </h2>
     <?php endif; ?>
 
-    <?php if (get_field('meet_the_team_readmore')) : ?>
-        <?php $readMore = get_field('meet_the_team_readmore'); ?>
+    <?php if ( get_field( 'meet_the_team_readmore' ) ) : ?>
+        <?php $readMore = get_field( 'meet_the_team_readmore' ); ?>
     <?php endif; ?>
 
-    <?php if ($teamMembers->have_posts()) : ?>
+    <?php if ( $teamMembers->have_posts() ) : ?>
         <div class="meet-the-team__members">
-            <?php while ($teamMembers->have_posts()) : $teamMembers->the_post(); ?>
+            <?php while ( $teamMembers->have_posts() ) : $teamMembers->the_post(); ?>
                 <div class="members__member">
                     <div class="member__image-block">
                         <?php the_post_thumbnail(); ?>
@@ -377,9 +400,9 @@
                         <div class="member__text">
                             <?php the_excerpt(); ?>
                         </div>
-                        <?php if (isset($readMore)) : ?>
-                            <a href="<?php echo $readMore['url'] ?>" target="<?php echo $readMore['target'] ?>"
-                               title="<?php echo $readMore['title'] ?>" class="member__readmore">
+                        <?php if ( isset( $readMore ) ) : ?>
+                            <a href="<?php echo $readMore['url']; ?>" target="<?php echo $readMore['target']; ?>"
+                               title="<?php echo $readMore['title']; ?>" class="member__readmore">
                                 <?php echo $readMore['title']; ?>
                             </a>
                         <?php endif; ?>
@@ -391,7 +414,7 @@
     <?php endif; ?>
 </div>
 
-<?php if (have_posts()) : while (have_posts()) :
+<?php if ( have_posts() ) : while ( have_posts() ) :
     the_post(); ?>
     <div class="container prose">
         <?php the_content(); ?>
