@@ -5,6 +5,8 @@ function enqueue_styles()
 {
     wp_enqueue_style('VU-AMS_style', THEME_URL . '/build/css/app.css');
     wp_enqueue_style('slickcss', THEME_URL. '/resources/slick/slick.css');
+    wp_enqueue_style( 'leaflet', THEME_URL . '/node_modules/leaflet/dist/leaflet.css' );
+
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
