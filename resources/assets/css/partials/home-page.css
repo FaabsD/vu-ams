@@ -115,9 +115,10 @@
   }
 
   .caption-slider-container {
-    @apply pb-16;
+    /* @apply pb-16; */
     .metaslider {
       .flexslider {
+        @apply !m-0;
         .slides {
           @apply max-h-max;
           li {
@@ -129,29 +130,30 @@
             .caption-wrap {
               @apply static bg-ams-dark bg-opacity-90 opacity-100;
               .caption {
-                @apply prose-sm px-8 xl:px-32 md:prose md:max-w-none md:text-white;
+                @apply prose-sm px-8 md:prose md:max-w-none md:text-white xl:px-32;
               }
             }
           }
         }
 
-        .flex-control-nav, .flex-control-paging {
-            li {
-                a {
-                    @apply bg-ams-text_light;
-                    &.flex-active {
-                        @apply bg-ams-dark;
-                    }
-                }
+        .flex-control-nav,
+        .flex-control-paging {
+          li {
+            a {
+              @apply bg-ams-text_light;
+              &.flex-active {
+                @apply bg-ams-dark;
+              }
             }
-
+          }
         }
 
         .flex-direction-nav {
           .flex-nav-prev {
             .flex-prev {
               @apply !left-4 
-              xl:!left-16
+              h-6
+                w-6 
                 -rotate-45 
                 transform 
                 !border-l-[4px] 
@@ -159,19 +161,19 @@
                 !border-b-0 
                 !border-r-0 
                 !border-solid 
-                !border-ams-cyan 
+                !border-ams-cyan
                 bg-none
                 !opacity-100
                 md:!top-2/4
-                w-6
-                h-6;
+                xl:!left-16;
             }
           }
 
           .flex-nav-next {
             .flex-next {
               @apply !right-4
-              xl:!right-16
+              h-6
+                w-6
                 rotate-45
                 transform
                 !border-t-[4px]
@@ -183,12 +185,34 @@
                 bg-none
                 !opacity-100
                 md:!top-2/4
-                h-6
-                w-6;
+                xl:!right-16;
             }
           }
         }
       }
+    }
+  }
+
+  .locations-wrapper {
+    @apply prose
+        flex
+        flex-col
+        items-center
+        justify-start
+        px-8
+        pb-16
+        prose-h3:text-ams-dark
+        md:max-w-none
+        lg:prose
+        xl:mx-32
+        lg:max-w-none
+        lg:flex-row
+        lg:items-start;
+    #locationsMap {
+      @apply h-96 xl:h-[600px] 2xl:h-[700px] w-full lg:basis-1/2 grow shrink;
+    }
+    .locations-text {
+      @apply basis-1/2 grow shrink;
     }
   }
 

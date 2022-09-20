@@ -91,6 +91,11 @@
 </div>
 <?php endif; ?>
 
+<div class="locations-wrapper">
+    <div id="locationsMap"></div>
+    <div class="locations-text"></div>
+</div>
+
 <!-- Learnmore section -->
 <!--<div class="learn-more">
     <?php if ( get_field( 'learn_more_head' ) ) : ?>
