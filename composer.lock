@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b95a33119f434e399a06b1e33d85190",
+    "content-hash": "d378d3a1d2bcd6efd85d8248c951a6cc",
     "packages": [
         {
             "name": "serpapi/google-search-results-php",
@@ -72,17 +72,59 @@
             "time": "2020-08-15T13:30:01+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "tareq1988/wp-php-cs-fixer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tareq1988/wp-php-cs-fixer.git",
+                "reference": "eeef65598ae7bac55a09073e666ec0eabf303a12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tareq1988/wp-php-cs-fixer/zipball/eeef65598ae7bac55a09073e666ec0eabf303a12",
+                "reference": "eeef65598ae7bac55a09073e666ec0eabf303a12",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WeDevs\\Fixer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tareq Hasan",
+                    "email": "tareq@wedevs.com"
+                }
+            ],
+            "description": "WordPress rules for php-cs-fixer",
+            "support": {
+                "issues": "https://github.com/tareq1988/wp-php-cs-fixer/issues",
+                "source": "https://github.com/tareq1988/wp-php-cs-fixer/tree/master"
+            },
+            "time": "2022-08-26T09:36:52+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "tareq1988/wp-php-cs-fixer": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "ext-json": "*",
         "ext-dom": "*",
-        "ext-libxml": "*"
+        "ext-libxml": "*",
+        "ext-curl": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

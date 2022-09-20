@@ -11,5 +11,8 @@
       "ext-libxml": "*",
         "serpapi/google-search-results-php": "^2.0",
       "ext-curl": "*"
+    },
+    "require-dev": {
+        "tareq1988/wp-php-cs-fixer": "dev-master"
     }
 }
