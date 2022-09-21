@@ -194,25 +194,31 @@
   }
 
   .locations-wrapper {
-    @apply prose
+    @apply prose-sm
         flex
         flex-col
         items-center
         justify-start
         px-8
-        pb-16
+        py-8
         prose-h3:text-ams-dark
         md:max-w-none
         lg:prose
-        xl:mx-32
         lg:max-w-none
         lg:flex-row
-        lg:items-start;
+        lg:items-start
+        lg:gap-8
+        xl:gap-16
+        xl:px-32
+        2xl:gap-32;
     #locationsMap {
-      @apply h-96 xl:h-[600px] 2xl:h-[700px] w-full lg:basis-1/2 grow shrink;
+      @apply h-96 w-full shrink grow lg:basis-1/2 xl:h-[600px] 2xl:h-[700px];
     }
     .locations-text {
-      @apply basis-1/2 grow shrink;
+      @apply shrink grow basis-1/2;
+      p {
+        @apply first-of-type:lg:m-0;
+      }
     }
   }
 
