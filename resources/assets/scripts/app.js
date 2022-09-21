@@ -3,6 +3,7 @@ $ = jQuery;
 require('./modules/3d-preview');
 require('./modules/faq-open-close');
 require('./modules/home-header-slider');
+require('./modules/interactive-map');
 require('./modules/my-account');
 require('./modules/navigationbar');
 require('./modules/previous-downloads');
