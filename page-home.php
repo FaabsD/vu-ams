@@ -93,7 +93,12 @@
 
 <div class="locations-wrapper">
     <div id="locationsMap"></div>
-    <div class="locations-text"></div>
+    <div class="locations-text">
+        <?php if (get_field('locations_information')) {
+            the_field('locations_information');
+        }
+        ?>
+    </div>
 </div>
 
 <!-- Learnmore section -->
