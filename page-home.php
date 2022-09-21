@@ -92,7 +92,7 @@
 <?php endif; ?>
 
 <div class="locations-wrapper">
-    <div id="locationsMap"></div>
+    <div id="locationsMap" class="not-prose"></div>
     <div class="locations-text">
         <?php if (get_field('locations_information')) {
             the_field('locations_information');
