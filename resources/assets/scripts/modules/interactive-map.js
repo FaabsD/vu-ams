@@ -15,7 +15,7 @@ if ($('#locationsMap')) {
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; OpenStreetMap'
+        attribution: '<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap</a>',
     }).addTo(map);
 
     // make a call to the (built-in) WordPress API to retrieve locations
@@ -23,8 +23,10 @@ if ($('#locationsMap')) {
     fetch(apiUrl)
         .then((response) => {
             if (response.ok) {
-                return response.json()
+                return response.json();
             }
+            // if status not ok throw an error
+            throw new Error("Failed to fetch locations from built-in WordPress API");
         })
         .then((json) => {
             let locations = json;
@@ -48,14 +50,29 @@ if ($('#locationsMap')) {
                     let long = location.acf.long;
                     let locationInfo = location.content.rendered;
 
+                    // create a pop-up to add to the marker
+                    let popUp = L.popup().setContent("<h3>" + locationTitle + "</h3>" + locationInfo);
+
 
                     // create a new marker on the map
-                    markers[index] = L.marker([lat, long]).addTo(map);
+                    markers[index] = L.marker([lat, long]).addTo(map).bindPopup(popUp);
                 });
 
                 console.log("======== set location markers ========");
                 console.log(markers);
+
+                // create a group of all the markers
+                let markerGroup = L.featureGroup(markers);
+                // set map view to fit the markers
+                map.fitBounds(markerGroup.getBounds());
             }
+        })
+        .catch((error) => {
+            // just in case fetching the locations from the built-in WordPress API fails
+            // open a alert to show the visitor that the locations fetching failed
+
+            alert('Something went wrong while loading in locations try refreshing the page or check the console tab from the inspector by right clicking and selecting inspect');
+            console.error('Something went wrong while fetching locations', error);
         });
 
 
