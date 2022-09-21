@@ -213,6 +213,20 @@
         2xl:gap-32;
     #locationsMap {
       @apply h-96 w-full shrink grow lg:basis-1/2 xl:h-[600px] 2xl:h-[700px];
+      .leaflet-map-pane {
+        .leaflet-popup-pane {
+          .leaflet-popup{
+            .leaflet-popup-content-wrapper {
+              .leaflet-popup-content {
+                @apply prose-sm text-left;
+                h3 {
+                  @apply !text-lg !text-ams-cyan !font-bold;
+                }
+              }
+            }
+          }
+        }
+      }
     }
     .locations-text {
       @apply shrink grow basis-1/2;
