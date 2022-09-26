@@ -122,6 +122,16 @@
 						}
 					}
 
+					.wonderplugin-pdf-iframe {
+						@apply w-full
+						min-h-[65vh]
+						md:min-h-[650px]
+						lg:min-h-[500px]
+						2xl:min-h-[800px]
+						max-h-full
+						h-auto;
+					}
+
 					& > .wp-block-columns {
 						&.small-gap {
 							@apply gap-x-2;
@@ -136,6 +146,15 @@
 										}
 									}
 								}
+							}
+							.wonderplugin-pdf-iframe {
+								@apply w-full
+								min-h-[65vh]
+								md:min-h-[650px]
+								lg:min-h-[500px]
+								2xl:min-h-[800px]
+								max-h-full
+								h-auto;
 							}
 						}
 					}
