@@ -7,6 +7,7 @@ module.exports = {
 		'./footer.php',
 		'./page-*.php',
 		'./single-*.php',
+		'./search.php',
 	]),
 	theme: {
 		extend: {
