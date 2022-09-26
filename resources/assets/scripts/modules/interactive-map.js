@@ -1,7 +1,7 @@
 let L = require('leaflet');
 // const { URL, URLSearchParams } = require('url');
 
-if ($('#locationsMap')) {
+if (document.querySelector('#locationsMap')) {
     const baseUrl = window.location.origin;
     // let apiUrl = new URL(baseUrl + "/wp-json/wp/v2/location");
     const apiUrl = baseUrl + "/wp-json/wp/v2/location";
