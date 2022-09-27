@@ -41,8 +41,60 @@
       @apply bg-dots;
     }
     header {
+        @apply 
+            pb-8
+            xl:pb-16
+            ;
+        
       & > h1 {
         @apply text-3xl font-bold text-ams-cyan lg:text-6xl;
+      }
+      .refine-search {
+        h2 {
+            @apply text-ams-dark
+        }
+        > form {
+            fieldset {
+                @apply last-of-type:divide-x last-of-type:divide-ams-dark;
+                label.screen-reader-text {
+                    @apply sr-only;
+                }
+                input[type="search"] {
+                    @apply border border-ams-dark w-full focus:border-transparent focus:ring-2 focus:ring-ams-cyan
+                }
+                h3 {
+                    @apply text-ams-dark;
+                }
+                label:not(.screen-reader-text) {
+                    @apply 
+                    px-1 
+                    first-of-type:pl-0 
+                    last-of-type:pr-0 
+                    first-of-type:!border-l-0
+                    select-none
+                    mb-1
+                    last-of-type:mb-0
+                    inline-block
+                    ;
+
+                    input[type="checkbox"] {
+                        @apply w-5 h-5 checked:bg-ams-cyan focus:ring-2 focus:ring-ams-cyan;
+                    }
+                }
+            }
+            input[type="submit"] {
+                @apply bg-ams-yellow 
+                text-ams-dark 
+                px-8 
+                py-2 
+                mt-8 
+                font-medium 
+                text-base 
+                cursor-pointer
+                hover:xl:bg-ams-dark
+                hover:xl:text-white;
+            }
+        }
       }
     }
 
