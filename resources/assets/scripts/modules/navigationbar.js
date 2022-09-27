@@ -86,6 +86,8 @@ $(document).ready(function () {
                 if (menuSearchBtn && menuSearchField) {
                     menuSearchBtn.addEventListener('click', function (e) {
                         if (!menuSearchField.classList.contains('search-field--shown')) {
+                            /* prevent searchbutton default event only if the searchbar is not shown.
+                            if the searchbar is shown during the event then it will just submit the form */
                             e.preventDefault();
 
                             menuSearchField.classList.add('search-field--shown');
