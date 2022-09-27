@@ -3,8 +3,11 @@
 <?php
     $s = get_search_query();
     $filters = $_GET['filters'];
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args  = array(
     's' => $s,
+    'posts_per_page' => 10,
+    'paged' => $paged,
 );
 if (isset($filters) && is_array($filters)) {
     $args['post_type'] = $filters;
@@ -19,8 +22,7 @@ $filter_post_types = array_filter( get_post_types( array( 'public' => true ), 'o
 } );
 ?>
 <div class="content">
-<?php if ( $the_query->have_posts() ) : ?>
-    <header>
+<header>
         <h1>
             <?php _e( 'Search Results for: ' . get_query_var( 's' ) ); ?>
         </h1>
@@ -45,7 +47,7 @@ $filter_post_types = array_filter( get_post_types( array( 'public' => true ), 'o
                     <?php foreach ($filter_post_types as $index => $post_type) : ?>
                         <label>
                             <?php _e($post_type->labels->name, THEME_TEXT_DOMAIN) ?>
-                            <input type="checkbox" name="filters[]" value="<?php echo $post_type->name ?>" <?php if (in_array($post_type->name, $filters ) || !isset($filters)) { echo "checked"; }?>>
+                            <input type="checkbox" name="filters[]" value="<?php echo $post_type->name ?>" <?php if (isset($filters) && in_array($post_type->name, $filters ) || !isset($filters)) { echo "checked"; }?>>
                         </label>
                     <?php endforeach; ?>
                 </fieldset>
@@ -53,11 +55,12 @@ $filter_post_types = array_filter( get_post_types( array( 'public' => true ), 'o
             </form>
         </section>
     </header>
+<?php if ( $the_query->have_posts() ) : ?>   
     <main class="results">
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-        <?php
-            $post_type = get_post_type_object(get_post_type()); 
-        ?>
+            <?php
+                $post_type = get_post_type_object(get_post_type()); 
+            ?>
             <article class="results__item">
                 <p class="result-type">
                     <?php echo $post_type->labels->singular_name ?>
@@ -73,6 +76,7 @@ $filter_post_types = array_filter( get_post_types( array( 'public' => true ), 'o
             </article>
         <?php endwhile; ?>
     </main>
+    <?php custom_pagination($the_query->max_num_pages); ?>
  <?php else : ?>
         <h2 style='font-weight:bold;color:#000'>Nothing Found</h2>
         <div class="alert alert-info">

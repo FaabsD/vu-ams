@@ -112,5 +112,33 @@
         }
       }
     }
+    .pagination {
+      @apply flex max-w-full items-center justify-center space-x-1 md:space-x-4;
+
+      .prev {
+        svg {
+          @apply w-4 rotate-180 transform fill-[#707070];
+        }
+      }
+
+      &-dots {
+        @apply self-end;
+      }
+
+      .current,
+      a:not(.next, .prev) {
+        @apply py-2 px-3 text-ams-dark shadow-[0_0_6px_#0000006A] md:py-2 md:px-4;
+      }
+
+      .current {
+        @apply bg-ams-cyan;
+      }
+
+      .next {
+        svg {
+          @apply w-4 fill-[#707070];
+        }
+      }
+    }
   }
 }
