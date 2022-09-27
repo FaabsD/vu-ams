@@ -29,6 +29,31 @@ function theme_setup()
 
     add_theme_support('post-thumbnails');
     add_image_size('custom-thumbnail-image-size', 570, 380, true);
+
+    // add filter to add search bar to primary navigation menu
+
+    add_filter( 'wp_nav_menu_items', 'ams_add_searchbar_to_navigation', 10, 2 );
+
+    /**
+     * Add a searchbar to the end of the main navigation
+     *
+     * @param [type] $items
+     * @param [type] $args
+     *
+     * @return void
+     */
+    function ams_add_searchbar_to_navigation( $items, $args ) {
+        if ( defined( 'WP_DEBUG' ) ) {
+            error_log( print_r( $args, true ) );
+        }
+
+        if ( $args->menu == 'navbar' ) {
+            $items .= '<li class="menu-item menu-searchbar">' . get_search_form( array( 'echo' => false ) ) . '</li>';
+        }
+
+        return $items;
+    }
+
 }
 
 // add support for custom logo
