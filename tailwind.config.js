@@ -25,6 +25,9 @@ module.exports = {
 			},
 			fontFamily: {
 				'heebo': ["Heebo", 'sans-serif'],
+			},
+			screens: {
+				'1.5xl': '1440px',
 			}
 		},
 	},
