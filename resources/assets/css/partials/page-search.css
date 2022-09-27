@@ -1,0 +1,64 @@
+.search,
+.search-results {
+  .content {
+    @apply prose-sm
+        flex
+        max-w-none
+        flex-col
+        px-8
+        py-8
+        before:hidden
+        after:hidden
+        prose-headings:text-ams-cyan
+        prose-h2:text-inherit
+        prose-a:text-ams-cyan
+        md:prose
+        md:max-w-none
+        md:prose-headings:text-ams-cyan
+        md:prose-h2:text-inherit
+        md:prose-a:text-ams-cyan
+        xl:relative
+        xl:py-16
+        xl:px-32
+        before:xl:absolute
+        before:xl:top-48
+        before:xl:left-0
+        before:xl:block
+        before:xl:!h-48
+        before:xl:!w-24
+        after:xl:absolute
+
+        after:xl:bottom-1/4
+        after:xl:right-0
+        after:xl:block
+        after:xl:!h-48
+        after:xl:!w-2
+        xl:prose-a:no-underline
+        hover:xl:prose-a:text-ams-dark;
+
+    &:before,
+    &:after {
+      @apply bg-dots;
+    }
+    header {
+      & > h1 {
+        @apply text-3xl font-bold text-ams-cyan lg:text-6xl;
+      }
+    }
+
+    .results {
+      @apply divide-y divide-ams-dark md:max-w-none;
+      &__item {
+        @apply py-6 first-of-type:pt-0 last-of-type:pb-0;
+        .result-type {
+          @apply mb-1 select-none text-ams-text_light md:mb-0;
+        }
+        a {
+            h1, h2, h3, h4, h5, h6 {
+                @apply mt-0 md:mt-0
+            }
+        }
+      }
+    }
+  }
+}
