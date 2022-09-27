@@ -67,5 +67,36 @@ $(document).ready(function () {
                 })
             })
         }
+
+        // open up the searchbar
+
+        //get menu item which contains the searchform from te navmenu
+        const menuSBContainer = siteNavigation.querySelector('.menu-item.menu-searchbar');
+
+        if (menuSBContainer) {
+
+            // get searchform
+            const menuSearchForm = menuSBContainer.querySelector('.search-form');
+
+            if (menuSearchForm) {
+
+                const menuSearchBtn = menuSearchForm.querySelector('.search-btn');
+                const menuSearchField = menuSearchForm.querySelector('.search-field');
+
+                if (menuSearchBtn && menuSearchField) {
+                    menuSearchBtn.addEventListener('click', function (e) {
+                        if (!menuSearchField.classList.contains('search-field--shown')) {
+                            e.preventDefault();
+
+                            menuSearchField.classList.add('search-field--shown');
+                        }
+
+                        menuSearchForm.addEventListener('mouseleave', (e) => {
+                            menuSearchField.classList.remove('search-field--shown');
+                        })
+                    })
+                }
+            }
+        }
     }
 });
