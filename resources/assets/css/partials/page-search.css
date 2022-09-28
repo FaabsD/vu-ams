@@ -1,0 +1,144 @@
+.search,
+.search-results {
+  .content {
+    @apply prose-sm
+        flex
+        max-w-none
+        flex-col
+        px-8
+        py-8
+        before:hidden
+        after:hidden
+        prose-headings:text-ams-cyan
+        prose-h2:text-inherit
+        prose-a:text-ams-cyan
+        md:prose
+        md:max-w-none
+        md:prose-headings:text-ams-cyan
+        md:prose-h2:text-inherit
+        md:prose-a:text-ams-cyan
+        xl:relative
+        xl:py-16
+        xl:px-32
+        before:xl:absolute
+        before:xl:top-48
+        before:xl:left-0
+        before:xl:block
+        before:xl:!h-48
+        before:xl:!w-24
+        after:xl:absolute
+
+        after:xl:bottom-1/4
+        after:xl:right-0
+        after:xl:block
+        after:xl:!h-48
+        after:xl:!w-2
+        xl:prose-a:no-underline
+        hover:xl:prose-a:text-ams-dark;
+
+    &:before,
+    &:after {
+      @apply bg-dots;
+    }
+    header {
+        @apply 
+            pb-8
+            xl:pb-16
+            ;
+        
+      & > h1 {
+        @apply text-3xl font-bold text-ams-cyan lg:text-6xl;
+      }
+      .refine-search {
+        h2 {
+            @apply text-ams-dark
+        }
+        > form {
+            fieldset {
+                @apply last-of-type:divide-x last-of-type:divide-ams-dark;
+                label.screen-reader-text {
+                    @apply sr-only;
+                }
+                input[type="search"] {
+                    @apply border border-ams-dark w-full focus:border-transparent focus:ring-2 focus:ring-ams-cyan
+                }
+                h3 {
+                    @apply text-ams-dark;
+                }
+                label:not(.screen-reader-text) {
+                    @apply 
+                    px-1 
+                    first-of-type:pl-0 
+                    last-of-type:pr-0 
+                    first-of-type:!border-l-0
+                    select-none
+                    mb-1
+                    last-of-type:mb-0
+                    inline-block
+                    ;
+
+                    input[type="checkbox"] {
+                        @apply w-5 h-5 checked:bg-ams-cyan focus:ring-2 focus:ring-ams-cyan;
+                    }
+                }
+            }
+            input[type="submit"] {
+                @apply bg-ams-yellow 
+                text-ams-dark 
+                px-8 
+                py-2 
+                mt-8 
+                font-medium 
+                text-base 
+                cursor-pointer
+                hover:xl:bg-ams-dark
+                hover:xl:text-white;
+            }
+        }
+      }
+    }
+
+    .results {
+      @apply divide-y divide-ams-dark md:max-w-none;
+      &__item {
+        @apply py-6 first-of-type:pt-0 last-of-type:pb-0;
+        .result-type {
+          @apply mb-1 select-none text-ams-text_light md:mb-0;
+        }
+        a {
+            h1, h2, h3, h4, h5, h6 {
+                @apply mt-0 md:mt-0
+            }
+        }
+      }
+    }
+    .pagination {
+      @apply flex max-w-full items-center justify-center space-x-1 md:space-x-4;
+
+      .prev {
+        svg {
+          @apply w-4 rotate-180 transform fill-[#707070];
+        }
+      }
+
+      &-dots {
+        @apply self-end;
+      }
+
+      .current,
+      a:not(.next, .prev) {
+        @apply py-2 px-3 text-ams-dark shadow-[0_0_6px_#0000006A] md:py-2 md:px-4;
+      }
+
+      .current {
+        @apply bg-ams-cyan;
+      }
+
+      .next {
+        svg {
+          @apply w-4 fill-[#707070];
+        }
+      }
+    }
+  }
+}

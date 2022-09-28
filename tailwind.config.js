@@ -7,6 +7,7 @@ module.exports = {
 		'./footer.php',
 		'./page-*.php',
 		'./single-*.php',
+		'./search.php',
 	]),
 	theme: {
 		extend: {
@@ -24,6 +25,9 @@ module.exports = {
 			},
 			fontFamily: {
 				'heebo': ["Heebo", 'sans-serif'],
+			},
+			screens: {
+				'1.5xl': '1440px',
 			}
 		},
 	},

@@ -1,190 +1,236 @@
 .navigation {
-    @apply
-    hidden
+  @apply hidden
     flex-row
-    justify-between
-    px-32
     items-center
+    justify-between
     bg-gradient-to-r
     from-ams-cyan
     to-ams-dark
+    px-8
     xl:flex
-    ;
+    1.5xl:px-32;
 
-    &--fixed {
-        @apply fixed z-[9999] w-screen top-0;
+  &--fixed {
+    @apply fixed top-0 z-[9999] w-screen;
 
-        animation-name: flow-in;
-        animation-duration: 1.5s;
-        
-        @keyframes flow-in {
-            from {
-                transform: translateY(-100%);
-            }
-            to{
-                transform: translateY(0%);
-            }
-        }
+    animation-name: flow-in;
+    animation-duration: 1.5s;
+
+    @keyframes flow-in {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0%);
+      }
     }
+  }
 
-    .custom-logo-link {
-        @apply grow-0 shrink-0;
+  .custom-logo-link {
+    @apply shrink-0 grow-0;
 
-        .custom-logo {
-            @apply max-h-16 w-auto
-        }
+    .custom-logo {
+      @apply max-h-16 w-auto;
     }
+  }
 
-    .navbar {
-        @apply flex justify-between min-h-min;
+  .navbar {
+    @apply flex min-h-min justify-between;
 
-        &__navigation {
-            @apply flex justify-between gap-x-12 2xl:gap-x-16 grow-0 shrink-0;
+    &__navigation {
+      @apply flex shrink-0 grow-0 justify-between gap-x-8 2xl:gap-x-16;
 
-            .menu-item {
-                @apply text-white grow-0 shrink-0;
+      .menu-item {
+        @apply shrink-0 grow-0 text-white;
 
-                a {
-                    @apply font-normal text-base pr-5 py-8 block box-border leading-tight;
+        a {
+          @apply box-border block py-8 pr-5 text-base font-normal leading-tight;
+        }
+
+        &-has-children {
+          @apply relative;
+
+          > a {
+            @apply relative
+                after:absolute
+                after:top-1/2
+                after:right-0
+                after:h-3
+                after:w-3
+                after:-translate-y-3/4
+                after:rotate-45
+                after:transform
+                after:border-b-2
+                after:border-r-2
+                after:content-[''];
+          }
+
+          .sub-menu {
+            @apply absolute z-50 hidden w-auto max-w-sm divide-y bg-ams-dark px-4;
+
+            > .menu-item {
+              @apply min-w-min;
+
+              a {
+                @apply min-w-min whitespace-pre py-4 px-2 text-left;
+              }
+            }
+
+            &--show {
+              @apply block;
+              animation-name: flap-open;
+              animation-duration: 0.7s;
+
+              @keyframes flap-open {
+                from {
+                  transform: scaleY(0%);
+                  transform-origin: top;
                 }
-
-
-                &-has-children {
-                    @apply relative;
-
-                    > a {
-                        @apply relative
-                        after:content-['']
-                        after:absolute
-                        after:w-3
-                        after:h-3
-                        after:border-b-2
-                        after:border-r-2
-                        after:transform
-                        after:rotate-45
-                        after:top-1/2
-                        after:-translate-y-3/4
-                        after:right-0
-                        ;
-                    }
-
-                    .sub-menu {
-                        @apply hidden absolute z-50 w-auto max-w-sm bg-ams-dark divide-y px-4;
-
-                        > .menu-item {
-                            @apply min-w-min;
-
-                            a {
-                                @apply min-w-min whitespace-pre text-left py-4 px-2;
-                            }
-                        }
-
-                        &--show {
-                            @apply block;
-                            animation-name: flap-open;
-                            animation-duration: .7s;
-
-                            @keyframes flap-open {
-                                from {
-                                    transform: scaleY(0%);
-                                    transform-origin: top;
-                                }
-                                to {
-                                    transform: scaleY(100%);
-                                    transform-origin: top;
-                                }
-                            }
-                        }
-                    }
+                to {
+                  transform: scaleY(100%);
+                  transform-origin: top;
                 }
+              }
             }
+          }
         }
-    }
-
-    &__cta {
-        .wp-block-buttons {
-            @apply inline-block;
-
-            .wp-block-button {
-                &__link {
-                    @apply bg-ams-yellow rounded-none text-ams-dark font-bold font-heebo text-lg leading-normal;
-                }
+        &.menu-searchbar {
+          @apply flex 
+            items-center 
+            justify-center;
+          .search-form {
+            @apply relative flex items-center;
+            .screen-reader-text {
+              @apply sr-only;
             }
+            .search-field {
+              @apply 
+              w-0
+              transform
+              origin-left
+              scale-x-0
+              rounded 
+              border-0
+              bg-transparent
+              p-0
+              text-white
+              placeholder:text-white
+              placeholder:text-opacity-75
+              focus:border-transparent
+              focus:ring-1
+              focus:ring-white
+              transition-all
+              duration-500
+              ease-in-out;
+              &--shown {
+                @apply
+                    scale-x-100 
+                    xl:w-32
+                    xl:border
+                    xl:px-4
+                    xl:py-2
+                    1.5xl:w-28
+                    2xl:!w-36
+                    mr-2
+                    ;
+              }
+            }
+            .search-btn {
+              @apply h-auto max-h-max min-h-min w-auto min-w-min max-w-max;
+              svg {
+                @apply h-7 w-7 fill-transparent stroke-current stroke-2 text-white;
+              }
+            }
+          }
         }
+      }
     }
+  }
+
+  &__cta {
+    .wp-block-buttons {
+      @apply inline-block;
+
+      .wp-block-button {
+        &__link {
+          @apply rounded-none bg-ams-yellow font-heebo text-lg font-bold leading-normal text-ams-dark;
+        }
+      }
+    }
+  }
 }
 
 /*style mobile menu from mobilemenu plugin*/
 
 .mobmenu {
-    @apply bg-gradient-to-r from-ams-cyan to-ams-dark font-heebo;
+  @apply bg-gradient-to-r from-ams-cyan to-ams-dark font-heebo;
 }
 
 .mobmenu-overlay {
-    @apply !bg-transparent;
+  @apply !bg-transparent;
 }
 
-.mob-right-alignment, .mobmenu-panel, .mobmenu-right-panel {
-    @apply !transform !translate-x-0 !-translate-y-full !h-auto;
+.mob-right-alignment,
+.mobmenu-panel,
+.mobmenu-right-panel {
+  @apply !h-auto !translate-x-0 !-translate-y-full !transform;
 
-    .mobmenu-content {
-        @apply
-        !font-heebo
-        !mt-4
+  .mobmenu-content {
+    @apply !mt-4
         !mb-0
         !pb-4
         !pt-2
-        ;
+        !font-heebo;
 
-        .menu-main-container {
-            ul {
-                @apply divide-y !px-8;
+    .menu-main-container {
+      ul {
+        @apply divide-y !px-8;
 
-                .menu-item {
-                    -webkit-tap-highlight-color: transparent !important;
+        .menu-item {
+          -webkit-tap-highlight-color: transparent !important;
 
-                    @apply px-0;
+          @apply px-0;
 
-                    a {
-                        @apply !text-base !font-normal px-0 !py-4;
+          a {
+            @apply px-0 !py-4 !text-base !font-normal;
 
-                        .mob-expand-submenu {
-                            @apply !right-[55%] md:!right-[80%] lg:!right-[85%] !ml-4;
-                        }
-                    }
-
-                    .sub-menu {
-                        @apply !bg-transparent !pr-0 !pl-4;
-
-                        .menu-item {
-                            @apply !px-0 !text-base;
-
-                            &:first-of-type {
-                                @apply !border-t;
-                            }
-
-                            a {
-                                @apply !min-w-min !whitespace-pre-wrap !px-4 !text-sm;
-                            }
-                        }
-                    }
-                }
+            .mob-expand-submenu {
+              @apply !right-[55%] !ml-4 md:!right-[80%] lg:!right-[85%];
             }
-        }
-    }
+          }
 
-    .mob-menu-right-bg-holder {
-        @apply !bg-ams-dark !opacity-70;
+          .sub-menu {
+            @apply !bg-transparent !pr-0 !pl-4;
+
+            .menu-item {
+              @apply !px-0 !text-base;
+
+              &:first-of-type {
+                @apply !border-t;
+              }
+
+              a {
+                @apply !min-w-min !whitespace-pre-wrap !px-4 !text-sm;
+              }
+            }
+          }
+        }
+      }
     }
+  }
+
+  .mob-menu-right-bg-holder {
+    @apply !bg-ams-dark !opacity-70;
+  }
 }
 
 .mobmenu-right-panel {
-    @apply !bg-transparent !w-full;
+  @apply !w-full !bg-transparent;
 }
 
-.mobmenu-right-alignment, .mobmenu-left-alignment {
-    &.show-panel {
-        @apply !transform !translate-y-0 !top-[72px];
-    }
+.mobmenu-right-alignment,
+.mobmenu-left-alignment {
+  &.show-panel {
+    @apply !top-[72px] !translate-y-0 !transform;
+  }
 }
-
