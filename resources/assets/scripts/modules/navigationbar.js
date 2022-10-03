@@ -27,13 +27,14 @@ $(document).ready(function () {
 
         // make the submenus open or close
         if (siteNavigation) {
-            let subMenus = siteNavigation.querySelectorAll('.menu-item-has-children');
+            let subMenus = siteNavigation.querySelectorAll(':scope > .menu-item-has-children');
+            console.log('===== THE SUB MENUS =====');
             // loop through all the nav items with submenus
             subMenus.forEach(subMenu => {
                 // get the submenu trigger link
                 let triggerBtn = subMenu.querySelector('a');
                 // get the actual submenu
-                let menu = subMenu.querySelector('ul.sub-menu');
+                let menu = subMenu.querySelector(':scope > ul.sub-menu');
 
                 // trigger a click event on the trigger link
                 triggerBtn.addEventListener('mouseenter', function (e) {
@@ -65,6 +66,39 @@ $(document).ready(function () {
                     // close the submenu on mouseleave
                     menu.classList.remove('sub-menu--show');
                 })
+
+                // go check if a submenu has a second level submenu
+                const subMenusLv2 = subMenu.querySelectorAll('.menu-item-has-children');
+                if (subMenusLv2) {
+                    console.log('===== Submenus of Submenus =====');
+                    console.log(subMenusLv2);
+                    subMenusLv2.forEach(subMenuLv2 => {
+                        // get the submenu's menu
+                        let menuLv2 = subMenuLv2.querySelector(':scope > .sub-menu');
+                        // get link inside submenuLv2
+                        let subMenuLv2Link = subMenuLv2.querySelector(':scope > a');
+                        // subMenuLv2.style.backgroundColor = 'red';
+                        subMenuLv2.addEventListener('mouseenter', (e) => {
+                            if (subMenuLv2Link.getAttribute('href').includes('*') || subMenuLv2Link.getAttribute('href').includes("#")) {
+                                subMenuLv2Link.addEventListener('click', function (event) {
+                                    event.preventDefault();
+                                });
+                            }
+
+                            // toggle the submenu opened or closed
+                            console.log(menuLv2);
+                            menuLv2.classList.toggle('sub-menu--show');
+                        });
+
+                        // close a submenu's submenu on mouseleave
+                        subMenuLv2.addEventListener('mouseleave', (e) => {
+                            console.log('======== TRIGGER THIS ON SUBMENU LV2 MOUSELEAVE ========');
+                            console.log(e.target);
+                            // alert('User left the level 2 submenu');
+                            menuLv2.classList.remove('sub-menu--show');
+                        })
+                    })
+                }
             })
         }
 
