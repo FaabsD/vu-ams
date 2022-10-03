@@ -40,7 +40,7 @@
     &__navigation {
       @apply flex shrink-0 grow-0 justify-between gap-x-8 2xl:gap-x-16;
 
-      .menu-item {
+      > .menu-item {
         @apply shrink-0 grow-0 text-white;
 
         a {
@@ -65,14 +65,71 @@
                 after:content-[''];
           }
 
-          .sub-menu {
-            @apply absolute z-50 hidden w-auto max-w-sm divide-y bg-ams-dark px-4;
+          > .sub-menu {
+            @apply absolute 
+            z-50 
+            hidden 
+            w-auto 
+            max-w-sm 
+            divide-y 
+            bg-ams-dark 
+            px-4;
 
             > .menu-item {
               @apply min-w-min;
 
               a {
                 @apply min-w-min whitespace-pre py-4 px-2 text-left;
+              }
+              &-has-children {
+                @apply relative
+                pr-2;
+
+                > a {
+                  @apply relative
+                    pr-4
+                    after:absolute
+                    after:top-1/2
+                    after:right-0
+                    after:h-3
+                    after:w-3
+                    after:-translate-y-3/4
+                    after:-rotate-45
+                    after:transform
+                    after:border-b-2
+                    after:border-r-2
+                    after:content-[''];
+                }
+                > .sub-menu {
+                  @apply absolute
+                  left-full
+                  top-0
+                  z-50
+                  hidden
+                  w-auto
+                  max-w-sm
+                  divide-y
+                  bg-ams-dark
+                  px-4
+                  pl-8;
+
+                  &--show {
+                    @apply block;
+                    animation-name: flap-open-from-left;
+                    animation-duration: 0.7s;
+
+                    @keyframes flap-open-from-left {
+                      from {
+                        transform: scaleX(0%);
+                        transform-origin: left;
+                      }
+                      to {
+                        transform: scaleX(100%);
+                        transform-origin: left;
+                      }
+                    }
+                  }
+                }
               }
             }
 
@@ -104,35 +161,32 @@
               @apply sr-only;
             }
             .search-field {
-              @apply 
-              w-0
-              transform
+              @apply w-0
               origin-left
               scale-x-0
+              transform
               rounded 
               border-0
               bg-transparent
               p-0
               text-white
+              transition-all
+              duration-500
+              ease-in-out
               placeholder:text-white
               placeholder:text-opacity-75
               focus:border-transparent
               focus:ring-1
-              focus:ring-white
-              transition-all
-              duration-500
-              ease-in-out;
+              focus:ring-white;
               &--shown {
-                @apply
-                    scale-x-100 
+                @apply mr-2 
+                    scale-x-100
                     xl:w-32
                     xl:border
                     xl:px-4
                     xl:py-2
-                    1.5xl:w-28
                     2xl:!w-36
-                    mr-2
-                    ;
+                    1.5xl:w-28;
               }
             }
             .search-btn {
