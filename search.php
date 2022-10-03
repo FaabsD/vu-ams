@@ -2,13 +2,16 @@
 
 <?php
     $s = get_search_query();
-    $filters = $_GET['filters'];
+    $filters = ( isset( $_GET['filters'] ) ) ? $_GET['filters'] : null;
+
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$args  = array(
-    's' => $s,
-    'posts_per_page' => 10,
-    'paged' => $paged,
-);
+
+    $args  = array(
+        's'              => $s,
+        'posts_per_page' => 10,
+        'paged'          => $paged,
+    );
+
 if (isset($filters) && is_array($filters)) {
     $args['post_type'] = $filters;
 }
