@@ -152,11 +152,8 @@
           }
         }
         &.menu-searchbar {
-          @apply flex 
-            items-center 
-            justify-center;
           .search-form {
-            @apply relative flex items-center;
+            @apply relative flex items-center h-full;
             .screen-reader-text {
               @apply sr-only;
             }
