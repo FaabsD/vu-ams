@@ -342,7 +342,7 @@ body,
 
   .wp-block-handpicked-products {
     .wc-block-grid__products {
-      @apply grid grid-cols-1 gap-8 before:hidden md:grid-cols-2 md:gap-8 lg:grid-cols-3 2xl:gap-16;
+      @apply !mx-0 grid grid-cols-1 gap-8 !px-0 before:hidden md:grid-cols-2 md:gap-8 lg:grid-cols-3 2xl:gap-16;
       .wc-block-grid__product {
         @apply prose-sm 
           float-none 
@@ -394,6 +394,91 @@ body,
             bg-ams-yellow 
             py-2 
             px-4 
+            text-base
+            text-ams-dark
+            no-underline
+            hover:bg-ams-dark
+            hover:text-ams-grey
+            xl:py-3
+            xl:px-6;
+          }
+          .added_to_cart {
+            @apply text-base text-ams-dark hover:text-ams-cyan;
+          }
+        }
+      }
+    }
+  }
+  .wp-block-woocommerce-all-products {
+    .wc-block-grid {
+      &__products {
+        @apply !mx-0
+        grid
+        grid-cols-1
+        gap-8
+        !px-0
+        before:hidden
+        md:grid-cols-4
+        md:gap-8
+        lg:grid-cols-3
+        2xl:gap-16;
+      }
+
+      .wc-block-grid__product {
+        @apply prose-sm 
+          float-none 
+          m-0
+          w-full
+          border
+          border-dashed
+          border-ams-dark
+          py-4
+          px-4
+          text-left
+          shadow-lg
+          md:prose
+          md:py-8
+          lg:py-4
+          xl:shadow-xl
+          2xl:p-8;
+
+        .wc-block-components {
+          &-product-image {
+            @apply m-0;
+            > a {
+              .product-image,
+              img {
+                @apply m-0 w-full object-contain;
+              }
+            }
+          }
+
+          &-product-title {
+            @apply mt-4 mb-0 text-xl font-normal text-ams-cyan md:text-2xl md:font-bold;
+            .wc-block-components-product-name {
+              @apply text-inherit no-underline;
+            }
+          }
+
+          &-product-price {
+            @apply m-0 pb-4 pt-2 text-base;
+            .wc-block-formatted-money-amount {
+              @apply text-ams-dark;
+            }
+          }
+        }
+
+        > .wp-block-button,
+        > .wc-block-components-product-button {
+          @apply mb-0;
+
+          .wp-block-button__link,
+          .add_to_cart_button {
+            @apply !mr-4
+            rounded-none
+            bg-ams-yellow
+            py-2
+            px-4
             text-base
             text-ams-dark
             no-underline
