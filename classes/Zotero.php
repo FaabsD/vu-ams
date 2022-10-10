@@ -99,7 +99,20 @@ class Zotero {
         curl_setopt( $curl, CURLOPT_URL, $finalUrl );
         curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
 
+
+        curl_setopt( $curl, CURLOPT_HEADER, 1 );
+
         $this->response = curl_exec( $curl );
+
+        // get the response header length
+        $headerSize = curl_getinfo( $curl, CURLINFO_HEADER_SIZE );
+        
+        // get response header
+        $headerStr = substr( $this->response, 0, $headerSize );
+
+        // get response body
+        $bodyStr = substr( $this->response, $headerSize );
+        
 
         curl_close( $curl );
 
@@ -107,6 +120,8 @@ class Zotero {
 
         error_log( $this->response );
 
-        return $this->response;
+
+        return array( 'header' => $headerStr, 'body' => $bodyStr );
+
     }
 }
