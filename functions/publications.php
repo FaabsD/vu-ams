@@ -174,7 +174,8 @@ function save_publication($title, $args, $metaValues) {
                         if ($index !== count($metaValue)-1 ) {
                             $reformattedMetaValue .= $creator->firstName . " " . $creator->lastName . ", ";
                         } else {
-                            $reformattedMetaValue .= $creator->firsName . " " . $creator->lastName;
+                            $reformattedMetaValue .= $creator->firstName . ' ' . $creator->lastName;
+
                         }
 
                         if (defined('WP_DEBUG')) {
