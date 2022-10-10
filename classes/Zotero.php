@@ -106,9 +106,11 @@ class Zotero {
 
         // get the response header length
         $headerSize = curl_getinfo( $curl, CURLINFO_HEADER_SIZE );
-        
+
         // get response header
         $headerStr = substr( $this->response, 0, $headerSize );
+
+       $headers = $this->get_headers_from_curl_response($this->response);
 
         // get response body
         $bodyStr = substr( $this->response, $headerSize );
@@ -121,7 +123,25 @@ class Zotero {
         error_log( $this->response );
 
 
-        return array( 'header' => $headerStr, 'body' => $bodyStr );
+        return array( 'headers' => $headers, 'body' => $bodyStr );
 
+    }
+
+    private function get_headers_from_curl_response($response)
+    {
+        $headers = array();
+
+        $header_text = substr($response, 0, strpos($response, "\r\n\r\n"));
+
+        foreach(explode("\r\n", $header_text) as $i => $line) {
+            if($i === 0) {
+                $headers['http_code'] = $line;
+            } else {
+                list($key, $value) = explode(': ', $line);
+                $headers[$key] = $value;
+            }
+        }
+
+        return $headers;
     }
 }
