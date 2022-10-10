@@ -1,5 +1,10 @@
 <?php
 
+
+if ( !function_exists( 'post_exists' ) ) {
+    require_once ABSPATH . 'wp-admin/includes/post.php';
+}
+
 function get_publications_from_zotero() {
     $userID     =  ( defined( 'ZOTERO_USER_ID' ) && null !== ZOTERO_USER_ID ) ? ZOTERO_USER_ID : 0;
     $groupID    = ( defined( 'ZOTERO_GROUP_ID' ) && null !== ZOTERO_GROUP_ID ) ? ZOTERO_GROUP_ID : 0;
@@ -81,10 +86,35 @@ function get_publications_from_zotero() {
                 }
             }
 
+
+            // save the values for the custom fields in an array
+
+            $pubMetaValues = array(
+                'version'              => $version,
+                'item_type'            => $itemType,
+                'authors'              => $creators,
+                'publication_title'    => $publicationTitle,
+                'volume'               => $volume,
+                'pages'                => $pages,
+                'publication_date'     => $date,
+                'series'               => $series,
+                'series_title'         => $seriesTitle,
+                'series_text'          => $seriesText,
+                'journal_abbreviation' => $journalAbbreviation,
+                'doi'                  => $DOI,
+                'issn'                 => $ISSN,
+                'short_title'          => $shortTitle,
+                'url'                  => $url,
+                'library_catalog'      => $libraryCatalog,
+                'tags'                 => $tags,
+            );
+
             // check if post exists by title
 
             if (post_exists($title, '', '', 'publication') === 0) {
                 // go save the publication
+                save_publication( $title, array( 'post_content' => $abstract ), $pubMetaValues );
+
             } else {
                 // a post with the same title was found
                 // get the existing posts id
@@ -105,27 +135,100 @@ function get_publications_from_zotero() {
 add_action( 'retrieve_pubs_from_zotero', 'get_publications_from_zotero', 10 );
 
 /**
- * Creates a new publication post-type post and saves it
+ * Handle saving and updating? The publications retrieved from Zotero
  *
- * @param [type] $title
- * @param [type] $args
- * @param [type] $metaValues
+ * @param string $title
+ * @param array $args
+ * @param array $metaValues
  * @return void
  */
 function save_publication($title, $args, $metaValues) {
     $defaults = array(
         'post_title' => $title,
         'post_content' => '',
-        'post_status' => 'public',
+        'post_status' => 'Publish',
         'comment_status' => 'closed',
         'post_type' => 'publication',
     );
 
     $args = array_merge($defaults, $args);
 
-    $newPost = wp_insert_post($args);
+    $postId = wp_insert_post($args);
 
     if(isset($metaValues) && is_array($metaValues)) {
         // save meta's
+
+        foreach ( $metaValues as $key => $metaValue ) {
+            if ( defined( 'WP_DEBUG' ) ) {
+                error_log( '========= extra data to save in the custom field ========' );
+                error_log( 'key: ' . $key );
+                // error_log( 'value: ' . $metaValue );
+            }
+
+            switch ($key) {
+                case "authors" :
+                    $reformattedMetaValue = "";
+                    
+                    foreach ($metaValue as $index => $creator) {
+
+                        if ($index !== count($metaValue)-1 ) {
+                            $reformattedMetaValue .= $creator->firstName . " " . $creator->lastName . ", ";
+                        } else {
+                            $reformattedMetaValue .= $creator->firsName . " " . $creator->lastName;
+                        }
+
+                        if (defined('WP_DEBUG')) {
+                            error_log('Creators count: ' . count($metaValue));
+                            error_log('current creator index: ' . $index);
+                        }
+                    }
+                    if (defined('WP_DEBUG')) {
+                        error_log('====== transform meta value from Array to a comma separated string ======');
+                        error_log('original meta value array: ' . print_r($metaValue, true));
+                        error_log( 'transformed meta value: ' . $reformattedMetaValue );
+                    }
+                    break;
+                case "tags" :
+                    $reformattedMetaValue = "";
+
+                    foreach($metaValue as $index => $tag) {
+                        if ($index !== count($metaValue)-1) {
+                            $reformattedMetaValue .= $tag->tag . ", ";
+                        } else {
+                            $reformattedMetaValue .= $tag->tag;
+                        }
+
+                        if (defined('WP_DEBUG')) {
+                            error_log('Tags count: ' . count($metaValue));
+                            error_log('current tag index: ' . $index);
+                        }
+                    }
+                    if (defined('WP_DEBUG')) {
+                        error_log('====== transform meta value from Array to a comma separated string ======');
+                        error_log('original meta value array: ' . print_r($metaValue, true));
+                        error_log( 'transformed meta value: ' . $reformattedMetaValue );
+                    }
+                    break;
+
+            }
+
+            // save meta values or formatted meta value
+
+            if($key === "authors" && isset($reformattedMetaValue) || $key === "tags" && isset($reformattedMetaValue)) {
+                // save extra data with transformed value
+                if (defined('WP_DEBUG')) {
+                    error_log('====== SAVE EXTRA DATA WITH TRANSFORMED VALUE ======');
+                }
+                update_field($key, $reformattedMetaValue, $postId);
+            } else {
+                // save extra data as it is
+                if (defined('WP_DEBUG')) {
+                    error_log('====== SAVE EXTRA DATA AS IT IS ======');
+                }
+
+                update_field($key, $metaValue, $postId);
+            }
+        }
+
     }
 }
