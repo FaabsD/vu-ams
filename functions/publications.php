@@ -112,7 +112,7 @@ function get_publications_from_zotero() {
                 'doi'                  => $DOI,
                 'issn'                 => $ISSN,
                 'short_title'          => $shortTitle,
-                'url'                  => $url,
+                'fallback_url'                  => $url,
                 'library_catalog'      => $libraryCatalog,
                 'tags'                 => $tags,
             );
@@ -247,7 +247,7 @@ function get_publications_from_zotero() {
                             'doi'                  => $DOI,
                             'issn'                 => $ISSN,
                             'short_title'          => $shortTitle,
-                            'url'                  => $url,
+                            'fallback_url'                  => $url,
                             'library_catalog'      => $libraryCatalog,
                             'tags'                 => $tags,
                         );
@@ -325,7 +325,8 @@ function save_publication($title, $args, $metaValues) {
             if ( defined( 'WP_DEBUG' ) ) {
                 error_log( '========= extra data to save in the custom field ========' );
                 error_log( 'key: ' . $key );
-                // error_log( 'value: ' . $metaValue );
+                error_log( 'value: ' . $metaValue );
+
             }
 
             switch ($key) {
