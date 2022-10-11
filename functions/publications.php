@@ -48,7 +48,8 @@ function get_publications_from_zotero() {
             $publicationTitle    = $item->data->publicationTitle;
             $volume              = $item->data->volume;
             $pages               = $item->data->pages;
-            $date                = $item->data->date;
+            $date                = ( isset( $item->meta->parsedDate ) ) ? $item->meta->parsedDate : $item->data->date;
+
             $series              = $item->data->series;
             $seriesTitle         = $item->data->seriesTitle;
             $seriesText          = $item->data->seriesText;
@@ -180,7 +181,8 @@ function get_publications_from_zotero() {
                         $publicationTitle    = $item->data->publicationTitle;
                         $volume              = $item->data->volume;
                         $pages               = $item->data->pages;
-                        $date                = $item->data->date;
+                        $date                = ( isset( $item->meta->parsedDate ) ) ? $item->meta->parsedDate : $item->data->date;
+
                         $series              = $item->data->series;
                         $seriesTitle         = $item->data->seriesTitle;
                         $seriesText          = $item->data->seriesText;
