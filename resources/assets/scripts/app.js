@@ -1,6 +1,7 @@
 $ = jQuery;
 
 require('./modules/3d-preview');
+require('./modules/dynamic-chart');
 require('./modules/faq-open-close');
 require('./modules/home-header-slider');
 require('./modules/interactive-map');
