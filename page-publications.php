@@ -29,6 +29,15 @@ if ( isset( $_GET['date'] ) && $_GET['date'] != 'Date' ) {
         'compare' => '=',
     );
 }
+
+if ( isset( $_GET['tags'] ) && !empty( $_GET['tags'] ) ) {
+    $meta_query[] = array(
+        'key'     => 'tags',
+        'value'   => $_GET['tags'],
+        'compare' => 'LIKE',
+    );
+}
+
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array(
 	's'              => isset( $_GET['search'] ) && $_GET['search'] != '' ? $_GET['search'] : '',
