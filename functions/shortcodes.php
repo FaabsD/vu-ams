@@ -795,4 +795,75 @@ function ams_add_shortcodes()
 
 		return $html;
 	}
+
+    // add a shortcode to display a chart showing how many publications where published involving the VU-AMS device per year
+
+    add_shortcode( 'ams_publications_chart', 'ams_create_publications_chart' );
+
+    /**
+     * Retrieve all publication dates from publications and create a chart container
+     *
+     * @return html|string returns a html div containing a canvas with publication years and publication counts in the data or a string if none are found
+     */
+    function ams_create_publications_chart() {
+        $publicationYears = array();
+        $queryArgs        =  array(
+            'post_type'     => 'publication',
+            'post_status'   => 'Publish',
+            'post_per_page' => -1,
+        );
+
+        $query = new WP_Query( $queryArgs );
+
+        if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+            $publicationDate = get_field( 'publication_date' );
+
+            if( isset( $publicationDate ) && !empty( $publicationDate ) ) {
+                $formattedDate      = strtotime( $publicationDate );
+                $publicationYears[] = date( 'Y', $formattedDate );
+            }
+
+        endwhile; endif;
+        wp_reset_query();
+
+        if( is_array( $publicationYears ) ) {
+            // count every years occurrence
+            $pubsPerYear = array_count_values( $publicationYears );
+
+            // place the years and occurrences in two comma separated string
+            $years                       = '';
+            $publicationOccurrenceCounts = '';
+
+            if( is_array( $pubsPerYear ) ) {
+                // create an iterator to determine if there should be a comma added after a year or occurrence
+                $i = 1;
+
+                foreach( $pubsPerYear as $year => $occurrenceCount ) {
+                    if( count( $pubsPerYear ) !== $i ) {
+                        // add a year to the years string with a comma and space behind it.
+                        $years .= $year . ', ';
+                        // add a occurrenceCount to the publicationOccurrencesCounts string with a comma and space behind it.
+                        $publicationOccurrenceCounts .= $occurrenceCount . ', ';
+                    } else {
+                        // add a year to the years string without a comma and space because this would be the last one
+                        $years .= $year;
+                        // add a occurrenceCount to the publicationOccurrenceCounts string without a comma and space because this would be the last one
+                        $publicationOccurrenceCounts .= $occurrenceCount;
+                    }
+                    // count up the iterator
+                    $i++;
+                }
+            }
+
+            // create a container for the chart with datasets to read the years and publication counts from
+            $html = '<div class="pub-chart">';
+            $html .= '<canvas id="publicationsChart" data-years="' . $years . '" data-publications-count="' . $publicationOccurrenceCounts . '">';
+            $html .= '</div';
+
+            return $html;
+        } else {
+            return 'Unable to retrieve publication_dates';
+        }
+    }
+
 }
