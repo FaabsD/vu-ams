@@ -1,8 +1,4 @@
-<?php
-
-use Extendify\MetaGallery\Contracts\BasicRoute;
-
- get_header(); ?>
+<?php get_header(); ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <main class="publication">
@@ -119,12 +115,12 @@ use Extendify\MetaGallery\Contracts\BasicRoute;
             </ul>
             <!-- Get link to the source -->
             <?php if(get_field('doi') && !empty(get_field('doi'))) : ?>
-                <a class="source-link" href="<?php the_field('doi') ?>" 
+                <a class="source-link" href="<?php the_field('doi') ?>" target="_blank" 
                 title="<?php _e('Go to source (DOI)', THEME_TEXT_DOMAIN); ?>">
                     <?php _e("Go to source (DOI)", THEME_TEXT_DOMAIN); ?>
                 </a>
                 <?php elseif(get_field('fallback_url') && !empty(get_field('fallback_url'))) : ?>
-                    <a href="<?php  the_field('fallback_url') ?>" class="source-link" 
+                    <a href="<?php  the_field('fallback_url') ?>" target="_blank" class="source-link" 
                     title="<?php _e('Go to source', THEME_TEXT_DOMAIN); ?>">
                         <?php _e('Go to source', THEME_TEXT_DOMAIN); ?>
                     </a>
