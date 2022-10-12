@@ -8,11 +8,14 @@
       @apply prose-sm
         relative
         px-8
-        py-8
+        pt-8
+        pb-0
+        md:pb-0.5
         md:prose
         md:max-w-full
         xl:px-32
-        xl:py-16;
+        xl:pt-16
+        xl:py-1;
 
       h1 {
         @apply text-ams-cyan md:w-4/5 lg:w-3/4;
