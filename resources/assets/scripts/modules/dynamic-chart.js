@@ -1,7 +1,11 @@
 // import tailwindConfig from directory_uri.theme_url + '/tailwind.config';
 const Chart = require('chart.js/auto').default;
+const ChartDataLabels = require('chartjs-plugin-datalabels').default;
+
+
 
 $(document).ready(function () {
+    Chart.register(ChartDataLabels);
     const chartContainer = document.querySelector('#publicationsChart');
     if (chartContainer) {
         console.log('======== GET THE DATA SETS FROM THE CHART CONTAINER ========');
@@ -27,10 +31,14 @@ $(document).ready(function () {
         const chartData = {
             labels: yearsArr,
             datasets: [{
-                label: "Publications per Year",
-                backgroundColor: '#00b0d5',
+                label: "Total publications:",
+                backgroundColor: 'rgb(247, 200, 12) ',
                 borderColor: '#f1f1f1',
                 data: pubCountsArr,
+                datalabels: {
+                    align: 'center',
+                    anchor: 'center',
+                }
             }]
         }
 
@@ -38,7 +46,51 @@ $(document).ready(function () {
         const chartConfig = {
             type: 'bar',
             data: chartData,
-            options: {},
+            options: {
+                plugins: {
+                    datalabels: {
+                        color: "#ffffff",
+                        font: {
+                            size: 16
+                        }
+                    },
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 20
+                            },
+                            boxWidth: 0,
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            font: {
+                                size: 16
+                            }
+                        },
+                        ticks: {
+                            font: {
+                                size: 16
+                            }
+                        }
+                    },
+                    y: {
+                        title: {
+                            font: {
+                                size: 16
+                            }
+                        },
+                        ticks: {
+                            beginAtZero: true,
+                            font: {
+                                size: 16
+                            }
+                        }
+                    }
+                }
+            },
         };
 
         const myChart = new Chart(chartContainer, chartConfig);
