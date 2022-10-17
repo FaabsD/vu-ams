@@ -9,6 +9,10 @@ $(document).ready(function () {
     const chartContainer = document.querySelector('#publicationsChart');
     if (chartContainer) {
         console.log('======== GET THE DATA SETS FROM THE CHART CONTAINER ========');
+        console.log('===== TOTAL PUBLICATIONS COUNT =====');
+        let totalPublicationsCount = chartContainer.dataset.totalPubCount;
+        console.log(totalPublicationsCount);
+
         console.log('===== YEARS =====');
         let Years = chartContainer.dataset.years;
         console.log(Years);
@@ -31,7 +35,7 @@ $(document).ready(function () {
         const chartData = {
             labels: yearsArr,
             datasets: [{
-                label: "Total publications:",
+                label: "Total publications: " + totalPublicationsCount,
                 backgroundColor: 'rgb(247, 200, 12) ',
                 borderColor: '#f1f1f1',
                 data: pubCountsArr,
@@ -57,10 +61,11 @@ $(document).ready(function () {
                     legend: {
                         labels: {
                             font: {
-                                size: 20
+                                size: 24
                             },
                             boxWidth: 0,
-                        }
+                        },
+                        onClick: (e) => e.stopPropagation()
                     }
                 },
                 scales: {
