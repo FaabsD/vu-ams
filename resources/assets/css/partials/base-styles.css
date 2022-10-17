@@ -513,6 +513,16 @@ body,
       }
     }
   }
+
+  /* style publictions chart */
+
+  .pub-chart {
+    @apply h-72 2xl:h-[750px] w-full relative;
+
+    #publicationsChart {
+      @apply !h-full !w-full;
+    }
+  }
 }
 
 /* Style default template */
