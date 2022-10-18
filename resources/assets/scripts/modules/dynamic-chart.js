@@ -31,13 +31,33 @@ $(document).ready(function () {
         let pubCountsArr = publicationsCounts.split(", ");
         console.log(pubCountsArr);
 
+        // create a array with colors to use as background for every year
+        /*const backgroundColors = [];
+        console.log('======== GENERATE RANDOM BACKGROUND COLORS ========')
+        for (let i = 0; i < yearsArr.length; i++) {
+            backgroundColors.push(generateRandomColor());
+            console.log('===== NEW BACKGROUND COLOR =====');
+            console.log(backgroundColors[i]);
+        }
+        // log the background color array
+        console.log("===== GENERATED BACKGROUNDS =====");
+        console.log(backgroundColors);
+        */
+
         // setup chart data
         const chartData = {
             labels: yearsArr,
             datasets: [{
                 label: "Total publications: " + totalPublicationsCount,
-                backgroundColor: 'rgb(247, 200, 12) ',
-                borderColor: '#f1f1f1',
+                backgroundColor: [
+                    'rgb(247, 200, 12)',
+                    'rgb(0, 182, 203)',
+                    '#00b0d5',
+                    '#8989A2',
+                    'rgb(16, 20, 48)',
+                ],
+                // backgroundColor: backgroundColors,
+                borderColor: '#000',
                 data: pubCountsArr,
                 datalabels: {
                     align: 'center',
@@ -61,11 +81,12 @@ $(document).ready(function () {
                     legend: {
                         labels: {
                             font: {
-                                size: 24
+                                size: 20
                             },
                             boxWidth: 0,
                         },
-                        onClick: (e) => e.stopPropagation()
+                        onClick: (e) => e.stopPropagation(),
+                        align: 'start'
                     }
                 },
                 scales: {
@@ -94,7 +115,9 @@ $(document).ready(function () {
                             }
                         }
                     }
-                }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
             },
         };
 
@@ -102,3 +125,7 @@ $(document).ready(function () {
     }
 
 })
+
+/*function generateRandomColor() {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}*/
