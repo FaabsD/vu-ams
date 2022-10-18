@@ -71,7 +71,7 @@
 
                   &__asc,
                   &__desc {
-                    @apply w-4 stroke-2 md:w-5 xl:w-6;
+                    @apply w-4 stroke-2 md:w-5;
 
                     &--active {
                       @apply opacity-100;
