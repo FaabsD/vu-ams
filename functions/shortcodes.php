@@ -1,48 +1,47 @@
 <?php
 
-add_action('init', 'ams_add_shortcodes');
+add_action( 'init', 'ams_add_shortcodes' );
 
-function ams_add_shortcodes()
-{
+function ams_add_shortcodes() {
+    // add a shortcode to display software downloads
+    add_shortcode( 'dams_downloads', 'retrieve_software_releases' );
 
-	// add a shortcode to display software downloads
-	add_shortcode('dams_downloads', 'retrieve_software_releases');
+    // retrieve the vu-dams downloads for the dams_downloads shortcode
+    function retrieve_software_releases( $atts ) {
+        $defaultArgs = array(
+            'post_type'      => 'software-release',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'posts_per_page' => -1,
+        );
 
-	// retrieve the vu-dams downloads for the dams_downloads shortcode
-	function retrieve_software_releases($atts)
-	{
-		$defaultArgs = [
-			'post_type' => 'software-release',
-			'orderby' => 'date',
-			'order' => 'DESC',
-			'posts_per_page' => -1,
-		];
+        $args = shortcode_atts( $defaultArgs, $atts );
 
-		$args = shortcode_atts($defaultArgs, $atts);
+        $query = new WP_Query( $args );
 
-		$query = new WP_Query($args);
+        $html = '<div class="releases">';
 
-		$html = '<div class="releases">';
-		if ($query->have_posts()) {
-			$current_release = $query->get_posts()[0];
+        if ( $query->have_posts() ) {
+            $current_release = $query->get_posts()[0];
 
-			$html .= '<div class="releases__current">';
+            $html .= '<div class="releases__current">';
 
-			$html .= '<h3>' . $current_release->post_title . '</h3>';
-			$html .= '<a href="' . get_permalink($current_release->ID) . '">';
-			$html .= 'View changelog</a>';
+            $html .= '<h3>' . $current_release->post_title . '</h3>';
+            $html .= '<a href="' . get_permalink( $current_release->ID ) . '">';
+            $html .= 'View changelog</a>';
 
-			// downloads section current release
-			$html .= '<div class="downloads">';
+            // downloads section current release
+            $html .= '<div class="downloads">';
 
-			// edit the windows part of the downloads
-			if (have_rows('download_windows', $current_release->ID)) : while (have_rows('download_windows', $current_release->ID)) : the_row();
-				if (get_sub_field('download_text') && get_sub_field('download_file')):
-					$winDownload = get_sub_field('download_file');
-					$html .= '<a href="' . $winDownload['url'] . '" class="downloads__download" download>';
-					$html .= get_sub_field('download_text');
-					// add the svg
-					$html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
+            // edit the windows part of the downloads
+            if ( have_rows( 'download_windows', $current_release->ID ) ) : while ( have_rows( 'download_windows', $current_release->ID ) ) : the_row();
+
+                if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                    $winDownload = get_sub_field( 'download_file' );
+                    $html .= '<a href="' . $winDownload['url'] . '" class="downloads__download" download>';
+                    $html .= get_sub_field( 'download_text' );
+                    // add the svg
+                    $html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
 										xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										viewBox="0 0 497.886 497.886"
 										xml:space="preserve">
@@ -91,20 +90,20 @@ function ams_add_shortcodes()
 									<g>
 									</g>
 								</svg>';
-					$html .= '</a>';
-				endif;
-			endwhile;
-			endif;
+                    $html .= '</a>';
+                endif;
+            endwhile;
+            endif;
 
-			// edit the macos part of the downloads
-			if (have_rows('download_macos', $current_release->ID)) : while (have_rows('download_macos', $current_release->ID)): the_row();
+            // edit the macos part of the downloads
+            if ( have_rows( 'download_macos', $current_release->ID ) ) : while ( have_rows( 'download_macos', $current_release->ID ) ): the_row();
 
-				if (get_sub_field('download_text') && get_sub_field('download_file')):
-					$macDownload = get_sub_field('download_file');
-					$html .= '<a href="' . $macDownload['url'] . '" class="downloads__download" download>';
-					$html .= get_sub_field('download_text');
-					// add the svg
-					$html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
+                if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                    $macDownload = get_sub_field( 'download_file' );
+                    $html .= '<a href="' . $macDownload['url'] . '" class="downloads__download" download>';
+                    $html .= get_sub_field( 'download_text' );
+                    // add the svg
+                    $html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
 										xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										viewBox="0 0 305 305" style="enable-background:new 0 0 305 305;"
 										xml:space="preserve">
@@ -153,65 +152,65 @@ function ams_add_shortcodes()
 									<g>
 									</g>
 								</svg>';
-					$html .= '</a>';
-				endif;
-			endwhile;
-			endif;
+                    $html .= '</a>';
+                endif;
+            endwhile;
+            endif;
 
-			// edit the universal part of the downloads
-			if (have_rows('download_universal', $current_release->ID)) : while (have_rows('download_universal', $current_release->ID)): the_row();
+            // edit the universal part of the downloads
+            if ( have_rows( 'download_universal', $current_release->ID ) ) : while ( have_rows( 'download_universal', $current_release->ID ) ): the_row();
 
-				if (get_sub_field('download_text') && get_sub_field('download_file')):
-					$universalDownload = get_sub_field('download_file');
-					$html .= '<a href="' . $universalDownload['url'] . '" class="downloads__download" download>';
-					$html .= get_sub_field('download_text');
-					// add the svg
-					$html .= '</a>';
-				endif;
-			endwhile;
-			endif;
-			// close downloads section
-			$html .= '</div>';
+                if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                    $universalDownload = get_sub_field( 'download_file' );
+                    $html .= '<a href="' . $universalDownload['url'] . '" class="downloads__download" download>';
+                    $html .= get_sub_field( 'download_text' );
+                    // add the svg
+                    $html .= '</a>';
+                endif;
+            endwhile;
+            endif;
+            // close downloads section
+            $html .= '</div>';
 
-			// close current release
-			$html .= '</div>';
+            // close current release
+            $html .= '</div>';
 
-			// start releases opener
-			$html .= '<div class="releases__opener">';
-			$html .= '<h3>Previous versions</h3>';
-			$html .= '<div class="opener-btn">';
+            // start releases opener
+            $html .= '<div class="releases__opener">';
+            $html .= '<h3>Previous versions</h3>';
+            $html .= '<div class="opener-btn">';
 
-			$html .= '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-6 md:w-8">';
-			$html .= '<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>';
-			$html .= '</svg>';
+            $html .= '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-6 md:w-8">';
+            $html .= '<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>';
+            $html .= '</svg>';
 
-			$html .= '</div>';
+            $html .= '</div>';
 
-			// close releases opener
-			$html .= '</div>';
+            // close releases opener
+            $html .= '</div>';
 
-			// start previous releases
-			$html .= '<div class="releases__previous releases__previous--closed">';
+            // start previous releases
+            $html .= '<div class="releases__previous releases__previous--closed">';
 
-			foreach ($query->get_posts() as $index => $release) : if ($index > 0) :
-					$html .= '<div class="release">';
-					$html .= '<h4>' . $release->post_title . '</h4>';
-					$html .= '<a href="' . get_permalink($release->ID) . '">';
-					$html .= 'View changelog';
-					$html .= '</a>';
+            foreach ( $query->get_posts() as $index => $release ) : if ( $index > 0 ) :
+                $html .= '<div class="release">';
+                $html .= '<h4>' . $release->post_title . '</h4>';
+                $html .= '<a href="' . get_permalink( $release->ID ) . '">';
+                $html .= 'View changelog';
+                $html .= '</a>';
 
+                // downloads section current release
+                $html .= '<div class="release__downloads">';
 
-					// downloads section current release
-					$html .= '<div class="release__downloads">';
+                // edit the windows part of the downloads
+                if ( have_rows( 'download_windows', $release->ID ) ) : while ( have_rows( 'download_windows', $release->ID ) ) : the_row();
 
-					// edit the windows part of the downloads
-					if (have_rows('download_windows', $release->ID)) : while (have_rows('download_windows', $release->ID)) : the_row();
-						if (get_sub_field('download_text') && get_sub_field('download_file')):
-							$winDownload = get_sub_field('download_file');
-							$html .= '<a href="' . $winDownload['url'] . '" class="release__download" download>';
-							$html .= get_sub_field('download_text');
-							// add the svg
-							$html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
+                    if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                        $winDownload = get_sub_field( 'download_file' );
+                        $html .= '<a href="' . $winDownload['url'] . '" class="release__download" download>';
+                        $html .= get_sub_field( 'download_text' );
+                        // add the svg
+                        $html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
 											xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 											viewBox="0 0 497.886 497.886"
 											xml:space="preserve">
@@ -260,20 +259,20 @@ function ams_add_shortcodes()
 										<g>
 										</g>
 									</svg>';
-							$html .= '</a>';
-						endif;
-					endwhile;
-					endif;
+                        $html .= '</a>';
+                    endif;
+                endwhile;
+                endif;
 
-					// edit the macos part of the downloads
-					if (have_rows('download_macos', $release->ID)) : while (have_rows('download_macos', $release->ID)): the_row();
+                // edit the macos part of the downloads
+                if ( have_rows( 'download_macos', $release->ID ) ) : while ( have_rows( 'download_macos', $release->ID ) ): the_row();
 
-						if (get_sub_field('download_text') && get_sub_field('download_file')):
-							$macDownload = get_sub_field('download_file');
-							$html .= '<a href="' . $macDownload['url'] . '" class="release__download" download>';
-							$html .= get_sub_field('download_text');
-							// add the svg
-							$html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
+                    if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                        $macDownload = get_sub_field( 'download_file' );
+                        $html .= '<a href="' . $macDownload['url'] . '" class="release__download" download>';
+                        $html .= get_sub_field( 'download_text' );
+                        // add the svg
+                        $html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
 											xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 											viewBox="0 0 305 305" style="enable-background:new 0 0 305 305;"
 											xml:space="preserve">
@@ -322,76 +321,76 @@ function ams_add_shortcodes()
 										<g>
 										</g>
 									</svg>';
-							$html .= '</a>';
-						endif;
-					endwhile;
-					endif;
+                        $html .= '</a>';
+                    endif;
+                endwhile;
+                endif;
 
-					// edit the universal part of the downloads
-					if (have_rows('download_universal', $release->ID)) : while (have_rows('download_universal', $release->ID)): the_row();
+                // edit the universal part of the downloads
+                if ( have_rows( 'download_universal', $release->ID ) ) : while ( have_rows( 'download_universal', $release->ID ) ): the_row();
 
-						if (get_sub_field('download_text') && get_sub_field('download_file')):
-							$universalDownload = get_sub_field('download_file');
-							$html .= '<a href="' . $universalDownload['url'] . '" class="release__download" download>';
-							$html .= get_sub_field('download_text');
-							// add the svg
-							$html .= '</a>';
-						endif;
-					endwhile;
-					endif;
-					// close downloads section
-					$html .= '</div>';
+                    if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                        $universalDownload = get_sub_field( 'download_file' );
+                        $html .= '<a href="' . $universalDownload['url'] . '" class="release__download" download>';
+                        $html .= get_sub_field( 'download_text' );
+                        // add the svg
+                        $html .= '</a>';
+                    endif;
+                endwhile;
+                endif;
+                // close downloads section
+                $html .= '</div>';
 
+                $html .= '</div>';
+            endif;
+            endforeach;
 
-					$html .= '</div>';
-			endif;
-			endforeach;
+            // close previous retrieve_software_releases
+            $html .= '</div>';
+        }
+        // close releases div
+        $html .= '</div>';
 
-			// close previous retrieve_software_releases
-			$html .= '</div>';
-		}
-		// close releases div
-		$html .= '</div>';
-		return $html;
-	}
+        return $html;
+    }
 
-	// add a shortcode to display the downloads to the most recent dams version
+    // add a shortcode to display the downloads to the most recent dams version
 
-	add_shortcode('dams_recent', 'retrieve_recent_software_release');
+    add_shortcode( 'dams_recent', 'retrieve_recent_software_release' );
 
-	function retrieve_recent_software_release()
-	{
-		$args = [
-			'post_type' => 'software-release',
-			'posts_per_page' => 1,
-			'orderby' => 'date',
-			'order' => 'DESC',
-		];
+    function retrieve_recent_software_release() {
+        $args = array(
+            'post_type'      => 'software-release',
+            'posts_per_page' => 1,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+        );
 
-		$query = new WP_Query($args);
+        $query = new WP_Query( $args );
 
-		$html = '<div class="recent_software-release">';
+        $html = '<div class="recent_software-release">';
 
-		if ($query->have_posts()) {
-			$release = $query->get_posts()[0];
+        if ( $query->have_posts() ) {
+            $release = $query->get_posts()[0];
 
-			$html .= '<div class="recent_software-release__inner">';
-			$html .= '<h3>' . $release->post_title . '</h3>';
-			// Add View changelog button
-			$html .= '<a href="' . get_permalink($release->ID) . '">';
-			$html .= 'View changelog</a>';
+            $html .= '<div class="recent_software-release__inner">';
+            $html .= '<h3>' . $release->post_title . '</h3>';
+            // Add View changelog button
+            $html .= '<a href="' . get_permalink( $release->ID ) . '">';
+            $html .= 'View changelog</a>';
 
-			// download section of release
-			$html .= '<div class="downloads">';
+            // download section of release
+            $html .= '<div class="downloads">';
 
-			// windows downloads
-			if (have_rows('download_windows', $release->ID)) : while (have_rows('download_windows', $release->ID)) : the_row();
-				if (get_sub_field('download_text') && get_sub_field('download_file')):
-					$winDownload = get_sub_field('download_file');
-					$html .= '<a href="' . $winDownload['url'] . '" class="downloads__download" download>';
-					$html .= get_sub_field('download_text');
-					// add the svg
-					$html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
+            // windows downloads
+            if ( have_rows( 'download_windows', $release->ID ) ) : while ( have_rows( 'download_windows', $release->ID ) ) : the_row();
+
+                if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                    $winDownload = get_sub_field( 'download_file' );
+                    $html .= '<a href="' . $winDownload['url'] . '" class="downloads__download" download>';
+                    $html .= get_sub_field( 'download_text' );
+                    // add the svg
+                    $html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
 										xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										viewBox="0 0 497.886 497.886"
 										xml:space="preserve">
@@ -440,20 +439,20 @@ function ams_add_shortcodes()
 									<g>
 									</g>
 								</svg>';
-					$html .= '</a>';
-				endif;
-			endwhile;
-			endif;
+                    $html .= '</a>';
+                endif;
+            endwhile;
+            endif;
 
-			// edit the macos part of the downloads
-			if (have_rows('download_macos', $release->ID)) : while (have_rows('download_macos', $release->ID)): the_row();
+            // edit the macos part of the downloads
+            if ( have_rows( 'download_macos', $release->ID ) ) : while ( have_rows( 'download_macos', $release->ID ) ): the_row();
 
-				if (get_sub_field('download_text') && get_sub_field('download_file')):
-					$macDownload = get_sub_field('download_file');
-					$html .= '<a href="' . $macDownload['url'] . '" class="downloads__download" download>';
-					$html .= get_sub_field('download_text');
-					// add the svg
-					$html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
+                if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                    $macDownload = get_sub_field( 'download_file' );
+                    $html .= '<a href="' . $macDownload['url'] . '" class="downloads__download" download>';
+                    $html .= get_sub_field( 'download_text' );
+                    // add the svg
+                    $html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
 								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								viewBox="0 0 305 305" style="enable-background:new 0 0 305 305;"
 								xml:space="preserve">
@@ -502,82 +501,80 @@ function ams_add_shortcodes()
 							<g>
 							</g>
 						</svg>';
-					$html .= '</a>';
-				endif;
-			endwhile;
-			endif;
+                    $html .= '</a>';
+                endif;
+            endwhile;
+            endif;
 
-			// edit the universal part of the downloads
-			if (have_rows('download_universal', $release->ID)) : while (have_rows('download_universal', $release->ID)): the_row();
+            // edit the universal part of the downloads
+            if ( have_rows( 'download_universal', $release->ID ) ) : while ( have_rows( 'download_universal', $release->ID ) ): the_row();
 
-				if (get_sub_field('download_text') && get_sub_field('download_file')):
-					$universalDownload = get_sub_field('download_file');
-					$html .= '<a href="' . $universalDownload['url'] . '" class="downloads__download" download>';
-					$html .= get_sub_field('download_text');
-					// add the svg
-					$html .= '</a>';
-				endif;
-			endwhile;
-			endif;
-			// close downloads section
-			$html .= '</div>';
+                if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                    $universalDownload = get_sub_field( 'download_file' );
+                    $html .= '<a href="' . $universalDownload['url'] . '" class="downloads__download" download>';
+                    $html .= get_sub_field( 'download_text' );
+                    // add the svg
+                    $html .= '</a>';
+                endif;
+            endwhile;
+            endif;
+            // close downloads section
+            $html .= '</div>';
 
-			// close release__inner div
-			$html .= '</div>';
-			
-		}
+            // close release__inner div
+            $html .= '</div>';
+        }
 
-		// close the parent div
-		$html .= '</div>';
+        // close the parent div
+        $html .= '</div>';
 
-		return $html;
-	}
+        return $html;
+    }
 
-	// add shortcode to retrieve and display old software releases/sodium_version_string(  )
+    // add shortcode to retrieve and display old software releases/sodium_version_string(  )
 
-	add_shortcode('dams_old_versions', 'retrieve_old_software_versions');
+    add_shortcode( 'dams_old_versions', 'retrieve_old_software_versions' );
 
-	function retrieve_old_software_versions($atts)
-	{
-		$atts = shortcode_atts(
-			array (
-				'post_type' => 'software-release',
-				'posts_per_page' => -1,
-				'orderby' => 'date',
-				'order' => 'DESC',
-			),
-			$atts,
-			'dams_old_versions'
-		);
+    function retrieve_old_software_versions( $atts ) {
+        $atts = shortcode_atts(
+            array(
+                'post_type'      => 'software-release',
+                'posts_per_page' => -1,
+                'orderby'        => 'date',
+                'order'          => 'DESC',
+            ),
+            $atts,
+            'dams_old_versions'
+        );
 
-		$query = new WP_Query($atts);
+        $query = new WP_Query( $atts );
 
-		if ($query->have_posts()) {
-			// open a new div
-			$html = '<div class="old_software_releases">';
+        if ( $query->have_posts() ) {
+            // open a new div
+            $html = '<div class="old_software_releases">';
 
-			//open the inner container
-			$html .= '<div class="old_software_releases__inner">';
+            //open the inner container
+            $html .= '<div class="old_software_releases__inner">';
 
-			foreach($query->get_posts() as $index => $release) : if($index > 0):
-				$html .= '<div class="release">';
-					$html .= '<h3>' . $release->post_title . '</h3>';
-					$html .= '<a href="' . get_permalink($release->ID) . '">';
-					$html .= 'View changelog';
-					$html .= '</a>';
+            foreach( $query->get_posts() as $index => $release ) : if( $index > 0 ):
+                $html .= '<div class="release">';
+                $html .= '<h3>' . $release->post_title . '</h3>';
+                $html .= '<a href="' . get_permalink( $release->ID ) . '">';
+                $html .= 'View changelog';
+                $html .= '</a>';
 
+                // downloads section current release
+                $html .= '<div class="release__downloads">';
 
-					// downloads section current release
-					$html .= '<div class="release__downloads">';
+                // edit the windows part of the downloads
+                if ( have_rows( 'download_windows', $release->ID ) ) : while ( have_rows( 'download_windows', $release->ID ) ) : the_row();
 
-					// edit the windows part of the downloads
-					if (have_rows('download_windows', $release->ID)) : while (have_rows('download_windows', $release->ID)) : the_row();
-						if (get_sub_field('download_text') && get_sub_field('download_file')):
-							$winDownload = get_sub_field('download_file');
-							$html .= '<a href="' . $winDownload['url'] . '" class="release__download" download>';
-							$html .= get_sub_field('download_text');
-							// add the svg
-							$html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
+                    if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                        $winDownload = get_sub_field( 'download_file' );
+                        $html .= '<a href="' . $winDownload['url'] . '" class="release__download" download>';
+                        $html .= get_sub_field( 'download_text' );
+                        // add the svg
+                        $html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
 											xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 											viewBox="0 0 497.886 497.886"
 											xml:space="preserve">
@@ -626,20 +623,20 @@ function ams_add_shortcodes()
 										<g>
 										</g>
 									</svg>';
-							$html .= '</a>';
-						endif;
-					endwhile;
-					endif;
+                        $html .= '</a>';
+                    endif;
+                endwhile;
+                endif;
 
-					// edit the macos part of the downloads
-					if (have_rows('download_macos', $release->ID)) : while (have_rows('download_macos', $release->ID)): the_row();
+                // edit the macos part of the downloads
+                if ( have_rows( 'download_macos', $release->ID ) ) : while ( have_rows( 'download_macos', $release->ID ) ): the_row();
 
-						if (get_sub_field('download_text') && get_sub_field('download_file')):
-							$macDownload = get_sub_field('download_file');
-							$html .= '<a href="' . $macDownload['url'] . '" class="release__download" download>';
-							$html .= get_sub_field('download_text');
-							// add the svg
-							$html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
+                    if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                        $macDownload = get_sub_field( 'download_file' );
+                        $html .= '<a href="' . $macDownload['url'] . '" class="release__download" download>';
+                        $html .= get_sub_field( 'download_text' );
+                        // add the svg
+                        $html .= '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg"
 											xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 											viewBox="0 0 305 305" style="enable-background:new 0 0 305 305;"
 											xml:space="preserve">
@@ -688,111 +685,185 @@ function ams_add_shortcodes()
 										<g>
 										</g>
 									</svg>';
-							$html .= '</a>';
-						endif;
-					endwhile;
-					endif;
+                        $html .= '</a>';
+                    endif;
+                endwhile;
+                endif;
 
-					// edit the universal part of the downloads
-					if (have_rows('download_universal', $release->ID)) : while (have_rows('download_universal', $release->ID)): the_row();
+                // edit the universal part of the downloads
+                if ( have_rows( 'download_universal', $release->ID ) ) : while ( have_rows( 'download_universal', $release->ID ) ): the_row();
 
-						if (get_sub_field('download_text') && get_sub_field('download_file')):
-							$universalDownload = get_sub_field('download_file');
-							$html .= '<a href="' . $universalDownload['url'] . '" class="release__download" download>';
-							$html .= get_sub_field('download_text');
-							// add the svg
-							$html .= '</a>';
-						endif;
-					endwhile;
-					endif;
-					// close downloads section
-					$html .= '</div>';
+                    if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                        $universalDownload = get_sub_field( 'download_file' );
+                        $html .= '<a href="' . $universalDownload['url'] . '" class="release__download" download>';
+                        $html .= get_sub_field( 'download_text' );
+                        // add the svg
+                        $html .= '</a>';
+                    endif;
+                endwhile;
+                endif;
+                // close downloads section
+                $html .= '</div>';
 
+                $html .= '</div>';
+            endif; endforeach;
 
-					$html .= '</div>';
-			endif; endforeach;
+            //close the inner container
+            $html .= '</div>';
 
-			//close the inner container
-			$html .= '</div>';
+            // close the old_software_releases container
+            $html .= '</div>';
+        }
 
-			// close the old_software_releases container
-			$html .= '</div>';
-		}
+        return $html;
+    }
 
-		return $html;
-	}
+    // add shortcode to display FAQ's at any position on the FAQ page
 
-	// add shortcode to display FAQ's at any position on the FAQ page
+    add_shortcode( 'ams_display_faq', 'get_all_faq' );
 
-	add_shortcode('ams_display_faq', 'get_all_faq');
+    /**
+     * Retrieve all FAQ items
+     * and return them in a html markup for the ams_display_faq shortcode
+     *
+     * @param array $atts
+     *
+     * @return html|string returns the FAQ items in a HTML markup or a string if none are found
+     */
+    function get_all_faq( $atts ) {
+        $atts = shortcode_atts( array(
+            'post_type'      => 'faq',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'posts_per_page' => -1,
+        ), $atts, 'ams_display_faq' );
 
-	/**
-	 * Retrieve all FAQ items
-	 * and return them in a html markup for the ams_display_faq shortcode
-	 *
-	 * @param array $atts
-	 * @return html|string returns the FAQ items in a HTML markup or a string if none are found
-	 */
-	function get_all_faq($atts) {
-		$atts = shortcode_atts(array(
-			'post_type' => 'faq',
-			'orderby' => 'date',
-			'order' => 'DESC',
-			'posts_per_page' => -1,
-		), $atts, 'ams_display_faq');
+        $query = new WP_Query( $atts );
 
-		$query = new WP_Query($atts);
+        if ( $query->have_posts() ) {
+            $html = '<div class="questions">';
 
-		if ($query->have_posts()) {
-			$html = '<div class="questions">';
+            foreach( array_chunk( $query->get_posts(), 3 ) as $values ) {
+                if ( defined( 'WP_DEBUG' ) ) {
+                    if ( count( $values ) > 1 ) {
+                        error_log( '======== FAQ GROUPED PER 3 ========' );
+                        error_log( print_r( $values, true ) );
+                    } else {
+                        error_log( "======== FAQ ON IT'S OWN ========" );
+                        error_log( print_r( $values[0], true ) );
+                    }
+                }
 
-			foreach( array_chunk($query->get_posts(), 3) as $values) {
-				if (defined('WP_DEBUG')) {
-					if (count($values) > 1) {
-						error_log('======== FAQ GROUPED PER 3 ========');
-						error_log(print_r($values, true));
-					}
-					else {
-						error_log("======== FAQ ON IT'S OWN ========");
-						error_log(print_r($values[0], true));
-					}
-				}
+                if ( count( $values ) > 1 ) {
+                    $html .= '<div class="questions__col">';
 
-				if (count($values) > 1) {
-					$html .= '<div class="questions__col">';
-					foreach ($values as $faq) {
-						$html .= '<div class="question">';
+                    foreach ( $values as $faq ) {
+                        $html .= '<div class="question">';
 
-						$html .= '<h3 class="question__title">' . $faq->post_title . '</h3>';
+                        $html .= '<h3 class="question__title">' . $faq->post_title . '</h3>';
 
-						$html .= '<div class="question__answer">';
-						$html .= $faq->post_content;
-						$html .= '</div>';
+                        $html .= '<div class="question__answer">';
+                        $html .= $faq->post_content;
+                        $html .= '</div>';
 
+                        $html .= '</div>';
+                    }
+                    $html .= '</div>';
+                } else {
+                    $html .= '<div class="questions__col">';
 
-						$html .= '</div>';
-					}
-					$html .= '</div>';
-				} else {
-					$html .= '<div class="questions__col">';
+                    $html .= '<div class="question">';
 
-						$html .= '<div class="question">';
+                    $html .= '<h3 class="question__title">' . $values[0]->post_title . '</h3>';
 
-						$html .= '<h3 class="question__title">' . $values[0]->post_title . '</h3>';
+                    $html .= '<div class="question__answer">';
+                    $html .= $values[0]->post_content;
+                    $html .= '</div>';
 
-						$html .= '<div class="question__answer">';
-						$html .= $values[0]->post_content;
-						$html .= '</div>';
+                    $html .= '</div>';
+                }
+            }
+            $html .= '</div>';
+        } else {
+            return 'No FAQ found';
+        }
 
-					$html .= '</div>';
-				}
-			}
-			$html .= '</div>';
+        return $html;
+    }
 
-		} else {
-			return "No FAQ found";
-		}
+    // add a shortcode to display a chart showing how many publications where published involving the VU-AMS device per year
 
-		return $html;
-	}
+    add_shortcode( 'ams_publications_chart', 'ams_create_publications_chart' );
+
+    /**
+     * Retrieve all publication dates from publications and create a chart container
+     *
+     * @return html|string returns a html div containing a canvas with publication years and publication counts in the data or a string if none are found
+     */
+    function ams_create_publications_chart() {
+        $publicationYears = array();
+        $queryArgs        =  array(
+            'post_type'     => 'publication',
+            'post_status'   => 'Publish',
+            'post_per_page' => -1,
+            'meta_key'      => 'publication_date',
+            'orderby'       => 'meta_value_num',
+            'order'         => 'ASC',
+        );
+
+        $query = new WP_Query( $queryArgs );
+
+        if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+            $publicationDate = get_field( 'publication_date' );
+
+            if( isset( $publicationDate ) && !empty( $publicationDate ) ) {
+                $formattedDate      = strtotime( $publicationDate );
+                $publicationYears[] = date( 'Y', $formattedDate );
+            }
+
+        endwhile; endif;
+        wp_reset_query();
+
+        if( is_array( $publicationYears ) ) {
+            $totalPubsCount = count( $publicationYears );
+
+            // count every years occurrence
+            $pubsPerYear = array_count_values( $publicationYears );
+
+            // place the years and occurrences in two comma separated string
+            $years                       = '';
+            $publicationOccurrenceCounts = '';
+
+            if( is_array( $pubsPerYear ) ) {
+                // create an iterator to determine if there should be a comma added after a year or occurrence
+                $i = 1;
+
+                foreach( $pubsPerYear as $year => $occurrenceCount ) {
+                    if( count( $pubsPerYear ) !== $i ) {
+                        // add a year to the years string with a comma and space behind it.
+                        $years .= $year . ', ';
+                        // add a occurrenceCount to the publicationOccurrencesCounts string with a comma and space behind it.
+                        $publicationOccurrenceCounts .= $occurrenceCount . ', ';
+                    } else {
+                        // add a year to the years string without a comma and space because this would be the last one
+                        $years .= $year;
+                        // add a occurrenceCount to the publicationOccurrenceCounts string without a comma and space because this would be the last one
+                        $publicationOccurrenceCounts .= $occurrenceCount;
+                    }
+                    // count up the iterator
+                    $i++;
+                }
+            }
+
+            // create a container for the chart with datasets to read the years and publication counts from
+            $html = '<div class="pub-chart">';
+            $html .= '<canvas id="publicationsChart" data-years="' . $years . '" data-publications-count="' . $publicationOccurrenceCounts . '" data-total-pub-count="' . $totalPubsCount . '">';
+
+            $html .= '</div';
+
+            return $html;
+        } else {
+            return 'Unable to retrieve publication_dates';
+        }
+    }
 }
