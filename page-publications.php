@@ -105,13 +105,12 @@
                 ?>
                 <a href="<?php echo get_permalink() . '?' . http_build_query($authorsSort) ?>">
                     Authors
-                    <span class="sort inline-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8 <?php echo (isset($_GET['order']) && $_GET['order'] === 'ASC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'authors_lastnames') ? 'inline-block' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'authors_lastnames') ? 'inline-block' : 'hidden')?>">
-                            <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
+                    <span class="sort">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__asc <?php echo (isset($_GET['order']) && $_GET['order'] === 'ASC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'authors_lastnames') ? 'sort__asc--active' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'authors_lastnames') ? 'sort__asc--inactive' : 'sort__asc--inactive')?>">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
                         </svg>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8 <?php echo (isset($_GET['order']) && $_GET['order'] === 'DESC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'authors_lastnames') ? 'inline-block' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'authors_lastnames') ? 'inline-block' : 'hidden') ?>">
-                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__desc <?php echo (isset($_GET['order']) && $_GET['order'] === 'DESC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'authors_lastnames') ? 'sort__desc--active' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'authors_lastnames') ? 'sort__desc--inactive' : 'sort__desc--inactive') ?>">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                         </svg>
                     </span>
                 </a>
@@ -127,14 +126,15 @@
                 <a href="<?php echo get_permalink() . '?' . http_build_query($dateSort) ?>">
                     Date
 
-                    <span class="sort inline-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8 <?php echo (isset($_GET['order']) && $_GET['order'] === 'ASC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'publication_date') ? 'inline-block' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'publication_date') ? 'inline-block' : 'hidden') ?>">
-                            <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
+                    <span class="sort">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__asc <?php echo (isset($_GET['order']) && $_GET['order'] === 'ASC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'publication_date') ? 'sort__asc--active' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'publication_date') ? 'sort__asc--inactive' : 'sort__asc--inactive') ?>">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
                         </svg>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8 <?php echo (isset($_GET['order']) && $_GET['order'] === 'DESC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'publication_date') ? 'inline-block' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'publication_date') ? 'inline-block' : 'hidden') ?>">
-                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__desc <?php echo (isset($_GET['order']) && $_GET['order'] === 'DESC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'publication_date') ? 'sort__desc--active' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'publication_date') ? 'sort__desc--inactive' : 'sort__desc--inactive') ?>">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                         </svg>
+
                     </span>
                 </a>
             </td>
