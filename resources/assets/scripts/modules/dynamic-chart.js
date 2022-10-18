@@ -57,7 +57,13 @@ $(document).ready(function () {
                     'rgb(16, 20, 48)',
                 ],
                 // backgroundColor: backgroundColors,
-                borderColor: '#000',
+                borderColor: [
+                    'rgb(247, 200, 12)',
+                    'rgb(0, 182, 203)',
+                    '#00b0d5',
+                    '#8989A2',
+                    'rgb(16, 20, 48)',
+                ],
                 data: pubCountsArr,
                 datalabels: {
                     align: 'center',
@@ -99,7 +105,8 @@ $(document).ready(function () {
                         ticks: {
                             font: {
                                 size: 16
-                            }
+                            },
+                            precision: 0
                         }
                     },
                     y: {
@@ -112,7 +119,8 @@ $(document).ready(function () {
                             beginAtZero: true,
                             font: {
                                 size: 16
-                            }
+                            },
+                            precision: 0
                         }
                     }
                 },
