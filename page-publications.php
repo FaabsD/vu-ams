@@ -47,9 +47,9 @@
         'meta_query'     => $meta_query,
         'posts_per_page' => 10,
         'paged'          => $paged,
-        'meta_key' 		 => 'publication_date',
-        'orderby'	     => 'meta_value_num',
-        'order'			 => 'DESC',
+        'meta_key' 		 => isset( $_GET['meta_key'] ) && $_GET['meta_key'] != '' ? $_GET['meta_key'] : 'publication_date',
+        'orderby'	     => isset( $_GET['orderby'] ) && $_GET['orderby'] != '' ? $_GET['orderby'] : 'meta_value_num',
+        'order'			 => isset( $_GET['order'] ) && $_GET['order'] != '' ? $_GET['order'] : 'DESC',
     );
     $query = new WP_Query( $args );
 ?>
@@ -95,8 +95,49 @@
         <tr>
             <td></td>
             <td>Title</td>
-            <td>Authors</td>
-            <td>Date</td>
+            <td>
+                <?php
+                    $authorsSort = array(
+                        'order'    => ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' ) ? 'DESC' : 'ASC',
+                        'orderby'  => 'meta_value',
+                        'meta_key' => 'authors_lastnames',
+                    ); 
+                ?>
+                <a href="<?php echo get_permalink() . '?' . http_build_query($authorsSort) ?>">
+                    Authors
+                    <span class="sort inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8 <?php echo (isset($_GET['order']) && $_GET['order'] === 'ASC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'authors_lastnames') ? 'inline-block' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'authors_lastnames') ? 'inline-block' : 'hidden')?>">
+                            <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8 <?php echo (isset($_GET['order']) && $_GET['order'] === 'DESC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'authors_lastnames') ? 'inline-block' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'authors_lastnames') ? 'inline-block' : 'hidden') ?>">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                </a>
+            </td>
+            <td>
+                <?php
+                    $dateSort = array(
+                        'order'    => ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' ) ? 'DESC' : 'ASC',
+                        'orderby'  => 'meta_value_num',
+                        'meta_key' => 'publication_date',
+                    );
+                ?>
+                <a href="<?php echo get_permalink() . '?' . http_build_query($dateSort) ?>">
+                    Date
+
+                    <span class="sort inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8 <?php echo (isset($_GET['order']) && $_GET['order'] === 'ASC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'publication_date') ? 'inline-block' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'publication_date') ? 'inline-block' : 'hidden') ?>">
+                            <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8 <?php echo (isset($_GET['order']) && $_GET['order'] === 'DESC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'publication_date') ? 'inline-block' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'publication_date') ? 'inline-block' : 'hidden') ?>">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                </a>
+            </td>
         </tr>
         </thead>
         <?php if ( $query->have_posts() ) : ?>
@@ -112,16 +153,28 @@
                         </a>
                     </td>
                     <td>
-                        <?php if ( get_field( 'authors' ) ) : ?>
-                            <?php the_field( 'authors' ); ?>
+                        <?php if ( get_field( 'authors_lastnames' ) ) : ?>
+                            <?php
+                                $authorsArr = explode(', ', get_field('authors_lastnames'));
+                                foreach ($authorsArr as $index => $author) {
+                                    if(count($authorsArr) - $index === 2) {
+                                        echo $author . ' & ';
+                                    } elseif( count($authorsArr) !== $index + 1) {
+                                        echo $author . ", ";
+                                    } 
+                                    else {
+                                        echo $author;
+                                    }
+                                } 
+                            ?>
                         <?php endif; ?>
                     </td>
                     <td>
                         <?php
-                            if ( get_field( 'publication_date' ) ) {
-                                the_field( 'publication_date' );
-                            }
-                        ?>
+            if ( get_field( 'publication_date' ) ) {
+                the_field( 'publication_date' );
+            }
+                ?>
                     </td>
                 </tr>
             <?php endwhile; ?>
