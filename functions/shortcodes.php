@@ -803,32 +803,77 @@ function ams_add_shortcodes() {
     function ams_create_publications_chart() {
         $publicationYears = array();
         $queryArgs        =  array(
-            'post_type'     => 'publication',
-            'post_status'   => 'Publish',
+            'post_type'      => 'publication',
+            'post_status'    => 'publish',
             'posts_per_page' => -1,
-            'meta_key'      => 'publication_date',
-            'orderby'       => 'meta_value_num',
-            'order'         => 'ASC',
+            'meta_key'       => 'publication_date',
+            'orderby'        => 'meta_value_num',
+            'order'          => 'ASC',
         );
 
         $query = new WP_Query( $queryArgs );
 
+        if( defined( 'WP_DEBUG' ) ) {
+            error_log( '======== GET ALL PUBLICATIONS PUBLICATION DATES ========' );
+        }
+
         if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+
+            if( defined( 'WP_DEBUG' ) ) {
+                error_log( '====== PUBLICATION DATE ======' );
+            }
             $publicationDate = get_field( 'publication_date' );
 
             if( isset( $publicationDate ) && !empty( $publicationDate ) ) {
                 $formattedDate      = strtotime( $publicationDate );
-                $publicationYears[] = date( 'Y', $formattedDate );
+				$yearCutFromDate = substr($publicationDate, 0, 4);
+                // $publicationYears[] = date( 'Y', $formattedDate );
+
+				if(date('Y-m-d') !== date('Y-m-d', $formattedDate)) {
+					if(defined('WP_DEBUG')) {
+						error_log('FORMATTED DATE IS: ' . date('Y-m-d', $formattedDate));
+						error_log('CURRENT DATE IS: ' . date('Y-m-d'));
+						error_log('FORMATTED DATE IS DIFFERENT FROM CURRENT DATE USE YEAR FROM FORMATTED DATE');
+					}
+					$publicationYears[] = date('Y', $formattedDate);
+				} else {
+					if(defined('WP_DEBUG')) {
+						error_log('FORMATTED DATE IS: ' . date('Y-m-d', $formattedDate));
+						error_log('CURRENT DATE IS: ' . date('Y-m-d'));
+						error_log('FORMATTED DATE IS THE SAME AS THE CURRENT DATE. JUST CUT THE YEAR FROM THE DATE WITHOUT FORMATTING');
+					}
+					$publicationYears[] = $yearCutFromDate;
+				}
+
+                if( defined( 'WP_DEBUG' ) ) {
+                    error_log( '===== UNFORMATTED PUBLICATION DATE =====' );
+                    error_log( $publicationDate );
+
+                    error_log( '===== FORMATTED PUBLICATION DATE =====' );
+                    error_log( $formattedDate );
+
+                    error_log( '===== FORMATTED DATE IN A HUMAN READABLE FORMAT =====' );
+                    error_log( date( 'Y', $formattedDate ) );
+                }
             }
 
         endwhile; endif;
         wp_reset_query();
 
         if( is_array( $publicationYears ) ) {
-            $totalPubsCount = count( $publicationYears );
+            if( defined( 'WP_DEBUG' ) ) {
+                error_log( '======== THE ARRAY CONTAINING ALL PUBLICATION YEARS ========' );
+                error_log( print_r( $publicationYears, true ) );
+            }
+            $totalPubsCount = count( $query->get_posts());
 
             // count every years occurrence
             $pubsPerYear = array_count_values( $publicationYears );
+
+			if(defined('WP_DEBUG')) {
+				error_log('===== COUNTED ARRAY OF PUBLICATION YEARS =====');
+				error_log(print_r($pubsPerYear, true));
+			}
 
             // place the years and occurrences in two comma separated string
             $years                       = '';
