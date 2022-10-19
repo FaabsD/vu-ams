@@ -14,6 +14,9 @@
 <?php endwhile; endif; ?>
 
 <?php
+
+    $current_url = home_url( add_query_arg( null, null ) );
+
     $meta_query = array();
 
     if ( isset( $_GET['author'] ) && !empty( $_GET['author'] ) ) {
@@ -101,9 +104,10 @@
                         'order'    => ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' ) ? 'DESC' : 'ASC',
                         'orderby'  => 'meta_value',
                         'meta_key' => 'authors_lastnames',
-                    ); 
+                    );
+                    $authorsSortingUrl = esc_url( add_query_arg( $authorsSort, $current_url ) ); 
                 ?>
-                <a href="<?php echo get_permalink() . '?' . http_build_query($authorsSort) ?>">
+                <a href="<?php echo $authorsSortingUrl ?>">
                     Authors
                     <span class="sort">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__asc <?php echo (isset($_GET['order']) && $_GET['order'] === 'ASC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'authors_lastnames') ? 'sort__asc--active' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'authors_lastnames') ? 'sort__asc--inactive' : 'sort__asc--inactive')?>">
@@ -122,8 +126,9 @@
                         'orderby'  => 'meta_value_num',
                         'meta_key' => 'publication_date',
                     );
+                    $dateSortingUrl = esc_url( add_query_arg( $dateSort, $current_url ) )
                 ?>
-                <a href="<?php echo get_permalink() . '?' . http_build_query($dateSort) ?>">
+                <a href="<?php echo $dateSortingUrl; ?>">
                     Date
 
                     <span class="sort">
