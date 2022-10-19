@@ -805,7 +805,7 @@ function ams_add_shortcodes() {
         $queryArgs        =  array(
             'post_type'     => 'publication',
             'post_status'   => 'Publish',
-            'post_per_page' => -1,
+            'posts_per_page' => -1,
             'meta_key'      => 'publication_date',
             'orderby'       => 'meta_value_num',
             'order'         => 'ASC',
