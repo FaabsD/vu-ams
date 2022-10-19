@@ -6,3 +6,4 @@ resources/.DS_Store
 publications_index.txt
 prettier.config.js
 .DS_Store
+debug.log
