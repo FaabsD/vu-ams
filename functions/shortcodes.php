@@ -911,4 +911,27 @@ function ams_add_shortcodes() {
             return 'Unable to retrieve publication_dates';
         }
     }
+
+    /**
+     * Create a locations container with given height and width
+     *
+     * @param array $atts
+     *
+     * @return html
+     */
+    function ams_create_worldwide_map( $atts ) {
+        $atts = shortcode_atts( array(
+            'width'      => '100%',
+            'height'     => '700px',
+            'min-height' => 'auto',
+            'max-height' => 'auto',
+        ), $atts, 'ams_worldwide_map' );
+
+        $html = '<div id="locationsMap" class="not-prose" style="' . 'width: ' . $atts['width'] . '; height: ' . $atts['height'] . '; min-height: ' . $atts['min-height'] . '; max-height: ' . $atts['max-height'] . '; "></div>';
+
+        return $html;
+    }
+
+    add_shortcode( 'ams_worldwide_map', 'ams_create_worldwide_map' );
+
 }

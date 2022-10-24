@@ -92,7 +92,15 @@
 <?php endif; ?>
 
 <div class="locations-wrapper">
-    <div id="locationsMap" class="not-prose"></div>
+
+    <?php
+        $locationSizes        = get_field( 'locations_map_sizes' );
+    $locationMapHeight        = ( isset( $locationSizes['height'] ) && !empty( $locationSizes['height'] ) ) ? $locationSizes['height'] : '';
+    $locationMapWidth         = ( isset( $locationSizes['width'] ) && !empty( $locationSizes['width'] ) ) ? $locationSizes['width'] : '';
+    $locationMapMinHeight     = ( isset( $locationSizes['min_height'] ) && !empty( $locationSizes['min_height'] ) ) ? $locationSizes['min_height'] : '';
+    $locationMapMaxHeight     = ( isset( $locationSizes['max_height'] ) && !empty( $locationSizes['max_height'] ) ) ? $locationSizes['max_height'] : '';
+    ?>
+    <?php echo do_shortcode( '[ams_worldwide_map height="' . $locationMapHeight . '" min-height="' . $locationMapMinHeight . '" max-height="' . $locationMapMaxHeight . '" width="' . $locationMapWidth . '"]' ); ?>
     <div class="locations-text">
         <?php if (get_field('locations_information')) {
             the_field('locations_information');
