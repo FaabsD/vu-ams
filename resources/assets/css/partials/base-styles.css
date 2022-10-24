@@ -7,15 +7,15 @@ body,
 
     &__current {
       @apply space-y-2
-            border-b
-            border-ams-grey
-            bg-ams-cyan py-4
-            px-8
-            text-center
-            md:grid
-            md:grid-cols-2
-            md:space-y-0
-            md:text-left;
+        border-b
+        border-ams-grey
+        bg-ams-cyan py-4
+        px-8
+        text-center
+        md:grid
+        md:grid-cols-2
+        md:space-y-0
+        md:text-left;
 
       h3 {
         @apply mt-0 text-ams-dark;
@@ -27,15 +27,16 @@ body,
 
       .downloads {
         @apply flex
-                flex-col
-                items-center
-                justify-between
-                space-y-2
-                md:col-span-2
-                md:!mt-4
-                md:flex-row
-                md:items-start
-                md:space-y-0;
+          flex-col
+          items-center
+          justify-between
+          space-y-2
+          md:col-span-2
+          md:!mt-4
+          md:flex-row
+          md:items-start
+          md:space-y-0
+          md:gap-x-3.5;
 
         &__download {
           @apply inline-flex flex-row items-start gap-x-2 text-ams-dark hover:text-ams-grey;
@@ -49,18 +50,18 @@ body,
 
     &__opener {
       @apply prose-sm
-            flex
-            !max-w-full
-            select-none
-            flex-row
-            items-center
-            justify-around
-            bg-ams-cyan
-            p-4
-            md:prose
-            md:justify-between
-            md:py-4
-            md:px-8;
+        flex
+        !max-w-full
+        select-none
+        flex-row
+        items-center
+        justify-around
+        bg-ams-cyan
+        p-4
+        md:prose
+        md:justify-between
+        md:py-4
+        md:px-8;
 
       h3 {
         @apply !m-0 text-ams-dark;
@@ -81,17 +82,17 @@ body,
 
     &__previous {
       @apply h-auto
-            max-h-[500px]
-            origin-top
-            scale-y-100
-            transform
-            divide-y
-            divide-ams-grey
-            overflow-y-scroll
-            bg-ams-dark
-            transition-transform
-            duration-100
-            ease-in-out;
+        max-h-[500px]
+        origin-top
+        scale-y-100
+        transform
+        divide-y
+        divide-ams-grey
+        overflow-y-scroll
+        bg-ams-dark
+        transition-transform
+        duration-100
+        ease-in-out;
 
       &--closed {
         @apply h-0 scale-y-0 transform;
@@ -110,23 +111,23 @@ body,
 
         &__downloads {
           @apply flex
-                    flex-col
-                    items-center
-                    justify-around
-                    space-y-2
-                    md:col-span-2
-                    md:!mt-4
-                    md:flex-row
-                    md:items-start
-                    md:space-y-0;
+            flex-col
+            items-center
+            justify-around
+            space-y-2
+            md:col-span-2
+            md:!mt-4
+            md:flex-row
+            md:items-start
+            md:space-y-0;
 
           a {
             @apply inline-flex
-                        flex-row
-                        items-center
-                        gap-x-2
-                        text-ams-grey
-						hover:text-ams-cyan;
+              flex-row
+              items-center
+              gap-x-2
+              text-ams-grey
+            hover:text-ams-cyan;
 
             .brand-logo {
               @apply inline-block w-6 fill-current md:w-8;
@@ -142,15 +143,15 @@ body,
 
     &__inner {
       @apply space-y-2
-            border-b
-            border-ams-grey
-            bg-ams-cyan py-4
-            px-8
-            text-center
-            md:grid
-            md:grid-cols-2
-            md:space-y-0
-            md:text-left;
+        border-b
+        border-ams-grey
+        bg-ams-cyan py-4
+        px-8
+        text-center
+        md:grid
+        md:grid-cols-2
+        md:space-y-0
+        md:text-left;
 
       h3 {
         @apply mt-0 text-ams-dark;
@@ -162,15 +163,16 @@ body,
 
       .downloads {
         @apply flex
-                flex-col
-                items-center
-                justify-between
-                space-y-2
-                md:col-span-2
-                md:!mt-4
-                md:flex-row
-                md:items-start
-                md:space-y-0;
+          flex-col
+          items-center
+          justify-between
+          space-y-2
+          md:col-span-2
+          md:!mt-4
+          md:flex-row
+          md:items-start
+          md:space-y-0
+          md:gap-x-3.5;
 
         &__download {
           @apply inline-flex flex-row items-start gap-x-2 text-ams-dark hover:text-ams-grey;
@@ -294,14 +296,14 @@ body,
 
       .release {
         @apply select-none 
-			space-y-2 
-			bg-ams-dark 
-			py-4 
-			px-8 
-			text-center 
-			md:grid 
-			md:grid-cols-2 
-			md:space-y-0;
+          space-y-2 
+          bg-ams-dark 
+          py-4 
+          px-8 
+          text-center 
+          md:grid 
+          md:grid-cols-2 
+          md:space-y-0;
 
         h3 {
           @apply mt-0 text-ams-grey md:!m-0;
@@ -321,7 +323,8 @@ body,
 						md:!mt-4
 						md:flex-row
 						md:items-start
-						md:space-y-0;
+						md:space-y-0
+            md:gap-x-3.5;
 
           a {
             @apply inline-flex
