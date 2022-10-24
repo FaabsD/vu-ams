@@ -127,8 +127,17 @@ function get_publications_from_zotero() {
                 // get the existing posts id
                 $existing_post = post_exists( $title, '', '', 'publication' );
                 // update post only if version number is present and different from current version number
-
-                if ( get_field( 'version', $existing_post ) && get_field( 'version', $existing_post ) !== $version ) {
+                if ( get_field( 'item_type', $existing_post ) && get_field( 'item_type', $existing_post ) !== $itemType ) {
+                    if ( defined( 'WP_DEBUG' ) ) {
+                        error_log( 'existing publication is of a different type than this one save as another separate publication' );
+                    }
+                    save_publication( $title, array( 'post_content' => $abstract ), $pubMetaValues );
+                } elseif ( get_field( 'item_type', $existing_post ) && get_field( 'item_type', $existing_post ) === $itemType && get_field( 'version', $existing_post ) && get_field( 'version', $existing_post ) !== $version ) {
+                    if ( defined( 'WP_DEBUG' ) ) {
+                        error_log( 'publication with same title and type exists but version has changed. Update this publication' );
+                    }
+                    save_publication( $title, array( 'post_content' => $abstract, 'ID' => $existing_post ), $pubMetaValues );
+                } elseif ( get_field( 'version', $existing_post ) && get_field( 'version', $existing_post ) !== $version ) {
                     if ( defined( 'WP_DEBUG' ) ) {
                         error_log( 'update existing publication' );
 
@@ -260,8 +269,17 @@ function get_publications_from_zotero() {
                             // get the existing posts id
                             $existing_post = post_exists( $title, '', '', 'publication' );
                             // update post only if version number is present and different from current version number
-
-                            if ( get_field( 'version', $existing_post ) && get_field( 'version', $existing_post ) !== $version ) {
+                            if ( get_field( 'item_type', $existing_post ) && get_field( 'item_type', $existing_post ) !== $itemType ) {
+                                if ( defined( 'WP_DEBUG' ) ) {
+                                    error_log( 'existing publication is of a different type than this one save as another separate publication' );
+                                }
+                                save_publication( $title, array( 'post_content' => $abstract ), $pubMetaValues );
+                            } elseif ( get_field( 'item_type', $existing_post ) && get_field( 'item_type', $existing_post ) === $itemType && get_field( 'version', $existing_post ) && get_field( 'version', $existing_post ) !== $version ) {
+                                if ( defined( 'WP_DEBUG' ) ) {
+                                    error_log( 'publication with same title and type exists but version has changed. Update this publication' );
+                                }
+                                save_publication( $title, array( 'post_content' => $abstract, 'ID' => $existing_post ), $pubMetaValues );
+                            } elseif ( get_field( 'version', $existing_post ) && get_field( 'version', $existing_post ) !== $version ) {
                                 if ( defined( 'WP_DEBUG' ) ) {
                                     error_log( 'update existing publication' );
 
