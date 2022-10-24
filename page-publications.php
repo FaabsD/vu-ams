@@ -59,91 +59,91 @@
 <form action="<?php the_permalink(); ?>" method="get" id="pubForm">
     <table class="pub-table">
         <thead class="pub-table__head">
-        <tr>
-            <td id="searchCell">
-                <input type="text" name="search" id="search"
-                       value="<?php echo isset( $_GET['search'] ) && !empty( $_GET['search'] ) ? $_GET['search'] : ''; ?>"
-                       placeholder="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
-            </td>
-            <td>
-                <input type="text" name="author" id="author"
-                       value="<?php echo isset( $_GET['author'] ) && !empty( $_GET['author'] ) ? $_GET['author'] : ''; ?>"
-                       placeholder="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
-            </td>
-            <td>
-                <?php
-                    $dateArr = array();
-                    $pubDates = getPublicationDates();
-                ?>
-                <?php if ( $pubDates ) {
-                    foreach ( $pubDates as $date ) {
-                        if ( !in_array( $date, $dateArr, ) ) {
-                            $dateArr[] = $date;
+            <tr>
+                <td id="searchCell">
+                    <input type="text" name="search" id="search"
+                        value="<?php echo isset( $_GET['search'] ) && !empty( $_GET['search'] ) ? $_GET['search'] : ''; ?>"
+                        placeholder="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
+                </td>
+                <td>
+                    <input type="text" name="author" id="author"
+                        value="<?php echo isset( $_GET['author'] ) && !empty( $_GET['author'] ) ? $_GET['author'] : ''; ?>"
+                        placeholder="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
+                </td>
+                <td>
+                    <?php
+                        $dateArr = array();
+                        $pubDates = getPublicationDates();
+                    ?>
+                    <?php if ( $pubDates ) {
+                        foreach ( $pubDates as $date ) {
+                            if ( !in_array( $date, $dateArr, ) ) {
+                                $dateArr[] = $date;
+                            }
                         }
-                    }
 
-                    arsort( $dateArr );
-                } ?>
-                <select name="date" id="date">
-                    <option value="Date">Date</option>
-                    <?php foreach ( $dateArr as $date ) : ?>
-                        <option <?php echo isset( $_GET['date'] ) && $_GET['date'] === $date ? 'selected' : ''; ?>
-                                value="<?php echo $date; ?>">
-                            <?php echo $date; ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Title</td>
-            <td>
-                <?php
-                    $authorsSort = array(
-                        'order'    => ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' ) ? 'DESC' : 'ASC',
-                        'orderby'  => 'meta_value',
-                        'meta_key' => 'authors_lastnames',
-                    );
-                    $authorsSortingUrl = esc_url( add_query_arg( $authorsSort, $current_url ) ); 
-                ?>
-                <a href="<?php echo $authorsSortingUrl ?>">
-                    Authors
-                    <span class="sort">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__asc <?php echo (isset($_GET['order']) && $_GET['order'] === 'ASC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'authors_lastnames') ? 'sort__asc--active' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'authors_lastnames') ? 'sort__asc--inactive' : 'sort__asc--inactive')?>">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__desc <?php echo (isset($_GET['order']) && $_GET['order'] === 'DESC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'authors_lastnames') ? 'sort__desc--active' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'authors_lastnames') ? 'sort__desc--inactive' : 'sort__desc--inactive') ?>">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                        </svg>
-                    </span>
-                </a>
-            </td>
-            <td>
-                <?php
-                    $dateSort = array(
-                        'order'    => ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' ) ? 'DESC' : 'ASC',
-                        'orderby'  => 'meta_value_num',
-                        'meta_key' => 'publication_date',
-                    );
-                    $dateSortingUrl = esc_url( add_query_arg( $dateSort, $current_url ) )
-                ?>
-                <a href="<?php echo $dateSortingUrl; ?>">
-                    Date
+                        arsort( $dateArr );
+                    } ?>
+                    <select name="date" id="date">
+                        <option value="Date">Date</option>
+                        <?php foreach ( $dateArr as $date ) : ?>
+                            <option <?php echo isset( $_GET['date'] ) && $_GET['date'] === $date ? 'selected' : ''; ?>
+                                    value="<?php echo $date; ?>">
+                                <?php echo $date; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Title</td>
+                <td>
+                    <?php
+                        $authorsSort = array(
+                            'order'    => ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' ) ? 'DESC' : 'ASC',
+                            'orderby'  => 'meta_value',
+                            'meta_key' => 'authors_lastnames',
+                        );
+                        $authorsSortingUrl = esc_url( add_query_arg( $authorsSort, $current_url ) );
+                    ?>
+                    <a href="<?php echo $authorsSortingUrl; ?>">
+                        Authors
+                        <span class="sort">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__asc <?php echo ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' && isset( $_GET['meta_key'] ) && $_GET['meta_key'] === 'authors_lastnames' ) ? 'sort__asc--active' : ( ( !isset( $_GET['order'] ) || isset( $_GET['meta_key'] ) && $_GET['meta_key'] !== 'authors_lastnames' ) ? 'sort__asc--inactive' : 'sort__asc--inactive' ); ?>">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__desc <?php echo ( isset( $_GET['order'] ) && $_GET['order'] === 'DESC' && isset( $_GET['meta_key'] ) && $_GET['meta_key'] === 'authors_lastnames' ) ? 'sort__desc--active' : ( ( !isset( $_GET['order'] ) || isset( $_GET['meta_key'] ) && $_GET['meta_key'] !== 'authors_lastnames' ) ? 'sort__desc--inactive' : 'sort__desc--inactive' ); ?>">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </span>
+                    </a>
+                </td>
+                <td>
+                    <?php
+                        $dateSort = array(
+                            'order'    => ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' ) ? 'DESC' : 'ASC',
+                            'orderby'  => 'meta_value_num',
+                            'meta_key' => 'publication_date',
+                        );
+                        $dateSortingUrl = esc_url( add_query_arg( $dateSort, $current_url ) );
+                    ?>
+                    <a href="<?php echo $dateSortingUrl; ?>">
+                        Date
 
-                    <span class="sort">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__asc <?php echo (isset($_GET['order']) && $_GET['order'] === 'ASC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'publication_date') ? 'sort__asc--active' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'publication_date') ? 'sort__asc--inactive' : 'sort__asc--inactive') ?>">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                        </svg>
+                        <span class="sort">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__asc <?php echo ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' && isset( $_GET['meta_key'] ) && $_GET['meta_key'] === 'publication_date' ) ? 'sort__asc--active' : ( ( !isset( $_GET['order'] ) || isset( $_GET['meta_key'] ) && $_GET['meta_key'] !== 'publication_date' ) ? 'sort__asc--inactive' : 'sort__asc--inactive' ); ?>">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                            </svg>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__desc <?php echo (isset($_GET['order']) && $_GET['order'] === 'DESC' && isset($_GET['meta_key']) && $_GET['meta_key'] === 'publication_date') ? 'sort__desc--active' : ((!isset($_GET['order']) || isset($_GET['meta_key']) && $_GET['meta_key'] !== 'publication_date') ? 'sort__desc--inactive' : 'sort__desc--inactive') ?>">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                        </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sort__desc <?php echo ( isset( $_GET['order'] ) && $_GET['order'] === 'DESC' && isset( $_GET['meta_key'] ) && $_GET['meta_key'] === 'publication_date' ) ? 'sort__desc--active' : ( ( !isset( $_GET['order'] ) || isset( $_GET['meta_key'] ) && $_GET['meta_key'] !== 'publication_date' ) ? 'sort__desc--inactive' : 'sort__desc--inactive' ); ?>">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
 
-                    </span>
-                </a>
-            </td>
-        </tr>
+                        </span>
+                    </a>
+                </td>
+            </tr>
         </thead>
         <?php if ( $query->have_posts() ) : ?>
             <tbody class="pub-table__body">
@@ -160,26 +160,26 @@
                     <td>
                         <?php if ( get_field( 'authors_lastnames' ) ) : ?>
                             <?php
-                                $authorsArr = explode(', ', get_field('authors_lastnames'));
-                                foreach ($authorsArr as $index => $author) {
-                                    if(count($authorsArr) - $index === 2) {
+                                $authorsArr = explode( ', ', get_field( 'authors_lastnames' ) );
+
+                                foreach ( $authorsArr as $index => $author ) {
+                                    if( count( $authorsArr ) - $index === 2 ) {
                                         echo $author . ' & ';
-                                    } elseif( count($authorsArr) !== $index + 1) {
-                                        echo $author . ", ";
-                                    } 
-                                    else {
+                                    } elseif( count( $authorsArr ) !== $index + 1 ) {
+                                        echo $author . ', ';
+                                    } else {
                                         echo $author;
                                     }
-                                } 
+                                }
                             ?>
                         <?php endif; ?>
                     </td>
                     <td>
                         <?php
-            if ( get_field( 'publication_date' ) ) {
-                the_field( 'publication_date' );
-            }
-                ?>
+                            if ( get_field( 'publication_date' ) ) {
+                                echo substr(get_field('publication_date'), 0, 4);
+                            }
+                        ?>
                     </td>
                 </tr>
             <?php endwhile; ?>

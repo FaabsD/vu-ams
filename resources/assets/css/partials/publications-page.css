@@ -115,6 +115,13 @@
                 }
               }
             }
+
+            &:nth-child(3) {
+              @apply md:box-border md:w-96 md:max-w-[150px] lg:w-96 lg:max-w-[175px] xl:max-w-[250px] 2xl:max-w-xs;
+            }
+            &:last-child {
+              @apply md:box-border md:w-[25px] md:max-w-[25px] lg:max-w-[10px];
+            }
           }
 
           &:nth-child(odd) {
