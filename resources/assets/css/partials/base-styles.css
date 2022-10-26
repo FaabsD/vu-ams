@@ -35,8 +35,8 @@ body,
           md:!mt-4
           md:flex-row
           md:items-start
-          md:space-y-0
-          md:gap-x-3.5;
+          md:gap-x-3.5
+          md:space-y-0;
 
         &__download {
           @apply inline-flex flex-row items-start gap-x-2 text-ams-dark hover:text-ams-grey;
@@ -171,8 +171,8 @@ body,
           md:!mt-4
           md:flex-row
           md:items-start
-          md:space-y-0
-          md:gap-x-3.5;
+          md:gap-x-3.5
+          md:space-y-0;
 
         &__download {
           @apply inline-flex flex-row items-start gap-x-2 text-ams-dark hover:text-ams-grey;
@@ -323,8 +323,8 @@ body,
 						md:!mt-4
 						md:flex-row
 						md:items-start
-						md:space-y-0
-            md:gap-x-3.5;
+						md:gap-x-3.5
+            md:space-y-0;
 
           a {
             @apply inline-flex
@@ -413,8 +413,7 @@ body,
     }
   }
   .wp-block-woocommerce-all-products {
-    .wc-block-grid { 
-     
+    .wc-block-grid {
       .wc-block-sort-select,
       .wc-block-components-sort-select,
       .wc-block-product-sort-select,
@@ -424,27 +423,27 @@ body,
           @apply sr-only;
         }
         wc-block-sort-select__select,
-          .wc-block-components-sort-select__select {
-            @apply !border 
+        .wc-block-components-sort-select__select {
+          @apply !border 
             !border-ams-dark 
             !bg-white
             focus:!border-transparent 
             focus:!ring-2 
             focus:!ring-ams-cyan;
-          }
+        }
       }
 
       &__products {
         @apply !mx-0
-        grid
-        grid-cols-1
-        gap-8
-        !px-0
-        before:hidden
-        md:grid-cols-4
-        md:gap-8
-        lg:grid-cols-3
-        2xl:gap-16;
+          grid
+          grid-cols-1
+          gap-8
+          !px-0
+          before:hidden
+          md:grid-cols-4
+          md:gap-8
+          lg:grid-cols-3
+          2xl:gap-16;
       }
 
       .wc-block-grid__product {
@@ -520,10 +519,76 @@ body,
   /* style publictions chart */
 
   .pub-chart {
-    @apply h-80 md:h-96 lg:h-[50vh] xl:h-[45vh] 2xl:h-[50vh] w-full relative;
+    @apply relative h-80 w-full md:h-96 lg:h-[50vh] xl:h-[45vh] 2xl:h-[50vh];
 
     #publicationsChart {
       @apply !h-full !w-full;
+    }
+  }
+
+  #cmplz-cookiebanner-container {
+    .cmplz-cookiebanner {
+      @apply rounded-none bg-white md:p-8;
+      .cmplz-header {
+        .cmplz-title {
+          @apply font-bold text-ams-cyan md:text-xl xl:text-2xl;
+        }
+        .cmplz-close {
+          @apply text-ams-dark;
+        }
+      }
+      .cmplz-body {
+        @apply space-y-4;
+        .cmplz-message {
+          @apply prose-sm text-ams-dark;
+        }
+        .cmplz-categories {
+          details.cmplz-category {
+            @apply bg-ams-grey text-ams-dark;
+            summary {
+              .cmplz-category-header {
+                .cmplz-always-active {
+                  @apply text-ams-cyan;
+                }
+                .cmplz-banner-checkbox {
+                  .cmplz-consent-checkbox:checked {
+                    & + .cmplz-label {
+                      @apply before:bg-ams-dark;
+                    }
+                  }
+                  .cmplz-label {
+                    @apply before:bg-ams-text_light after:bg-ams-grey;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .cmplz-buttons {
+        .cmplz-btn {
+          @apply rounded-none border-none;
+        }
+        .cmplz-accept {
+          @apply bg-ams-cyan text-ams-dark hover:xl:bg-ams-dark hover:xl:text-ams-grey;
+        }
+        .cmplz-deny {
+          @apply bg-ams-dark text-ams-grey hover:xl:bg-ams-cyan hover:xl:text-ams-dark;
+        }
+        .cmplz-view-preferences,
+        .cmplz-save-preferences {
+          @apply bg-ams-yellow text-ams-dark hover:xl:bg-ams-dark hover:xl:text-ams-grey;
+        }
+      }
+    }
+  }
+
+  #cmplz-manage-consent {
+    .cmplz-btn,
+    .cmplz-manage-consent,
+    .cmplz-show {
+      @apply bg-ams-yellow text-ams-dark font-semibold;
     }
   }
 }
