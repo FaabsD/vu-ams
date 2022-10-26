@@ -153,6 +153,7 @@
             .flex-prev {
               @apply !left-0
                 !top-0
+                !m-0
                 h-full
                 w-1/4
                 bg-none
@@ -185,6 +186,7 @@
             .flex-next {
               @apply !right-0
                 !top-0
+                !m-0
                 h-full
                 w-1/4
                 bg-none
