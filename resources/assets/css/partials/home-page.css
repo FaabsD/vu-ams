@@ -151,41 +151,65 @@
         .flex-direction-nav {
           .flex-nav-prev {
             .flex-prev {
-              @apply !left-4 
-              h-6
-                w-6 
-                -rotate-45 
-                transform 
-                !border-l-[4px] 
-                !border-t-[4px] 
-                !border-b-0 
-                !border-r-0 
-                !border-solid 
-                !border-ams-cyan
+              @apply !left-0
+                !top-0
+                h-full
+                w-1/4
                 bg-none
                 !opacity-100
-                md:!top-2/4
-                xl:!left-16;
+                after:absolute
+                after:inset-x-1/2
+                after:inset-y-1/2
+                after:block
+                after:h-6
+                after:w-6
+                after:-translate-x-1/2
+                after:-translate-y-1/2
+                after:-rotate-45
+                after:transform
+                after:!border-t-[4px]
+                after:!border-l-[4px]
+                after:!border-b-0
+                after:!border-r-0
+                after:!border-solid
+                after:!border-ams-cyan
+                md:after:inset-x-1/4
+                xl:!right-0
+                hover:xl:bg-gradient-to-r
+                hover:xl:from-ams-dark/30
+                hover:xl:to-transparent;
             }
           }
 
           .flex-nav-next {
             .flex-next {
-              @apply !right-4
-              h-6
-                w-6
-                rotate-45
-                transform
-                !border-t-[4px]
-                !border-r-[4px]
-                !border-b-0
-                !border-l-0
-                !border-solid
-                !border-ams-cyan
+              @apply !right-0
+                !top-0
+                h-full
+                w-1/4
                 bg-none
                 !opacity-100
-                md:!top-2/4
-                xl:!right-16;
+                after:absolute
+                after:inset-x-1/2
+                after:inset-y-1/2
+                after:block
+                after:h-6
+                after:w-6
+                after:-translate-x-1/2
+                after:-translate-y-1/2
+                after:rotate-45
+                after:transform
+                after:!border-t-[4px]
+                after:!border-r-[4px]
+                after:!border-b-0
+                after:!border-l-0
+                after:!border-solid
+                after:!border-ams-cyan
+                md:after:inset-x-3/4
+                xl:!right-0
+                hover:xl:bg-gradient-to-l
+                hover:xl:from-ams-dark/30
+                hover:xl:to-transparent;
             }
           }
         }
@@ -215,12 +239,12 @@
       @apply h-96 w-full shrink grow lg:basis-1/2 xl:h-[600px] 2xl:h-[700px];
       .leaflet-map-pane {
         .leaflet-popup-pane {
-          .leaflet-popup{
+          .leaflet-popup {
             .leaflet-popup-content-wrapper {
               .leaflet-popup-content {
                 @apply prose-sm text-left;
                 h3 {
-                  @apply !text-lg !text-ams-cyan !font-bold;
+                  @apply !text-lg !font-bold !text-ams-cyan;
                 }
               }
             }
