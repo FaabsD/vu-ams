@@ -23,7 +23,7 @@ $(document).ready(function () {
         };
         // initialize and start the observer.
         const observer = new IntersectionObserver(handleScroll, options);
-        observer.observe(body.children[1]);
+        observer.observe(body.children[2]);
 
         // make the submenus open or close
         if (siteNavigation) {
