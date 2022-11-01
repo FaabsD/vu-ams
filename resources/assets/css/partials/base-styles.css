@@ -58,10 +58,10 @@ body,
         justify-around
         bg-ams-cyan
         p-4
-        md:prose
         md:justify-between
         md:py-4
-        md:px-8;
+        md:px-8
+        md:prose;
 
       h3 {
         @apply !m-0 text-ams-dark;
@@ -139,7 +139,7 @@ body,
   }
 
   .recent_software-release {
-    @apply prose-sm mx-auto max-w-none md:prose md:max-w-none;
+    @apply prose-sm mx-auto max-w-none md:max-w-none md:prose;
 
     &__inner {
       @apply space-y-2
@@ -187,90 +187,90 @@ body,
 
   .questions {
     @apply prose-sm
-		grid
-		max-w-none
-		grid-flow-row
-		auto-rows-auto 
-		gap-y-2 
-		py-8 
-		text-ams-dark
-		prose-headings:!text-ams-dark
-		md:prose
-		md:max-w-none
-		md:grid-cols-2
-		md:gap-x-4
-		lg:gap-x-8
-		lg:gap-y-4
-		xl:gap-x-16
-		xl:py-16
-		2xl:gap-x-32;
+      grid
+      max-w-none
+      grid-flow-row
+      auto-rows-auto 
+      gap-y-2 
+      py-8 
+      text-ams-dark
+      prose-headings:!text-ams-dark
+      md:max-w-none
+      md:gap-x-4
+      md:prose
+      lg:grid-cols-2
+      lg:gap-x-8
+      lg:gap-y-4
+      xl:gap-x-16
+      xl:py-16
+      2xl:gap-x-32;
 
     &__col {
       @apply grid 
-	  grid-flow-row
-	  auto-rows-max
-	  divide-y
-	  divide-ams-dark;
+        grid-flow-row
+        auto-rows-max
+        divide-y
+        divide-ams-dark;
 
       .question {
         @apply relative
-	  		box-border
-			max-h-[55px]
-			bg-ams-cyan
-			px-6
-			py-3
-			transition-all
-			duration-300
-			after:absolute
-			after:top-3
-			after:right-6
-			after:box-border
-			after:inline-block
-			after:h-4
-			after:w-4
-			after:origin-center
-			after:rotate-45
-			after:transform
-			after:border-2
-			after:border-ams-dark
-			after:border-l-transparent
-			after:border-t-transparent
-			after:transition-transform
-			after:duration-300
-			after:content-[""]
-			first-of-type:border-t-2
-			first-of-type:border-t-ams-dark;
+          box-border
+          bg-ams-cyan
+          px-6
+          py-3
+          transition-all
+          duration-300
+          after:absolute
+          after:top-3
+          after:right-6
+          after:box-border
+          after:inline-block
+          after:h-4
+          after:w-4
+          after:origin-center
+          after:rotate-45
+          after:transform
+          after:border-2
+          after:border-ams-dark
+          after:border-l-transparent
+          after:border-t-transparent
+          after:transition-transform
+          after:duration-300
+          after:content-[""]
+          first-of-type:border-t-2
+          first-of-type:border-t-ams-dark
+          lg:pr-12;
 
         &__title {
           @apply pointer-events-none 
-		  m-0 
-		  select-none;
+            m-0 
+            select-none;
         }
 
         &__answer {
           @apply max-h-0
-		  overflow-hidden
-		  bg-ams-grey
-		  p-0
-		  opacity-0
-		  transition-all
-		  duration-300
-		  ease-in-out;
+            overflow-hidden
+            bg-ams-grey
+            p-0
+            opacity-0
+            transition-all
+            duration-300
+            ease-in-out;
         }
 
         &--opened {
           @apply h-auto
-			max-h-[1000px]
-			after:translate-y-1/2
-			after:-rotate-[135deg];
+            max-h-[1000px]
+            after:translate-y-1/2
+            after:-rotate-[135deg];
           .question__title {
             @apply mb-2;
           }
 
           .question__answer {
             @apply max-h-[1000px] 
-			p-3
-			opacity-100;
+              p-3
+              opacity-100;
           }
         }
       }
@@ -278,7 +278,7 @@ body,
   }
 
   .old_software_releases {
-    @apply prose-sm mx-auto max-w-none py-4 md:prose md:max-w-none;
+    @apply prose-sm mx-auto max-w-none py-4 md:max-w-none md:prose;
     &__inner {
       @apply max-h-[350px] gap-y-2 divide-y-2 divide-ams-grey overflow-y-scroll;
 
@@ -358,8 +358,8 @@ body,
           px-4
           text-left
           shadow-lg
-          md:prose
           md:py-8
+          md:prose
           lg:py-4
           xl:shadow-xl
           2xl:p-8;
@@ -458,8 +458,8 @@ body,
           px-4
           text-left
           shadow-lg
-          md:prose
           md:py-8
+          md:prose
           lg:py-4
           xl:shadow-xl
           2xl:p-8;
@@ -588,7 +588,7 @@ body,
     .cmplz-btn,
     .cmplz-manage-consent,
     .cmplz-show {
-      @apply bg-ams-yellow text-ams-dark font-semibold;
+      @apply bg-ams-yellow font-semibold text-ams-dark;
     }
   }
 }
