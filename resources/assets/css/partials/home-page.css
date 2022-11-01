@@ -79,15 +79,32 @@
       @apply z-10 flex h-max flex-col;
 
       .slider__img {
-        @apply h-full w-60 basis-60 lg:w-80 xl:w-96;
+        @apply h-full w-60 basis-60 lg:w-80 xl:w-96 xl:h-64 2xl:w-96 2xl:h-auto;
 
         &--hidden {
           @apply hidden;
         }
+
+        img {
+          @apply xl:object-contain xl:h-full xl:w-full;
+        }
       }
 
       .slider__nav {
-        @apply flex flex-row items-center justify-around lg:absolute lg:inset-x-0 lg:bottom-32 lg:justify-center lg:gap-x-8 xl:bottom-36 2xl:bottom-48;
+        @apply flex 
+        flex-row 
+        items-center 
+        justify-around 
+        lg:absolute 
+        lg:inset-x-0 
+        lg:bottom-32 
+        lg:justify-center 
+        lg:gap-x-8 
+        xl:bottom-36 
+        2xl:bottom-48
+        xl:static
+        xl:mb-8
+        2xl:absolute;
 
         .nav__thumb {
           @apply w-14 lg:w-20;
