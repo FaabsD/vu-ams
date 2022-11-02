@@ -934,4 +934,92 @@ function ams_add_shortcodes() {
 
     add_shortcode( 'ams_worldwide_map', 'ams_create_worldwide_map' );
 
+
+    /**
+     * Show team-members from certain roles
+     *
+     * @param array $atts
+     *
+     * @return html|mixed
+     */
+    function retrieve_team_members_by_role( $atts ) {
+        $atts = shortcode_atts( array(
+            'role'    => '',
+            'orderby' => 'title',
+            'order'   => 'ASC',
+        ), $atts, 'team_members_by_role' );
+
+        $args = array(
+            'post_type' => 'team-member',
+            'tax_query' => array(
+                array(
+                'taxonomy' => 'roles',
+                'field'    => 'slug',
+                'terms'    => array( $atts['role'] ),
+                ),
+            ),
+            'posts_per_page' => -1,
+            'orderby'        => $atts['orderby'],
+            'order'          => $atts['order'],
+        );
+
+        $query = new WP_Query( $args );
+
+        if ( $query->have_posts() ) {
+            $html = '<section class="role_members">';
+
+            foreach ( $query->get_posts() as $index => $teamMember ) {
+                $html .= '<div class="member">';
+                // team member image section
+                $html .= '<div class="member__img-section">';
+                $html .= "'" . the_post_thumbnail() . "'";
+                $html .= '</div>';
+                // team member text section
+                $html .= '<div class="member__text-section">';
+                // team member name
+                $html .= '<h2 class="member__name">';
+                $html .= $teamMember->post_title;
+                $html .= '</h2>';
+
+                // team member text
+                // team member subroles
+                $html .= '<div class="sub-roles">';
+                // get subroles
+                $subRoles = get_categories( array(
+                    'taxonomy'   => 'roles',
+                    'child_of'   => $atts['role'],
+                    'object_ids' => $teamMember->ID,
+                ) );
+                $subRolesCount = count( $subRoles );
+
+                if ( $subRolesCount >= 1 ) {
+                    $html .= '<h2>';
+
+                    foreach ( $subRoles as $index => $subRole ) {
+                        if ( $subRolesCount === $index + 1 ) {
+                            $html .= $subRole->name . '.';
+                        } else {
+                            $html .= $subRole->name . ', ';
+                        }
+                    }
+                    $html .= '</h2>';
+                }
+                $html .= '</div>';
+                $html .= $teamMember->post_content;
+
+                $html .= '</div>';
+
+                $html .= '</div>';
+            }
+            $html .= '</section>';
+        } else {
+            return 'No Team members were found by role "' . $atts['role'] . '"';
+        }
+        wp_reset_query();
+
+        return $html;
+    }
+
+    add_shortcode( 'team_members_by_role', 'retrieve_team_members_by_role' );
+
 }
