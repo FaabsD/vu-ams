@@ -9,7 +9,7 @@
     </h1>
 </header>
 
-<div class="team">
+<!-- <div class="team">
 	<?php $roles = get_categories(array(
 		'taxonomy' => 'roles',
 		'type' =>'team-member',
@@ -88,6 +88,9 @@
 			<?php wp_reset_query(); ?>
 		</div>
 	<?php endforeach; ?>
+</div> -->
+<div class="team">
+	<?php the_content(); ?>
 </div>
 
 <?php get_footer(); ?>

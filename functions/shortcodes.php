@@ -959,20 +959,24 @@ function ams_add_shortcodes() {
                 ),
             ),
             'posts_per_page' => -1,
-            'orderby'        => $atts['orderby'],
+            'orderby'        => ($atts['orderby'] === "name") ? 'title' : (($atts['orderby'] === "description") ? 'content' : $atts['orderby']),
             'order'          => $atts['order'],
         );
 
         $query = new WP_Query( $args );
 
         if ( $query->have_posts() ) {
-            $html = '<section class="role_members">';
+            $html = '<div class="role">';
+            $html .= '<section class="role__info">';
+            $html .= '<h2>'. get_term_by('slug', $atts['role']) .'</h2>';
+            $html .= '</section>';
+            $html .= '<section class="role__members">';
 
             foreach ( $query->get_posts() as $index => $teamMember ) {
                 $html .= '<div class="member">';
                 // team member image section
                 $html .= '<div class="member__img-section">';
-                $html .= "'" . the_post_thumbnail() . "'";
+                $html .= get_the_post_thumbnail($teamMember->ID);
                 $html .= '</div>';
                 // team member text section
                 $html .= '<div class="member__text-section">';
@@ -982,6 +986,7 @@ function ams_add_shortcodes() {
                 $html .= '</h2>';
 
                 // team member text
+                $html .= '<div class="member__text">';
                 // team member subroles
                 $html .= '<div class="sub-roles">';
                 // get subroles
@@ -1006,12 +1011,13 @@ function ams_add_shortcodes() {
                 }
                 $html .= '</div>';
                 $html .= $teamMember->post_content;
-
+                $html .= '</div>';
                 $html .= '</div>';
 
                 $html .= '</div>';
             }
             $html .= '</section>';
+            $html .= '</div>';
         } else {
             return 'No Team members were found by role "' . $atts['role'] . '"';
         }
