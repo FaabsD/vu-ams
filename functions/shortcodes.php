@@ -968,7 +968,15 @@ function ams_add_shortcodes() {
         if ( $query->have_posts() ) {
             $html = '<div class="role">';
             $html .= '<section class="role__info">';
-            $html .= '<h2>'. get_term_by('slug', $atts['role']) .'</h2>';
+
+            $html .= '<h2>' . get_term_by( 'slug', $atts['role'], 'roles' )->name . '</h2>';
+
+            if ( defined( 'WP_DEBUG' ) ) {
+                if ( get_term_by( 'slug', $atts['role'], 'roles' ) ) {
+                    error_log( print_r( get_term_by( 'slug', $atts['role'], 'roles' ), true ) );
+                }
+            }
+
             $html .= '</section>';
             $html .= '<section class="role__members">';
 
