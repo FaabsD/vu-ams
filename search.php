@@ -41,7 +41,8 @@ $filter_post_types = array_filter( get_post_types( array( 'public' => true ), 'o
                     <input type="search" name="s"
                             placeholder="<?php esc_attr_x('Search ...', 'placeholder') ?>"
                             value="<?php echo get_search_query(); ?>"
-                            title="<?php esc_attr_x('Search for:', 'label') ?>"/>
+                            title="<?php esc_attr_x('Search for:', 'label') ?>"
+                            aria-label="Search for: "/>
                 </fieldset>
                 <fieldset>
                     <h3>

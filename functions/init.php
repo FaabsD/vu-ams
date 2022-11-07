@@ -263,25 +263,30 @@ function custom_pagination($pages = '', $range = 2)
     if (1 != $pages) {
         echo "<div class='pagination'>";
         if ($paged > 1 && $showitems < $pages) {
-            echo "<a href='" . get_pagenum_link($paged - 1) . "' class='prev'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M4 4l12 6-12 6z'/></svg></a>";
+
+            echo "<a href='" . get_pagenum_link( $paged - 1 ) . "' class='prev' title='Previous page'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M4 4l12 6-12 6z'/></svg></a>";
+
         }
         if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) {
-            echo "<a href='" . get_pagenum_link(1) . "'>1</a>";
+            echo "<a href='" . get_pagenum_link(1) . "' title='Page 1'>1</a>";
             echo "<span class='pagination-dots'>...</span>";
         }
         for ($i = 1; $i <= $pages; $i++) {
             if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
-                echo ($paged == $i) ? "<span class='current'>" . $i . "</span>" : "<a href='" . get_pagenum_link($i) . "' class='inactive' >" . $i . "</a>";
+                echo ( $paged == $i ) ? "<span class='current'>" . $i . '</span>' : "<a href='" . get_pagenum_link( $i ) . "' class='inactive' title='Page " . $i . "'>" . $i . '</a>';
+
             }
         }
         if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages) {
             if ($pages - $paged >= 4) {
                 echo "<span class='pagination-dots'>... </span>";
             }
-            echo "<a href='" . get_pagenum_link($pages) . "'>". $pages . "</a>";
+            echo "<a href='" . get_pagenum_link($pages) . "' title='Page " . $i . "'>". $pages . "</a>";
         }
         if ($paged < $pages && $showitems < $pages && $pages - $paged >= 4) {
-            echo "<a href='" . get_pagenum_link($paged + 1) . "' class='next'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M4 4l12 6-12 6z'/></svg></a>";
+
+            echo "<a href='" . get_pagenum_link( $paged + 1 ) . "' class='next' title='Next page'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M4 4l12 6-12 6z'/></svg></a>";
+
         }
 
         echo "</div>\n";

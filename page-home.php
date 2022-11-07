@@ -16,8 +16,8 @@
 			<?php if ( have_rows( 'homepage_header_buttons' ) ) : while ( have_rows( 'homepage_header_buttons' ) ) : the_row(); ?>
 				<?php
                     $btn1 = get_sub_field( 'header_button_1' );
-			    $btn2              = get_sub_field( 'header_button_2' );
-			    $btn3              = get_sub_field( 'header_button_3' );
+                    $btn2 = get_sub_field( 'header_button_2' );
+                    $btn3 = get_sub_field( 'header_button_3' );
 			    ?>
 
 				<a href="<?php echo $btn1['url']; ?>" class="buttons__btn1" target="<?php echo $btn1['target']; ?>"
@@ -95,17 +95,19 @@
 
     <?php
         $locationSizes        = get_field( 'locations_map_sizes' );
-    $locationMapHeight        = ( isset( $locationSizes['height'] ) && !empty( $locationSizes['height'] ) ) ? $locationSizes['height'] : '';
-    $locationMapWidth         = ( isset( $locationSizes['width'] ) && !empty( $locationSizes['width'] ) ) ? $locationSizes['width'] : '';
-    $locationMapMinHeight     = ( isset( $locationSizes['min_height'] ) && !empty( $locationSizes['min_height'] ) ) ? $locationSizes['min_height'] : '';
-    $locationMapMaxHeight     = ( isset( $locationSizes['max_height'] ) && !empty( $locationSizes['max_height'] ) ) ? $locationSizes['max_height'] : '';
-    ?>
+$locationMapHeight            = ( isset( $locationSizes['height'] ) && !empty( $locationSizes['height'] ) ) ? $locationSizes['height'] : '';
+$locationMapWidth             = ( isset( $locationSizes['width'] ) && !empty( $locationSizes['width'] ) ) ? $locationSizes['width'] : '';
+$locationMapMinHeight         = ( isset( $locationSizes['min_height'] ) && !empty( $locationSizes['min_height'] ) ) ? $locationSizes['min_height'] : '';
+$locationMapMaxHeight         = ( isset( $locationSizes['max_height'] ) && !empty( $locationSizes['max_height'] ) ) ? $locationSizes['max_height'] : '';
+
+?>
     <?php echo do_shortcode( '[ams_worldwide_map height="' . $locationMapHeight . '" min-height="' . $locationMapMinHeight . '" max-height="' . $locationMapMaxHeight . '" width="' . $locationMapWidth . '"]' ); ?>
     <div class="locations-text">
-        <?php if (get_field('locations_information')) {
-            the_field('locations_information');
+        <?php
+        if ( get_field( 'locations_information' ) ) {
+            the_field( 'locations_information' );
         }
-        ?>
+?>
     </div>
 </div>
 
@@ -114,7 +116,7 @@
     <?php if ( get_field( 'learn_more_head' ) ) : ?>
 
         <?php
-        $learn_more_title = colorize_last_string_word( get_field( 'learn_more_head' ) );
+    $learn_more_title = colorize_last_string_word( get_field( 'learn_more_head' ) );
 
         ?>
 
@@ -361,29 +363,29 @@
             'hide_empty'   => false,
         ) );
 
-        $filteredTerms = preg_grep( '/alumni/', $terms );
+$filteredTerms = preg_grep( '/alumni/', $terms );
 
-        $memberArgs = array(
-            'post_type' => 'team-member',
-            'tax_query' => array(
-                array(
-                'taxonomy' => 'roles',
-                'field'    => 'slug',
-                'terms'    => $filteredTerms,
-                'operator' => 'NOT IN',
-                ),
-            ),
-            'posts_per_page' => -1,
-            'orderby' => 'date',
-            'order' => 'ASC',
-        );
+$memberArgs = array(
+    'post_type' => 'team-member',
+    'tax_query' => array(
+        array(
+        'taxonomy' => 'roles',
+        'field'    => 'slug',
+        'terms'    => $filteredTerms,
+        'operator' => 'NOT IN',
+        ),
+    ),
+    'posts_per_page' => -1,
+    'orderby'        => 'date',
+    'order'          => 'ASC',
+);
 
-        $teamMembers = new WP_Query( $memberArgs );
-    ?>
+$teamMembers = new WP_Query( $memberArgs );
+?>
 
     <?php if ( get_field( 'meet_the_team_head' ) ) : ?>
         <?php
-        $meet_heading = colorize_last_string_word( get_field( 'meet_the_team_head' ) );
+    $meet_heading = colorize_last_string_word( get_field( 'meet_the_team_head' ) );
         ?>
         <div class="meet-the-team__heartbeat">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.31 76.61">
