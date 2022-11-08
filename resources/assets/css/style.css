@@ -54,6 +54,7 @@
 	font-weight: 100;
 	src: url("../../resources/fonts/Heebo/static/Heebo-Thin.ttf")
 		format("truetype");
+	font-display: swap;
 }
 
 /* Heebo ExtraLight */
@@ -63,6 +64,7 @@
 	font-weight: 200;
 	src: url("../../resources/fonts/Heebo/static/Heebo-ExtraLight.ttf")
 		format("truetype");
+	font-display: swap;
 }
 
 /* Heebo Light */
@@ -72,6 +74,7 @@
 	font-weight: 300;
 	src: url("../../resources/fonts/Heebo/static/Heebo-Light.ttf")
 		format("truetype");
+	font-display: swap;
 }
 
 /* Heebo Regular */
@@ -81,6 +84,7 @@
 	font-weight: 400;
 	src: url("../../resources/fonts/Heebo/static/Heebo-Regular.ttf")
 		format("truetype");
+	font-display: swap;
 }
 
 /* Heebo Medium */
@@ -90,6 +94,7 @@
 	font-weight: 500;
 	src: url("../../resources/fonts/Heebo/static/Heebo-Medium.ttf")
 		format("truetype");
+	font-display: swap;
 }
 
 /* Heebo Semibold */
@@ -99,6 +104,7 @@
 	font-weight: 600;
 	src: url("../../resources/fonts/Heebo/static/Heebo-SemiBold.ttf")
 		format("truetype");
+	font-display: swap;
 }
 
 /* Heebo Bold */
@@ -108,6 +114,7 @@
 	font-weight: 700;
 	src: url("../../resources/fonts/Heebo/static/Heebo-Bold.ttf")
 		format("truetype");
+	font-display: swap;
 }
 
 /* Heebo ExtraBold */
@@ -117,6 +124,7 @@
 	font-weight: 800;
 	src: url("../../resources/fonts/Heebo/static/Heebo-ExtraBold.ttf")
 		format("truetype");
+	font-display: swap;
 }
 
 /* Heebo Black */
@@ -126,5 +134,6 @@
 	font-weight: 900;
 	src: url("../../resources/fonts/Heebo/static/Heebo-Black.ttf")
 		format("truetype");
+	font-display: swap;
 }
 
