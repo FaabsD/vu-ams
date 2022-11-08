@@ -281,7 +281,7 @@ $locationMapMaxHeight         = ( isset( $locationSizes['max_height'] ) && !empt
                 <?php if ( get_sub_field( 'innovative_experience_image_' . $i ) ) : ?>
                     <?php $innovativeImgArr = get_sub_field( 'innovative_experience_image_' . $i ); ?>
                     <div class="innovative-experience__img--<?php echo $i; ?>">
-                        <img src="<?php echo $innovativeImgArr['url']; ?>" alt="<?php echo $innovativeImgArr['alt']; ?>">
+                        <img src="<?php echo $innovativeImgArr['url']; ?>" loading="lazy" alt="<?php echo $innovativeImgArr['alt']; ?>">
                     </div>
                 <?php endif; ?>
             <?php endfor; ?>
