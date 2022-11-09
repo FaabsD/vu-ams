@@ -153,7 +153,7 @@
         }
         &.menu-searchbar {
           .search-form {
-            @apply relative flex items-center h-full;
+            @apply relative flex h-full items-center;
             .screen-reader-text {
               @apply sr-only;
             }
@@ -182,8 +182,8 @@
                     xl:border
                     xl:px-4
                     xl:py-2
-                    2xl:!w-36
-                    1.5xl:w-28;
+                    1.5xl:w-28
+                    2xl:!w-36;
               }
             }
             .search-btn {
@@ -243,10 +243,17 @@
           @apply px-0;
 
           a {
-            @apply px-0 !py-4 !text-base !font-normal;
+            @apply min-w-min max-w-full pl-0 pr-8 !py-4 !text-base !font-normal box-border relative;
 
             .mob-expand-submenu {
-              @apply !right-[55%] !ml-4 md:!right-[80%] lg:!right-[85%];
+              @apply 
+              absolute
+              right-2
+              !ml-0
+              top-1/2
+              transform
+              origin-center
+              -translate-y-1/2;
             }
           }
 
