@@ -243,17 +243,16 @@
           @apply px-0;
 
           a {
-            @apply min-w-min max-w-full pl-0 pr-8 !py-4 !text-base !font-normal box-border relative;
+            @apply relative box-border min-w-min max-w-full !py-4 pl-0 pr-8 !text-base !font-normal;
 
             .mob-expand-submenu {
-              @apply 
-              absolute
+              @apply absolute
               right-2
-              !ml-0
               top-1/2
-              transform
+              !ml-0
               origin-center
-              -translate-y-1/2;
+              -translate-y-1/2
+              transform;
             }
           }
 
@@ -269,6 +268,148 @@
 
               a {
                 @apply !min-w-min !whitespace-pre-wrap !px-4 !text-sm;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .rightmbottom {
+      .widget_search {
+        .wp-block-search {
+          @apply text-white;
+          &.wp-block-search__button-inside {
+            .wp-block-search__inside-wrapper {
+              @apply flex 
+              flex-row flex-nowrap 
+              border 
+              border-b-white 
+              border-l-transparent 
+              border-r-transparent 
+              border-t-transparent;
+
+              .wp-block-search__input {
+                @apply border-none 
+                bg-transparent 
+                text-white 
+                placeholder:text-ams-grey
+                focus:border-none 
+                focus:ring-0;
+              }
+
+              .wp-block-search__button {
+                @apply text-white underline;
+                &.has-icon {
+                  @apply bg-transparent text-white no-underline;
+                  .search-icon {
+                    @apply h-8 w-8 fill-current;
+                  }
+                }
+              }
+            }
+          }
+
+          &.wp-block-search__button-outside {
+            .wp-block-search__inside-wrapper {
+              @apply flex 
+              flex-row 
+              flex-nowrap
+              gap-x-1.5;
+
+              .wp-block-search__input {
+                @apply rounded-full 
+                border 
+                border-white 
+                bg-transparent 
+                py-2
+                px-4
+                text-white
+                placeholder:text-ams-grey
+                focus:border-transparent
+                focus:ring-2
+                focus:ring-white;
+              }
+
+              .wp-block-search__button {
+                @apply m-0 rounded-full bg-white px-4 py-2 text-ams-dark;
+
+                &.has-icon {
+                  @apply px-2 text-ams-dark;
+                  .search-icon {
+                    @apply h-8 w-8 fill-current;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .rightmtop {
+      @apply px-[30px] py-5;
+      .wp-block-search {
+        @apply text-white;
+        &.wp-block-search__button-inside {
+          .wp-block-search__inside-wrapper {
+            @apply flex 
+            flex-row flex-nowrap 
+            border 
+            border-b-white 
+            border-l-transparent 
+            border-r-transparent 
+            border-t-transparent;
+
+            .wp-block-search__input {
+              @apply border-none 
+              bg-transparent 
+              text-white 
+              placeholder:text-ams-grey
+              focus:border-none 
+              focus:ring-0;
+            }
+
+            .wp-block-search__button {
+              @apply text-white underline;
+              &.has-icon {
+                @apply bg-transparent text-white no-underline;
+                .search-icon {
+                  @apply h-8 w-8 fill-current;
+                }
+              }
+            }
+          }
+        }
+
+        &.wp-block-search__button-outside {
+          .wp-block-search__inside-wrapper {
+            @apply flex 
+            flex-row 
+            flex-nowrap
+            gap-x-1.5;
+
+            .wp-block-search__input {
+              @apply rounded-full 
+              border 
+              border-white 
+              bg-transparent 
+              py-2
+              px-4
+              text-white
+              placeholder:text-ams-grey
+              focus:border-transparent
+              focus:ring-2
+              focus:ring-white;
+            }
+
+            .wp-block-search__button {
+              @apply m-0 rounded-full bg-white px-4 py-2 text-ams-dark;
+
+              &.has-icon {
+                @apply px-2 text-ams-dark;
+                .search-icon {
+                  @apply h-8 w-8 fill-current;
+                }
               }
             }
           }
