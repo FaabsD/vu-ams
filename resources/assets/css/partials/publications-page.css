@@ -32,7 +32,7 @@
         tr {
           &:nth-of-type(1) {
             td {
-              @apply pt-4 pb-2;
+              @apply pt-4 pb-1;
 
               input {
                 @apply w-full
