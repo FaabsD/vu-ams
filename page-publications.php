@@ -103,7 +103,7 @@
             </tr>
             <tr>
                 <td colspan="3">
-                    <input type="submit" value="Filter">
+                    <input type="submit" value="<?php _e('Search', THEME_TEXT_DOMAIN)?>">
                 </td>
             </tr>
             <tr>
