@@ -19,6 +19,7 @@
 
     $meta_query = array();
 
+
     if ( isset( $_GET['author'] ) && !empty( $_GET['author'] ) ) {
         $meta_query[] = array(
             'key'     => 'authors',
@@ -31,7 +32,7 @@
         $meta_query[] = array(
             'key'     => 'publication_date',
             'value'   => $_GET['date'],
-            'compare' => '=',
+            'compare' => 'Like',
         );
     }
 
@@ -55,20 +56,25 @@
         'order'			 => isset( $_GET['order'] ) && $_GET['order'] != '' ? $_GET['order'] : 'DESC',
     );
     $query = new WP_Query( $args );
+
+    // if(defined('WP_DEBUG')) {
+    //    echo $query->request . "<br><br>";
+    //    print_r($meta_query);
+    // }
 ?>
 <form action="<?php the_permalink(); ?>" method="get" id="pubForm">
     <table class="pub-table">
         <thead class="pub-table__head">
             <tr>
-                <td id="searchCell">
+                <td id="searchCell" colspan="2">
                     <input type="text" name="search" id="search"
                         value="<?php echo isset( $_GET['search'] ) && !empty( $_GET['search'] ) ? $_GET['search'] : ''; ?>"
-                        placeholder="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
+                        placeholder="<?php _e( 'Search in Titles/Content', THEME_TEXT_DOMAIN ); ?>">
                 </td>
-                <td>
+                <td class="hidden md:table-cell">
                     <input type="text" name="author" id="author"
                         value="<?php echo isset( $_GET['author'] ) && !empty( $_GET['author'] ) ? $_GET['author'] : ''; ?>"
-                        placeholder="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
+                        placeholder="<?php _e( 'Search by Author(s)', THEME_TEXT_DOMAIN ); ?>">
                 </td>
                 <td>
                     <?php
@@ -93,6 +99,11 @@
                             </option>
                         <?php endforeach; ?>
                     </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="submit" value="Filter">
                 </td>
             </tr>
             <tr>

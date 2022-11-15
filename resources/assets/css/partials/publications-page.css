@@ -16,8 +16,8 @@
       prose-headings:text-ams-cyan 
       prose-a:text-ams-cyan 
       hover:prose-a:text-ams-dark
-      md:prose
       md:max-w-none
+      md:prose
       md:prose-a:text-ams-cyan
       xl:px-32;
   }
@@ -32,7 +32,7 @@
         tr {
           &:nth-of-type(1) {
             td {
-              @apply py-4;
+              @apply pt-4 pb-2;
 
               input {
                 @apply w-full
@@ -58,6 +58,16 @@
           }
 
           &:nth-of-type(2) {
+            td {
+              @apply pb-4 last-of-type:text-center md:last-of-type:text-left;
+
+              input[type="submit"] {
+                @apply inline-block w-full bg-ams-yellow px-4 py-2 font-bold text-ams-dark md:w-1/3 lg:w-1/4 xl:w-auto xl:px-8 hover:xl:cursor-pointer hover:xl:bg-ams-dark hover:xl:text-ams-grey;
+              }
+            }
+          }
+
+          &:nth-of-type(3) {
             @apply divide-x divide-ams-text_light bg-ams-dark text-white;
 
             td {
@@ -105,7 +115,7 @@
               first-of-type:md:table-cell;
 
             &:nth-child(2) {
-              @apply prose-sm md:prose md:px-16;
+              @apply prose-sm md:px-16 md:prose;
 
               a {
                 @apply no-underline;
