@@ -395,7 +395,17 @@ function getPublicationDates()
 
         $date = get_post_meta($post->ID, 'publication_date', true);
 
-        $dates[$index] = $date;
+
+        if ( strlen( $date ) > 4 ) {
+            $dates[$index] = substr( $date, 0, 4 );
+        } else {
+            $dates[$index] = $date;
+        }
+
+        $dates = array_unique($dates, SORT_NUMERIC);
+        arsort($dates);
+        array_unshift($dates);
+        
     }
     wp_reset_query();
     return $dates; else:
