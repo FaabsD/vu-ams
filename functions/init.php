@@ -32,7 +32,7 @@ function theme_setup()
 
     // add filter to add search bar to primary navigation menu
 
-    add_filter( 'wp_nav_menu_items', 'ams_add_searchbar_to_navigation', 10, 2 );
+    add_filter('wp_nav_menu_items', 'ams_add_searchbar_to_navigation', 10, 2);
 
     /**
      * Add a searchbar to the end of the main navigation
@@ -42,13 +42,14 @@ function theme_setup()
      *
      * @return void
      */
-    function ams_add_searchbar_to_navigation( $items, $args ) {
-        if ( defined( 'WP_DEBUG' ) ) {
-            error_log( print_r( $args, true ) );
+    function ams_add_searchbar_to_navigation( $items, $args )
+    {
+        if (defined('WP_DEBUG') ) {
+            error_log(print_r($args, true));
         }
 
-        if ( $args->menu == 'navbar' ) {
-            $items .= '<li class="menu-item menu-searchbar">' . get_search_form( array( 'echo' => false ) ) . '</li>';
+        if ($args->menu == 'navbar' ) {
+            $items .= '<li class="menu-item menu-searchbar">' . get_search_form(array( 'echo' => false )) . '</li>';
         }
 
         return $items;
@@ -75,6 +76,7 @@ add_action('after_setup_theme', 'custom_logo_setup');
 
 /**
  * Display or get post image
+ *
  * @param array $args
  *
  * @return void|string
@@ -129,13 +131,17 @@ function get_image($args = [])
 
         // Get the first attached image
         if (!isset($html, $src)) {
-            $image_ids = array_keys(get_children([
-                'post_parent'    => $args['post_id'],
-                'post_type'      => 'attachment',
-                'post_mime_type' => 'image',
-                'orderby'        => 'menu_order',
-                'order'          => 'ASC',
-            ]));
+            $image_ids = array_keys(
+                get_children(
+                    [
+                    'post_parent'    => $args['post_id'],
+                    'post_type'      => 'attachment',
+                    'post_mime_type' => 'image',
+                    'orderby'        => 'menu_order',
+                    'order'          => 'ASC',
+                    ]
+                )
+            );
 
             // Check if this post has attached images
             if (!empty($image_ids)) {
@@ -190,7 +196,7 @@ function get_image($args = [])
  * Custom the_title function
  * With custom length
  *
- * @param $size
+ * @param  $size
  * @return string
  */
 function custom_title_length($size)
@@ -215,7 +221,7 @@ function custom_title_length($size)
  * Custom the_excerpt function
  * With custom length
  *
- * @param $size
+ * @param  $size
  * @return string
  */
 function custom_excerpt_length($size)
@@ -264,7 +270,7 @@ function custom_pagination($pages = '', $range = 2)
         echo "<div class='pagination'>";
         if ($paged > 1 && $showitems < $pages) {
 
-            echo "<a href='" . get_pagenum_link( $paged - 1 ) . "' class='prev' title='Previous page'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M4 4l12 6-12 6z'/></svg></a>";
+            echo "<a href='" . get_pagenum_link($paged - 1) . "' class='prev' title='Previous page'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M4 4l12 6-12 6z'/></svg></a>";
 
         }
         if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) {
@@ -273,7 +279,7 @@ function custom_pagination($pages = '', $range = 2)
         }
         for ($i = 1; $i <= $pages; $i++) {
             if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
-                echo ( $paged == $i ) ? "<span class='current'>" . $i . '</span>' : "<a href='" . get_pagenum_link( $i ) . "' class='inactive' title='Page " . $i . "'>" . $i . '</a>';
+                echo ( $paged == $i ) ? "<span class='current'>" . $i . '</span>' : "<a href='" . get_pagenum_link($i) . "' class='inactive' title='Page " . $i . "'>" . $i . '</a>';
 
             }
         }
@@ -285,7 +291,7 @@ function custom_pagination($pages = '', $range = 2)
         }
         if ($paged < $pages && $showitems < $pages && $pages - $paged >= 4) {
 
-            echo "<a href='" . get_pagenum_link( $paged + 1 ) . "' class='next' title='Next page'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M4 4l12 6-12 6z'/></svg></a>";
+            echo "<a href='" . get_pagenum_link($paged + 1) . "' class='next' title='Next page'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M4 4l12 6-12 6z'/></svg></a>";
 
         }
 
@@ -294,10 +300,9 @@ function custom_pagination($pages = '', $range = 2)
 }
 
 /**
- *
  * Custom WordPress body classes
  *
- * @param $classes
+ * @param  $classes
  * @return array|mixed
  */
 
@@ -357,7 +362,8 @@ function template_view($view, $name = null)
 /**
  * Let's use a new helper function to wrap the last word of a string in
  * a span width the class "colored-word"
- * @param $str
+ *
+ * @param  $str
  * @return string
  */
 function colorize_last_string_word($str)
@@ -375,6 +381,7 @@ function colorize_last_string_word($str)
 
 /**
  * Get all publication dates (Years)
+ *
  * @return array|false
  */
 function getPublicationDates()
@@ -390,57 +397,104 @@ function getPublicationDates()
 
     if ($query->have_posts()) :
         $posts = $query->posts;
-    foreach ($posts as $index => $post) {
-        error_log($index);
+        foreach ($posts as $index => $post) {
+            error_log($index);
 
-        $date = get_post_meta($post->ID, 'publication_date', true);
+            $date = get_post_meta($post->ID, 'publication_date', true);
 
 
-        if ( strlen( $date ) > 4 ) {
-            $dates[$index] = substr( $date, 0, 4 );
-        } else {
-            $dates[$index] = $date;
-        }
+            if (strlen($date) > 4 ) {
+                $dates[$index] = substr($date, 0, 4);
+            } else {
+                $dates[$index] = $date;
+            }
 
-        $dates = array_unique($dates, SORT_NUMERIC);
-        arsort($dates);
-        array_unshift($dates);
+            $dates = array_unique($dates, SORT_NUMERIC);
+            arsort($dates);
+            array_unshift($dates);
         
-    }
-    wp_reset_query();
-    return $dates; else:
+        }
         wp_reset_query();
-    return false;
-    endif;
+        return $dates; else:
+            wp_reset_query();
+            return false;
+        endif;
 }
 
 /**
  * Determine if the full post content word count is greater 
  * then the excerpt word count and if excerpt word count is greater then 1
  *
- * @param string $excerpt
- * @param string $full_text
+ * @param  string $excerpt
+ * @param  string $full_text
  * @return boolean
  */
-function check_longer_than_excerpt($excerpt, $full_text = null) {
-	// get excerpt length
-	$excerptWordCount = (str_word_count($excerpt) > 1) ? str_word_count($excerpt) -1 : str_word_count($excerpt);
-	$full_text_word_count = preg_split('/[\s,.:]+/', htmlentities(strip_tags($full_text)));
+function check_longer_than_excerpt($excerpt, $full_text = null)
+{
+    // get excerpt length
+    $excerptWordCount = (str_word_count($excerpt) > 1) ? str_word_count($excerpt) -1 : str_word_count($excerpt);
+    $full_text_word_count = preg_split('/[\s,.:]+/', htmlentities(strip_tags($full_text)));
 
 
-	if (defined('WP_DEBUG')) {
-		error_log("======== DEBUGGING THE CHECK_LONGER_THAN_EXCERPT FUNCTION ========");
-		error_log("Full text wordcount = " . count($full_text_word_count));
-		error_log("excerp wordcount = " . $excerptWordCount);
+    if (defined('WP_DEBUG')) {
+        error_log("======== DEBUGGING THE CHECK_LONGER_THAN_EXCERPT FUNCTION ========");
+        error_log("Full text wordcount = " . count($full_text_word_count));
+        error_log("excerp wordcount = " . $excerptWordCount);
 
-		error_log("fulltext wordcount higher then or equal to excerpt wordcount =  ". (count($full_text_word_count) >= $excerptWordCount) ? "true" : "false");
-		error_log('====== Original text stripped from tags ======');
-		error_log(htmlentities(strip_tags($full_text)));
-	}
+        error_log("fulltext wordcount higher then or equal to excerpt wordcount =  ". (count($full_text_word_count) >= $excerptWordCount) ? "true" : "false");
+        error_log('====== Original text stripped from tags ======');
+        error_log(htmlentities(strip_tags($full_text)));
+    }
 
-	if(is_array($full_text_word_count) && count($full_text_word_count) >= $excerptWordCount && $excerptWordCount > 1) {
-		return true;
-	}
+    if(is_array($full_text_word_count) && count($full_text_word_count) >= $excerptWordCount && $excerptWordCount > 1) {
+        return true;
+    }
 
-	return false;
+    return false;
+}
+
+
+/**
+ * Undocumented function
+ *
+ * @return array|false
+ */
+function publicationTags()
+{
+    global $post;
+    // retrieve all publications first
+    $args = array(
+        'post_type'      => 'publication',
+        'posts_per_page' => -1,
+        'order'          => 'ASC',
+    );
+
+    $tags = array();
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+            $current_post_tags = get_post_meta($post->ID, 'tags', true);
+            
+            if(isset($current_post_tags) && !empty($current_post_tags)) {
+                $current_post_tags_arr = explode(", ", $current_post_tags);
+            }
+
+            if(isset($current_post_tags_arr) && is_array($current_post_tags_arr)) {
+                foreach ($current_post_tags_arr as $current_post_tag) {
+                    $tags[] = $current_post_tag;
+                }
+            }
+
+            if(defined('WP_DEBUG') ) {
+                error_log($current_post_tags);
+            }
+        endwhile; 
+        if(defined('WP_DEBUG')) {
+            error_log('======== ALL THE TAGS FROM THE PUBLICATIONS ========');
+            error_log(print_r($tags, true));
+        }
+        return $tags;
+    endif;
+    return false;
 }
