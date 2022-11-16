@@ -455,7 +455,7 @@ function check_longer_than_excerpt($excerpt, $full_text = null)
 
 
 /**
- * Undocumented function
+ * Retrieve all the publications tags
  *
  * @return array|false
  */
@@ -489,7 +489,8 @@ function publicationTags()
             if(defined('WP_DEBUG') ) {
                 error_log($current_post_tags);
             }
-        endwhile; 
+        endwhile;
+        wp_reset_query(); 
         if(defined('WP_DEBUG')) {
             error_log('======== ALL THE TAGS FROM THE PUBLICATIONS ========');
             error_log(print_r($tags, true));
@@ -497,4 +498,48 @@ function publicationTags()
         return $tags;
     endif;
     return false;
+}
+
+/**
+ * filter all the most used tags from given tags array
+ * and return those with duplicates filtered out
+ *
+ * @param array $unfilteredTags
+ * @param integer $minimumCount The minimum count that a tag should occur in the given array
+ * @return array
+ */
+function getMostUsedTags( array $unfilteredTags, int $minimumCount = 5)
+{
+    $filteredTags = array();
+    $mostUsedTags = array();
+    $tagsCounts = array_count_values($unfilteredTags);
+
+    if(defined('WP_DEBUG')) {
+        error_log(print_r($tagsCounts, true));
+    }
+
+    if(is_array($tagsCounts)) {
+        foreach($tagsCounts as $key => $tagCount) {
+            if($tagCount >= $minimumCount) {
+                $mostUsedTags[] = $key;
+            }
+        }
+
+        if(defined('WP_DEBUG')) {
+            error_log('======== Most used tags filtered ========');
+            error_log(print_r($mostUsedTags, true));
+        }
+    }
+
+    if(is_array($mostUsedTags) && count($mostUsedTags) >= 1) {
+        // filter out all the double entries case insensitive
+        $filteredTags = array_intersect_key($mostUsedTags, array_unique(array_map('strtolower', $mostUsedTags)));
+
+        if(defined('WP_DEBUG')) {
+            error_log('======== FILTERED TAGS ARRAY WITHOUT DUPLICATES ========');
+            error_log(print_r($filteredTags, true));
+        }
+    }
+
+    return $filteredTags;
 }
