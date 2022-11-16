@@ -16,8 +16,8 @@
       prose-headings:text-ams-cyan 
       prose-a:text-ams-cyan 
       hover:prose-a:text-ams-dark
-      md:prose
       md:max-w-none
+      md:prose
       md:prose-a:text-ams-cyan
       xl:px-32;
   }
@@ -25,65 +25,102 @@
   #pubForm {
     @apply w-full md:px-8 xl:px-32;
 
+    .pub-search {
+      @apply flex 
+      flex-col 
+      items-center 
+      justify-center 
+      gap-1 
+      pt-4 
+      pb-2 
+      lg:flex-row 
+      lg:justify-start
+      lg:pb-1
+      2xl:justify-between;
+      section {
+        @apply min-w-full 
+        basis-full 
+        last-of-type:min-w-min 
+        lg:min-w-fit 
+        lg:basis-auto 
+        first-of-type:lg:basis-3/4;
+
+        input {
+          @apply w-full
+            border-[0.5px]
+            border-[#707070]
+            font-normal
+            placeholder-ams-dark
+            placeholder-opacity-40;
+        }
+
+        select {
+          @apply w-full
+            border-[0.5px]
+            border-[#707070]
+            text-ams-dark
+            text-opacity-40;
+        }
+        input[type="submit"] {
+          @apply min-w-min 
+          max-w-max 
+          border-none 
+          bg-ams-yellow 
+          py-2 
+          px-8 
+          font-bold 
+          text-ams-dark
+          lg:border-solid
+          lg:border-ams-yellow
+          lg:px-4
+          hover:xl:cursor-pointer
+          hover:xl:border-ams-dark
+          hover:xl:bg-ams-dark
+          hover:xl:text-ams-grey
+          2xl:px-10;
+        }
+      }
+    }
+
     .pub-table {
       @apply w-full table-fixed md:table-auto;
 
       &__head {
         tr {
-          &:nth-of-type(1) {
-            td {
-              @apply py-4;
+          @apply divide-x divide-ams-text_light bg-ams-dark text-white;
 
-              input {
-                @apply w-full
-                  border-[0.5px]
-                  border-[#707070]
-                  font-normal
-                  placeholder-ams-dark
-                  placeholder-opacity-40
-                  md:w-11/12
-                  md:px-8;
-              }
+          td {
+            @apply py-4 px-4 text-sm first-of-type:hidden md:text-base first-of-type:md:table-cell;
 
-              select {
-                @apply w-full
-                  border-[0.5px]
-                  border-[#707070]
-                  text-ams-dark
-                  text-opacity-40
-                  md:w-auto
-                  md:min-w-min;
-              }
-            }
-          }
+            a {
+              @apply inline-flex w-full items-center justify-between;
 
-          &:nth-of-type(2) {
-            @apply divide-x divide-ams-text_light bg-ams-dark text-white;
+              .sort {
+                @apply inline-flex flex-col;
 
-            td {
-              @apply py-4 px-4 text-sm first-of-type:hidden md:text-base first-of-type:md:table-cell;
+                &__asc,
+                &__desc {
+                  @apply w-4 stroke-2 md:w-5;
 
-              a {
-                @apply inline-flex w-full items-center justify-between;
-
-                .sort {
-                  @apply inline-flex flex-col;
-
-                  &__asc,
-                  &__desc {
-                    @apply w-4 stroke-2 md:w-5;
-
-                    &--active {
-                      @apply opacity-100;
-                    }
-                    &--inactive {
-                      @apply opacity-50;
-                    }
+                  &--active {
+                    @apply opacity-100;
+                  }
+                  &--inactive {
+                    @apply opacity-50;
                   }
                 }
               }
             }
           }
+          /* &:nth-of-type(2) {
+            td {
+              @apply pb-4 last-of-type:text-center md:last-of-type:text-left;
+
+              input[type="submit"] {
+                @apply inline-block w-full bg-ams-yellow px-4 py-2 font-bold text-ams-dark md:w-1/3 lg:w-1/4 xl:w-auto xl:px-8 hover:xl:cursor-pointer hover:xl:bg-ams-dark hover:xl:text-ams-grey;
+              }
+            }
+          } */
         }
       }
 
