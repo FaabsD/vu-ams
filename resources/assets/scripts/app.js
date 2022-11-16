@@ -1,4 +1,4 @@
-$ = jQuery;
+$ = require('jquery');
 
 require('./modules/3d-preview');
 require('./modules/dynamic-chart');
