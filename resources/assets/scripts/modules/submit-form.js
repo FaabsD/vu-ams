@@ -22,16 +22,6 @@ $(document).ready(function (){
         }
     }
 
-    const searchCell = document.getElementById('searchCell');
-
-    if (searchCell) {
-        console.log(window.innerWidth);
-
-        if (window.innerWidth >= 768) {
-            searchCell.colSpan = 2;
-        }
-    }
-
     const paginationCell = document.querySelector('.pagination-cell');
 
     if (paginationCell) {
