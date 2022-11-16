@@ -35,7 +35,10 @@
   "dependencies": {
     "chart.js": "^3.9.1",
     "chartjs-plugin-datalabels": "^2.1.0",
+    "jquery": "^3.6.1",
     "leaflet": "^1.9.2",
+    "select2": "^4.1.0-rc.0",
+    "slick-carousel": "^1.8.1",
     "three": "^0.146.0"
   }
 }
