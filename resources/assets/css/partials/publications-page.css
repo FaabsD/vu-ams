@@ -27,39 +27,45 @@
 
     .pub-search {
       @apply flex 
-      flex-col 
+      flex-col
       items-center 
       justify-center 
       gap-1 
       pt-4 
       pb-2 
       lg:flex-row 
+      lg:flex-wrap 
       lg:justify-start
-      lg:pb-1
-      2xl:justify-between;
+      lg:pb-1;
       section {
         @apply min-w-full 
         basis-full 
         last-of-type:min-w-min 
         lg:min-w-fit 
-        lg:basis-auto 
-        first-of-type:lg:basis-3/4;
+        lg:shrink-0
+        lg:grow
+        lg:basis-auto
+        first-of-type:lg:grow-0
+        first-of-type:lg:basis-2/4
+        last-of-type:lg:grow-0;
 
         input {
           @apply w-full
-            border-[0.5px]
-            border-[#707070]
-            font-normal
-            placeholder-ams-dark
-            placeholder-opacity-40;
+              border-[0.5px]
+              border-[#707070]
+              font-normal
+              placeholder-ams-dark
+              placeholder-opacity-40;
         }
 
         select {
-          @apply w-full
+          &:not(.select2-hidden-accessible) {
+            @apply w-full
             border-[0.5px]
             border-[#707070]
             text-ams-dark
             text-opacity-40;
+          }
         }
         input[type="submit"] {
           @apply min-w-min 
@@ -78,6 +84,45 @@
           hover:xl:bg-ams-dark
           hover:xl:text-ams-grey
           2xl:px-10;
+        }
+
+        &.has-multiselect {
+          @apply lg:basis-3/4 lg:grow lg:shrink-0;
+          span.select2,
+          span.select2-container,
+          span.select2-container--default {
+            @apply !w-full;
+
+            span.selection {
+              @apply p-0;
+              span.select2-selection {
+                &--multiple {
+                  @apply rounded-none border border-[#707070] py-2;
+
+                  .select2-selection__rendered {
+                    @apply space-x-1 space-y-1;
+                    .select2-selection__choice {
+                      @apply m-0 border-ams-dark bg-ams-grey first-of-type:ml-1;
+                      &__remove {
+                        @apply border-r border-r-ams-dark text-ams-dark;
+                      }
+                      &__display {
+                        @apply text-ams-dark;
+                      }
+                    }
+                  }
+
+                  span.select2-search, span.select2-search--inline {
+                    .select2-search__field {
+                      @apply font-heebo !mt-0 align-middle h-6 ml-3 placeholder:opacity-60 font-normal;
+                    }
+                  }
+                }
+              }
+            }
+            /* If you are looking to style the multiselection dropdown then you should edit it in "base-styles.css" 
+            or if just for this page declare it outside of any other selector */
+          }
         }
       }
     }

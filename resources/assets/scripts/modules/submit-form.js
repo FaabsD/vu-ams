@@ -31,6 +31,8 @@ $(document).ready(function (){
         }
     }
 
-    $('#multiSelect').select2();
+    $('#multiSelect').select2({
+        placeholder: "Select or type Tags",
+    });
 })
 

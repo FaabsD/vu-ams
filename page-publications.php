@@ -89,23 +89,6 @@
                     value="<?php echo isset( $_GET['author'] ) && !empty( $_GET['author'] ) ? $_GET['author'] : ''; ?>"
                     placeholder="<?php _e( 'Search by Author(s)', THEME_TEXT_DOMAIN ); ?>">
             </section>
-
-            <section>
-                <select name="tags[]" id="multiSelect" multiple="multiple">
-                    <?php 
-                        $tags = publicationTags();
-                        $mostUsedTags = getMostUsedTags($tags); 
-                    ?>
-
-                    <?php foreach($mostUsedTags as $tag) : ?>
-                        <option value="<?php _e($tag, THEME_TEXT_DOMAIN) ?>" mul>
-                            <?php _e($tag, THEME_TEXT_DOMAIN) ?>
-                        </option>
-                    <?php endforeach; ?>
-
-                </select>
-            </section>
-            
             <section>
                 <?php
                     $dateArr = array();
@@ -130,7 +113,22 @@
                     <?php endforeach; ?>
                 </select>
             </section>
+            <section class="has-multiselect">
+                <select name="tags[]" id="multiSelect" multiple="multiple">
+                    <?php 
+                        $tags = publicationTags();
+                        $mostUsedTags = getMostUsedTags($tags); 
+                    ?>
 
+                    <?php foreach($mostUsedTags as $tag) : ?>
+                        <option value="<?php _e($tag, THEME_TEXT_DOMAIN) ?>" 
+                        <?php echo (isset($_GET['tags']) && is_array($_GET['tags']) && in_array($tag, $_GET['tags'])) ? 'selected="selected"' : '' ?>>
+                            <?php _e($tag, THEME_TEXT_DOMAIN) ?>
+                        </option>
+                    <?php endforeach; ?>
+
+                </select>
+            </section>
             <section>
                 <input type="submit" value="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
             </section>
