@@ -17,49 +17,63 @@
 
     $current_url = home_url( add_query_arg( null, null ) );
 
-$meta_query = array();
+    $meta_query = array();
 
-if ( isset( $_GET['author'] ) && !empty( $_GET['author'] ) ) {
-    $meta_query[] = array(
-        'key'     => 'authors',
-        'value'   => $_GET['author'],
-        'compare' => 'LIKE',
+
+
+    if ( isset( $_GET['author'] ) && !empty( $_GET['author'] ) ) {
+        $meta_query[] = array(
+            'key'     => 'authors',
+            'value'   => $_GET['author'],
+            'compare' => 'LIKE',
+        );
+    }
+
+
+
+    if ( isset( $_GET['date'] ) && $_GET['date'] != 'Date' ) {
+        $meta_query[] = array(
+            'key'     => 'publication_date',
+            'value'   => $_GET['date'],
+            'compare' => 'Like',
+        );
+    }
+
+
+
+    if ( isset( $_GET['tags'] ) && !empty( $_GET['tags'] ) ) {
+        if(is_array($_GET['tags'])) {
+            $query_tags = implode(", ", $_GET['tags']);
+        }
+        $meta_query[] = array(
+            'key'     => 'tags',
+            'value'   => (isset($query_tags)) ? $query_tags : $_GET['tags'],
+            'compare' => 'LIKE',
+        );
+    }
+
+
+
+    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    $args  = array(
+        's'              => isset( $_GET['search'] ) && $_GET['search'] != '' ? $_GET['search'] : '',
+        'post_type'      => 'publication',
+        'meta_query'     => $meta_query,
+        'posts_per_page' => 10,
+        'paged'          => $paged,
+        'meta_key' 		    => isset( $_GET['meta_key'] ) && $_GET['meta_key'] != '' ? $_GET['meta_key'] : 'publication_date',
+        'orderby'	       => isset( $_GET['orderby'] ) && $_GET['orderby'] != '' ? $_GET['orderby'] : 'meta_value_num',
+        'order'			       => isset( $_GET['order'] ) && $_GET['order'] != '' ? $_GET['order'] : 'DESC',
     );
-}
+    $query = new WP_Query( $args );
 
-if ( isset( $_GET['date'] ) && $_GET['date'] != 'Date' ) {
-    $meta_query[] = array(
-        'key'     => 'publication_date',
-        'value'   => $_GET['date'],
-        'compare' => 'Like',
-    );
-}
 
-if ( isset( $_GET['tags'] ) && !empty( $_GET['tags'] ) ) {
-    $meta_query[] = array(
-        'key'     => 'tags',
-        'value'   => $_GET['tags'],
-        'compare' => 'LIKE',
-    );
-}
 
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$args  = array(
-    's'              => isset( $_GET['search'] ) && $_GET['search'] != '' ? $_GET['search'] : '',
-    'post_type'      => 'publication',
-    'meta_query'     => $meta_query,
-    'posts_per_page' => 10,
-    'paged'          => $paged,
-    'meta_key' 		    => isset( $_GET['meta_key'] ) && $_GET['meta_key'] != '' ? $_GET['meta_key'] : 'publication_date',
-    'orderby'	       => isset( $_GET['orderby'] ) && $_GET['orderby'] != '' ? $_GET['orderby'] : 'meta_value_num',
-    'order'			       => isset( $_GET['order'] ) && $_GET['order'] != '' ? $_GET['order'] : 'DESC',
-);
-$query = new WP_Query( $args );
+    // if(defined('WP_DEBUG')) {
+        //    echo $query->request . "<br><br>";
+        //    print_r($meta_query);
+    // }
 
-// if(defined('WP_DEBUG')) {
-    //    echo $query->request . "<br><br>";
-    //    print_r($meta_query);
-// }
 ?>
 <form action="<?php the_permalink(); ?>" method="get" id="pubForm">
     <div class="pub-search">
@@ -75,7 +89,6 @@ $query = new WP_Query( $args );
                     value="<?php echo isset( $_GET['author'] ) && !empty( $_GET['author'] ) ? $_GET['author'] : ''; ?>"
                     placeholder="<?php _e( 'Search by Author(s)', THEME_TEXT_DOMAIN ); ?>">
             </section>
-            
             <section>
                 <?php
                     $dateArr = array();
@@ -100,7 +113,22 @@ $query = new WP_Query( $args );
                     <?php endforeach; ?>
                 </select>
             </section>
+            <section class="has-multiselect">
+                <select name="tags[]" id="multiSelect" multiple="multiple">
+                    <?php 
+                        $tags = publicationTags();
+                        $mostUsedTags = getMostUsedTags($tags); 
+                    ?>
 
+                    <?php foreach($mostUsedTags as $tag) : ?>
+                        <option value="<?php _e($tag, THEME_TEXT_DOMAIN) ?>" 
+                        <?php echo (isset($_GET['tags']) && is_array($_GET['tags']) && in_array($tag, $_GET['tags'])) ? 'selected="selected"' : '' ?>>
+                            <?php _e($tag, THEME_TEXT_DOMAIN) ?>
+                        </option>
+                    <?php endforeach; ?>
+
+                </select>
+            </section>
             <section>
                 <input type="submit" value="<?php _e( 'Search', THEME_TEXT_DOMAIN ); ?>">
             </section>
@@ -117,8 +145,8 @@ $query = new WP_Query( $args );
                             'orderby'  => 'meta_value',
                             'meta_key' => 'authors_lastnames',
                         );
-$authorsSortingUrl = esc_url( add_query_arg( $authorsSort, $current_url ) );
-?>
+                        $authorsSortingUrl = esc_url( add_query_arg( $authorsSort, $current_url ) );
+                    ?>
                     <a href="<?php echo $authorsSortingUrl; ?>">
                         Authors
                         <span class="sort">
@@ -133,13 +161,13 @@ $authorsSortingUrl = esc_url( add_query_arg( $authorsSort, $current_url ) );
                 </td>
                 <td>
                     <?php
-    $dateSort = array(
-        'order'    => ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' ) ? 'DESC' : 'ASC',
-        'orderby'  => 'meta_value_num',
-        'meta_key' => 'publication_date',
-    );
-$dateSortingUrl = esc_url( add_query_arg( $dateSort, $current_url ) );
-?>
+                        $dateSort = array(
+                            'order'    => ( isset( $_GET['order'] ) && $_GET['order'] === 'ASC' ) ? 'DESC' : 'ASC',
+                            'orderby'  => 'meta_value_num',
+                            'meta_key' => 'publication_date',
+                        );
+                        $dateSortingUrl = esc_url( add_query_arg( $dateSort, $current_url ) );
+                    ?>
                     <a href="<?php echo $dateSortingUrl; ?>">
                         Date
 
@@ -172,18 +200,18 @@ $dateSortingUrl = esc_url( add_query_arg( $dateSort, $current_url ) );
                     <td>
                         <?php if ( get_field( 'authors_lastnames' ) ) : ?>
                             <?php
-            $authorsArr = explode( ', ', get_field( 'authors_lastnames' ) );
+                                $authorsArr = explode( ', ', get_field( 'authors_lastnames' ) );
 
-                            foreach ( $authorsArr as $index => $author ) {
-                                if( count( $authorsArr ) - $index === 2 ) {
-                                    echo $author . ' & ';
-                                } elseif( count( $authorsArr ) !== $index + 1 ) {
-                                    echo $author . ', ';
-                                } else {
-                                    echo $author;
+                                foreach ( $authorsArr as $index => $author ) {
+                                    if( count( $authorsArr ) - $index === 2 ) {
+                                        echo $author . ' & ';
+                                    } elseif( count( $authorsArr ) !== $index + 1 ) {
+                                        echo $author . ', ';
+                                    } else {
+                                        echo $author;
+                                    }
                                 }
-                            }
-                ?>
+                            ?>
                         <?php endif; ?>
                     </td>
                     <td>

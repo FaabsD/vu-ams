@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    slick = require('slick-carousel');
     $('.meet-the-team__members').slick({
         centerMode: true,
         centerPadding: '60px',
