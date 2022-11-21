@@ -9,8 +9,7 @@ function enqueue_styles()
 
     wp_enqueue_style( 'leaflet', THEME_URL . '/node_modules/leaflet/dist/leaflet.css' );
 
-
-    wp_enqueue_style( 'select2', THEME_URL . '/node_modules/select2/dist/css/select2.css' );
+    wp_enqueue_style( 'select2_min', THEME_URL . '/node_modules/select2/dist/css/select2.min.css' );
 
 }
 
