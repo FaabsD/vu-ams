@@ -154,7 +154,7 @@ body,
         md:text-left;
 
       h3 {
-        @apply mt-0 !text-ams-dark;
+        @apply !mt-0 !text-ams-dark;
       }
 
       & > a {
