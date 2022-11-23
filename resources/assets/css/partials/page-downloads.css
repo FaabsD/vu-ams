@@ -150,22 +150,42 @@
             }
 
             .wp-block-table {
-                table {
-                  @apply table-fixed border-separate border md:table-auto md:border-spacing-1;
-      
-                  thead, tbody {
-                    tr {
-                      td,
-                      th {
-                        @apply border border-ams-dark p-2 md:px-4 md:py-2;
-                      }
-                      th {
-                        @apply whitespace-nowrap;
-                      }
+              table {
+                @apply table-fixed border-separate border md:table-auto md:border-spacing-1;
+    
+                thead, tbody {
+                  tr {
+                    td,
+                    th {
+                      @apply border border-ams-dark p-2 md:px-4 md:py-2;
+                    }
+                    th {
+                      @apply whitespace-nowrap;
                     }
                   }
                 }
               }
+            }
+          }
+          &.manual-downloads {
+            >.wp-block-group {
+            &__inner-container {
+                .wp-block-file {
+                  @apply space-y-2 md:space-y-0 md:space-x-4;
+                  a {
+                    @apply inline text-ams-dark hover:md:text-ams-cyan;
+                  }
+                  &__button {
+                    @apply !inline-block 
+                    no-underline
+                    text-ams-dark
+                    hover:md:bg-ams-dark 
+                    hover:md:text-ams-grey
+                    m-0;
+                  }
+                }
+              }
+            }
           }
         }
       }
