@@ -12,6 +12,8 @@ require_once 'functions/posttypes.php';
 require_once 'functions/custom-subscription.php';
 
 require_once 'functions/enqueue.php';
+require_once 'functions/filters.php';
+
 require_once 'functions/full-publications-text.php';
 
 require_once 'functions/shortcodes.php';

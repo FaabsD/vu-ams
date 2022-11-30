@@ -19,8 +19,6 @@
 
     $meta_query = array();
 
-
-
     if ( isset( $_GET['author'] ) && !empty( $_GET['author'] ) ) {
         $meta_query[] = array(
             'key'     => 'authors',
@@ -28,8 +26,6 @@
             'compare' => 'LIKE',
         );
     }
-
-
 
     if ( isset( $_GET['date'] ) && $_GET['date'] != 'Date' ) {
         $meta_query[] = array(
@@ -39,20 +35,16 @@
         );
     }
 
-
-
     if ( isset( $_GET['tags'] ) && !empty( $_GET['tags'] ) ) {
-        if(is_array($_GET['tags'])) {
-            $query_tags = implode(", ", $_GET['tags']);
+        if( is_array( $_GET['tags'] ) ) {
+            $query_tags = implode( ', ', $_GET['tags'] );
         }
         $meta_query[] = array(
             'key'     => 'tags',
-            'value'   => (isset($query_tags)) ? $query_tags : $_GET['tags'],
+            'value'   => ( isset( $query_tags ) ) ? $query_tags : $_GET['tags'],
             'compare' => 'LIKE',
         );
     }
-
-
 
     $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
     $args  = array(
@@ -67,11 +59,9 @@
     );
     $query = new WP_Query( $args );
 
-
-
     // if(defined('WP_DEBUG')) {
-        //    echo $query->request . "<br><br>";
-        //    print_r($meta_query);
+            //    echo $query->request . "<br><br>";
+            //    print_r($meta_query);
     // }
 
 ?>
@@ -115,18 +105,43 @@
             </section>
             <section class="has-multiselect">
                 <select name="tags[]" id="multiSelect" multiple="multiple">
-                    <?php 
+                    <?php
                         $tags = publicationTags();
-                        $mostUsedTags = getMostUsedTags($tags); 
+                        $mostUsedTags = getMostUsedTags( $tags );
+
+                        $tagGroupsArgs = array(
+                            'post_type'       => 'tag-group',
+                            'orderby'        => 'title',
+                            'order'          => 'ASC',
+                            'posts_per_page' => -1,
+                            'status' => 'publish'
+                        );
+                        $tagGroups = new WP_Query( $tagGroupsArgs );
+
                     ?>
 
-                    <?php foreach($mostUsedTags as $tag) : ?>
-                        <option value="<?php _e($tag, THEME_TEXT_DOMAIN) ?>" 
-                        <?php echo (isset($_GET['tags']) && is_array($_GET['tags']) && in_array($tag, $_GET['tags'])) ? 'selected="selected"' : '' ?>>
-                            <?php _e($tag, THEME_TEXT_DOMAIN) ?>
-                        </option>
-                    <?php endforeach; ?>
+                    <?php if ( $tagGroups->have_posts() ) : ?>
+                            <?php foreach ($tagGroups->get_posts() as $tagGroup) : ?>
+                                <?php $groupedTags = explode(', ', $tagGroup->post_content); ?>
+                                <optgroup label="<?php echo $tagGroup->post_title ?>">
+                                    <?php if(is_array($groupedTags)) : foreach($groupedTags as $tag) : ?>
+                                        <option value="<?php _e($tag, THEME_TEXT_DOMAIN) ?>" 
+                                        <?php echo ( isset( $_GET['tags'] ) && is_array( $_GET['tags'] ) && in_array( $tag, $_GET['tags'] ) ) ? 'selected="selected"' : ''; ?>>
+                                            <?php _e($tag, THEME_TEXT_DOMAIN); ?>
+                                        </option>
+                                    <?php endforeach; endif; ?>
+                                </optgroup>
+                            <?php endforeach; ?>
+                            <?php wp_reset_query(); ?>
+                        <?php else : ?>
+                            <?php foreach( $mostUsedTags as $tag ) : ?>
+                                <option value="<?php _e( $tag, THEME_TEXT_DOMAIN ); ?>" 
+                                <?php echo ( isset( $_GET['tags'] ) && is_array( $_GET['tags'] ) && in_array( $tag, $_GET['tags'] ) ) ? 'selected="selected"' : ''; ?>>
+                                    <?php _e( $tag, THEME_TEXT_DOMAIN ); ?>
+                                </option>
+                            <?php endforeach; ?>
 
+                    <?php endif; ?>
                 </select>
             </section>
             <section>
@@ -216,10 +231,10 @@
                     </td>
                     <td>
                         <?php
-                if ( get_field( 'publication_date' ) ) {
-                    echo substr( get_field( 'publication_date' ), 0, 4 );
-                }
-                ?>
+                            if ( get_field( 'publication_date' ) ) {
+                                echo substr( get_field( 'publication_date' ), 0, 4 );
+                            }
+                        ?>
                     </td>
                 </tr>
             <?php endwhile; ?>

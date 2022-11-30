@@ -147,4 +147,31 @@ function register_post_types() {
         'supports'     => array( 'title', 'editor', 'thumbnail'),
         'show_in_rest' => true,
     ) );
+
+    // create a posttype to group tags
+    register_post_type( 'tag-group', array(
+        'labels' => array(
+            'name'               => __( 'Tag groups', THEME_TEXT_DOMAIN ),
+            'singular_name'      => __( 'Tag group', THEME_TEXT_DOMAIN ),
+            'add_new'            => __( 'Add tag group', THEME_TEXT_DOMAIN ),
+            'add_new_item'       => __( 'Add new tag group', THEME_TEXT_DOMAIN ),
+            'all_items'          => __( 'All tag groups', THEME_TEXT_DOMAIN ),
+            'edit_item'          => __( 'Edit tag group', THEME_TEXT_DOMAIN ),
+            'name_admin_bar'     => __( 'Tag groups', THEME_TEXT_DOMAIN ),
+            'menu_name'          => __( 'Tag groups', THEME_TEXT_DOMAIN ),
+            'new_item'           => __( 'New tag group', THEME_TEXT_DOMAIN ),
+            'not_found'          => __( 'No tag groups found', THEME_TEXT_DOMAIN ),
+            'not_found_in_trash' => __( 'No tag groups found in trash', THEME_TEXT_DOMAIN ),
+            'search_items'       => __( 'Search tag groups', THEME_TEXT_DOMAIN ),
+            'view_item'          => __( 'View tag group', THEME_TEXT_DOMAIN ),
+        ),
+        'public'             => true,
+        'has_archive'        => false,
+        'menu_icon'          => 'dashicons-tag',
+        'rewrite'            => array( 'with_front' => true ),
+        'supports'           => array( 'title', 'editor' ),
+        'show_in_rest'       => false,
+        'publicly_queryable' => false,
+    ) );
+
 }
