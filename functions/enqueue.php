@@ -11,6 +11,9 @@ function enqueue_styles()
 
     wp_enqueue_style( 'select2_min', THEME_URL . '/node_modules/select2/dist/css/select2.min.css' );
 
+    //include WordPress's dashicons in this theme
+    wp_enqueue_style( 'dashicons' );
+
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');

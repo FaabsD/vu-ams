@@ -58,10 +58,10 @@ body,
         justify-around
         bg-ams-cyan
         p-4
+        md:prose
         md:justify-between
         md:py-4
-        md:px-8
-        md:prose;
+        md:px-8;
 
       h3 {
         @apply !m-0 text-ams-dark;
@@ -196,8 +196,8 @@ body,
       text-ams-dark
       prose-headings:!text-ams-dark
       md:max-w-none
-      md:gap-x-4
       md:prose
+      md:gap-x-4
       lg:grid-cols-2
       lg:gap-x-8
       lg:gap-y-4
@@ -358,8 +358,8 @@ body,
           px-4
           text-left
           shadow-lg
-          md:py-8
           md:prose
+          md:py-8
           lg:py-4
           xl:shadow-xl
           2xl:p-8;
@@ -458,8 +458,8 @@ body,
           px-4
           text-left
           shadow-lg
-          md:py-8
           md:prose
+          md:py-8
           lg:py-4
           xl:shadow-xl
           2xl:p-8;
@@ -593,55 +593,111 @@ body,
   }
 
   span.select2,
-          span.select2-container,
-          span.select2-container--default {
-            @apply !w-full;
+  span.select2-container,
+  span.select2-container--default {
+    @apply !w-full;
 
-            span.selection {
-              @apply p-0;
-              span.select2-selection {
-                &--multiple {
-                  @apply rounded-none border border-[#707070] py-1.5;
+    span.selection {
+      @apply p-0;
+      span.select2-selection {
+        &--multiple {
+          @apply rounded-none border border-[#707070] py-1.5;
 
-                  .select2-selection__rendered {
-                    @apply space-x-1 space-y-1;
-                    .select2-selection__choice {
-                      @apply !mt-0 border-ams-dark bg-ams-grey first-of-type:ml-1;
-                      &__remove {
-                        @apply border-r border-r-ams-dark text-ams-dark;
-                      }
-                      &__display {
-                        @apply text-ams-dark;
-                      }
-                    }
-                  }
-
-                  span.select2-search, span.select2-search--inline {
-                    .select2-search__field {
-                      @apply !mt-0 align-middle;
-                    }
-                  }
-                }
+          .select2-selection__rendered {
+            @apply space-x-1 space-y-1;
+            .select2-selection__choice {
+              @apply !mt-0 border-ams-dark bg-ams-grey first-of-type:ml-1;
+              &__remove {
+                @apply border-r border-r-ams-dark text-ams-dark;
               }
-            }
-
-            span.select2-dropdown {
-              @apply bg-white;
-              .select2-results {
-                &__options {
-                  .select2-results__option {
-                    @apply text-ams-dark;
-                    &--selected {
-                      @apply bg-ams-grey text-ams-dark font-bold;
-                    }
-                    &--highlighted {
-                      @apply bg-ams-dark text-ams-grey;
-                    }
-                  }
-                }
+              &__display {
+                @apply text-ams-dark;
               }
             }
           }
+
+          span.select2-search,
+          span.select2-search--inline {
+            .select2-search__field {
+              @apply !mt-0 align-middle;
+            }
+          }
+        }
+      }
+    }
+
+    span.select2-dropdown {
+      @apply bg-white;
+      .select2-results {
+        &__options {
+          .select2-results__option {
+            @apply text-ams-dark;
+            &--selected {
+              @apply bg-ams-grey font-bold text-ams-dark;
+            }
+            &--highlighted {
+              @apply bg-ams-dark text-ams-grey;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cart-contents {
+    @apply fixed 
+    bottom-8
+    lg:bottom-16 
+    right-8 
+    z-50 
+    max-h-max 
+    max-w-max 
+    rounded-full 
+    bg-ams-yellow 
+    p-4
+    md:p-3.5 
+    !no-underline
+    shadow-md
+    text-ams-dark
+    hover:lg:bg-ams-dark
+    hover:lg:text-ams-grey;
+
+    .dashicons-cart {
+      @apply text-2xl 
+      md:text-3xl
+      md:leading-none
+      h-6 
+      w-6 
+      md:h-8
+      md:w-8
+      leading-none 
+      xl:h-10 
+      xl:w-10 
+      xl:text-4xl 
+      m-0;
+    }
+    &__count {
+      @apply absolute 
+      xl:-top-[5%] 
+      xl:-right-[5%]
+      -top-[10%]
+      -right-[10%]
+      lg:-top-[15]
+      lg:-right-[15%] 
+      box-border 
+      rounded-full 
+      bg-red-600 
+      lg:w-7
+      lg:h-7
+      w-6
+      h-6 
+      flex 
+      justify-center 
+      items-center 
+      text-ams-grey
+      m-0;
+    }
+  }
 }
 
 /* Style default template */

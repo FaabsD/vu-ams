@@ -1036,4 +1036,38 @@ function ams_add_shortcodes() {
 
     add_shortcode( 'team_members_by_role', 'retrieve_team_members_by_role' );
 
+    add_shortcode( 'ams_shopping_cart_button', 'ams_cart_button' );
+
+    /**
+     * Create a shopping cart button to display anywhere using a shortcode
+     *
+     * @param array $atts
+     *
+     * @return void
+     */
+    function ams_cart_button( $atts ) {
+        $atts = shortcode_atts( array(
+            'title' => 'Your Cart',
+        ), $atts, 'ams_shopping_cart_button' );
+        ob_start();
+
+        $cart_count = WC()->cart->cart_contents_count; // Set variable for cart item count
+        $cart_url   = wc_get_cart_url();  // Set Cart URL
+
+        ?>
+        <a class="cart-contents" href="<?php echo $cart_url; ?>" title="<?php _e( $atts['title'], THEME_TEXT_DOMAIN ); ?>">
+            <span class="dashicons dashicons-cart"></span>
+	    <?php
+        if ( $cart_count > 0 ) {
+            ?>
+            <span class="cart-contents__count"><?php echo $cart_count; ?></span>
+        <?php
+        }
+        ?>
+        </a>
+        <?php
+
+        return ob_get_clean();
+    }
+
 }

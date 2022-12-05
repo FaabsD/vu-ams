@@ -48,4 +48,36 @@ function ams_add_filters() {
         return $content;
     }
 
+    add_filter( 'woocommerce_add_to_cart_fragments', 'ams_cart_button_count' );
+
+    /**
+     * Update the shopping cart button product count (quantity) every time a product is added
+     *
+     * @param [type] $fragments
+     *
+     * @return void
+     */
+    function ams_cart_button_count( $fragments ) {
+        ob_start();
+
+        $cart_count = WC()->cart->cart_contents_count;
+        $cart_url   = wc_get_cart_url();
+
+        ?>
+        <a class="cart-contents" href="<?php echo $cart_url; ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+            <span class="dashicons dashicons-cart"></span>
+        <?php
+        if ( $cart_count > 0 ) {
+            ?>
+            <span class="cart-contents__count"><?php echo $cart_count; ?></span>
+            <?php
+        }
+        ?></a>
+        <?php
+
+        $fragments['a.cart-contents'] = ob_get_clean();
+
+        return $fragments;
+    }
+
 }
