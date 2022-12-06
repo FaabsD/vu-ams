@@ -660,7 +660,7 @@ body,
     shadow-md
     text-ams-dark
     hover:lg:bg-ams-dark
-    hover:lg:text-ams-grey;
+    hover:lg:!text-ams-grey;
 
     .dashicons-cart {
       @apply text-2xl 
