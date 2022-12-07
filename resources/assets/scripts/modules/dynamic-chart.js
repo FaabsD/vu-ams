@@ -1,11 +1,11 @@
 // import tailwindConfig from directory_uri.theme_url + '/tailwind.config';
 const Chart = require('chart.js/auto').default;
-const ChartDataLabels = require('chartjs-plugin-datalabels').default;
+// const ChartDataLabels = require('chartjs-plugin-datalabels').default;
 
 
 
 $(document).ready(function () {
-    Chart.register(ChartDataLabels);
+    // Chart.register(ChartDataLabels);
     const chartContainer = document.querySelector('#publicationsChart');
     if (chartContainer) {
         console.log('======== GET THE DATA SETS FROM THE CHART CONTAINER ========');
@@ -31,19 +31,6 @@ $(document).ready(function () {
         let pubCountsArr = publicationsCounts.split(", ");
         console.log(pubCountsArr);
 
-        // create a array with colors to use as background for every year
-        /*const backgroundColors = [];
-        console.log('======== GENERATE RANDOM BACKGROUND COLORS ========')
-        for (let i = 0; i < yearsArr.length; i++) {
-            backgroundColors.push(generateRandomColor());
-            console.log('===== NEW BACKGROUND COLOR =====');
-            console.log(backgroundColors[i]);
-        }
-        // log the background color array
-        console.log("===== GENERATED BACKGROUNDS =====");
-        console.log(backgroundColors);
-        */
-
         // setup chart data
         const chartData = {
             labels: yearsArr,
@@ -65,10 +52,10 @@ $(document).ready(function () {
                     'rgb(16, 20, 48)',
                 ],
                 data: pubCountsArr,
-                datalabels: {
-                    align: 'center',
-                    anchor: 'center',
-                }
+                // datalabels: {
+                //     align: 'center',
+                //     anchor: 'center',
+                // }
             }]
         }
 
@@ -78,12 +65,12 @@ $(document).ready(function () {
             data: chartData,
             options: {
                 plugins: {
-                    datalabels: {
-                        color: "#ffffff",
-                        font: {
-                            size: 16
-                        }
-                    },
+                    // datalabels: {
+                    //     color: "#ffffff",
+                    //     font: {
+                    //         size: 16
+                    //     }
+                    // },
                     legend: {
                         labels: {
                             font: {
