@@ -4,8 +4,11 @@ add_action('wp_enqueue_scripts', 'enqueue_styles');
 function enqueue_styles()
 {
     wp_enqueue_style('VU-AMS_style', THEME_URL . '/build/css/app.css');
+    
+    wp_enqueue_style( 'slickcss', THEME_URL . '/node_modules/slick-carousel/slick/slick.css' );
 
-    wp_enqueue_style( 'slickcss', THEME_URL . 'node_modules/slick-carousel/slick/slick.css' );
+    wp_enqueue_style( 'slick_theme', THEME_URL . '/node_modules/slick-carousel/slick/slick-theme.css' );
+
 
     wp_enqueue_style( 'leaflet', THEME_URL . '/node_modules/leaflet/dist/leaflet.css' );
 
