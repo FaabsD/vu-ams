@@ -152,23 +152,34 @@
           @apply flex flex-col gap-y-2;
 
           .col-2 {
-            @apply md:flex md:flex-row md:gap-x-2 xl:flex-row xl:gap-x-4;
+            @apply 
+            md:flex 
+            md:flex-row 
+            md:gap-x-2 
+            xl:flex-row 
+            xl:gap-x-4;
 
-            label {
-              @apply font-bold leading-loose text-ams-dark;
-
-              .wpcf7-form-control-wrap {
-                .wpcf7-form-control {
-                  @apply w-full
-                    border
-                    border-black
-                    border-opacity-25
-                    focus:border-transparent
-                    focus:ring-2
-                    focus:ring-ams-cyan;
+            p {
+              label {
+                @apply font-bold leading-loose text-ams-dark;
+  
+                .wpcf7-form-control-wrap {
+                  .wpcf7-form-control {
+                    @apply w-full
+                      border
+                      border-black
+                      border-opacity-25
+                      focus:border-transparent
+                      focus:ring-2
+                      focus:ring-ams-cyan;
+                  }
                 }
               }
+              br {
+                @apply md:hidden;
+              }
             }
+            
           }
 
           > p {
