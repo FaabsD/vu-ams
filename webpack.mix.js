@@ -14,6 +14,7 @@ mix.browserSync({
         'header.php',
         'footer.php',
         'page-*.php',
+        '404.php',
         'search.php',
         'single-*.php',
         'build/css/app.css',
