@@ -80,4 +80,57 @@ function ams_add_filters() {
         return $fragments;
     }
 
+    add_filter('post_mime_types', 'ams_modify_post_mime_types');
+    /**
+     * Add more filetypes to filter in the media library
+     *
+     * @param [type] $post_mime_types
+     * @return void
+     */
+    function ams_modify_post_mime_types( $post_mime_types )
+    {
+        $all_allowed_mime_types = get_allowed_mime_types();
+        $mime_types_to_add = array(
+            'exe',
+            'dmg',      
+            'amsdata',   
+            'cfg',       
+        );
+
+        foreach($mime_types_to_add as $fileExtension)
+        {
+            if(key_exists($fileExtension, $all_allowed_mime_types)) {
+                switch ($fileExtension) {
+                    case 'exe':
+                        $post_mime_types[$all_allowed_mime_types[$fileExtension]] = array(
+                            __('Windows Executables', THEME_TEXT_DOMAIN),
+                            __('Manage Windows Executables'),
+                        );
+                        break;
+                    case 'dmg':
+                    case 'amsdata':
+                        $post_mime_types[$all_allowed_mime_types[$fileExtension]] = array(
+                            __('Binary Files', THEME_TEXT_DOMAIN),
+                            __('Manage Binary Files', THEME_TEXT_DOMAIN),
+                        );
+                        break;
+                    default:
+                        $post_mime_types[$all_allowed_mime_types[$fileExtension]] = array(
+                            __(ucfirst($fileExtension) . "'s", THEME_TEXT_DOMAIN),
+                            __('Manage ' . ucfirst($fileExtension) . "'s", THEME_TEXT_DOMAIN),
+                        );
+                }
+            }
+        }
+        
+
+        if(defined('WP_DEBUG')) {
+            error_log('======== ALLOWED MIME TYPES ========');
+            error_log(print_r($all_allowed_mime_types, true));
+        }
+
+        return $post_mime_types;
+
+    }
+
 }
