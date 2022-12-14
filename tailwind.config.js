@@ -8,6 +8,7 @@ module.exports = {
 		'./page-*.php',
 		'./single-*.php',
 		'./search.php',
+		'./404.php',
 	]),
 	theme: {
 		extend: {
