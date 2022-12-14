@@ -1,0 +1,90 @@
+.error404 {
+  @apply !bg-ams-grey 
+    !pt-0;
+
+  .content {
+    @apply prose-sm relative min-h-screen w-screen md:max-w-none md:prose;
+    header {
+      @apply mx-auto 
+        px-8 
+        text-left 
+        md:flex 
+        md:max-w-screen-md 
+        md:flex-row-reverse 
+        md:items-center 
+        md:justify-between 
+        md:px-16 
+        md:pt-16 
+        md:pb-4 
+        xl:max-w-screen-lg 
+        2xl:max-w-screen-xl 
+        2xl:px-0;
+    }
+    main {
+      @apply mx-auto 
+        px-8 
+        text-left 
+        md:max-w-screen-md 
+        md:px-16 
+        xl:max-w-screen-lg 
+        2xl:max-w-screen-xl 
+        2xl:px-0;
+
+      button.back-button {
+        @apply bg-ams-yellow 
+            px-4 
+            py-2 
+            font-semibold 
+            text-ams-dark 
+            hover:bg-ams-dark 
+            hover:text-ams-grey;
+      }
+
+      a {
+        @apply hover:text-ams-cyan;
+        &.button--link {
+          @apply bg-ams-yellow 
+            px-4 
+            py-2 
+            !font-semibold 
+            text-ams-dark 
+            !no-underline 
+            hover:bg-ams-dark 
+            hover:text-ams-grey;
+        }
+      }
+
+      .heart-rate--404 {
+        @apply absolute
+            top-[10%]
+            right-0
+            left-0 
+            -z-50
+            opacity-25 
+            md:top-auto 
+            md:bottom-16
+            lg:bottom-0;
+
+        svg {
+          @apply fill-current stroke-current text-ams-cyan;
+        }
+
+        .fade-in {
+          @apply absolute top-0 right-0 h-full w-0 bg-ams-grey;
+          animation: heartRate404In 6s linear 1;
+        }
+        @keyframes heartRate404In {
+          0% {
+            width: 100%;
+          }
+          50% {
+            width: 0;
+          }
+          100% {
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+}
