@@ -1,5 +1,17 @@
 const mix = require('laravel-mix');
 
+if (mix.inProduction()) {
+    mix.options({
+        terser: {
+            terserOptions: {
+                compress: {
+                    pure_funcs: ['console.log'],
+                }
+            }
+        }
+    })
+}
+
 mix.browserSync({
     proxy: {
         target: 'http://vu-ams.test',
