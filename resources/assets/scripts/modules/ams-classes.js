@@ -82,13 +82,13 @@ class AmsWPRest {
     async makeMultipleRestCalls() {
 
         const callChain = await this.makeRestCall().then(results => {
-            // console.log('TEST TEST TEST');
-            // console.log(results);
+            console.log('TEST TEST TEST');
+            console.log(results);
             let chain = [];
 
             for (let i = 1; i <= this.totalPagesCount; i++) {
-                // console.log(this.totalPagesCount);
-                // console.log(i);
+                console.log(this.totalPagesCount);
+                console.log(i);
                 chain.push(this.makeRestCall(i));
             }
 
@@ -99,11 +99,11 @@ class AmsWPRest {
         const allPosts = await Promise.allSettled(callChain).then(responses => {
 
             responses.forEach(response => {
-                // console.log('PUTTING ALL RETRIEVED POSTS IN AN ARRAY...');
-                // console.log(response.value);
+                console.log('PUTTING ALL RETRIEVED POSTS IN AN ARRAY...');
+                console.log(response.value);
                 this.setAllResults(response.value);
-                // console.log('NEW POSTS ARRAY');
-                // console.log(this.allPostResults);
+                console.log('NEW POSTS ARRAY');
+                console.log(this.allPostResults);
             })
 
             return this.allPostResults;
