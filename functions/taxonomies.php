@@ -34,4 +34,31 @@ function VU_AMS_create_custom_taxonomies()
 			) 
 		);
 
+	// create categories taxonomy for faq
+	register_taxonomy(
+		'categories',
+		'faq',
+		array(
+			'hierarchical' => true,
+			'labels' => array(
+				'name' => _x('Categories', 'taxonomy general name'),
+					'singular_name' => _x('Category', 'taxonomy singular name'),
+					'search_items' => __('Search Categories', THEME_TEXT_DOMAIN),
+					'all_items' => __('All Categories', THEME_TEXT_DOMAIN),
+					'parent_item' => __('Parent Category', THEME_TEXT_DOMAIN),
+					'parent_item_colon' => __('Parent Category:', THEME_TEXT_DOMAIN),
+					'edit_item' => __('Edit Category', THEME_TEXT_DOMAIN),
+					'update_item' => __('Update Category', THEME_TEXT_DOMAIN),
+					'add_new_item' => __('Add new Category', THEME_TEXT_DOMAIN),
+					'new_item_name' => __('New Category Name', THEME_TEXT_DOMAIN),
+					'menu_name' => __('Categories'),
+			),
+			'show_ui' => true,
+			'show_in_rest' => true,
+			'show_admin_column' => true,
+			'query_var' => true,
+			'rewrite' => array('slug' => 'category'),
+		)
+	); 
+
 }
