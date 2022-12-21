@@ -3,10 +3,9 @@ const mix = require('laravel-mix');
 if (mix.inProduction()) {
     mix.options({
         terser: {
-            exclude: '/resources/assets/scripts/modules/submit-form.js',
             terserOptions: {
                 compress: {
-                    drop_console: true
+                    pure_funcs: ['console.log'],
                 }
             }
         }
