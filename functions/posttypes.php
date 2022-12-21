@@ -96,7 +96,7 @@ function register_post_types() {
         'menu_icon'    => 'dashicons-format-status',
         'rewrite'      => array( 'with_front' => true ),
         'supports'     => array( 'title', 'editor', 'excerpt' ),
-        'show_in_rest' => false,
+        'show_in_rest' => true,
     ) );
 
     // create a Projects posttype
