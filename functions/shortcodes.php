@@ -763,6 +763,19 @@ function ams_add_shortcodes() {
                         $html .= '<h3 class="question__title">' . $faq->post_title . '</h3>';
 
                         $html .= '<div class="question__answer">';
+                        $html .= '<h4>';
+                        $html .= "Categories: ";
+                        if(get_the_terms($faq->ID, 'categories')) {
+                            foreach(get_the_terms($faq->ID, 'categories') as $index => $category) {
+                               if($index + 1 === count(get_the_terms($faq->ID, 'categories')) ) {
+                                    $html .= $category->name;
+                               } else {
+                                $html .= $category->name . ", ";
+                               }
+                            }
+                        }
+
+                        $html .= '</h4>';
                         $html .= $faq->post_content;
                         $html .= '</div>';
 
