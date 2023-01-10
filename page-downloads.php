@@ -21,9 +21,9 @@
                     <p>
                         <?php the_sub_field( 'text' ); ?>
                     </p>
-                    <a href="<?php echo $header_download['url'] ?>" class="btn" download>
+                    <!-- <a href="<?php echo $header_download['url'] ?>" class="btn" download>
                         <?php the_sub_field( 'download_button_text' ); ?>
-                    </a>
+                    </a> -->
                 <?php endif; ?>
             </div>
             <?php if ( get_sub_field( 'image' ) ) : ?>
