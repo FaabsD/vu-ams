@@ -354,6 +354,71 @@ function ams_add_shortcodes() {
         return $html;
     }
 
+    // add a shortcode that creates a download latest dams version button
+
+    add_shortcode('dams_latest_download', 'latest_dams_release_button');
+
+    function latest_dams_release_button( $atts ) {
+        $atts = shortcode_atts(
+            array(
+                'for_os' => 'windows',
+                'title' => 'Download',
+            ),
+            $atts, 
+            'dams_latest_download'
+        );
+
+        $args = array(
+            'post_type'      => 'software-release',
+            'posts_per_page' => 1,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+        );
+
+        $query = new WP_Query( $args );
+
+        $html = "";
+
+        if ( $query->have_posts() ) {
+            $release = $query->get_posts()[0];
+
+            if($atts['for_os'] === "win" || $atts['for_os'] === "windows" || $atts['for_os'] === "Windows" || $atts['for_os'] === "Win"){
+                if(have_rows('download_windows', $release->ID)) : while(have_rows('download_windows', $release->ID)) : the_row();
+                        $download = get_sub_field('download_file');
+                        $html .= '<a href="' . $download['url'] . '" class="latest-dams-download" download>';
+                        $html .= $atts['title'];
+                        $html .= '</a>';
+                    endwhile;endif;
+            } elseif ($atts['for_os'] === "macos" || $atts['for_os'] === "MacOS" || $atts['for_os'] === "mac" || $atts['for_os'] === "Mac") {
+                if ( have_rows( 'download_macos', $release->ID ) ) : while ( have_rows( 'download_macos', $release->ID ) ): the_row();
+
+                        if ( get_sub_field( 'download_file' ) ):
+                            $download = get_sub_field( 'download_file' );
+                            $html .= '<a href="' . $download['url'] . '" class="latest-dams-download" download>';
+                            $html .= $atts['title'];
+                            $html .= '</a>';
+                        endif;
+                    endwhile;
+                    endif;
+            } else {
+                if ( have_rows( 'download_universal', $release->ID ) ) : while ( have_rows( 'download_universal', $release->ID ) ): the_row();
+
+                    if ( get_sub_field( 'download_text' ) && get_sub_field( 'download_file' ) ):
+                        $download = get_sub_field( 'download_file' );
+                        $html .= '<a href="' . $download['url'] . '" class="latest-dams-download" download>';
+                        $html .= $atts['title'];
+                        $html .= '</a>';
+                    endif;
+                endwhile;
+                endif;
+            }
+
+            wp_reset_query();
+            return $html;
+
+        }
+    }
+
     // add a shortcode to display the downloads to the most recent dams version
 
     add_shortcode( 'dams_recent', 'retrieve_recent_software_release' );
