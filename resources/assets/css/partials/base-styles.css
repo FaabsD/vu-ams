@@ -138,6 +138,21 @@ body,
     }
   }
 
+  .latest-dams-download {
+    @apply inline-block
+            max-w-max
+            flex-grow-0
+            bg-ams-yellow
+            px-4
+            py-2
+            text-base
+            font-bold
+            text-ams-dark
+            !no-underline
+            md:px-8
+            md:py-4
+            md:text-lg;
+  }
   .recent_software-release {
     @apply prose-sm mx-auto max-w-none md:max-w-none md:prose;
 
